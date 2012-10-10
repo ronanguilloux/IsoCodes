@@ -1,3 +1,6 @@
+# Composer
+composer.phar
+
 # Bootstrap
 app/bootstrap*
 

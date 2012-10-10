@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<phpunit strict="true" verbose="true" backupGlobals="false" backupStaticAttributes="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" stopOnError="false" stopOnIncomplete="false" stopOnSkipped="false" syntaxCheck="false" bootstrap="src/IsoCodes/Tests/bootstrap.php">
+  <testsuites>
+    <testsuite name="IsoCodes">
+      <testsuite>
+        <directory>src/IsoCodes/Tests</directory>
+      </testsuite>
+    </testsuite>
+    <logging>
+      <!-- uncoment to generate code-ceverage stats in /tmp/report: -->
+      <!--<log type="coverage-html" target="/tmp/report" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>-->
+    </logging>
+  </testsuites>
+</phpunit>

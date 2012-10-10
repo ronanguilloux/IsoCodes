@@ -1,0 +1,22 @@
+{
+    "name": "IsoCodes",
+    "description": "PHP library, validating various ISO codes, such as IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, NSS, Siren, Siret, Ssn, Uknin",
+    "keywords" : "Iso codes, IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, NSS, Siren, Siret, Ssn, Uknin",
+    "type": "library",
+    "version" : "1.0.0",
+    "time": "2012-10-10",
+    "authors": [
+    {
+        "name": "Ronan Guilloux",
+        "email": "ronan.guilloux@gmail.com",
+        "homepage": "http://github.com/ronanguilloux",
+        "role": "Developer"
+    },
+    "support": {
+        "email": "ronan.guilloux@gmail.com"
+    },
+    "license" => "GNU General Public License v3.0",
+    "autoload": {
+        "psr-0": {"IsoCodes": "src/"}
+    }
+}
