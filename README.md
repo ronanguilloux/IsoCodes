@@ -17,8 +17,9 @@ Installing & Building
 
     $ git clone git@github.com:ronanguilloux/IsoCodes.git
 
-Autoloading PSR-0 friendly
-Build autoloading using composer :
+Autoloading is PSR-0 friendly.
+
+Build autoload using composer :
 
     $ cd IsoCodes
     $ curl http://getcomposer.org/installer | php
