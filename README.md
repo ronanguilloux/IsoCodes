@@ -31,6 +31,12 @@ Build autoload using composer :
     $ php composer.phar install
 
 
+Testing
+-------
+
+    $ phpunit
+
+
 License Information
 -------------------
 
