@@ -11,6 +11,11 @@ PHP libray providing various ISO codes validators
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
 
+Usage
+-----
+
+    $isAmericanExpress = CreditCard::validate( '12345679123456' );
+
 
 Installing & Building
 ---------------------
