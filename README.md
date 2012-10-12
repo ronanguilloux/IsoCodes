@@ -11,6 +11,13 @@ PHP libray providing various ISO codes validators
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
 
+
+Build status
+------------
+
+[![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes)
+
+
 Usage
 -----
 
