@@ -58,5 +58,19 @@ class ZipCode
         $regexp = "/^[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$/";
         return (boolean)preg_match( $regexp, $zipcode );
     }
+
+    /**
+     * US "ZIP+4" zipcode validator
+     * @param string $zipcode
+     * @link http://en.wikipedia.org/wiki/Postal_codes_in_Canada
+     * @link http://en.wikipedia.org/wiki/List_of_A_postal_codes_of_Canada
+     * @return boolean
+     */
+
+    public static function validateUS($zipcode){
+        $regexp = "/^\d{5}(-\d{4})?$/";
+        return (boolean)preg_match( $regexp, $zipcode );
+    }
+
 }
 ?>
