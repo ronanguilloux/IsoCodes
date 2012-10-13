@@ -40,6 +40,8 @@ class CanadaTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( ZipCode::validate( 'A0 A1A0', 'Canada' ), false );
         $this->assertEquals( ZipCode::validate( 'A0A1 A0', 'Canada' ), false );
         $this->assertEquals( ZipCode::validate( 'A0A1A 0', 'Canada' ), false );
+        $this->assertEquals( ZipCode::validate( 'A0A1a0', 'Canada' ), false );
+        $this->assertEquals( ZipCode::validate( 'a0a1a0', 'Canada' ), false );
     }
 
     /**
