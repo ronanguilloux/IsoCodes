@@ -1,15 +1,15 @@
 <?php
 
-namespace IsoCodes\Tests;
+namespace IsoCodes\Tests\ZipCodes;
 
 use IsoCodes\ZipCode;
 
-class ZipCodeTest extends \PHPUnit_Framework_TestCase
+class FranceTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()
     {
         parent::__construct();
-        $this->setName( "ZipCode unit test case" );
+        $this->setName( "French zipcode unit test case" );
     }
 
     protected function setUp()
