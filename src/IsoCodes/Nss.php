@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Nss
+class Nss implements IsoCodeInterface
 {
 
     /**

@@ -20,15 +20,13 @@ class ZipCode
     }
 
     /**
-     * "CODE POSTAL" French zipcode validator
-     * Pay attention to many exceptions & particularities, see @link
-     *
+     * US "ZIP+4" zipcode validator
      * @param string $zipcode
-     * @link http://fr.wikipedia.org/wiki/Code_postal_en_France
      * @return boolean
      */
-    public static function validateFrance($zipcode){
-        $regexp = "/^[0-9]{5}$/";
+
+    public static function validateUS($zipcode){
+        $regexp = "/^\d{5}(-\d{4})?$/";
         return (boolean)preg_match( $regexp, $zipcode );
     }
 
@@ -60,17 +58,19 @@ class ZipCode
     }
 
     /**
-     * US "ZIP+4" zipcode validator
+     * "CODE POSTAL" French zipcode validator
+     * Pay attention to many exceptions & particularities, see @link
+     *
+     * variant : "/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/"
+     *
      * @param string $zipcode
-     * @link http://en.wikipedia.org/wiki/Postal_codes_in_Canada
-     * @link http://en.wikipedia.org/wiki/List_of_A_postal_codes_of_Canada
+     * @link http://fr.wikipedia.org/wiki/Code_postal_en_France
      * @return boolean
      */
+    public static function validateFrance($zipcode){
 
-    public static function validateUS($zipcode){
-        $regexp = "/^\d{5}(-\d{4})?$/";
+        $regexp = "/^[0-9]{5}$/";
         return (boolean)preg_match( $regexp, $zipcode );
     }
-
 }
 ?>

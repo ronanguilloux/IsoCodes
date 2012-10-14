@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Siret
+class Siret implements IsoCodeInterface
 {
     /**
      * SIRET validator

@@ -3,7 +3,8 @@
 namespace IsoCodes;
 
 // source : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
-class ssn{
+class Ssn
+{
 
     // Populate this variable with the high group list provided by the Social Security Administration:
     // http://www.ssa.gov/employer/ssnvhighgroup.htm

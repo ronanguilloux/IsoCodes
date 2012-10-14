@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Insee
+class Insee implements IsoCodeInterface
 {
 
     /**

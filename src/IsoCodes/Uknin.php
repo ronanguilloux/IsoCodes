@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Uknin
+class Uknin implements IsoCodeInterface
 {
 	/**
 	 * UK's National Insurance number validator

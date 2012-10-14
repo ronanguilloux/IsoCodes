@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Bban
+class Bban implements IsoCodeInterface
 {
 	/**
 	 * Bban validator

@@ -7,7 +7,7 @@ PHP libray providing various ISO codes validators
 * France : Numéro de Sécurité Sociale, SIREN, SIRET, Codes postaux
 * US : Social Security number
 * UK : National Insurance Number
-* Zipcode for many countries (France, Canada, etc.)
+* Zipcode for many countries (US, Canada, France, etc.)
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.

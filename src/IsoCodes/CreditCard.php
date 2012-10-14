@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class CreditCard
+class CreditCard implements IsoCodeInterface
 {
     /**
      * Credit Card validator
@@ -43,4 +43,3 @@ class CreditCard
         return (($tot % 10) == 0);
     }
 }
-?>

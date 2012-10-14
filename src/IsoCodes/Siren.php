@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Siren
+class Siren implements IsoCodeInterface
 {
     /**
      * SIREN validator

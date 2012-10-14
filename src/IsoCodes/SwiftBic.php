@@ -2,10 +2,12 @@
 
 namespace IsoCodes;
 
-class SwiftBic
+class SwiftBic implements IsoCodeInterface
 {
 	/**
 	 * SWIFT-BIC validator
+     *
+     * variant BIC Regex : ([a-zA-Z]{4}[a-zA-Z]{2}[a-zA-Z0-9]{2}([a-zA-Z0-9]{3})?)
 	 *
 	 * @author ronan.guilloux
 	 * @link http://networking.mydesigntool.com/viewtopic.php?tid=301&id=31
@@ -18,4 +20,3 @@ class SwiftBic
         return (boolean)preg_match( $regexp, $swiftbic );
 	}
 }
-?>

@@ -2,7 +2,7 @@
 
 namespace IsoCodes;
 
-class Iban
+class Iban implements IsoCodeInterface
 {
     /**
      * Iban validator
