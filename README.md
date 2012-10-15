@@ -39,7 +39,7 @@ Installing via GitHub
 
 Autoloading is PSR-0 friendly.
 
-Installing via Packagist/Composer
+Installing via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes)/Composer
 ---------------------------------
 
 Create a composer.json file:
@@ -48,8 +48,7 @@ Create a composer.json file:
         "require": {"ronanguilloux/isocodes": "dev-master"}
     }
 
-    https://packagist.org/packages/ronanguilloux/isocodes
-
+    
 Grab composer:
 
     $ curl -s http://getcomposer.org/installer | php
