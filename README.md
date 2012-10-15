@@ -32,17 +32,30 @@ Usage
     $isAmericanExpress = CreditCard::validate( '12345679123456' );
 
 
-Installing & Building
+Installing via GitHub
 ---------------------
 
     $ git clone git@github.com:ronanguilloux/IsoCodes.git
 
 Autoloading is PSR-0 friendly.
 
-Build autoload using composer :
+Installing via Packagist/Composer
+---------------------------------
 
-    $ cd IsoCodes
-    $ curl http://getcomposer.org/installer | php
+Create a composer.json file:
+
+    {
+        "require": {"ronanguilloux/isocodes": "dev-master"}
+    }
+
+    https://packagist.org/packages/ronanguilloux/isocodes
+
+Grab composer:
+
+    $ curl -s http://getcomposer.org/installer | php
+
+Run install (will build the auload):
+
     $ php composer.phar install
 
 
