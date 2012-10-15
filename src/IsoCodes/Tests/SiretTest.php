@@ -49,4 +49,3 @@ class SiretTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Siret::validate( 'azertyuiopqsdf' ), false );
     }
 }
-?>

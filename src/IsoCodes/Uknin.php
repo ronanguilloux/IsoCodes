@@ -19,4 +19,3 @@ class Uknin implements IsoCodeInterface
         return (boolean)(preg_match( $regexpMustCheck, $uknin ) && !preg_match( $regexpMustNOTCheck, $uknin ) );
 	}
 }
-?>

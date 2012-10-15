@@ -31,4 +31,3 @@ class Siret implements IsoCodeInterface
         return (($sum%10) == 0);
     }
 }
-?>

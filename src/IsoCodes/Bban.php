@@ -31,4 +31,4 @@ class Bban implements IsoCodeInterface
 		return 97 - bcmod(89*$bank + 15 * $branch + 3 * $account,97) === (int)$key;
 	}
 }
-?>
+

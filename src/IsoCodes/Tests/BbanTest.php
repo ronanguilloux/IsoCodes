@@ -9,7 +9,7 @@ class BbanTest extends \PHPUnit_Framework_TestCase
     public function __construct()
     {
         parent::__construct();
-        $this->setName( "BBAN unit test case" );
+        $this->setName( "Bban unit test case" );
     }
 
     protected function setUp()
@@ -36,4 +36,4 @@ class BbanTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Bban::validate( ' ' ), false );
     }
 }
-?>
+

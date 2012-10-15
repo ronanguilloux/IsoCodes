@@ -40,4 +40,3 @@ class NssTest extends \PHPUnit_Framework_TestCase
     }
 
 }
-?>

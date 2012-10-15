@@ -48,4 +48,3 @@ class SsnTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( $this->ssn->validate( ' ' ), false );
     }
 }
-?>

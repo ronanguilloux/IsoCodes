@@ -49,4 +49,3 @@ class SirenTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Siren::validate( 'azertyuio' ), false );
     }
 }
-?>

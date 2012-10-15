@@ -40,4 +40,3 @@ class InseeTest extends \PHPUnit_Framework_TestCase
     }
 
 }
-?>

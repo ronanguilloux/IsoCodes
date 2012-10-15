@@ -93,4 +93,3 @@ class IbanTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Iban::validate( ' ' ), false );
     }
 }
-?>

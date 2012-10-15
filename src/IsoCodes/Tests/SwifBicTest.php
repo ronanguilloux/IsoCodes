@@ -41,4 +41,3 @@ class SwiftBicTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( SwiftBic::validate( ' ' ), false );
     }
 }
-?>

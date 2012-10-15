@@ -73,4 +73,3 @@ class ZipCode
         return (boolean)preg_match( $regexp, $zipcode );
     }
 }
-?>

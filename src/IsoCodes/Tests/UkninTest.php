@@ -41,4 +41,3 @@ class UkninTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Uknin::validate( ' ' ), false );
     }
 }
-?>

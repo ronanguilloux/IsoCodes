@@ -66,4 +66,3 @@ class FranceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( ZipCode::validate( '01000', 'FRANCE'), true );
     }
 }
-
