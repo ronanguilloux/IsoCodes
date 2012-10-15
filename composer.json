@@ -1,7 +1,7 @@
 {
     "name": "ronanguilloux/isocodes",
-    "description": "PHP library, validating various ISO codes, such as IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, NSS, Siren, Siret, Ssn, Uknin",
-    "keywords": ["ISO codes", "IBAN", "SWIFT/BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "NSS", "Siren", "Siret", "Ssn", "Uknin"],
+    "description": "PHP library, validating various ISO codes, such as IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, NSS, Siren, Siret, Ssn, Uknin, Zipcode (US, Canada, France...), EAN13",
+    "keywords": ["ISO codes", "IBAN", "SWIFT/BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "NSS", "Siren", "Siret", "Ssn", "Uknin", "ZipCode", "EAN13"],
     "type": "library",
     "homepage": "https://github.com/ronanguilloux/IsoCodes",
     "version": "1.0.0",
