@@ -4,10 +4,10 @@ IsoCodes
 PHP libray providing various ISO codes validators
 
 * International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number
-* France : Numéro de Sécurité Sociale, SIREN, SIRET, Codes postaux
+* France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux
 * US : Social Security number
 * UK : National Insurance Number
-* Zipcode for many countries (US, Canada, France, etc.)
+* Zipcode for many countries: US, Canada, France, etc.
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
