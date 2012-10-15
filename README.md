@@ -48,12 +48,12 @@ Create a composer.json file:
         "require": {"ronanguilloux/isocodes": "dev-master"}
     }
 
-    
+
 Grab composer:
 
     $ curl -s http://getcomposer.org/installer | php
 
-Run install (will build the auload):
+Run install (will build the autoload):
 
     $ php composer.phar install
 
@@ -61,7 +61,7 @@ Run install (will build the auload):
 Testing
 -------
 
-    $ phpunit
+    $ phpunit --coverage-text
 
 
 License Information
