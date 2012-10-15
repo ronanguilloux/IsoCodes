@@ -3,7 +3,7 @@ IsoCodes
 
 PHP libray providing various ISO codes validators
 
-* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number
+* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, EAN13
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux
 * US : Social Security number
 * UK : National Insurance Number
