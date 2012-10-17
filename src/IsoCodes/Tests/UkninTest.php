@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\Uknin;
 
 /**
- * @covers Uknin
+ * @covers IsoCodes\Uknin
  */
 class UkninTest extends \PHPUnit_Framework_TestCase
 {

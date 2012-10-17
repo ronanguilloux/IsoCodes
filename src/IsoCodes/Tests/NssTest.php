@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\Nss;
 
 /**
- * @covers Nss
+ * @covers Isocodes\Nss
  */
 class NssTest extends \PHPUnit_Framework_TestCase
 {

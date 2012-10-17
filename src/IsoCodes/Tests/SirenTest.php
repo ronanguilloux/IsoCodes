@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\Siren;
 
 /**
- * @covers Siren
+ * @covers IsoCodes\Siren
  */
 class SirenTest extends \PHPUnit_Framework_TestCase
 {

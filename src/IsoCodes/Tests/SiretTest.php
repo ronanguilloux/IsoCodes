@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\Siret;
 
 /**
- * @covers Siret
+ * @covers IsoCodes\Siret
  */
 class SiretTest extends \PHPUnit_Framework_TestCase
 {

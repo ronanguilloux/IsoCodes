@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\SwiftBic;
 
 /**
- * @covers SwiftBic
+ * @covers IsoCodes\SwiftBic
  */
 class SwiftBicTest extends \PHPUnit_Framework_TestCase
 {

@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\IP;
 
 /**
- * @covers IP
+ * @covers Isocodes\IP
  */
 class IPTest extends \PHPUnit_Framework_TestCase
 {

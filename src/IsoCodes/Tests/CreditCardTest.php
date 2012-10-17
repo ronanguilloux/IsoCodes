@@ -5,7 +5,7 @@ namespace IsoCodes\Tests;
 use IsoCodes\CreditCard;
 
 /**
- * @covers CreditCard
+ * @covers Isocodes\CreditCard
  */
 class CreditCardTest extends \PHPUnit_Framework_TestCase
 {
