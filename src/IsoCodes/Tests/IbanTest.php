@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Iban;
 
+/**
+ * @covers Iban
+ */
 class IbanTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

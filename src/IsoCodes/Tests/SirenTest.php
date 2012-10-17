@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Siren;
 
+/**
+ * @covers Siren
+ */
 class SirenTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Ean13;
 
+/**
+ * @covers Ean13
+ */
 class Ean13Test extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

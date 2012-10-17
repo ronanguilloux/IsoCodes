@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Siret;
 
+/**
+ * @covers Siret
+ */
 class SiretTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

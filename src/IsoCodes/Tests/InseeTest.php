@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Insee;
 
+/**
+ * @covers Insee
+ */
 class InseeTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

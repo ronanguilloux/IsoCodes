@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\IP;
 
+/**
+ * @covers IP
+ */
 class IPTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

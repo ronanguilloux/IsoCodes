@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Nss;
 
+/**
+ * @covers Nss
+ */
 class NssTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

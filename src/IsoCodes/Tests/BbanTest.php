@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Bban;
 
+/**
+ * @covers Bban
+ */
 class BbanTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()

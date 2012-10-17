@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\Ssn;
 
+/**
+ * @covers Ssn
+ */
 class SsnTest extends \PHPUnit_Framework_TestCase
 {
     protected $ssn;

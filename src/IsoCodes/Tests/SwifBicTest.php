@@ -4,6 +4,9 @@ namespace IsoCodes\Tests;
 
 use IsoCodes\SwiftBic;
 
+/**
+ * @covers SwiftBic
+ */
 class SwiftBicTest extends \PHPUnit_Framework_TestCase
 {
     public function __construct()
