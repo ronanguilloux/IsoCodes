@@ -10,10 +10,11 @@ class Insee implements IsoCodeInterface
      * sinon renvoie FALSE
      * @author Webu (Dylann Cordel <d.cordel@webu.fr>) corrigé par Ronan
      * @link http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/
-     * @param string $insee à 15 chiffre
+     * @param  string  $insee à 15 chiffre
      * @return boolean ou mieux mixed array avec les infos récupérées du num de sécu ou FALSE
      */
-    public static function validate($numero){
+    public static function validate($numero)
+    {
         //Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
         //mais corigée par mes soins pour respecter plus scrupuleusement le format
         $regexp = '/^                                           # début de chaîne
@@ -28,7 +29,7 @@ class Insee implements IsoCodeInterface
                     /x';
                     //références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
-                    if(!preg_match($regexp, $numero, $match)){
+                    if (!preg_match($regexp, $numero, $match)) {
                     return FALSE ;
                     }
                     /* attention à l'overflow de php :)
@@ -55,7 +56,7 @@ class Insee implements IsoCodeInterface
                     $aChecker = floatval(substr($numero, 0, 13));
 
                     /*Traitement des cas des personnes nées hors métropole ou en corse*/
-                    switch(true){
+                    switch (true) {
                         //départements corses. Le calcul de la cles est différent
                         case $return['departement'] == '2A' :
                             $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
@@ -69,22 +70,24 @@ class Insee implements IsoCodeInterface
                         case $return['departement'] == 97 || $return['departement'] == 98 :
                             $return['departement'].=substr($return['numcommun'], 0, 1);
                             $return['numcommun'] = substr($return['numcommun'], 1, 2) ;
-                            if($return['numcommun'] > 90){//90 = commune inconnue
+                            if ($return['numcommun'] > 90) {//90 = commune inconnue
+
                                 return FALSE ;
                             }
                             break;
 
                         case $return['departement'] == 99 :
                             $return['pays'] = $match['numcommune'] ;
-                            if($return['numcommun'] > 990){//990 = pays inconnu
+                            if ($return['numcommun'] > 990) { //990 = pays inconnu
+
                                 return FALSE ;
                             }
                             break;
 
                         default :
-                            if(isset($return['numcommun']))
-                            {
-                                if($return['numcommun'] > 990){//990 = commune inconnue
+                            if (isset($return['numcommun'])) {
+                                if ($return['numcommun'] > 990) { //990 = commune inconnue
+
                                     return FALSE ;
                                 }
                             }
@@ -93,11 +96,12 @@ class Insee implements IsoCodeInterface
 
                     $clef = 97 - fmod($aChecker, 97) ;
 
-                    if(empty($return['clef'])){
+                    if (empty($return['clef'])) {
                         $return['clef'] = $clef ; //la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
-                    }if($clef != $return['clef']){
+                    }if ($clef != $return['clef']) {
                         return FALSE ;
                     }
+
                     return true;//$return ;
     }
 }
