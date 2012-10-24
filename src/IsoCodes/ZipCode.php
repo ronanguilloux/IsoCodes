@@ -1,6 +1,6 @@
 <?php
 
-namespace Isocodes;
+namespace IsoCodes;
 
 class ZipCode
 {
@@ -21,13 +21,15 @@ class ZipCode
 
     /**
      * US "ZIP+4" zipcode validator
-     * @param string $zipcode
+     * @param  string  $zipcode
      * @return boolean
      */
 
-    public static function validateUS($zipcode){
+    public static function validateUS($zipcode)
+    {
         $regexp = "/^\d{5}(-\d{4})?$/";
-        return (boolean)preg_match( $regexp, $zipcode );
+
+        return (boolean) preg_match( $regexp, $zipcode );
     }
 
     /**
@@ -52,9 +54,11 @@ class ZipCode
      * @link http://en.wikipedia.org/wiki/List_of_A_postal_codes_of_Canada
      * @return boolean
      */
-    public static function validateCanada($zipcode){
+    public static function validateCanada($zipcode)
+    {
         $regexp = "/^[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$/";
-        return (boolean)preg_match( $regexp, $zipcode );
+
+        return (boolean) preg_match( $regexp, $zipcode );
     }
 
     /**
@@ -67,9 +71,10 @@ class ZipCode
      * @link http://fr.wikipedia.org/wiki/Code_postal_en_France
      * @return boolean
      */
-    public static function validateFrance($zipcode){
-
+    public static function validateFrance($zipcode)
+    {
         $regexp = "/^[0-9]{5}$/";
-        return (boolean)preg_match( $regexp, $zipcode );
+
+        return (boolean) preg_match( $regexp, $zipcode );
     }
 }
