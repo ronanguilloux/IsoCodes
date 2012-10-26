@@ -20,7 +20,6 @@ class SirenTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidSiren()
     {
         $this->assertEquals( Siren::validate( '440797074' ), true );

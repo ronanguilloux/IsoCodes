@@ -1,6 +1,6 @@
 <?php
 
-namespace Isocodes;
+namespace IsoCodes;
 
 interface IsoCodeInterface
 {

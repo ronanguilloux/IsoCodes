@@ -20,7 +20,6 @@ class CreditCardTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidCreditCard()
     {
         $this->assertEquals( CreditCard::validate( '340000000000009' ), true ); //American Express
@@ -49,4 +48,3 @@ class CreditCardTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( CreditCard::validate( ' ' ), false );
     }
 }
-?>

@@ -23,7 +23,6 @@ class SsnTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidSSN()
     {
         // generated here : http://fr.fakenamegenerator.com/social-security-number.php
@@ -38,7 +37,7 @@ class SsnTest extends \PHPUnit_Framework_TestCase
 
     public function testInvalidSSN()
     {
-		$this->assertEquals( $this->ssn->validate( '574-09-0776' ), false );
+        $this->assertEquals( $this->ssn->validate( '574-09-0776' ), false );
         $this->assertEquals( $this->ssn->validate( '123-45-6789' ), false );
         $this->assertEquals( $this->ssn->validate( '1234-567-89' ), false );
         $this->assertEquals( $this->ssn->validate( '123456789' ), false );

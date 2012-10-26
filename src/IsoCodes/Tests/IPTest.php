@@ -20,7 +20,6 @@ class IPTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidIP()
     {
         $this->assertEquals( IP::validate( '93.184.220.20' ), true ); // 中华人民共和国

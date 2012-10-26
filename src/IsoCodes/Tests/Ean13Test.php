@@ -20,7 +20,6 @@ class Ean13Test extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidEan13()
     {
         $this->assertEquals( Ean13::validate( '4719512002889' ), true ); // Source: Wikipedia

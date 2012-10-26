@@ -20,7 +20,6 @@ class UkninTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidUknin()
     {
         $this->assertEquals( Uknin::validate( 'AB123456C' ), true );

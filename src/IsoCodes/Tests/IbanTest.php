@@ -20,7 +20,6 @@ class IbanTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidIban()
     {
         $this->assertEquals( Iban::validate('CH10002300A1023502601'), true );

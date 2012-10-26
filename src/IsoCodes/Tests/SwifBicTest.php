@@ -20,7 +20,6 @@ class SwiftBicTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidSwiftBic()
     {
         $this->assertEquals( SwiftBic::validate( 'RBOSGGSX' ), true );

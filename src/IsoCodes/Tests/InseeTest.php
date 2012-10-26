@@ -20,11 +20,10 @@ class InseeTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidInsee()
     {
-		$this->assertEquals( Insee::validate( '177022A00100229' ), true ); // Corse
-		$this->assertEquals( Insee::validate( '253012A07300444' ), true ); // Corse
+        $this->assertEquals( Insee::validate( '177022A00100229' ), true ); // Corse
+        $this->assertEquals( Insee::validate( '253012A07300444' ), true ); // Corse
         $this->assertEquals( Insee::validate( '177025626004544' ), true );
         $this->assertEquals( Insee::validate( '253077507300483' ), true );
         $this->assertEquals( Insee::validate( '188057208107893' ), true );

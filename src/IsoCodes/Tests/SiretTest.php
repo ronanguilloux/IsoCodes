@@ -20,7 +20,6 @@ class SiretTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-
     public function testValidSiret()
     {
         $this->assertEquals( Siret::validate( 44079707400026 ), true );

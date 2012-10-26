@@ -10,7 +10,7 @@ class Iban implements IsoCodeInterface
      * @author petitchevalroux
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
      * @link http://dev.petitchevalroux.net/php/validation-iban-php.356.html + comments & links
-     * @param string $iban
+     * @param  string  $iban
      * @return boolean
      */
     public static function validate($iban)
@@ -73,21 +73,18 @@ class Iban implements IsoCodeInterface
                 'GB'=>'[A-Z]{4}[0-9]{14}'
                     );
         /*On vérifie la longueur minimale*/
-        if(mb_strlen($iban) < 18)
-        {
+        if (mb_strlen($iban) < 18) {
             return false;
         }
         /*On récupère le code ISO du pays*/
         $ctr = substr($iban,0,2);
-        if(isset($rules[$ctr]) === false)
-        {
+        if (isset($rules[$ctr]) === false) {
             return false;
         }
         /*On récupère la règle de validation en fonction du pays*/
         $check = substr($iban,4);
         /*Si la règle n'est pas bonne l'IBAN n'est pas valide*/
-        if(preg_match('~'.$rules[$ctr].'~',$check) !== 1)
-        {
+        if (preg_match('~'.$rules[$ctr].'~',$check) !== 1) {
             return false;
         }
         /*On récupère la chaine qui permet de calculer la validation*/
@@ -99,6 +96,7 @@ class Iban implements IsoCodeInterface
                 $check
                 );
         /*On effectue la vérification finale*/
+
         return bcmod($check,97) === '1';
     }
 }
