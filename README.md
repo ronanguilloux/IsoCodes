@@ -76,7 +76,6 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 
 Then run:
 
-    rm STATS
     phploc . > STATS
     phpmd src/ text codesize,unusedcode,naming . >> STATS
     phpcpd . >> STATS
