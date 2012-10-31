@@ -338,12 +338,12 @@ class Ssn
             return false;
         }
 
-        foreach ($statePrefixes as $state => $numbers) {
+        foreach ($statePrefixes as $numbers) {
             // Search for the area number in the state list
             if (in_array($areaNumber, $numbers)) {
                 // Make sure the group number is valid
                 if (array_search($highgroup[$areaNumber],$possibleGroups) >= array_search($groupNumber,$possibleGroups)) {
-                    //return $state;
+                    //return $state => must use "as $state => numbers" in the foreach loop;
                     return true;
                 } else {
                     return false;

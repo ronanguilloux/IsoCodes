@@ -102,6 +102,6 @@ class Insee implements IsoCodeInterface
                         return FALSE ;
                     }
 
-                    return true;//$return ;
+                    return true;
     }
 }
