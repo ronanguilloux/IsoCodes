@@ -1,29 +1,29 @@
 phploc 1.7.1 by Sebastian Bergmann.
 
-Directories:                                          4
-Files:                                               33
+Directories:                                          2
+Files:                                               28
 
-Lines of Code (LOC):                               1947
-  Cyclomatic Complexity / Lines of Code:           0,05
-Comment Lines of Code (CLOC):                       525
-Non-Comment Lines of Code (NCLOC):                 1422
+Lines of Code (LOC):                               1679
+  Cyclomatic Complexity / Lines of Code:           0,04
+Comment Lines of Code (CLOC):                       435
+Non-Comment Lines of Code (NCLOC):                 1244
 
-Namespaces:                                           4
+Namespaces:                                           3
 Interfaces:                                           1
 Traits:                                               0
-Classes:                                             28
+Classes:                                             26
   Abstract:                                           0 (0,00%)
-  Concrete:                                          28 (100,00%)
-  Average Class Length (NCLOC):                      49
-Methods:                                            107
+  Concrete:                                          26 (100,00%)
+  Average Class Length (NCLOC):                      46
+Methods:                                             95
   Scope:
-    Non-Static:                                      90 (84,11%)
-    Static:                                          17 (15,89%)
+    Non-Static:                                      79 (83,16%)
+    Static:                                          16 (16,84%)
   Visibility:
-    Public:                                          90 (84,11%)
-    Non-Public:                                      17 (15,89%)
+    Public:                                          80 (84,21%)
+    Non-Public:                                      15 (15,79%)
   Average Method Length (NCLOC):                     12
-  Cyclomatic Complexity / Number of Methods:       1,66
+  Cyclomatic Complexity / Number of Methods:       1,55
 
 Anonymous Functions:                                  0
 Functions:                                            0
@@ -42,9 +42,9 @@ Found 1 exact clones with 8 duplicated lines in 2 files:
   - /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siren.php:23-31
     /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siret.php:23-31
 
-0.41% duplicated lines out of 1947 total lines of code.
+0.48% duplicated lines out of 1679 total lines of code.
 
-Time: 0 seconds, Memory: 6,75Mb
+Time: 0 seconds, Memory: 6,50Mb
 PHP_Depend 1.1.0 by Manuel Pichler
 
 
