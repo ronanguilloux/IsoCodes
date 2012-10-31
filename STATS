@@ -1,0 +1,54 @@
+phploc 1.7.1 by Sebastian Bergmann.
+
+Directories:                                          4
+Files:                                               33
+
+Lines of Code (LOC):                               1947
+  Cyclomatic Complexity / Lines of Code:           0,05
+Comment Lines of Code (CLOC):                       525
+Non-Comment Lines of Code (NCLOC):                 1422
+
+Namespaces:                                           4
+Interfaces:                                           1
+Traits:                                               0
+Classes:                                             28
+  Abstract:                                           0 (0,00%)
+  Concrete:                                          28 (100,00%)
+  Average Class Length (NCLOC):                      49
+Methods:                                            107
+  Scope:
+    Non-Static:                                      90 (84,11%)
+    Static:                                          17 (15,89%)
+  Visibility:
+    Public:                                          90 (84,11%)
+    Non-Public:                                      17 (15,89%)
+  Average Method Length (NCLOC):                     12
+  Cyclomatic Complexity / Number of Methods:       1,66
+
+Anonymous Functions:                                  0
+Functions:                                            0
+
+Constants:                                            0
+  Global constants:                                   0
+  Class constants:                                    0
+
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Insee.php:16	The method validate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Insee.php:16	The method validate() has an NPath complexity of 360. The configured NPath complexity threshold is 200.
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Ssn.php:302	The method validate() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+phpcpd 1.4.0 by Sebastian Bergmann.
+
+Found 1 exact clones with 8 duplicated lines in 2 files:
+
+  - /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siren.php:23-31
+    /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siret.php:23-31
+
+0.41% duplicated lines out of 1947 total lines of code.
+
+Time: 0 seconds, Memory: 6,75Mb
+PHP_Depend 1.1.0 by Manuel Pichler
+
+
+
+Critical error: 
+=============== 
+No output specified.
