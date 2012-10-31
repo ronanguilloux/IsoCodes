@@ -76,11 +76,11 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 
 Then run:
 
-    phploc . > STATS
-    phpmd src/ text codesize,unusedcode,naming . >> STATS
-    phpcpd . >> STATS
-    pdepend . >> STATS
-    php-cs-fixer fix /path/to/code --dry-run >> STATS
+    phploc src/ > STATS
+    phpmd src/ text codesize,unusedcode,naming >> STATS
+    phpcpd src/ >> STATS
+    pdepend src/ >> STATS
+    php-cs-fixer fix src/ --dry-run >> STATS
 
 This set of php QA tools are currently run on this sources, via a git's pre-commit hook: See STATS file for the actual report.
 
