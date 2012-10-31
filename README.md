@@ -72,17 +72,16 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 * [phpmd](https://github.com/phpmd/phpmd)
 * [phpcpd](https://github.com/sebastianbergmann/phpcpd)
 * [pdepend](https://github.com/pdepend/pdepend)
-* [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer),
+* [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
 
 Then run:
-<pre>
+
     rm STATS
     phploc . > STATS
     phpmd src/ text codesize,unusedcode,naming . >> STATS
     phpcpd . >> STATS
     pdepend . >> STATS
     php-cs-fixer fix /path/to/code --dry-run >> STATS
-</pre>
 
 This set of php QA tools are currently run on this sources, via a git's pre-commit hook: See STATS file for the actual report.
 
