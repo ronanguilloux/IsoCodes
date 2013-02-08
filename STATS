@@ -1,29 +1,29 @@
 phploc 1.7.1 by Sebastian Bergmann.
 
 Directories:                                          2
-Files:                                               28
+Files:                                               30
 
-Lines of Code (LOC):                               1679
-  Cyclomatic Complexity / Lines of Code:           0,04
-Comment Lines of Code (CLOC):                       435
-Non-Comment Lines of Code (NCLOC):                 1244
+Lines of Code (LOC):                               1986
+  Cyclomatic Complexity / Lines of Code:           0,05
+Comment Lines of Code (CLOC):                       457
+Non-Comment Lines of Code (NCLOC):                 1529
 
 Namespaces:                                           3
 Interfaces:                                           1
 Traits:                                               0
-Classes:                                             26
+Classes:                                             28
   Abstract:                                           0 (0,00%)
-  Concrete:                                          26 (100,00%)
-  Average Class Length (NCLOC):                      46
-Methods:                                             95
+  Concrete:                                          28 (100,00%)
+  Average Class Length (NCLOC):                      53
+Methods:                                            103
   Scope:
-    Non-Static:                                      79 (83,16%)
-    Static:                                          16 (16,84%)
+    Non-Static:                                      86 (83,50%)
+    Static:                                          17 (16,50%)
   Visibility:
-    Public:                                          80 (84,21%)
-    Non-Public:                                      15 (15,79%)
-  Average Method Length (NCLOC):                     12
-  Cyclomatic Complexity / Number of Methods:       1,55
+    Public:                                          87 (84,47%)
+    Non-Public:                                      16 (15,53%)
+  Average Method Length (NCLOC):                     14
+  Cyclomatic Complexity / Number of Methods:       1,81
 
 Anonymous Functions:                                  0
 Functions:                                            0
@@ -35,6 +35,9 @@ Constants:                                            0
 /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Insee.php:16	The method validate() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
 /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Insee.php:16	The method validate() has an NPath complexity of 360. The configured NPath complexity threshold is 200.
 /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Ssn.php:302	The method validate() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Vat.php:20	The method validate() has a Cyclomatic Complexity of 32. The configured cyclomatic complexity threshold is 10.
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Vat.php:20	The method validate() has an NPath complexity of 336. The configured NPath complexity threshold is 200.
+/home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Vat.php:20	The method validate() has 113 lines of code. Current threshold is set to 100. Avoid really long methods.
 phpcpd 1.4.0 by Sebastian Bergmann.
 
 Found 1 exact clones with 8 duplicated lines in 2 files:
@@ -42,9 +45,9 @@ Found 1 exact clones with 8 duplicated lines in 2 files:
   - /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siren.php:23-31
     /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siret.php:23-31
 
-0.48% duplicated lines out of 1679 total lines of code.
+0.40% duplicated lines out of 1986 total lines of code.
 
-Time: 1 second, Memory: 6,50Mb
+Time: 0 seconds, Memory: 4,75Mb
 PHP_Depend 1.1.0 by Manuel Pichler
 
 
@@ -52,3 +55,5 @@ PHP_Depend 1.1.0 by Manuel Pichler
 Critical error: 
 =============== 
 No output specified.
+   1) IsoCodes/Vat.php
+   2) IsoCodes/Tests/VatTest.php
