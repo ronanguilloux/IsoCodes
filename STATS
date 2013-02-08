@@ -3,10 +3,10 @@ phploc 1.7.1 by Sebastian Bergmann.
 Directories:                                          2
 Files:                                               30
 
-Lines of Code (LOC):                               1986
+Lines of Code (LOC):                               1985
   Cyclomatic Complexity / Lines of Code:           0,05
 Comment Lines of Code (CLOC):                       457
-Non-Comment Lines of Code (NCLOC):                 1529
+Non-Comment Lines of Code (NCLOC):                 1528
 
 Namespaces:                                           3
 Interfaces:                                           1
@@ -45,7 +45,7 @@ Found 1 exact clones with 8 duplicated lines in 2 files:
   - /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siren.php:23-31
     /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Siret.php:23-31
 
-0.40% duplicated lines out of 1986 total lines of code.
+0.40% duplicated lines out of 1985 total lines of code.
 
 Time: 0 seconds, Memory: 4,75Mb
 PHP_Depend 1.1.0 by Manuel Pichler
@@ -55,5 +55,3 @@ PHP_Depend 1.1.0 by Manuel Pichler
 Critical error: 
 =============== 
 No output specified.
-   1) IsoCodes/Vat.php
-   2) IsoCodes/Tests/VatTest.php
