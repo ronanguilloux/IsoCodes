@@ -10,7 +10,66 @@ namespace IsoCodes;
  */
 class Vat
 {
-     /**
+
+    /**
+     * Regular expression patterns per country code
+     *
+     * @var array
+     * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
+     * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     */
+    public static $patterns = array(
+        'AT' => 'U[A-Z\d]{8}',
+        'BE' => '0\d{9}',
+        'BG' => '\d{9,10}',
+        'CY' => '\d{8}[A-Z]',
+        'CZ' => '\d{8,10}',
+        'DE' => '\d{9}',
+        'DK' => '(\d{2} ?){3}\d{2}',
+        'EE' => '\d{9}',
+        'EL' => '\d{9}',
+
+        // ES: The first and last characters may be alpha or numeric; but they may not both be numeric:
+        'ES' => '[A-Z]\d{7}[A-Z]|\d{8}[A-Z]|[A-Z]\d{8}',
+
+        'FI' => '\d{8}',
+        'FR' => '([A-Z]{2}|\d{2})\d{9}',
+        'GB' => '\d{9}|\d{12}|(GD|HA)\d{3}',
+        'HU' => '\d{8}',
+
+        // IE: Seven digits and one last letter or six digits and two letters (second & last)
+        'IE' => '\d{7}[A-Z]|\d[A-Z]\d{5}[A-Z]',
+
+        'IT' => '\d{11}',
+        'LT' => '(\d{9}|\d{12})',
+        'LU' => '\d{8}',
+        'LV' => '\d{11}',
+        'MT' => '\d{8}',
+
+        // NL: The 10th position following the prefix is always "B".
+        'NL' => '\d{9}B\d{2}',
+
+        'PL' => '\d{10}',
+        'PT' => '\d{9}',
+        'RO' => '\d{2,10}',
+        'SE' => '\d{12}',
+        'SI' => '\d{8}',
+        'SK' => '\d{10}'
+    );
+
+    /**
+     * Returns true if value is valid country code, false otherwise
+     *
+     * @param string $value VAT
+     *
+     * @return bool
+     */
+    public static function isValidCountryCode($vat)
+    {
+        return isset(self::$patterns[$vat]);
+    }
+
+    /**
      * validate
      * Checks if $vat is a valid, European Union VAT number
      *
@@ -19,112 +78,17 @@ class Vat
      */
     public static function validate($vat)
     {
-        if (empty($vat)) {
+        if (empty($vat) || null === $vat || '' === $vat) {
             return false;
-            //return new InvalidArgumentException("Valid VAT number cannot be empty");
         }
-        // retrieve the $country code (2 letters)
-        preg_match('/[A-Z]{2}/', $vat, $countries);
-        if ( count($countries) != 1) {
+
+        $countryCode = substr($vat, 0, 2);
+        if (false === self::isValidCountryCode($countryCode)) {
             return false;
-            //return new \InvalidArgumentException("Expected VAT numbers start with 2 uppercase letters");
-        }
-        $country = $countries[0];
-
-        $matches = array();
-        switch ($country) {
-        case 'DE' :
-        case 'EE' :
-        case 'EL' :
-        case 'PT' :
-            $details = 'country code + 9 numbers';
-            preg_match('/^' . $country . '[0-9]{9}$/', $vat, $matches);
-            break;
-
-        case 'BE' :
-        case 'PL' :
-        case 'SK' :
-            $details = 'country code + 10 numbers';
-            preg_match('/^' . $country . '[0-9]{10}$/', $vat, $matches);
-            break;
-
-        case 'AT' :
-            $details = 'country code + U + 8 numbers';
-            preg_match('/^' . $country . 'U[0-9]{8}$/', $vat, $matches);
-            break;
-
-        case 'BG' :
-            $details = 'country code + 9 or 10 numbers';
-            preg_match('/^' . $country . '[0-9]{9,10}$/', $vat, $matches);
-            break;
-
-        case 'CY' :
-            $details = 'country code + 8 numbers + 1 char';
-            preg_match('/^' . $country . '[0-9]{8}[a-z]{1}$/i', $vat, $matches);
-            break;
-
-        case 'DK' :
-        case 'FI' :
-        case 'HU' :
-        case 'LU' :
-        case 'MT' :
-        case 'SI' :
-            $details = 'country code + 8 numbers';
-            preg_match('/^' . $country . '[0-9]{8}$/', $vat, $matches);
-            break;
-
-        case 'ES' :
-            $details = 'country code + 9 numbers or chars';
-            preg_match('/^' . $country . '[0-9a-z]{9}$/i', $vat, $matches);
-            break;
-
-        case 'IE' :
-            $details = 'country code + 8 numbers or chars';
-            preg_match('/^' . $country . '[0-9a-z]{8}$/i', $vat, $matches);
-            break;
-
-        case 'IT' :
-        case 'FR' :
-        case 'LV' :
-            $details = 'country code + 11 numbers';
-            preg_match('/^' . $country . '[0-9]{11}$/', $vat, $matches);
-            break;
-
-        case 'LT' :
-            $details = 'country code + 9 or 12 numbers';
-            preg_match('/^' . $country . '([0-9]{9}|[0-9]{12})$/', $vat, $matches);
-            break;
-
-        case 'NL' :
-            $details = 'country code + 12 numbers or chars';
-            preg_match('/^' . $country . '[0-9a-z]{12}$/i', $vat, $matches);
-            break;
-
-        case 'CZ' :
-            $details = 'country code + 8, 9 or 10 numbers';
-            preg_match('/^' . $country . '[0-9]{8,10}$/', $vat, $matches);
-            break;
-
-        case 'RO' :
-            $details = 'country code + 2 to 10 numbers';
-            preg_match('/^' . $country . '[0-9]{2,10}$/', $vat, $matches);
-            break;
-
-        case 'GB' :
-            $details = 'country code + 5, 9 or 12 numbers or chars';
-            preg_match('/^' . $country . '([0-9a-z]{5}|[0-9a-z]{9}|[0-9a-z]{12})$/i', $vat, $matches);
-            break;
-
-        case 'SE' :
-            $details = 'country code + 12 numbers';
-            preg_match('/^' . $country . '[0-9]{12}$/', $vat, $matches);
-            break;
-
-        default :
-            $details = "Unmanaged error occured (because sometimes, shit happens)";
         }
 
-        if (is_array($matches) && empty($matches)) {
+        $vat = substr($vat, 2);
+        if (0 === preg_match('/^' . self::$patterns[$countryCode] . '$/', $vat)) {
             return false;
         }
 

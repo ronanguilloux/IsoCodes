@@ -27,7 +27,7 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( Vat::validate( 'EL123456789' ));
         $this->assertTrue( Vat::validate( 'PT123456789' ));
 
-        $this->assertTrue( Vat::validate( 'BE1234567890' ));
+        $this->assertTrue( Vat::validate( 'BE0123456789' ));
         $this->assertTrue( Vat::validate( 'PL1234567890' ));
         $this->assertTrue( Vat::validate( 'SK1234567890' ));
 
@@ -37,7 +37,6 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( Vat::validate( 'BG1234567890' ));
 
         $this->assertTrue( Vat::validate( 'CY12345678A' ));
-        $this->assertTrue( Vat::validate( 'CY12345678a' ));
 
         $this->assertTrue( Vat::validate( 'DK12345678' ));
         $this->assertTrue( Vat::validate( 'FI12345678' ));
@@ -46,13 +45,13 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( Vat::validate( 'MT12345678' ));
         $this->assertTrue( Vat::validate( 'SI12345678' ));
 
-        $this->assertTrue( Vat::validate( 'ES123456789' ));
-        $this->assertTrue( Vat::validate( 'ESazertyuio' ));
-        $this->assertTrue( Vat::validate( 'ESazerty123' ));
+        $this->assertTrue( Vat::validate( 'ESA1234567Z' ));
+        $this->assertTrue( Vat::validate( 'ESX12345678' ));
+        $this->assertTrue( Vat::validate( 'ES12345678X' ));
+        $this->assertTrue( Vat::validate( 'ESX1234567X' ));
 
-        $this->assertTrue( Vat::validate( 'IE12345678' ));
-        $this->assertTrue( Vat::validate( 'IEazertyui' ));
-        $this->assertTrue( Vat::validate( 'IEazerty12' ));
+        $this->assertTrue( Vat::validate( 'IE1234567X' ));
+        $this->assertTrue( Vat::validate( 'IE1X12345X' ));
 
         $this->assertTrue( Vat::validate( 'IT12345678901' ));
         $this->assertTrue( Vat::validate( 'FR12345678901' ));
@@ -61,7 +60,7 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( Vat::validate( 'LT123456789' ));
         $this->assertTrue( Vat::validate( 'LT123456789012' ));
 
-        $this->assertTrue( Vat::validate( 'NL123456789012' ));
+        $this->assertTrue( Vat::validate( 'NL123456789B01'));
 
         $this->assertTrue( Vat::validate( 'CZ12345678' ));
         $this->assertTrue( Vat::validate( 'CZ123456789' ));
@@ -77,7 +76,6 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( Vat::validate( 'RO123456789' ));
         $this->assertTrue( Vat::validate( 'RO1234567890' ));
 
-        $this->assertTrue( Vat::validate( 'GB12345' ));
         $this->assertTrue( Vat::validate( 'GB123456789' ));
         $this->assertTrue( Vat::validate( 'GB123456789012' ));
 
@@ -101,6 +99,8 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse( Vat::validate( 'EL123456' ));
         $this->assertFalse( Vat::validate( 'PT12345' ));
 
+        $this->assertFalse( Vat::validate( 'BE123456789' ));
+        $this->assertFalse( Vat::validate( 'BE1234567890' ));
         $this->assertFalse( Vat::validate( 'BE1234' ));
         $this->assertFalse( Vat::validate( 'PL123' ));
         $this->assertFalse( Vat::validate( 'SK12' ));
@@ -111,6 +111,7 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse( Vat::validate( 'BG12345678901' ));
 
         $this->assertFalse( Vat::validate( 'CY123456789' ));
+        $this->assertFalse( Vat::validate( 'CY12345678a' ));
 
         $this->assertFalse( Vat::validate( 'DK123456789' ));
         $this->assertFalse( Vat::validate( 'FI1234567' ));
@@ -119,11 +120,20 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse( Vat::validate( 'MT1234' ));
         $this->assertFalse( Vat::validate( 'SI123' ));
 
+        $this->assertFalse( Vat::validate( 'ES1234567' ));
         $this->assertFalse( Vat::validate( 'ES12345678' ));
+        $this->assertFalse( Vat::validate( 'ES123456789' ));
+        $this->assertFalse( Vat::validate( 'ESABCDEFGHI' ));
+        $this->assertFalse( Vat::validate( 'ESa12345678' ));
+        $this->assertFalse( Vat::validate( 'ES12345678z' ));
+        $this->assertFalse( Vat::validate( 'ESazertyuio' ));
+        $this->assertFalse( Vat::validate( 'ESazerty123' ));
         $this->assertFalse( Vat::validate( 'ESazertyuiop' ));
 
         $this->assertFalse( Vat::validate( 'IE1234567' ));
         $this->assertFalse( Vat::validate( 'IEazertyuio' ));
+        $this->assertFalse( Vat::validate( 'IEazertyui' ));
+        $this->assertFalse( Vat::validate( 'IEazerty12' ));
 
         $this->assertFalse( Vat::validate( 'IT123456789012' ));
         $this->assertFalse( Vat::validate( 'FR123456789' ));
@@ -134,6 +144,10 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse( Vat::validate( 'LT12345678901' ));
         $this->assertFalse( Vat::validate( 'LT1234567890123' ));
 
+        $this->assertFalse( Vat::validate( 'NL12345678B012'));
+        $this->assertFalse( Vat::validate( 'NL123456789BB0'));
+        $this->assertFalse( Vat::validate( 'NL123456789B0B'));
+        $this->assertFalse( Vat::validate( 'NL123456789012' ));
         $this->assertFalse( Vat::validate( 'NL12345678901' ));
         $this->assertFalse( Vat::validate( 'NL1234567890123' ));
 
@@ -143,13 +157,7 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse( Vat::validate( 'RO1' ));
         $this->assertFalse( Vat::validate( 'RO12345678901' ));
 
-        $this->assertFalse( Vat::validate( 'GB1234' ));
-        $this->assertFalse( Vat::validate( 'GB123456' ));
-        $this->assertFalse( Vat::validate( 'GB1234567' ));
         $this->assertFalse( Vat::validate( 'GB12345678' ));
-        $this->assertFalse( Vat::validate( 'GB1234567890' ));
-        $this->assertFalse( Vat::validate( 'GB12345678901' ));
-        $this->assertFalse( Vat::validate( 'GB1234567890123' ));
 
         $this->assertFalse( Vat::validate( 'SE12345678901' ));
         $this->assertFalse( Vat::validate( 'SE1234567890123' ));
