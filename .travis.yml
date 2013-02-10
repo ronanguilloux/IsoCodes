@@ -6,7 +6,7 @@ php:
 # omitting "script:" will default to phpunit
 before_script:
   - composer install
-script: phpunit --coverage-text --configuration phpunit.xml
+script: phpunit --coverage-text --configuration phpunit.xml.dist
 notifications:
   email:
     - ronan.guilloux@gmail.com
