@@ -2,31 +2,23 @@
 
 namespace IsoCodes;
 
-class Siret implements IsoCodeInterface
+/**
+ * Siret
+ * En France, le SIRET (Système d’Identification du Répertoire des ETablissements) est un code Insee.
+ * Il s'agit d'un identifiant géographique d'un établissement ou d'une entreprise.
+ */
+class Siret extends Siren implements IsoCodeInterface
 {
     /**
      * SIRET validator
      *
      * @author ronan.guilloux
      * @link http://fr.wikipedia.org/wiki/SIRET
-     * @param  string  $siret
+     * @param  string  $insee
      * @return boolean
      */
-    public static function validate( $siret )
+    public static function validate( $insee, $length=14)
     {
-        if (strlen($siret) != 14) return false;
-        if (!is_numeric($siret)) return false;
-        $len = strlen($siret);
-        $sum = 0;
-        for ($i = 0; $i < $len; $i++) {
-            $indice = ($len - $i);
-            $tmp = (2 - ($indice%2)) * $siret[$i];
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-        }
-
-        return (($sum%10) == 0);
+        return parent::validate($insee,$length);
     }
 }

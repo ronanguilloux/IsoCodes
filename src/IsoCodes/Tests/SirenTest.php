@@ -22,7 +22,7 @@ class SirenTest extends \PHPUnit_Framework_TestCase
 
     public function testValidSiren()
     {
-        $this->assertEquals( Siren::validate( '440797074' ), true );
+        $this->assertEquals( Siren::validate( 440797074 ), true );
         $this->assertEquals( Siren::validate( '488537812' ), true );
         $this->assertEquals( Siren::validate( '432167567' ), true );
         $this->assertEquals( Siren::validate( '417625639' ), true );
