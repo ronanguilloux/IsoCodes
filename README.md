@@ -23,6 +23,7 @@ Build status
 Usage
 -----
 
+``` php
     // Will this financial transaction succeed ?
     $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
@@ -31,12 +32,14 @@ Usage
 
     // American Express, anyone ?
     $isAmericanExpress = CreditCard::validate( '12345679123456' );
-
+```
 
 Installing via GitHub
 ---------------------
 
+``` bash
     $ git clone git@github.com:ronanguilloux/IsoCodes.git
+```
 
 Autoloading is PSR-0 friendly.
 
@@ -45,24 +48,32 @@ Installing via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes
 
 Create a composer.json file:
 
+``` json
     {
         "require": {"ronanguilloux/isocodes": "dev-master"}
     }
+```
 
 
 Grab composer:
 
+``` bash
     $ curl -s http://getcomposer.org/installer | php
+```
 
 Run install (will build the autoload):
 
+``` bash
     $ php composer.phar install
+```
 
 
 Testing
 -------
 
+``` bash
     $ phpunit --coverage-text
+```
 
 
 Quality assurance report
@@ -77,11 +88,13 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 
 Then run:
 
-    phploc src/ > STATS
-    phpmd src/ text codesize,unusedcode,naming >> STATS
-    phpcpd src/ >> STATS
-    pdepend src/ >> STATS
-    php-cs-fixer fix src/ --dry-run >> STATS
+``` bash
+    $ phploc src/ > STATS
+    $ phpmd src/ text codesize,unusedcode,naming >> STATS
+    $ phpcpd src/ >> STATS
+    $ pdepend src/ >> STATS
+    $ php-cs-fixer fix src/ --dry-run >> STATS
+```
 
 This set of php QA tools are currently run on this sources, via a git's pre-commit hook: See STATS file for the actual report.
 
