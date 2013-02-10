@@ -101,3 +101,10 @@ All contributors will be fully credited. Just sign up for a github account, crea
 Submit patches to: ronan.guilloux@gmail.com
 Even one-off contributors will be fully credited (& probably blessed through three generations).
 
+TODO
+----
+
+* Various iso codes listed in http://www.credit-card.be/BankAccount/ValidationRules.htm
+* ISBN
+* Add UK PostCode, UK Tax Code (http://www.braemoor.co.uk/software/vat.shtml)
+* US phone number : /^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/
