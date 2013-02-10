@@ -1,29 +1,26 @@
 phploc 1.7.1 by Sebastian Bergmann.
 
-Directories:                                          2
-Files:                                               30
+Lines of Code (LOC):                                993
+  Cyclomatic Complexity / Lines of Code:           0,08
+Comment Lines of Code (CLOC):                       318
+Non-Comment Lines of Code (NCLOC):                  675
 
-Lines of Code (LOC):                               1955
-  Cyclomatic Complexity / Lines of Code:           0,04
-Comment Lines of Code (CLOC):                       482
-Non-Comment Lines of Code (NCLOC):                 1473
-
-Namespaces:                                           3
+Namespaces:                                           1
 Interfaces:                                           1
 Traits:                                               0
-Classes:                                             28
+Classes:                                             13
   Abstract:                                           0 (0,00%)
-  Concrete:                                          28 (100,00%)
-  Average Class Length (NCLOC):                      51
-Methods:                                            104
+  Concrete:                                          13 (100,00%)
+  Average Class Length (NCLOC):                      53
+Methods:                                             22
   Scope:
-    Non-Static:                                      86 (82,69%)
-    Static:                                          18 (17,31%)
+    Non-Static:                                       4 (18,18%)
+    Static:                                          18 (81,82%)
   Visibility:
-    Public:                                          88 (84,62%)
-    Non-Public:                                      16 (15,38%)
-  Average Method Length (NCLOC):                     13
-  Cyclomatic Complexity / Number of Methods:       1,51
+    Public:                                          22 (100,00%)
+    Non-Public:                                       0 (0,00%)
+  Average Method Length (NCLOC):                     31
+  Cyclomatic Complexity / Number of Methods:       3,41
 
 Anonymous Functions:                                  0
 Functions:                                            0
@@ -37,9 +34,9 @@ Constants:                                            0
 /home/ronan/Workspace/github/IsoCodes/src/IsoCodes/Ssn.php:302	The method validate() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
 phpcpd 1.4.0 by Sebastian Bergmann.
 
-0.00% duplicated lines out of 1955 total lines of code.
+0.00% duplicated lines out of 993 total lines of code.
 
-Time: 0 seconds, Memory: 4,75Mb
+Time: 0 seconds, Memory: 3,75Mb
 PHP_Depend 1.1.0 by Manuel Pichler
 
 
