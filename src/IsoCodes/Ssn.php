@@ -222,7 +222,7 @@ class Ssn
 
         // Trim the high group list and remove asterisks, fix space/tabs, and replace new lines with tabs.
         // The data isn't formatted well so we have to do quite a bit of random replacing.
-        $highgroup = trim($highgroup);
+        $highgroup = trim((string)$highgroup);
         $highgroup = str_replace(array('*'," \t","\n",' '),array('',"\t","\t","\t"),$highgroup);
 
         // Explode on tab. This should give us an array of prefixes and group numbers, IE '203 82', '204 82', etc
@@ -230,6 +230,7 @@ class Ssn
 
         // Make array useful by splitting the prefix and group number
         // We also convert the string to an int for easier handling later down the road
+        $cleangroup = array();
         foreach ($highgroup as $value) {
             if (trim($value) != '') {
                 $temp = explode(' ',$value);
@@ -348,7 +349,6 @@ class Ssn
                 } else {
                     return false;
                 }
-                break;
             }
         }
 

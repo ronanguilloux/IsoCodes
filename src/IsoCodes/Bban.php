@@ -21,7 +21,6 @@ class Bban implements IsoCodeInterface
         }
         $key = substr($bban,-2);
         $bank = substr($bban,0,5);
-        $bank = substr($bban,0,5);
         $branch = substr($bban,5,5);
         $account = substr($bban,10,11);
         $account = strtr($account,
