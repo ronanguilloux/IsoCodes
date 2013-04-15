@@ -17,6 +17,7 @@ class Vat
      * @var array
      * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
      * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @link http://en.wikipedia.org/wiki/VAT_identification_number
      */
     public static $patterns = array(
         'AT' => 'U[A-Z\d]{8}',
@@ -54,7 +55,26 @@ class Vat
         'RO' => '\d{2,10}',
         'SE' => '\d{12}',
         'SI' => '\d{8}',
-        'SK' => '\d{10}'
+        'SK' => '\d{10}',
+
+        'AL' => '[KJ]\d{8}L',
+        'AU' => '\d{9}',
+        'BY' => '\d{9}',
+        'HR' => '\d{11}',
+        'CA' => '[A-Z\d]{15}',
+        'NO' => '\d{9}MVA',
+        'PH' => '\d{12}',
+        'RU' => '(\d{10}|\d{12})',
+        'CH' => '(\d{6}|E\d{9}(TVA|MWST|IVA))',
+        'TR' => '\d{10}',
+        'UA' => '\d{12}',
+        'AR' => '\d{11}',
+        'CL' => '\d{8}-\d',
+        'CO' => '\d{10}',
+        'EC' => '\d{13}',
+        'GT' => '\d{7}-\d',
+        'MX' => '\d{3} \d{6} \d{3}',
+        'VE' => '[JGVE]-\d{8}-?\d',
     );
 
     /**
