@@ -4,7 +4,7 @@ IsoCodes
 PHP libray providing various ISO codes validators
 
 * International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, EAN13
-* European : VAT number
+* European : various VAT number formats
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux
 * US : Social Security number
 * UK : National Insurance Number
@@ -17,7 +17,7 @@ Each validator is illustrated by a unit test case.
 Build status
 ------------
 
-[![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes)
+[![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes) [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.png?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes)
 
 
 Usage
