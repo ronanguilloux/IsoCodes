@@ -3,10 +3,19 @@ language: php
 php:
   - 5.3
   - 5.4
-# omitting "script:" will default to phpunit
+  - 5.5
+matrix:
+    allow_failures:
+        - php: 5.5
 before_script:
-  - composer install
-script: phpunit --coverage-text --configuration phpunit.xml.dist
+#  - curl -s http://getcomposer.org/installer | php
+#  - php composer.phar install --dev --no-interaction
+  - composer install --dev --no-interaction
+script:
+  - mkdir build/logs
+  - phpunit --coverage-text --configuration phpunit.xml.dist
+after_script:
+  - php vendor/bin/coveralls -v
 notifications:
   email:
     - ronan.guilloux@gmail.com
