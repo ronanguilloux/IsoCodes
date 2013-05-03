@@ -8,9 +8,8 @@ matrix:
     allow_failures:
         - php: 5.5
 before_script:
-#  - curl -s http://getcomposer.org/installer | php
-#  - php composer.phar install --dev --no-interaction
-  - composer install --dev --no-interaction
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
 script:
   - mkdir build/logs
   - phpunit --coverage-text --configuration phpunit.xml.dist
