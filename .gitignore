@@ -15,5 +15,8 @@ web/bundles/*
 # Configuration files
 app/config/parameters.ini
 
+# Builds
+build
+
 # phpcpd & phploc stats (generated in a pre-commit hook)
 STATS
