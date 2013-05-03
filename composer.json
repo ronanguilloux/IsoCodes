@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"
-    }
+    },
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
     }
