@@ -4,17 +4,22 @@ php:
   - 5.3
   - 5.4
   - 5.5
+
 matrix:
     allow_failures:
         - php: 5.5
+
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev --no-interaction
+
 script:
-  - mkdir build/logs
+  - mkdir -p build/logs
   - phpunit -c phpunit.xml.dist
+
 after_script:
   - php vendor/bin/coveralls -v
+
 notifications:
   email:
     - ronan.guilloux@gmail.com
