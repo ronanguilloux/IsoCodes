@@ -12,9 +12,9 @@ before_script:
   - php composer.phar install --dev --no-interaction
 script:
   - mkdir build/logs
-  - phpunit --coverage-text --configuration phpunit.xml.dist
+  - phpunit -c phpunit.xml.dist
 after_script:
-#  - php vendor/bin/coveralls -v
+  - php vendor/bin/coveralls -v
 notifications:
   email:
     - ronan.guilloux@gmail.com
