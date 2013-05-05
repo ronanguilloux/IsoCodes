@@ -1,5 +1,6 @@
 # Composer
 composer.phar
+composer.lock
 
 # Bootstrap
 app/bootstrap*
