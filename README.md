@@ -96,6 +96,15 @@ Then run:
     $ php-cs-fixer fix src/ --dry-run >> STATS
 ```
 
+Manual checks & xml-based output:
+
+``` bash
+    $ mkdir -p build/logs
+    $ phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=Symfony2 --ignore=*.html.php,*.config.php,*.twig.php src
+    $ phpmd src xml codesize,unusedcode,naming --reportfile build/logs/pmd.xml
+
+```
+
 This set of php QA tools are currently run on this sources, via a git's pre-commit hook: See STATS file for the actual report.
 
 
