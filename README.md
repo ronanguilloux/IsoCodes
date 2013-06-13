@@ -18,7 +18,7 @@ Build status
 ------------
 
 [![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes) [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.png?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes)
-
+[![Total Downloads](https://poser.pugx.org/ronanguilloux/IsoCodes/downloads.png)](https://packagist.org/packages/ronanguilloux/IsoCodes)
 
 Usage
 -----
