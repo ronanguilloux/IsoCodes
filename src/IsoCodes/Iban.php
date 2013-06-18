@@ -73,7 +73,7 @@ class Iban implements IsoCodeInterface
                 'GB'=>'[A-Z]{4}[0-9]{14}'
                     );
         /*On vérifie la longueur minimale*/
-        if (mb_strlen($iban) < 18) {
+        if (mb_strlen($iban) < 15) {
             return false;
         }
         /*On récupère le code ISO du pays*/
