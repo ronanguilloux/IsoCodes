@@ -29,8 +29,8 @@ class IbanTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Iban::validate('AD1200012030200359100100'), true );
         $this->assertEquals( Iban::validate('AT611904300234573201'), true );
         $this->assertEquals( Iban::validate('BA391290079401028494'), true );
-//        $this->assertEquals( Iban::validate('BE68539007547034'), true );        => Invalid for chevalroux's algo. To be fixed.
-//        $this->assertEquals( Iban::validate('BE43068999999501'), true );
+        $this->assertEquals( Iban::validate('BE68539007547034'), true );
+        $this->assertEquals( Iban::validate('BE43068999999501'), true );
         $this->assertEquals( Iban::validate('BG80BNBG96611020345678'), true );
         $this->assertEquals( Iban::validate('CH9300762011623852957'), true );
         $this->assertEquals( Iban::validate('CY17002001280000001200527600'), true );
@@ -54,13 +54,13 @@ class IbanTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals( Iban::validate('LT121000011101001000'), true );
         $this->assertEquals( Iban::validate('LU280019400644750000'), true );
         $this->assertEquals( Iban::validate('LV80BANK0000435195001'), true );
-//        $this->assertEquals( Iban::validate('MC1112739000700011111000h79'), true );  => Invalid for chevalroux's algo. To be fixed.
+        $this->assertEquals( Iban::validate('MC1112739000700011111000H79'), true );
         $this->assertEquals( Iban::validate('ME25505000012345678951'), true );
         $this->assertEquals( Iban::validate('MK07250120000058984'), true );
         $this->assertEquals( Iban::validate('MT84MALT011000012345MTLCAST001S'), true );
         $this->assertEquals( Iban::validate('MU17BOMM0101101030300200000MUR'), true );
         $this->assertEquals( Iban::validate('NL91ABNA0417164300'), true );
-//        $this->assertEquals( Iban::validate('NO9386011117947'), true );               => Invalid for chevalroux's algo. To be fixed
+        $this->assertEquals( Iban::validate('NO9386011117947'), true );
         $this->assertEquals( Iban::validate('PL61109010140000071219812874'), true );
         $this->assertEquals( Iban::validate('PT50000201231234567890154'), true );
         $this->assertEquals( Iban::validate('RO49AAAA1B31007593840000'), true );
