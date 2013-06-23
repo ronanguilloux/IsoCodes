@@ -24,13 +24,13 @@ Usage
 -----
 
 ``` php
-    // Will this financial transaction succeed ?
+    // Is this bank account number ok?
     $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
-    // Will my letter reach the Labrador islands ?
+    // Will my letter reach the Labrador Islands ?
     $isCanadianZipCode = ZipCode::validate( 'A0A 1A0', 'Canada');
 
-    // American Express, anyone ?
+    // Money, anyone ?
     $isAmericanExpress = CreditCard::validate( '12345679123456' );
 ```
 
