@@ -1,13 +1,32 @@
 tools:
-    php_cs_fixer: true
+    php_cs_fixer:
+        enabled: true
+        config:
+            level: all
     php_code_sniffer:
         config:
-            standard: PSR1
-    php_mess_detector: true
-    php_cpd: true
+            standard: PSR2
+    php_mess_detector:
+        enabled: true
+        config:
+            rulesets:
+                - codesize
+                - unusedcode
+                - naming
+    php_cpd:
+        names:
+            # Default:
+            - '*.php'
+        # A list of excluded directories.
+        excluded_dirs: ["vendor"]
+        enabled: true
+#        filter:
+#            paths: ["src/*"]
+#            excluded_paths: ["/Tests/*"]
     php_loc:
         excluded_dirs: [vendor]
     php_analyzer:
         filter:
-            excluded_paths: ["*/tests/*"]
+            excluded_paths: ["*/Tests/*"]
     sensiolabs_security_checker: true
+    php_code_coverage: true
