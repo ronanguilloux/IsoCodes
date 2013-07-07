@@ -25,5 +25,10 @@
     },
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
