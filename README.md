@@ -17,8 +17,8 @@ Each validator is illustrated by a unit test case.
 Build status
 ------------
 
-[![Latest Stable Version](https://poser.pugx.org/ronanguilloux/IsoCodes/v/stable.png)](https://packagist.org/packages/ronanguilloux/IsoCodes) [![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes) [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.png?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes)
-[![Total Downloads](https://poser.pugx.org/ronanguilloux/IsoCodes/downloads.png)](https://packagist.org/packages/ronanguilloux/IsoCodes)
+[![Latest Stable Version](https://poser.pugx.org/ronanguilloux/IsoCodes/v/stable.png)](https://packagist.org/packages/ronanguilloux/IsoCodes) [![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes) [![Total Downloads](https://poser.pugx.org/ronanguilloux/IsoCodes/downloads.png)](https://packagist.org/packages/ronanguilloux/IsoCodes)
+
 
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
