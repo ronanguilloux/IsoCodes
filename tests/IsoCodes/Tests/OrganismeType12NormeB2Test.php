@@ -41,7 +41,7 @@ class OrganismeType12NormeB2Test  extends \PHPUnit_Framework_TestCase
     /**
      * testValidOrganismeType1_2NormeB2
      *
-     * @dataProvider clefs
+     * @dataProvider fournisseur
      *
      * @param string $code
      * @param int $clef
