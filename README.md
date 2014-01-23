@@ -5,7 +5,7 @@ PHP libray providing various ISO codes validators
 
 * International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, EAN13
 * European : various VAT number formats
-* France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux
+* France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
 * UK : National Insurance Number
 * Zipcode for many countries: US, Canada, France, etc.
