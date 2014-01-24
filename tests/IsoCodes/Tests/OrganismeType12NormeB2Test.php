@@ -10,38 +10,37 @@ use IsoCodes\OrganismeType12NormeB2;
 class OrganismeType12NormeB2Test  extends \PHPUnit_Framework_TestCase
 {
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "Organisme Type 1/2 Norme B2 unit test case" );
-    }
-
     protected function setUp()
     {
         parent::setUp();
     }
 
     /**
-     * @dataProvider fournisseur
+     * clefs dataProvider
+     *
+     * @return void
      */
     public function clefs()
     {
         return array(
-            array("76031208",2,true),
-            array("76031208","2",false),
-            array("76031208",0,false),
-            array("76031208",null,false),
-            array(1,1,false),
-            array(null,2,false),
-            array(null,0,false),
-            array(null,null,false),
+            //good:
+            array("76031208",   2,      true),
+            //bad:
+            array("76031208",   "2",    false),
+            array("76031208",   0,      false),
+            array("76031208",   null,   false),
+            array(1,            1,      false),
+            array("",           "2",    false),
+            array(null,         2,      false),
+            array(null,         0,      false),
+            array(null,         null,   false),
         );
     }
 
     /**
      * testValidOrganismeType1_2NormeB2
      *
-     * @dataProvider fournisseur
+     * @dataProvider clefs
      *
      * @param string $code
      * @param int $clef
