@@ -13,13 +13,25 @@ class CanadaTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * testCanadianZipCode
+     *
      * @dataProvider zipCodes
+     *
+     * @param mixed $code
+     * @param string $country
+     * @param bool $result
+     * @return void
      */
     public function testCanadianZipCode($code, $country, $result)
     {
         $this->assertEquals( ZipCode::validate( $code, $country), $result );
     }
 
+    /**
+     * zipCodes: dataProvider
+     *
+     * @return array
+     */
     public function zipCodes()
     {
         return array(

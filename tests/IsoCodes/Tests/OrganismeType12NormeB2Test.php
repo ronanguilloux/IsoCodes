@@ -16,11 +16,11 @@ class OrganismeType12NormeB2Test  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * clefs dataProvider
+     * getClefs dataProvider
      *
-     * @return void
+     * @return array
      */
-    public function clefs()
+    public function getClefs()
     {
         return array(
             //good:
@@ -40,7 +40,7 @@ class OrganismeType12NormeB2Test  extends \PHPUnit_Framework_TestCase
     /**
      * testValidOrganismeType1_2NormeB2
      *
-     * @dataProvider clefs
+     * @dataProvider getClefs
      *
      * @param string $code
      * @param int $clef
