@@ -43,6 +43,7 @@ class BbanTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $bban
      * @param mixed $result
+     *
      * @return void
      */
     public function testBban($bban, $result)
