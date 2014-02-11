@@ -37,6 +37,7 @@ Usage
     $isAmericanExpress = CreditCard::validate( '12345679123456' );
 ```
 
+
 Installing via GitHub
 ---------------------
 
@@ -125,6 +126,7 @@ The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issue
 All contributors will be fully credited. Just sign up for a github account, create a fork and hack away at the codebase.
 Submit patches to: ronan.guilloux@gmail.com
 Even one-off contributors will be fully credited (& probably blessed through three generations).
+
 
 TODO
 ----
