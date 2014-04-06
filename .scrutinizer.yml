@@ -27,20 +27,20 @@ tools:
 #                - codesize
 #                - unusedcode
 #                - naming
-#    php_cpd:
+    php_cpd: true
 #        names:
 #            # Default:
 #            - '*.php'
 #        # A list of excluded directories.
 #        excluded_dirs: ["vendor"]
-        enabled: true
+#        enabled: true
 #        filter:
 #            paths: ["src/*"]
 #            excluded_paths: ["/Tests/*"]
-    php_loc:
-        excluded_dirs: [vendor]
-    php_analyzer:
-        filter:
-            excluded_paths: ["*/Tests/*"]
-    sensiolabs_security_checker: true
-    php_code_coverage: true
+#    php_loc:
+#        excluded_dirs: [vendor]
+#    php_analyzer:
+#        filter:
+#           excluded_paths: ["*/Tests/*"]
+#    sensiolabs_security_checker: true
+#    php_code_coverage: true
