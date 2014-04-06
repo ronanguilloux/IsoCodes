@@ -1,17 +1,17 @@
 filter:
     excluded_paths: [vendor/*, tests/*, app/*, bin/*, library/*]
-
+#
 tools:
     # Similar Code Detector
     php_sim: true
-
+#
     # Metrics
     php_pdepend: true
-
+#
     # Some Metrics + Bug Detection/Auto-Fixes
     php_analyzer: true
-    
-    
+#    
+#    
 #    external_code_coverage: true
 #    php_cs_fixer:
 #        enabled: true
