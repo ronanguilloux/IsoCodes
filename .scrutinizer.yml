@@ -1,46 +1,13 @@
 filter:
     excluded_paths: [vendor/*, tests/*, app/*, bin/*, library/*]
-#
+
 tools:
     # Similar Code Detector
     php_sim: true
-#
+
     # Metrics
     php_pdepend: true
-#
+
     # Some Metrics + Bug Detection/Auto-Fixes
     php_analyzer: true
-#    
-#    
-#    external_code_coverage: true
-#    php_cs_fixer:
-#        enabled: true
-#        config:
-#            level: all
-#    php_code_sniffer:
-#        config:
-#            standard: PSR2
-#   php_mess_detector:
-#        enabled: true
-#        config:
-#            rulesets:
-#                - codesize
-#                - unusedcode
-#                - naming
-    php_cpd: true
-#        names:
-#            # Default:
-#            - '*.php'
-#        # A list of excluded directories.
-#        excluded_dirs: ["vendor"]
-#        enabled: true
-#        filter:
-#            paths: ["src/*"]
-#            excluded_paths: ["/Tests/*"]
-#    php_loc:
-#        excluded_dirs: [vendor]
-#    php_analyzer:
-#        filter:
-#           excluded_paths: ["*/Tests/*"]
-#    sensiolabs_security_checker: true
-#    php_code_coverage: true
+
