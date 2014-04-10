@@ -4,6 +4,7 @@ filter:
 tools:
     # Similar Code Detector
     php_sim: true
+    php_cpd: false
 
     # Metrics
     php_pdepend: true
