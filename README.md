@@ -31,10 +31,10 @@ Usage
     $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
     // Will my letter reach the Labrador Islands ?
-    $isCanadianZipCode = ZipCode::validate( 'A0A 1A0', 'Canada');
+    $isCanadian = ZipCode::validate( 'A0A 1A0', 'Canada');
 
     // Money, anyone ?
-    $isAmericanExpress = CreditCard::validate( '12345679123456' );
+    $isBankable = CreditCard::validate( '12345679123456' );
 ```
 
 
