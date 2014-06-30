@@ -8,10 +8,12 @@ PHP libray providing various ISO codes validators
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
 * UK : National Insurance Number
-* Zipcode for many countries: US, Canada, France, etc.
+* Zipcode for many countries: US, Canada, France, Netherlands, etc.
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
+
+IsoCodes is PHP 5.3 to 5.6 compatible & supports hhvm.
 
 
 Build status
