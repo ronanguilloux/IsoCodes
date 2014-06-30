@@ -5,7 +5,7 @@ namespace IsoCodes;
 class ZipCode
 {
 
-    public static function validate( $zipcode, $country )
+    public static function validate($zipcode, $country)
     {
         $zipcode = trim($zipcode);
         if (empty($zipcode)) {
@@ -16,12 +16,12 @@ class ZipCode
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
 
-        return call_user_func_array(array(__CLASS__ , $methodName), array($zipcode));
+        return call_user_func_array(array(__CLASS__, $methodName), array($zipcode));
     }
 
     /**
      * US "ZIP+4" zipcode validator
-     * @param  string  $zipcode
+     * @param  string $zipcode
      * @return boolean
      */
 
@@ -29,7 +29,7 @@ class ZipCode
     {
         $regexp = "/^\d{5}(-\d{4})?$/";
 
-        return (boolean) preg_match( $regexp, $zipcode );
+        return (boolean) preg_match($regexp, $zipcode);
     }
 
     /**
@@ -58,7 +58,7 @@ class ZipCode
     {
         $regexp = "/^[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$/";
 
-        return (boolean) preg_match( $regexp, $zipcode );
+        return (boolean) preg_match($regexp, $zipcode);
     }
 
     /**
@@ -75,6 +75,13 @@ class ZipCode
     {
         $regexp = "/^[0-9]{5}$/";
 
-        return (boolean) preg_match( $regexp, $zipcode );
+        return (boolean) preg_match($regexp, $zipcode);
+    }
+
+    public static function validateNetherlands($zipcode)
+    {
+        $regexp = "/^[1-9]{1}\d{3}[ ]?[A-Z]{2}$/";
+
+        return (boolean) preg_match($regexp, $zipcode);
     }
 }
