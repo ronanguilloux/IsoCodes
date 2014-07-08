@@ -20,3 +20,6 @@ build
 
 # phpcpd & phploc stats (generated in a pre-commit hook)
 STATS
+
+# IDE files
+.idea/*
