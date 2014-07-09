@@ -8,6 +8,7 @@ PHP libray providing various ISO codes validators
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
 * UK : National Insurance Number
+* Belgian structured communication ("communication structurée")
 * Zipcode for many countries: US, Canada, France, Netherlands, etc.
 
 Each code has its own validator.
