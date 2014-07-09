@@ -5,177 +5,174 @@ namespace IsoCodes\Tests;
 use IsoCodes\Vat;
 
 /**
+ * VatTest
+ *
  * @covers IsoCodes\Vat
  */
 class VatTest extends \PHPUnit_Framework_TestCase
 {
-    public function __construct()
+
+    /**
+     * getValidVat: data Provider
+     *
+     * @return array
+     */
+    public function getValidVat()
     {
-        parent::__construct();
-        $this->setName( "VAT unit test case" );
+        return array(
+            array('DE123456789'),
+            array('EE123456789'),
+            array('EL123456789'),
+            array('PT123456789'),
+            array('BE0123456789'),
+            array('PL1234567890'),
+            array('SK1234567890'),
+            array('ATU12345678'),
+            array('BG123456789'),
+            array('BG1234567890'),
+            array('CY12345678A'),
+            array('DK12345678'),
+            array('FI12345678'),
+            array('HU12345678'),
+            array('LU12345678'),
+            array('MT12345678'),
+            array('SI12345678'),
+            array('ESA1234567Z'),
+            array('ESX12345678'),
+            array('ES12345678X'),
+            array('ESX1234567X'),
+            array('IE1234567X'),
+            array('IE1X12345X'),
+            array('IT12345678901'),
+            array('FR12345678901'),
+            array('LV12345678901'),
+            array('LT123456789'),
+            array('LT123456789012'),
+            array('NL123456789B01'),
+            array('CZ12345678'),
+            array('CZ123456789'),
+            array('CZ1234567890'),
+            array('RO12'),
+            array('RO123'),
+            array('RO1234'),
+            array('RO12345'),
+            array('RO123456'),
+            array('RO1234567'),
+            array('RO12345678'),
+            array('RO123456789'),
+            array('RO1234567890'),
+            array('GB123456789'),
+            array('GB123456789012'),
+            array('SE123456789012')
+        );
     }
 
-    protected function setUp()
+    /**
+     * getInvalidVat: data Provider
+     *
+     * @return array
+     */
+    public function getInvalidVat()
+    {
+        return array(
+            array(''),
+            array(' '),
+            array(null),
+            array(array()),
+            array(999999999),
+            array(9999.9999),
+            array("aaa"),
+            array("&é\"'array(-è_çà$^$*,;:!¨£%µ?./§¹~#{[|->\^@]}¤->^̣··´"),
+            array('DE12345678'),
+            array('EE1234567'),
+            array('EL123456'),
+            array('PT12345'),
+            array('BE123456789'),
+            array('BE1234567890'),
+            array('BE1234'),
+            array('PL123'),
+            array('SK12'),
+            array('ATU1'),
+            array('BG12345678'),
+            array('BG12345678901'),
+            array('CY123456789'),
+            array('CY12345678a'),
+            array('DK123456789'),
+            array('FI1234567'),
+            array('HU123456'),
+            array('LU12345'),
+            array('MT1234'),
+            array('SI123'),
+            array('ES1234567'),
+            array('ES12345678'),
+            array('ES123456789'),
+            array('ESABCDEFGHI'),
+            array('ESa12345678'),
+            array('ES12345678z'),
+            array('ESazertyuio'),
+            array('ESazerty123'),
+            array('ESazertyuiop'),
+            array('IE1234567'),
+            array('IEazertyuio'),
+            array('IEazertyui'),
+            array('IEazerty12'),
+            array('IT123456789012'),
+            array('FR123456789'),
+            array('LV12345678'),
+            array('LT12345678'),
+            array('LT1234567890'),
+            array('LT12345678901'),
+            array('LT1234567890123'),
+            array('NL12345678B012'),
+            array('NL123456789BB0'),
+            array('NL123456789B0B'),
+            array('NL123456789012'),
+            array('NL12345678901'),
+            array('NL1234567890123'),
+            array('CZ1234567'),
+            array('CZ12345678901'),
+            array('RO1'),
+            array('RO12345678901'),
+            array('GB12345678'),
+            array('SE12345678901'),
+            array('SE1234567890123'),
+            array('1234579'),
+            array('XX1234579'), // unknown
+            array('de123456789') // lowercase is invalid
+        );
+    }
+
+    /**
+     * testValidVat
+     *
+     * @param mixed $vat
+     *
+     * @dataProvider getValidVat
+     *
+     * return void
+     */
+    public function testValidVat($vat)
+    {
+        $this->assertTrue(Vat::validate($vat));
+    }
+
+    /**
+     * testInvalidVat
+     *
+     * @param mixed $vat
+     *
+     * @dataProvider getInvalidVat
+     *
+     * return void
+     */
+    public function testInvalidVat($vat)
+    {
+        $this->assertFalse(Vat::validate($vat));
+    }
+
+    public function setUp()
     {
         parent::setUp();
-    }
-
-    public function testValidVat()
-    {
-        $this->assertTrue( Vat::validate( 'DE123456789' ));
-        $this->assertTrue( Vat::validate( 'EE123456789' ));
-        $this->assertTrue( Vat::validate( 'EL123456789' ));
-        $this->assertTrue( Vat::validate( 'PT123456789' ));
-
-        $this->assertTrue( Vat::validate( 'BE0123456789' ));
-        $this->assertTrue( Vat::validate( 'PL1234567890' ));
-        $this->assertTrue( Vat::validate( 'SK1234567890' ));
-
-        $this->assertTrue( Vat::validate( 'ATU12345678' ));
-
-        $this->assertTrue( Vat::validate( 'BG123456789' ));
-        $this->assertTrue( Vat::validate( 'BG1234567890' ));
-
-        $this->assertTrue( Vat::validate( 'CY12345678A' ));
-
-        $this->assertTrue( Vat::validate( 'DK12345678' ));
-        $this->assertTrue( Vat::validate( 'FI12345678' ));
-        $this->assertTrue( Vat::validate( 'HU12345678' ));
-        $this->assertTrue( Vat::validate( 'LU12345678' ));
-        $this->assertTrue( Vat::validate( 'MT12345678' ));
-        $this->assertTrue( Vat::validate( 'SI12345678' ));
-
-        $this->assertTrue( Vat::validate( 'ESA1234567Z' ));
-        $this->assertTrue( Vat::validate( 'ESX12345678' ));
-        $this->assertTrue( Vat::validate( 'ES12345678X' ));
-        $this->assertTrue( Vat::validate( 'ESX1234567X' ));
-
-        $this->assertTrue( Vat::validate( 'IE1234567X' ));
-        $this->assertTrue( Vat::validate( 'IE1X12345X' ));
-
-        $this->assertTrue( Vat::validate( 'IT12345678901' ));
-        $this->assertTrue( Vat::validate( 'FR12345678901' ));
-        $this->assertTrue( Vat::validate( 'LV12345678901' ));
-
-        $this->assertTrue( Vat::validate( 'LT123456789' ));
-        $this->assertTrue( Vat::validate( 'LT123456789012' ));
-
-        $this->assertTrue( Vat::validate( 'NL123456789B01'));
-
-        $this->assertTrue( Vat::validate( 'CZ12345678' ));
-        $this->assertTrue( Vat::validate( 'CZ123456789' ));
-        $this->assertTrue( Vat::validate( 'CZ1234567890' ));
-
-        $this->assertTrue( Vat::validate( 'RO12' ));
-        $this->assertTrue( Vat::validate( 'RO123' ));
-        $this->assertTrue( Vat::validate( 'RO1234' ));
-        $this->assertTrue( Vat::validate( 'RO12345' ));
-        $this->assertTrue( Vat::validate( 'RO123456' ));
-        $this->assertTrue( Vat::validate( 'RO1234567' ));
-        $this->assertTrue( Vat::validate( 'RO12345678' ));
-        $this->assertTrue( Vat::validate( 'RO123456789' ));
-        $this->assertTrue( Vat::validate( 'RO1234567890' ));
-
-        $this->assertTrue( Vat::validate( 'GB123456789' ));
-        $this->assertTrue( Vat::validate( 'GB123456789012' ));
-
-        $this->assertTrue( Vat::validate( 'SE123456789012' ));
-
-    }
-
-    public function testInvalidVat()
-    {
-        $this->assertFalse( Vat::validate( '' ));
-        $this->assertFalse( Vat::validate( ' ' ));
-        $this->assertFalse( Vat::validate( null ));
-        $this->assertFalse( Vat::validate( array() ));
-        $this->assertFalse( Vat::validate( 999999999 ));
-        $this->assertFalse( Vat::validate( 9999.9999 ));
-        $this->assertFalse( Vat::validate( "aaa" ));
-        $this->assertFalse( Vat::validate( "&é\"'(-è_çà$^$*,;:!¨£%µ?./§¹~#{[|->\^@]}¤->^̣··´" ));
-
-        $this->assertFalse( Vat::validate( 'DE12345678' ));
-        $this->assertFalse( Vat::validate( 'EE1234567' ));
-        $this->assertFalse( Vat::validate( 'EL123456' ));
-        $this->assertFalse( Vat::validate( 'PT12345' ));
-
-        $this->assertFalse( Vat::validate( 'BE123456789' ));
-        $this->assertFalse( Vat::validate( 'BE1234567890' ));
-        $this->assertFalse( Vat::validate( 'BE1234' ));
-        $this->assertFalse( Vat::validate( 'PL123' ));
-        $this->assertFalse( Vat::validate( 'SK12' ));
-
-        $this->assertFalse( Vat::validate( 'ATU1' ));
-
-        $this->assertFalse( Vat::validate( 'BG12345678' ));
-        $this->assertFalse( Vat::validate( 'BG12345678901' ));
-
-        $this->assertFalse( Vat::validate( 'CY123456789' ));
-        $this->assertFalse( Vat::validate( 'CY12345678a' ));
-
-        $this->assertFalse( Vat::validate( 'DK123456789' ));
-        $this->assertFalse( Vat::validate( 'FI1234567' ));
-        $this->assertFalse( Vat::validate( 'HU123456' ));
-        $this->assertFalse( Vat::validate( 'LU12345' ));
-        $this->assertFalse( Vat::validate( 'MT1234' ));
-        $this->assertFalse( Vat::validate( 'SI123' ));
-
-        $this->assertFalse( Vat::validate( 'ES1234567' ));
-        $this->assertFalse( Vat::validate( 'ES12345678' ));
-        $this->assertFalse( Vat::validate( 'ES123456789' ));
-        $this->assertFalse( Vat::validate( 'ESABCDEFGHI' ));
-        $this->assertFalse( Vat::validate( 'ESa12345678' ));
-        $this->assertFalse( Vat::validate( 'ES12345678z' ));
-        $this->assertFalse( Vat::validate( 'ESazertyuio' ));
-        $this->assertFalse( Vat::validate( 'ESazerty123' ));
-        $this->assertFalse( Vat::validate( 'ESazertyuiop' ));
-
-        $this->assertFalse( Vat::validate( 'IE1234567' ));
-        $this->assertFalse( Vat::validate( 'IEazertyuio' ));
-        $this->assertFalse( Vat::validate( 'IEazertyui' ));
-        $this->assertFalse( Vat::validate( 'IEazerty12' ));
-
-        $this->assertFalse( Vat::validate( 'IT123456789012' ));
-        $this->assertFalse( Vat::validate( 'FR123456789' ));
-        $this->assertFalse( Vat::validate( 'LV12345678' ));
-
-        $this->assertFalse( Vat::validate( 'LT12345678' ));
-        $this->assertFalse( Vat::validate( 'LT1234567890' ));
-        $this->assertFalse( Vat::validate( 'LT12345678901' ));
-        $this->assertFalse( Vat::validate( 'LT1234567890123' ));
-
-        $this->assertFalse( Vat::validate( 'NL12345678B012'));
-        $this->assertFalse( Vat::validate( 'NL123456789BB0'));
-        $this->assertFalse( Vat::validate( 'NL123456789B0B'));
-        $this->assertFalse( Vat::validate( 'NL123456789012' ));
-        $this->assertFalse( Vat::validate( 'NL12345678901' ));
-        $this->assertFalse( Vat::validate( 'NL1234567890123' ));
-
-        $this->assertFalse( Vat::validate( 'CZ1234567' ));
-        $this->assertFalse( Vat::validate( 'CZ12345678901' ));
-
-        $this->assertFalse( Vat::validate( 'RO1' ));
-        $this->assertFalse( Vat::validate( 'RO12345678901' ));
-
-        $this->assertFalse( Vat::validate( 'GB12345678' ));
-
-        $this->assertFalse( Vat::validate( 'SE12345678901' ));
-        $this->assertFalse( Vat::validate( 'SE1234567890123' ));
-
-    }
-    public function testEmptyCountryCode()
-    {
-        $this->assertFalse( Vat::validate( '1234579' ));
-    }
-
-    public function testUnkownCountryCode()
-    {
-        $this->assertFalse( Vat::validate( 'XX1234579' ));
-    }
-
-    public function testInvalidLowerCaseCountry()
-    {
-        $this->assertFalse( Vat::validate( 'de123456789' ));
     }
 
 }

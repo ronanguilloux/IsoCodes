@@ -5,57 +5,81 @@ namespace IsoCodes\Tests;
 use IsoCodes\CreditCard;
 
 /**
+ * CreditCardTest
+ *
  * @covers Isocodes\CreditCard
  */
 class CreditCardTest extends \PHPUnit_Framework_TestCase
 {
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
     /**
-     * getCreditCards: data provider
+     * getValidCreditCards: data provider
      *
      * @return array
      */
-    public function getCreditCards()
+    public function getValidCreditCards()
     {
         return array(
-            //good:
-            array( '340000000000009',    true ), //American Express
-            array( '30000000000004',     true ), //Carte Blanche
-            array( '6011000000000004',   true ), //Discover
-            array( '38520000023237',     true ), //DinersClub
-            array( '201400000000009',    true ), //enRoute
-            array( '2131000000000008',   true ), //JCB
-            array( '5500000000000004',   true ), //MasterCard
-            array( '6334000000000004',   true ), //Solo
-            array( '4903010000000009',   true ), //Switch
-            array( '4111111111111111',   true ), //Visa
-            array( '6304100000000008',   true ), //Laser
-            array( 6304100000000008,     true ), //Laser
-            //bad:
-            array( 'CE1EL2LLFFF',        false ),
-            array( 'E31DCLLFFF',         false ),
-            array( '',                   false ),
-            array( ' ',                  false )
+            array('340000000000009'), //American Express
+            array('30000000000004'), //Carte Blanche
+            array('6011000000000004'), //Discover
+            array('38520000023237'), //DinersClub
+            array('201400000000009'), //enRoute
+            array('2131000000000008'), //JCB
+            array('5500000000000004'), //MasterCard
+            array('6334000000000004'), //Solo
+            array('4903010000000009'), //Switch
+            array('4111111111111111'), //Visa
+            array('6304100000000008'), //Laser
+            array(6304100000000008), //Laser
         );
     }
 
     /**
-     * testCreditCard
+     * getInvalidCreditCards: data provider
      *
-     * @dataProvider getCreditCards
+     * @return array
+     */
+    public function getInvalidCreditCards()
+    {
+        return array(
+            array('CE1EL2LLFFF'),
+            array('E31DCLLFFF'),
+            array(''),
+            array(' ')
+        );
+    }
+
+    /**
+     * testValidCreditCard
      *
      * @param mixed $creditCard
-     * @param bool $result
+     *
+     * @dataProvider getValidCreditCards
      *
      * @return void
      */
-    public function testCreditCard($creditCard, $result)
+    public function testValidCreditCard($creditCard)
     {
-        $this->assertEquals( CreditCard::validate( $creditCard ), $result );
+        $this->assertTrue(CreditCard::validate($creditCard));
+    }
+
+    /**
+     * testInvalidCreditCard
+     *
+     * @param mixed $creditCard
+     *
+     * @dataProvider getInvalidCreditCards
+     *
+     * @return void
+     */
+    public function testInvalidCreditCard($creditCard)
+    {
+        $this->assertFalse(CreditCard::validate($creditCard));
+    }
+
+    protected function setUp()
+    {
+        parent::setUp();
     }
 
 }

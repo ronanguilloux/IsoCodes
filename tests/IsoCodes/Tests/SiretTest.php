@@ -9,45 +9,78 @@ use IsoCodes\Siret;
  */
 class SiretTest extends \PHPUnit_Framework_TestCase
 {
-    public function __construct()
+
+    /**
+     * getValidSirets dataProvider
+     *
+     * @return array
+     */
+    public function getValidSirets()
     {
-        parent::__construct();
-        $this->setName( "SIRET unit test case" );
+        return array(
+            array(44079707400026),
+            array('48853781200015'),
+            array('43216756700028'),
+            array('41762563900030'),
+            array('33493272000017'),
+            array('44028837100014'),
+            array('51743954300011')
+        );
+    }
+
+    /**
+     * getInvalidSirets dataProvider
+     *
+     * @return array
+     */
+    public function getInvalidSirets()
+    {
+        return array(
+            array(440797074000),
+            array('440797074000278'),
+            array('44079707400027'),
+            array('48853781200016'),
+            array('43216756700029'),
+            array('41762563900031'),
+            array('33493272000018'),
+            array('44028837100015'),
+            array('51743954300012'),
+            array(''),
+            array(' '),
+            array('azertyuiopqsdf')
+        );
+    }
+
+    /**
+     * testValidSiret
+     *
+     * @param mixed $siret
+     *
+     * @dataProvider getValidSirets
+     *
+     * return void
+     */
+    public function testValidSiret($siret)
+    {
+        $this->assertTrue(Siret::validate($siret));
+    }
+
+    /**
+     * testInvalidSiret
+     *
+     * @param mixed $siret
+     *
+     * @dataProvider getInvalidSirets
+     *
+     * return void
+     */
+    public function testInvalidSiret($siret)
+    {
+        $this->assertFalse(Siret::validate($siret));
     }
 
     protected function setUp()
     {
         parent::setUp();
-    }
-
-    public function testValidSiret()
-    {
-        $this->assertEquals( Siret::validate( 44079707400026 ), true );
-        $this->assertEquals( Siret::validate( '48853781200015' ), true );
-        $this->assertEquals( Siret::validate( '43216756700028' ), true );
-        $this->assertEquals( Siret::validate( '41762563900030' ), true );
-        $this->assertEquals( Siret::validate( '33493272000017' ), true );
-        $this->assertEquals( Siret::validate( '44028837100014' ), true );
-        $this->assertEquals( Siret::validate( '51743954300011' ), true );
-    }
-
-    public function testInvalidSiret()
-    {
-        $this->assertEquals( Siret::validate( 440797074000 ), false );
-        $this->assertEquals( Siret::validate( '440797074000278' ), false );
-        $this->assertEquals( Siret::validate( '44079707400027' ), false );
-        $this->assertEquals( Siret::validate( '48853781200016' ), false );
-        $this->assertEquals( Siret::validate( '43216756700029' ), false );
-        $this->assertEquals( Siret::validate( '41762563900031' ), false );
-        $this->assertEquals( Siret::validate( '33493272000018' ), false );
-        $this->assertEquals( Siret::validate( '44028837100015' ), false );
-        $this->assertEquals( Siret::validate( '51743954300012' ), false );
-    }
-
-    public function testEmptySiretAsInvalid()
-    {
-        $this->assertEquals( Siret::validate( '' ), false );
-        $this->assertEquals( Siret::validate( ' ' ), false );
-        $this->assertEquals( Siret::validate( 'azertyuiopqsdf' ), false );
     }
 }

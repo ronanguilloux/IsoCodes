@@ -5,14 +5,80 @@ namespace IsoCodes\Tests;
 use IsoCodes\Siren;
 
 /**
+ * SirenTest
+ *
  * @covers IsoCodes\Siren
  */
 class SirenTest extends \PHPUnit_Framework_TestCase
 {
-    public function __construct()
+
+    /**
+     * getValidSirens dataProvider
+     *
+     * @return array
+     */
+    public function getValidSirens()
     {
-        parent::__construct();
-        $this->setName( "SIREN unit test case" );
+        return array(
+            array('432167567'),
+            array(432167567),
+            array('417625639'),
+            array('334932720'),
+            array('440288371'),
+            array('517439543')
+        );
+    }
+
+    /**
+     * getInvalidSirens dataProvider
+     *
+     * @return array
+     */
+    public function getInvalidSirens()
+    {
+        return array(
+            array('44079707'),
+            array(44079707),
+            array('4407970745'),
+            array('440797075'),
+            array('488537813'),
+            array('432167568'),
+            array('417625630'),
+            array('334932721'),
+            array('440288372'),
+            array('517439544'),
+            array(''),
+            array(' '),
+            array('azertyuio'),
+        );
+    }
+
+    /**
+     * testValidSiren
+     *
+     * @param mixed $siren
+     *
+     * @dataProvider getValidSirens
+     *
+     * return void
+     */
+    public function testValidSiren($siren)
+    {
+        $this->assertTrue(Siren::validate($siren));
+    }
+
+    /**
+     * testInvalidSiren
+     *
+     * @param mixed $siren
+     *
+     * @dataProvider getInvalidSirens
+     *
+     * return void
+     */
+    public function testInvalidSiren($siren)
+    {
+        $this->assertFalse(Siren::validate($siren));
     }
 
     protected function setUp()
@@ -20,34 +86,4 @@ class SirenTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-    public function testValidSiren()
-    {
-        $this->assertEquals( Siren::validate( 440797074 ), true );
-        $this->assertEquals( Siren::validate( '488537812' ), true );
-        $this->assertEquals( Siren::validate( '432167567' ), true );
-        $this->assertEquals( Siren::validate( '417625639' ), true );
-        $this->assertEquals( Siren::validate( '334932720' ), true );
-        $this->assertEquals( Siren::validate( '440288371' ), true );
-        $this->assertEquals( Siren::validate( '517439543' ), true );
-    }
-
-    public function testInvalidSiren()
-    {
-        $this->assertEquals( Siren::validate( '44079707' ), false );
-        $this->assertEquals( Siren::validate( '4407970745' ), false );
-        $this->assertEquals( Siren::validate( '440797075' ), false );
-        $this->assertEquals( Siren::validate( '488537813' ), false );
-        $this->assertEquals( Siren::validate( '432167568' ), false );
-        $this->assertEquals( Siren::validate( '417625630' ), false );
-        $this->assertEquals( Siren::validate( '334932721' ), false );
-        $this->assertEquals( Siren::validate( '440288372' ), false );
-        $this->assertEquals( Siren::validate( '517439544' ), false );
-    }
-
-    public function testEmptySirenAsInvalid()
-    {
-        $this->assertEquals( Siren::validate( '' ), false );
-        $this->assertEquals( Siren::validate( ' ' ), false );
-        $this->assertEquals( Siren::validate( 'azertyuio' ), false );
-    }
 }

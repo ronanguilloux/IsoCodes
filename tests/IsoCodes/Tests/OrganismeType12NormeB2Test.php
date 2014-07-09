@@ -5,52 +5,77 @@ namespace IsoCodes\Tests;
 use IsoCodes\OrganismeType12NormeB2;
 
 /**
+ * OrganismeType12NormeB2Test
+ *
  * @covers IsoCodes\OrganismeType12NormeB2
  */
-class OrganismeType12NormeB2Test  extends \PHPUnit_Framework_TestCase
+class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
 {
 
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
     /**
-     * getClefs dataProvider
+     * getValidClefs dataProvider
      *
      * @return array
      */
-    public function getClefs()
+    public function getValidClefs()
     {
         return array(
-            //good:
-            array("76031208",   2,      true),
-            //bad:
-            array("76031208",   "2",    false),
-            array("76031208",   0,      false),
-            array("76031208",   null,   false),
-            array(1,            1,      false),
-            array("",           "2",    false),
-            array(null,         2,      false),
-            array(null,         0,      false),
-            array(null,         null,   false),
+            array("76031208", 2),
+        );
+    }
+
+    /**
+     * getInvalidClefs dataProvider
+     *
+     * @return array
+     */
+    public function getInvalidClefs()
+    {
+        return array(
+            array("76031208", "2"),
+            array("76031208", 0),
+            array("76031208", null),
+            array(1, 1),
+            array("", "2"),
+            array(null, 2),
+            array(null, 0),
+            array(null, null),
         );
     }
 
     /**
      * testValidOrganismeType1_2NormeB2
      *
-     * @dataProvider getClefs
-     *
      * @param string $code
-     * @param int $clef
-     * @param boolean $resultat
+     * @param int    $clef
+     *
+     * @dataProvider getValidClefs
      *
      * @return void
      */
-    public function testValidOrganismeType12NormeB2($code="",$clef=0,$resultat=false)
+    public function testValidOrganismeType12NormeB2($code = "", $clef = 0)
     {
-        $this->assertEquals($resultat, OrganismeType12NormeB2::validate($code, $clef));
+        $this->assertTrue(OrganismeType12NormeB2::validate($code, $clef));
+    }
+
+    /**
+     * testInvalidOrganismeType1_2NormeB2
+     *
+     * @param string $code
+     * @param int    $clef
+     *
+     * @dataProvider getInvalidClefs
+     *
+     * @return void
+     */
+    public function testInvalidOrganismeType12NormeB2($code = "", $clef = 0)
+    {
+        $this->assertFalse(OrganismeType12NormeB2::validate($code, $clef));
+    }
+
+    protected function setUp()
+    {
+        parent::setUp();
     }
 
 }
