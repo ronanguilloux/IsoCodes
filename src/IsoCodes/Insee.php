@@ -70,8 +70,9 @@ class Insee implements IsoCodeInterface
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
                 break;
+
             case $return['departement'] == '2B' :
-                $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
+                $aChecker = floatval(str_replace('B', 1, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
                 break;
 
