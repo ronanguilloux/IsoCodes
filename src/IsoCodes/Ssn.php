@@ -16,7 +16,7 @@ namespace IsoCodes;
  * // Validate a SSN
  * echo $ssn->validate('557-26-9048');
  *
- * @source : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
+ * @source  : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
  * @package IsoCodes
  */
 class Ssn
@@ -238,7 +238,7 @@ class Ssn
                 $temp = explode(' ', $value);
                 if (isset($temp[1])) {
                     $cleangroup[(int) trim($temp[0])] = (int) trim($temp[1]);
-                    $this->highgroup                 = $cleangroup;
+                    $this->highgroup                  = (string) $cleangroup;
                 }
             }
         }
