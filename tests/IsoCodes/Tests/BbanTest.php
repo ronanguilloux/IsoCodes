@@ -19,8 +19,8 @@ class BbanTest extends \PHPUnit_Framework_TestCase
     public function getValidBbans()
     {
         return array(
-            array('15459450000411700920U62', true),
-            array('10207000260402601177083', true)
+            array('15459450000411700920U62'),
+            array('10207000260402601177083')
         );
     }
 
@@ -32,13 +32,13 @@ class BbanTest extends \PHPUnit_Framework_TestCase
     public function getInvalidBbans()
     {
         return array(
-            array(10207000260402601177083, false),
-            array('15459 45000 0411700920U 62', false),
-            array('10207000260402601177084', false),
-            array(10207000260402601177084, false),
-            array('', false),
-            array(' ', false),
-            array(null, false)
+            array(10207000260402601177083),
+            array('15459 45000 0411700920U 62'),
+            array('10207000260402601177084'),
+            array(10207000260402601177084),
+            array(''),
+            array(' '),
+            array(null)
         );
     }
 
