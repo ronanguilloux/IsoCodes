@@ -247,20 +247,6 @@ class Ssn
     }
 
     /**
-     * Print the cleaned high group array. This is useful when putting in a new high group list.
-     *
-     * @return void
-     */
-    public function printHighGroup()
-    {
-        $highgroup = $this->highgroup;
-        echo '<pre>';
-        print_r($highgroup);
-        echo '</pre>';
-    }
-
-
-    /**
      * Generate an SSN based on state
      *
      * @param mixed  $state
@@ -308,15 +294,12 @@ class Ssn
     public function validate($ssn)
     {
         if (!is_string($ssn)) {
-            //echo "not a string!";
             return false;
         }
         if (trim($ssn) === '') {
-            //echo "empty!";
             return false;
         }
         $statePrefixes = $this->statePrefixes;
-        //$state = strtoupper($this->state);
         $highgroup      = $this->highgroup;
         $possibleGroups = $this->possibleGroups;
 
