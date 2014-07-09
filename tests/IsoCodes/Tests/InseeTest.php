@@ -5,40 +5,76 @@ namespace IsoCodes\Tests;
 use IsoCodes\Insee;
 
 /**
+ * InseeTest
+ *
  * @covers Isocodes\Insee
  */
 class InseeTest extends \PHPUnit_Framework_TestCase
 {
-    public function __construct()
+
+    /**
+     * getInsees: data Provider
+     *
+     * @return array
+     */
+    public function getValidInsees()
     {
-        parent::__construct();
-        $this->setName( "Insee unit test case" );
+        return array(
+            array('177022A00100229'), // Corse: 2A
+            array('253012B073004'), // Corse: 2B, clef optionnelle omise
+            array('177025626004544'),
+            array('253077507300483'),
+            array('188057208107893')
+        );
+    }
+
+    /**
+     * getInsees: data Provider
+     *
+     * @return array
+     */
+    public function getInvalidInsees()
+    {
+        return array(
+            array('353072B07300483'),
+            array('253072C07300483'),
+            array(''),
+            array(' '),
+            array(null),
+        );
+    }
+
+    /**
+     * testValidInsee
+     *
+     * @param mixed $insee
+     *
+     * @dataProvider getValidInsees
+     *
+     * @return void
+     */
+    public function testValidInsee($insee)
+    {
+        $this->assertTrue(Insee::validate($insee));
+    }
+
+    /**
+     * testValidInsee
+     *
+     * @param mixed $insee
+     *
+     * @dataProvider getInvalidInsees
+     *
+     * @return void
+     */
+    public function testInvalidInsee($insee)
+    {
+        $this->assertFalse(Insee::validate($insee));
     }
 
     protected function setUp()
     {
         parent::setUp();
-    }
-
-    public function testValidInsee()
-    {
-        $this->assertEquals( Insee::validate( '177022A00100229' ), true ); // Corse
-        $this->assertEquals( Insee::validate( '253012A07300444' ), true ); // Corse
-        $this->assertEquals( Insee::validate( '177025626004544' ), true );
-        $this->assertEquals( Insee::validate( '253077507300483' ), true );
-        $this->assertEquals( Insee::validate( '188057208107893' ), true );
-    }
-
-    public function testInvalidInsee()
-    {
-        $this->assertEquals( Insee::validate( '353072B07300483' ), false );
-        $this->assertEquals( Insee::validate( '253072C07300483' ), false );
-    }
-
-    public function testEmptyInseeAsInvalid()
-    {
-        $this->assertEquals( Insee::validate( '' ), false );
-        $this->assertEquals( Insee::validate( ' ' ), false );
     }
 
 }

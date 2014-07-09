@@ -5,48 +5,81 @@ namespace IsoCodes\Tests;
 use IsoCodes\Ssn;
 
 /**
+ * SsnTest
+ *
  * @covers IsoCodes\Ssn
  */
 class SsnTest extends \PHPUnit_Framework_TestCase
 {
     protected $ssn;
 
-    public function __construct()
+    /**
+     * getValidSSN: data Provider
+     *
+     * @return array
+     */
+    public function getValidSsn()
     {
-        parent::__construct();
-        $this->ssn = new Ssn();
-        $this->setName( "US Social Security Number unit test case" );
+        // generated here : http://fr.fakenamegenerator.com/social-security-number.php
+        return array(
+            array('423-05-9675'),
+            array('432-01-5257'),
+            array('600-01-4950'),
+            array('619-01-7173'),
+            array('651-01-3431')
+        );
+    }
+
+    /**
+     * getInvalidSsn: data Provider
+     *
+     * @return array
+     */
+    public function getInvalidSsn()
+    {
+        return array(
+            array('574-09-0776'),
+            array('123-45-6789'),
+            array('1234-567-89'),
+            array('123456789'),
+            array('773-45-6789'),
+            array(''),
+            array(' '),
+            array(null)
+        );
+    }
+
+    /**
+     * testValidSsn
+     *
+     * @param mixed $ssn
+     *
+     * @dataProvider getValidSsn
+     *
+     * return void
+     */
+    public function testValidSsn($ssn)
+    {
+        $this->assertTrue($this->ssn->validate($ssn));
+    }
+
+    /**
+     * testInvalidSsn
+     *
+     * @param mixed $ssn
+     *
+     * @dataProvider getInvalidSsn
+     *
+     * return void
+     */
+    public function testInvalidSsn($ssn)
+    {
+        $this->assertFalse($this->ssn->validate($ssn));
     }
 
     protected function setUp()
     {
         parent::setUp();
-    }
-
-    public function testValidSSN()
-    {
-        // generated here : http://fr.fakenamegenerator.com/social-security-number.php
-
-        //$this->assertEquals( $this->ssn->validate( '574-07-0776' ), true );
-        $this->assertEquals( $this->ssn->validate( '423-05-9675' ), true );
-        $this->assertEquals( $this->ssn->validate( '432-01-5257' ), true );
-        $this->assertEquals( $this->ssn->validate( '600-01-4950' ), true );
-        $this->assertEquals( $this->ssn->validate( '619-01-7173' ), true );
-        $this->assertEquals( $this->ssn->validate( '651-01-3431' ), true );
-    }
-
-    public function testInvalidSSN()
-    {
-        $this->assertEquals( $this->ssn->validate( '574-09-0776' ), false );
-        $this->assertEquals( $this->ssn->validate( '123-45-6789' ), false );
-        $this->assertEquals( $this->ssn->validate( '1234-567-89' ), false );
-        $this->assertEquals( $this->ssn->validate( '123456789' ), false );
-        $this->assertEquals( $this->ssn->validate( '773-45-6789' ), false );
-    }
-
-    public function testEmptySSNAsInvalid()
-    {
-        $this->assertEquals( $this->ssn->validate( '' ), false );
-        $this->assertEquals( $this->ssn->validate( ' ' ), false );
+        $this->ssn = new Ssn();
     }
 }
