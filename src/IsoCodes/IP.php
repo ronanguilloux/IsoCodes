@@ -2,13 +2,20 @@
 
 namespace IsoCodes;
 
+/**
+ * Class IP
+ *
+ * @package IsoCodes
+ */
 class IP implements IsoCodeInterface
 {
     /**
      * IPV4 public-only validator
      *
+     * @param string $ipv4
+     *
      * @link http://php.net/manual/fr/function.filter-var.php
-     * @param  string  $ipv4
+     *
      * @return boolean
      */
     public static function validate($ipv4)
@@ -19,8 +26,10 @@ class IP implements IsoCodeInterface
     /**
      * IPV6 validator
      *
+     * @param string $ipv6
+     *
      * @link http://php.net/manual/fr/function.filter-var.php
-     * @param  string  $ipv6
+     *
      * @return boolean
      */
     public static function validateIPV6($ipv6)

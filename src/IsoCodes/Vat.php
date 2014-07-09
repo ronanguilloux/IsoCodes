@@ -6,6 +6,7 @@ namespace IsoCodes;
  * VAT
  * The Value Added Tax, or VAT, in the European Union is a general, broadly based consumption tax
  * assessed on the value added to goods and services.
+ *
  * @see http://ec.europa.eu/taxation_customs/vies/faq.html
  */
 class Vat
@@ -78,22 +79,11 @@ class Vat
     );
 
     /**
-     * Returns true if value is valid country code, false otherwise
-     *
-     * @param string $value VAT
-     *
-     * @return bool
-     */
-    public static function isValidCountryCode($vat)
-    {
-        return isset(self::$patterns[$vat]);
-    }
-
-    /**
      * validate
      * Checks if $vat is a valid, European Union VAT number
      *
-     * @param  mixed   $vat
+     * @param mixed $vat
+     *
      * @return boolean
      */
     public static function validate($vat)
@@ -113,5 +103,17 @@ class Vat
         }
 
         return true;
+    }
+
+    /**
+     * Returns true if value is valid country code, false otherwise
+     *
+     * @param string $vat
+     *
+     * @return bool
+     */
+    public static function isValidCountryCode($vat)
+    {
+        return isset(self::$patterns[$vat]);
     }
 }

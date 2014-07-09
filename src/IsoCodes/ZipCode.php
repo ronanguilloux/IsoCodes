@@ -2,9 +2,21 @@
 
 namespace IsoCodes;
 
+/**
+ * Class ZipCode
+ *
+ * @package IsoCodes
+ */
 class ZipCode
 {
 
+    /**
+     * @param $zipcode
+     * @param $country
+     *
+     * @return mixed
+     * @throws \InvalidArgumentException
+     */
     public static function validate($zipcode, $country)
     {
         $zipcode = trim($zipcode);
@@ -21,7 +33,9 @@ class ZipCode
 
     /**
      * US "ZIP+4" zipcode validator
-     * @param  string $zipcode
+     *
+     * @param string $zipcode
+     *
      * @return boolean
      */
 
@@ -50,8 +64,10 @@ class ZipCode
      * The letters W and Z are used, but are not currently used as the first letter"
      *
      * @param string $zipcode
+     *
      * @link http://en.wikipedia.org/wiki/Postal_codes_in_Canada
      * @link http://en.wikipedia.org/wiki/List_of_A_postal_codes_of_Canada
+     *
      * @return boolean
      */
     public static function validateCanada($zipcode)
@@ -68,7 +84,9 @@ class ZipCode
      * variant : "/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/"
      *
      * @param string $zipcode
+     *
      * @link http://fr.wikipedia.org/wiki/Code_postal_en_France
+     *
      * @return boolean
      */
     public static function validateFrance($zipcode)
@@ -78,6 +96,11 @@ class ZipCode
         return (boolean) preg_match($regexp, $zipcode);
     }
 
+    /**
+     * @param $zipcode
+     *
+     * @return bool
+     */
     public static function validateNetherlands($zipcode)
     {
         $regexp = "/^[1-9]{1}\d{3}[ ]?[A-Z]{2}$/";

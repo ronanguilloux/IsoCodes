@@ -2,9 +2,19 @@
 
 namespace IsoCodes;
 
+/**
+ * Class Ean13
+ *
+ * @package IsoCodes
+ */
 class Ean13 implements IsoCodeInterface
 {
 
+    /**
+     * @param $ean13
+     *
+     * @return bool
+     */
     public static function validate($ean13)
     {
         if (strlen($ean13) != 13) return false;
@@ -14,13 +24,13 @@ class Ean13 implements IsoCodeInterface
         // which alternate so that the final data digit has a weight of 3;
         // In an EAN-13 code, the weight is 3 for even positions and 1 for odd positions;
         $sum = 0;
-        for ($index = 0; $index < 12; $index ++) {
+        for ($index = 0; $index < 12; $index++) {
             $number = (int) $ean13[$index];
             if (($index % 2) != 0) $number *= 3;
             $sum += $number;
         }
 
-        $key = $ean13[12];  // Ean13's checksum digit key
+        $key = $ean13[12]; // Ean13's checksum digit key
 
         // The Check digit, a single checksum digit, is computed modulo 10
         if (10 - ($sum % 10) != $key) return false; else return true;
