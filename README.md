@@ -130,6 +130,14 @@ Submit patches to: ronan.guilloux@gmail.com
 Even one-off contributors will be fully credited (& probably blessed through three generations).
 
 
+Special thanks
+--------------
+
+Many thanks to [IntelliJ/JetBrains/PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development!
+Any contributor having an accepted PR may receive an Open Source License Key for [PhpStorm IDE](http://www.jetbrains.com/phpstorm/download/).
+Just ping [Ronan Guilloux via email](mailto:ronan.guilloux@gmail.com) to get one.
+
+
 TODO
 ----
 
