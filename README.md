@@ -86,6 +86,11 @@ Testing
 Quality assurance report
 ------------------------
 
+Isocodes quality plan is mainly based on phpunit: it runs +/- 400 tests & 420 assertions,
+with separated valid & invalid entries sets.
+Tests values are mainly real data or documented examples
+from standards documentation, and a few handmade values.
+
 Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then install:
 * [phploc](https://github.com/sebastianbergmann/phploc)
 * [phpmd](https://github.com/phpmd/phpmd)
