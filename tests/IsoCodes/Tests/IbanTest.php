@@ -83,13 +83,14 @@ class IbanTest extends \PHPUnit_Framework_TestCase
     public function getInvalidIbans()
     {
         return array(
-            array('15459 45000 0411700920U 62', false),
-            array('10207000260402601177084', false),
-            array('DE6070051755000000722', false),
-            array('DE10002300A1023502601', false),
-            array('PL12100500000123456789', false),
-            array('', false),
-            array(' ', false)
+            array('15459 45000 0411700920U 62'),
+            array('10207000260402601177084'),
+            array('DE6070051755000000722'),
+            array('DE10002300A1023502601'),
+            array('PL12100500000123456789'),
+            array(''),
+            array(' '),
+            array(null)
         );
     }
 
