@@ -9,6 +9,7 @@ PHP libray providing various ISO codes validators
 * US : Social Security number
 * UK : National Insurance Number
 * Belgian structured communication ("communication structurée")
+* Spain: NIF (Número de Identificación Fiscal)
 * Zipcode for many countries: US, Canada, France, Netherlands, etc.
 
 Each code has its own validator.
@@ -36,8 +37,11 @@ Usage
     // Will my letter reach the Labrador Islands ?
     $isCanadian = ZipCode::validate( 'A0A 1A0', 'Canada');
 
-    // Money, anyone ?
+    // Worldwide money transfer, anyone ?
     $isBankable = CreditCard::validate( '12345679123456' );
+
+    // Paying your taxes in Madrid?
+    $isTaxableInSpain = Nif::validate('A999999L');
 ```
 
 
@@ -86,12 +90,13 @@ Testing
 Quality assurance report
 ------------------------
 
-Isocodes quality plan is mainly based on phpunit: it runs +/- 400 tests & 420 assertions,
+Isocodes quality plan is mainly based on phpunit: it runs +/- 410 tests & 430 assertions,
 with separated valid & invalid entries sets.
 Tests values are mainly real data or documented examples
 from standards documentation, and a few handmade values.
 
 Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then install:
+
 * [phploc](https://github.com/sebastianbergmann/phploc)
 * [phpmd](https://github.com/phpmd/phpmd)
 * [phpcpd](https://github.com/sebastianbergmann/phpcpd)
