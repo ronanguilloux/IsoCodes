@@ -38,6 +38,17 @@ class Iban implements IsoCodeInterface
             'FO' => '[0-9]{14}',
             'FI' => '[0-9]{14}',
             'FR' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}',
+            'PF' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Polynesia
+            'TF' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Southern Territories
+            'GP' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Guadeloupe
+            'MQ' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Martinique
+            'YT' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Mayotte
+            'NC' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // New Caledonia
+            'RE' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Reunion
+            'BL' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Saint Barthelemy
+            'MF' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // French Saint Martin
+            'PM' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // Saint Pierre et Miquelon
+            'WF' => '[0-9]{10}[0-9A-Z]{11}[0-9]{2}', // Wallis and Futuna Islands
             'GE' => '[0-9A-Z]{2}[0-9]{16}',
             'DE' => '[0-9]{18}',
             'GI' => '[A-Z]{4}[0-9A-Z]{15}',
