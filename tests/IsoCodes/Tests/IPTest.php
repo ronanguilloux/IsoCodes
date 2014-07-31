@@ -19,12 +19,12 @@ class IPTest extends \PHPUnit_Framework_TestCase
     public function getValidIPV4s()
     {
         return array(
-            array('93.184.220.20'), // 中华人民共和国
-            array('161.148.172.130'), // www.brazil.gov.br
-            array('161.148.172.130'), // www.brazil.gov.br
-            array('73.194.66.94'), // google.co.uk
-            array('60.92.167.193'), // france.fr
-            array('92.168.1.1'), // LAN
+            array('93.184.220.20'),     // 中华人民共和国
+            array('161.148.172.130'),   // www.brazil.gov.br
+            array('161.148.172.130'),   // www.brazil.gov.br
+            array('73.194.66.94'),      // google.co.uk
+            array('60.92.167.193'),     // france.fr
+            array('92.168.1.1'),        // LAN
             array('0.0.0.0'),
             array('55.255.255.255')
         );

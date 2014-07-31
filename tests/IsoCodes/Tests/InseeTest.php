@@ -20,8 +20,8 @@ class InseeTest extends \PHPUnit_Framework_TestCase
     public function getValidInsees()
     {
         return array(
-            array('177022A00100229'), // Corse: 2A
-            array('253012B073004'), // Corse: 2B, clef optionnelle omise
+            array('177022A00100229'),   // Corse: 2A
+            array('253012B073004'),     // Corse: 2B, clef optionnelle omise
             array('177025626004544'),
             array('253077507300483'),
             array('188057208107893')

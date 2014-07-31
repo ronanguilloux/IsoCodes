@@ -12,27 +12,27 @@ class CreditCard implements IsoCodeInterface
     /**
      * Credit Card validator
      *
+     * @param string $creditCard
+     *
      * @author ronan.guilloux
      * @link   http://www.prometee-creation.com/tutoriels/fonction-de-luhn-en-php.html
      *
-     * @param string $creditcard
-     *
      * @return boolean
      */
-    public static function validate($creditcard)
+    public static function validate($creditCard)
     {
 
-        if (trim($creditcard) === '') {
+        if (trim($creditCard) === '') {
             return false;
         }
 
-        //longueur de la chaine $creditcard
-        $length = strlen($creditcard);
+        //longueur de la chaine $creditCard
+        $length = strlen($creditCard);
 
         //resultat de l'addition de tous les chiffres
         $tot = 0;
         for ($i = $length - 1; $i >= 0; $i--) {
-            $digit = substr($creditcard, $i, 1);
+            $digit = substr($creditCard, $i, 1);
 
             if ((($length - $i) % 2) == 0) {
                 $digit = $digit * 2;
@@ -40,7 +40,7 @@ class CreditCard implements IsoCodeInterface
                     $digit = $digit - 9;
                 }
             }
-            $tot += $digit;
+            $tot += (int) $digit;
         }
 
         return (($tot % 10) == 0);
