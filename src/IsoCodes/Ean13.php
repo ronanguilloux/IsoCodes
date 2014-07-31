@@ -17,32 +17,24 @@ class Ean13 implements IsoCodeInterface
      */
     public static function validate($ean13)
     {
+        // removing hyphens
+        $ean13 = str_replace(" ", "", $ean13);
+        $ean13 = str_replace("-", "", $ean13); // this is a dash
+        $ean13 = str_replace("‐", "", $ean13); // this is an authentic hyphen
         if (strlen($ean13) != 13) {
             return false;
         }
-        if (!is_numeric($ean13)) {
+        if (!preg_match("/\\d{13}/i", $ean13)) {
             return false;
         }
-
-        // The weight for a specific position in the EAN code is either 3 or 1,
-        // which alternate so that the final data digit has a weight of 3;
-        // In an EAN-13 code, the weight is 3 for even positions and 1 for odd positions;
-        $sum = 0;
-        for ($index = 0; $index < 12; $index++) {
-            $number = (int) $ean13[$index];
-            if (($index % 2) != 0) {
-                $number *= 3;
-            }
-            $sum += $number;
+        $check = 0;
+        for ($i = 0; $i < 13; $i+=2) {
+            $check += (int) substr($ean13, $i, 1);
+        }
+        for ($i = 1; $i < 12; $i+=2) {
+            $check += 3 * substr($ean13, $i, 1);
         }
 
-        $key = $ean13[12]; // Ean13's checksum digit key
-
-        // The Check digit, a single checksum digit, is computed modulo 10
-        if (10 - ($sum % 10) != $key) {
-            return false;
-        }
-
-        return true;
+        return $check % 10 == 0;
     }
 }
