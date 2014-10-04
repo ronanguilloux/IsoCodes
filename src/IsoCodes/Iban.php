@@ -88,7 +88,8 @@ class Iban implements IsoCodeInterface
             'TN' => '[0-9]{20}',
             'TR' => '[0-9]{5}[0-9A-Z]{17}',
             'AE' => '[0-9]{19}',
-            'GB' => '[A-Z]{4}[0-9]{14}'
+            'GB' => '[A-Z]{4}[0-9]{14}',
+            'CI' => '[0-9A-Z]{2}[0-9]{22}'
         );
         /*On vérifie la longueur minimale*/
         if (mb_strlen($iban) < 15) {
