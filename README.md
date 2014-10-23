@@ -83,7 +83,7 @@ Testing
 -------
 
 ``` bash
-    $ phpunit --coverage-text
+    $ phpunit --testdox --coverage-text
 ```
 
 
