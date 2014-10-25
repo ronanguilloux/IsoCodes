@@ -20,7 +20,7 @@ class IP implements IsoCodeInterface
      */
     public static function validate($ipv4)
     {
-        return (false != filter_var($ipv4, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
+        return (false !== filter_var($ipv4, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
     }
 
     /**
@@ -34,7 +34,7 @@ class IP implements IsoCodeInterface
      */
     public static function validateIPV6($ipv6)
     {
-        return (false != filter_var($ipv6, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
+        return (false !== filter_var($ipv6, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
 
     }
 
