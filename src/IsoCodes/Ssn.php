@@ -261,7 +261,7 @@ class Ssn
         $highgroup      = $this->highgroup;
         $possibleGroups = $this->possibleGroups;
 
-        if ($state == false) {
+        if ($state === false) {
             $state = $states[mt_rand(0, count($states) - 1)];
         }
 
