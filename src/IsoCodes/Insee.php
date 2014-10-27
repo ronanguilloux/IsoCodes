@@ -14,10 +14,10 @@ class Insee implements IsoCodeInterface
      * Vérifie le numéro de sécurité sociale. S'il est valide, renvoit true (ou mieux : un tableau des infos)
      * sinon renvoie FALSE
      *
+     * @param string $numero
+     *
      * @author Webu (Dylann Cordel <d.cordel@webu.fr>) corrigé par Ronan
      * @link   http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/
-     *
-     * @param string $insee à 15 chiffre
      *
      * @return boolean ou mieux mixed array avec les infos récupérées du num de sécu ou FALSE
      */

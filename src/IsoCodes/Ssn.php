@@ -254,7 +254,7 @@ EOT;
      * @param mixed  $state
      * @param string $separator
      *
-     * @return boolean (False  == bad state found)
+     * @return false|string (false: bad state found)
      */
     public function generate($state = false, $separator = '-')
     {

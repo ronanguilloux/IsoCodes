@@ -15,8 +15,8 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
      * n° établissement, centre de santé, praticien, laboratoire, pharmacien, trasnporteur, fournisseur,
      * n° accident du travail, n° d'organisme complémentaire.
      *
-     * @param string $code
-     * @param mixed  $clef
+     * @param string  $code
+     * @param integer $clef
      *
      * @return bool
      */
