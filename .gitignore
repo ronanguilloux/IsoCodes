@@ -1,25 +1,7 @@
 # Composer
 composer.phar
-composer.lock
 
-# Bootstrap
-app/bootstrap*
-
-# Symfony directories
 vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
+build/*
+bin/*
 
-# Configuration files
-app/config/parameters.ini
-
-# Builds
-build
-
-# phpcpd & phploc stats (generated in a pre-commit hook)
-STATS
-
-# IDE files
-.idea/*
