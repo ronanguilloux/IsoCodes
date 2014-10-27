@@ -12,7 +12,6 @@ matrix:
         - php: hhvm
 
 before_script:
-  - phpenv config-rm xdebug.ini
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev --no-interaction
 
