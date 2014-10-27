@@ -4,28 +4,13 @@ namespace IsoCodes\Tests\ZipCodes;
 
 use IsoCodes\ZipCode;
 
+/**
+ * Class NetherlandsTest
+ *
+ * @package IsoCodes\Tests\ZipCodes
+ */
 class NetherlandsTest extends \PHPUnit_Framework_TestCase
 {
-
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * testNetherlandsZipCode
-     *
-     * @dataProvider zipCodes
-     *
-     * @param mixed $code
-     * @param string $country
-     * @param bool $result
-     * @return void
-     */
-    public function testNetherlandsZipCode($code, $country, $result)
-    {
-        $this->assertEquals( ZipCode::validate( $code, $country), $result );
-    }
 
     /**
      * zipCodes: dataProvider
@@ -50,29 +35,52 @@ class NetherlandsTest extends \PHPUnit_Framework_TestCase
             array( '12345A',     'Netherlands', false ),
             array( '1234 5A',    'Netherlands', false ),
             array( '0123 AA',    'Netherlands', false ), // Zipcodes cannot start with 0
-            array( '1234aa',     'Netherlands' , false ),
+            array( '1234aa',     'Netherlands', false ),
 
             // good:
-            array( '1234AA',     'Netherlands' , true ),
-            array( '1234 AA',    'Netherlands' , true ), // Some people add a space
+            array( '1234AA',     'Netherlands', true ),
+            array( '1234 AA',    'Netherlands', true ), // Some people add a space
             array( '1023 AA',    'Netherlands', true ),
         );
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * testNetherlandsZipCode
+     *
+     * @param mixed  $code
+     * @param string $country
+     * @param bool   $result
+     *
+     * @dataProvider zipCodes
+     *
+     * @return void
      */
-    public function testEmptyZipCodeAsInvalid()
+    public function testNetherlandsZipCode($code, $country, $result)
     {
-        $this->assertEquals( ZipCode::validate( '', 'Netherlands' ), false );
+        $this->assertEquals(ZipCode::validate($code, $country), $result);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
+     */
+    public function testEmptyZipCodeAsInvalid()
+    {
+        $this->assertEquals(ZipCode::validate('', 'Netherlands'), false);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
      */
     public function testBlankZipCodeAsInvalid()
     {
-        $this->assertEquals( ZipCode::validate( ' ', 'Netherlands' ), false );
+        $this->assertEquals(ZipCode::validate(' ', 'Netherlands'), false);
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
 }

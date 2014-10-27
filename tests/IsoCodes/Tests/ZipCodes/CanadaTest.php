@@ -4,28 +4,13 @@ namespace IsoCodes\Tests\ZipCodes;
 
 use IsoCodes\ZipCode;
 
+/**
+ * Class CanadaTest
+ *
+ * @package IsoCodes\Tests\ZipCodes
+ */
 class CanadaTest extends \PHPUnit_Framework_TestCase
 {
-
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * testCanadianZipCode
-     *
-     * @dataProvider zipCodes
-     *
-     * @param mixed $code
-     * @param string $country
-     * @param bool $result
-     * @return void
-     */
-    public function testCanadianZipCode($code, $country, $result)
-    {
-        $this->assertEquals( ZipCode::validate( $code, $country), $result );
-    }
 
     /**
      * zipCodes: dataProvider
@@ -64,19 +49,42 @@ class CanadaTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * testCanadianZipCode
+     *
+     * @param mixed  $code
+     * @param string $country
+     * @param bool   $result
+     *
+     * @dataProvider zipCodes
+     *
+     * @return void
      */
-    public function testEmptyZipCodeAsInvalid()
+    public function testCanadianZipCode($code, $country, $result)
     {
-        $this->assertEquals( ZipCode::validate( '', 'Canada' ), false );
+        $this->assertEquals(ZipCode::validate($code, $country), $result);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
+     */
+    public function testEmptyZipCodeAsInvalid()
+    {
+        $this->assertEquals(ZipCode::validate('', 'Canada'), false);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
      */
     public function testBlankZipCodeAsInvalid()
     {
-        $this->assertEquals( ZipCode::validate( ' ', 'Canada' ), false );
+        $this->assertEquals(ZipCode::validate(' ', 'Canada'), false);
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
 }
