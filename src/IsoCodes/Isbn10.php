@@ -2,7 +2,6 @@
 
 namespace IsoCodes;
 
-
 /**
  * Class Isbn10
  *
@@ -23,9 +22,6 @@ class Isbn10 implements IsoCodeInterface
         $isbn10 = str_replace("-", "", $isbn10); // this is a dash
         $isbn10 = str_replace("‐", "", $isbn10); // this is an authentic hyphen
         if (strlen($isbn10) != 10) {
-            return false;
-        }
-        if (!is_numeric($isbn10)) {
             return false;
         }
 

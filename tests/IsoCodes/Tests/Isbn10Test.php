@@ -21,7 +21,9 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
         return array(
             array('8881837188'),
             array('2266111566'),
-            array('2123456802')
+            array('2123456802'),
+            array('888 18 3 7 1-88'),
+            array('2-7605-1028-X')
         );
     }
 
@@ -33,6 +35,9 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
     public function getInvalidIsbn10()
     {
         return array(
+            array('8881837187'),
+            array('888183718A'),
+            array('stringof10'),
             array(888183718),       // not a string
             array(88818371880),     // not 10 chars found
             array('88818371880'),   // not 10 chars found
@@ -72,9 +77,11 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Isbn10::validate($isbn10));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }
