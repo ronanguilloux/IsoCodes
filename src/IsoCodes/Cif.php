@@ -53,5 +53,4 @@ class Cif implements IsoCodeInterface
 
         return false;
     }
-
 }
