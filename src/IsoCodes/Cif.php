@@ -34,7 +34,7 @@ class Cif implements IsoCodeInterface
 
         $n = (10 - substr($sum, -1)) % 10;
 
-        if (preg_match('/^[ABCDEFGHJNPQRSUVW]{1}/', $cif)) {
+        if (preg_match('/^[ABCDEFGHJKNPQRSUVW]{1}/', $cif)) {
             if (in_array($cif[0], array ('A', 'B', 'E', 'H'))) {
                 // Numerico
                 return ($cif[8] == $n);
