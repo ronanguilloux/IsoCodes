@@ -32,6 +32,9 @@
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.1.x-dev"
