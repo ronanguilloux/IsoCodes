@@ -75,6 +75,9 @@ class StructuredCommunicationTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(StructuredCommunication::validate($structure));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

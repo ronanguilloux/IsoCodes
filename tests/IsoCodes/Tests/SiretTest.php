@@ -79,6 +79,9 @@ class SiretTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Siret::validate($siret));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

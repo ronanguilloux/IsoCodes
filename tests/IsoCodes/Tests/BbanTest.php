@@ -70,6 +70,9 @@ class BbanTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Bban::validate($bban));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

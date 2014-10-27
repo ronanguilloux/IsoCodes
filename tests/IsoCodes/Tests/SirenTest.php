@@ -81,9 +81,11 @@ class SirenTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Siren::validate($siren));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }

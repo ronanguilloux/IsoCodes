@@ -77,9 +77,11 @@ class CreditCardTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(CreditCard::validate($creditCard));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }

@@ -74,6 +74,9 @@ class Ean13Test extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Ean13::validate($ean13));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

@@ -170,9 +170,11 @@ class VatTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Vat::validate($vat));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setUp()
     {
         parent::setUp();
     }
-
 }

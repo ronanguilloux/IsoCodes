@@ -74,6 +74,9 @@ class UkninTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Uknin::validate($uknin));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

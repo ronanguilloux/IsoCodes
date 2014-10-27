@@ -72,9 +72,11 @@ class InseeTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Insee::validate($insee));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }

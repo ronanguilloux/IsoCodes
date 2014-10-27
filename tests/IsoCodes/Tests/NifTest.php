@@ -13,7 +13,7 @@ class NifTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * getValidNifs: dataprovider
+     * getValidNifs: data provider
      *
      * @return array
      */
@@ -29,7 +29,7 @@ class NifTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getValidNifs: dataprovider
+     * getValidNifs: data provider
      *
      * @return array
      */
@@ -78,9 +78,11 @@ class NifTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Nif::validate($nif));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }

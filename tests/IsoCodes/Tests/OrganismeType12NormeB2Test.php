@@ -73,9 +73,11 @@ class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
         $this->assertFalse(OrganismeType12NormeB2::validate($code, $clef));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
     }
-
 }

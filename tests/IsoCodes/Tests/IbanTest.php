@@ -13,7 +13,7 @@ class IbanTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * getValidIbans: dataprovider
+     * getValidIbans: data provider
      *
      * @return array
      */
@@ -361,7 +361,7 @@ class IbanTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIbans: dataprovider
+     * getInvalidIbans: data provider
      *
      * @return array
      */
@@ -407,6 +407,9 @@ class IbanTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Iban::validate($iban));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();

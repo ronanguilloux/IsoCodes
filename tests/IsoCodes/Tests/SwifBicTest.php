@@ -74,6 +74,9 @@ class SwifBicTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(SwiftBic::validate($swiftBic));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
