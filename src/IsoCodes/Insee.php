@@ -38,7 +38,7 @@ class Insee implements IsoCodeInterface
         //références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
         if (!preg_match($regexp, $numero, $match)) {
-            return FALSE;
+            return false;
         }
         /* attention à l'overflow de php :)
            i.e :
@@ -66,38 +66,38 @@ class Insee implements IsoCodeInterface
         /*Traitement des cas des personnes nées hors métropole ou en corse*/
         switch (true) {
             //départements corses. Le calcul de la cles est différent
-            case $return['departement'] == '2A' :
+            case $return['departement'] == '2A':
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
                 break;
 
-            case $return['departement'] == '2B' :
+            case $return['departement'] == '2B':
                 $aChecker = floatval(str_replace('B', 1, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
                 break;
 
-            case $return['departement'] == 97 || $return['departement'] == 98 :
+            case $return['departement'] == 97 || $return['departement'] == 98:
                 $return['departement'] .= substr($return['numcommun'], 0, 1);
                 $return['numcommun'] = substr($return['numcommun'], 1, 2);
-                if ($return['numcommun'] > 90) { //90 = commune inconnue
-
-                    return FALSE;
+                if ($return['numcommun'] > 90) {
+                    //90 = commune inconnue
+                    return false;
                 }
                 break;
 
-            case $return['departement'] == 99 :
+            case $return['departement'] == 99:
                 $return['pays'] = $match['numcommune'];
-                if ($return['numcommun'] > 990) { //990 = pays inconnu
-
-                    return FALSE;
+                if ($return['numcommun'] > 990) {
+                    //990 = pays inconnu
+                    return false;
                 }
                 break;
 
-            default :
+            default:
                 if (isset($return['numcommun'])) {
-                    if ($return['numcommun'] > 990) { //990 = commune inconnue
-
-                        return FALSE;
+                    if ($return['numcommun'] > 990) {
+                        //990 = commune inconnue
+                        return false;
                     }
                 }
                 break;
@@ -109,7 +109,7 @@ class Insee implements IsoCodeInterface
             $return['clef'] = $clef; //la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
         }
         if ($clef != $return['clef']) {
-            return FALSE;
+            return false;
         }
 
         return true;

@@ -37,5 +37,4 @@ class IP implements IsoCodeInterface
         return (false !== filter_var($ipv6, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
 
     }
-
 }

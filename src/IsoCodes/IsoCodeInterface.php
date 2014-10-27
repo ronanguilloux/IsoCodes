@@ -15,5 +15,4 @@ interface IsoCodeInterface
      * @return boolean
      */
     public static function validate($value);
-
 }

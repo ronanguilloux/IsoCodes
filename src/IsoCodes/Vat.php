@@ -15,7 +15,7 @@ class Vat
     /**
      * Regular expression patterns per country code
      *
-     * @var array
+     * @var  array
      * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
      * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
      * @link http://en.wikipedia.org/wiki/VAT_identification_number

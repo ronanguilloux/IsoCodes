@@ -78,5 +78,4 @@ class Nif implements IsoCodeInterface
 
         return $sum;
     }
-
 }

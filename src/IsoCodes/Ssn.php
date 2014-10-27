@@ -2,7 +2,8 @@
 
 namespace IsoCodes;
 
-/** @example :
+/**
+ * @example :
  * Instantiate the class
  * $ssn = new ssn();
  * // Generate a SSN for California
@@ -27,7 +28,8 @@ class Ssn
 
     // We only want the numbers. Omit the explanatory text at the beginning of the file.
     // This list is from September 2007
-    public $highgroup = '001 06 002 04	003 04	004 08	005 08	006 08
+    public $highgroup = <<<EOT
+001 06 002 04	003 04	004 08	005 08	006 08
         007 06 008 90	009 90 010 90 011 90 012 90
         013 90	014 90	015 90	016 90	017 90	018 90
         019 90	020 90	021 90	022 90	023 90	024 90
@@ -152,7 +154,8 @@ class Ssn
         750 09 751 07	752 01 753 01 756 05 757 05
         758 05 759 05 760 05* 761 03 762 03 763 03
         764 80 765 80*	766 64* 767 64*	768 62 769 62
-        770 62 771 62 772 62*';
+        770 62 771 62 772 62*
+EOT;
 
     // This information is obtained from:
     // http://www.ssa.gov/employer/stateweb.htm
@@ -242,7 +245,6 @@ class Ssn
                 }
             }
         }
-
 
     }
 
