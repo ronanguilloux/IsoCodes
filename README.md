@@ -30,7 +30,7 @@ Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scruti
 Usage
 -----
 
-``` php
+```php
     // Is this bank account number ok?
     $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
@@ -42,13 +42,16 @@ Usage
 
     // Paying your taxes in Madrid?
     $isTaxableInSpain = Nif::validate('A999999L');
+    
+    // Does this book just exists?
+    $isPublished = Isbn10::validate('2-2110-4199-X') 
 ```
 
 
 Installing via GitHub
 ---------------------
 
-``` bash
+```bash
     $ git clone git@github.com:ronanguilloux/IsoCodes.git
 ```
 
@@ -59,38 +62,60 @@ Installing via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes
 
 Create a composer.json file:
 
-``` json
+```json
     {
         "require": {"ronanguilloux/isocodes": "dev-master"}
     }
 ```
 
-
 Grab composer:
 
-``` bash
+```bash
     $ curl -s http://getcomposer.org/installer | php
 ```
 
 Run install (will build the autoload):
 
-``` bash
+```bash
     $ php composer.phar install
 ```
 
 
-Testing
--------
+Unit testing
+------------
 
-``` bash
+```bash
     $ phpunit --testdox --coverage-text
 ```
 
 
+Make utilities
+--------------
+
+For development & contribution purpose only,
+a Makefile provides various tools to check your code style, quality & test coverage:
+
+```
+Usual tasks:
+
+	To initialize vendors:  make
+	To check code quality:	make quality
+	To run tests suite:	    make tests
+	To fix code style:	    make cs-fix
+
+Other specific tasks:
+
+	To evaluate code coverage:			        make codecoverage
+	To run a simple continuous tests server:	mak continuous
+	To dry-fix code style issues:			    make dry-fix
+	To evaluate code quality stats:			    make stats
+	To update vendors using Composer:		    make update
+```
+
 Quality assurance report
 ------------------------
 
-Isocodes quality plan is mainly based on phpunit: it runs +/- 410 tests & 430 assertions,
+Isocodes quality plan is mainly based on phpunit: it runs +/- 750 tests & assertions,
 with separated valid & invalid entries sets.
 Tests values are mainly real data or documented examples
 from standards documentation, and a few handmade values.
@@ -105,25 +130,11 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 
 Then run:
 
-``` bash
-    $ phploc src/ > STATS
-    $ phpmd src/ text codesize,unusedcode,naming >> STATS
-    $ phpcpd src/ >> STATS
-    $ pdepend src/ >> STATS
-    $ php-cs-fixer fix src/ --dry-run >> STATS
+```bash
+    $ make stats -i
 ```
 
-Manual checks & xml-based output:
-
-``` bash
-    $ mkdir -p build/logs
-    $ phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=Symfony2 --ignore=*.html.php,*.config.php,*.twig.php src
-    $ phpmd src xml codesize,unusedcode,naming --reportfile build/logs/pmd.xml
-
-```
-
-This set of php QA tools are currently run on this sources, via a git's pre-commit hook: See STATS file for the actual report.
-
+XML report outputs are generated in the `./build` folder
 
 License Information
 -------------------
@@ -153,6 +164,6 @@ TODO
 ----
 
 * Various iso codes listed in http://www.credit-card.be/BankAccount/ValidationRules.htm
-* ISBN
+* ISBN13
 * Add UK PostCode, UK Tax Code (http://www.braemoor.co.uk/software/vat.shtml)
 * US phone number : /^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/
