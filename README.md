@@ -128,7 +128,7 @@ with separated valid & invalid entries sets.
 Tests values are mainly real data or documented examples
 from standards documentation, and a few handmade values.
 
-Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then install:
+The `composer.json` already includes these  [Php Quality Assurance Toolchain](http://phpqatools.org) libraries:
 
 * [phploc](https://github.com/sebastianbergmann/phploc)
 * [phpmd](https://github.com/phpmd/phpmd)
@@ -136,13 +136,13 @@ Have a look at [Php Quality Assurance Toolchain](http://phpqatools.org), then in
 * [pdepend](https://github.com/pdepend/pdepend)
 * [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
 
-Then run:
+Just run:
 
 ```bash
     $ make stats -i
 ```
 
-XML report outputs are generated in the `./build` folder
+XML report outputs are then generated in a new `./build` folder
 
 License Information
 -------------------
