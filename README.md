@@ -82,7 +82,7 @@ Grab composer:
     $ curl -s http://getcomposer.org/installer | php
 ```
 
-Run install (will build the autoload):
+Run install (will build the autoloading):
 
 ```bash
     $ php composer.phar install
