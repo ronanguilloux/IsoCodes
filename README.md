@@ -7,7 +7,7 @@ PHP libray providing various ISO codes validators
 * European : various VAT number formats
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
-* UK : National Insurance Number
+* UK : National Insurance Number (NINO)
 * Belgian structured communication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 * Zipcode for many countries: US, Canada, France, Netherlands, etc.
