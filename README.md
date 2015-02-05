@@ -26,6 +26,7 @@ Build status
 [![Latest Unstable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/unstable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?s=db3d0ec70de304f743065f3b628c809c4a48d46f)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/fde42adb-344d-4055-b78d-20b598040ac8/mini.png)](https://insight.sensiolabs.com/projects/fde42adb-344d-4055-b78d-20b598040ac8)
+[![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.svg?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes?branch=master)
 
 [![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
@@ -50,9 +51,9 @@ Usage
 
     // Paying your taxes in Madrid?
     $isTaxableInSpain = Nif::validate('A999999L');
-    
+
     // Does this book just exists?
-    $isPublished = Isbn10::validate('2-2110-4199-X') 
+    $isPublished = Isbn10::validate('2-2110-4199-X')
 ```
 
 
@@ -143,6 +144,10 @@ Just run:
 ```
 
 XML report outputs are then generated in a new `./build` folder
+
+Code covering report built using [Coveralls.io](https://coveralls.io/r/ronanguilloux/IsoCodes).
+[How-to generate such code coverage report using PHPUnit](https://github.com/satooshi/php-coveralls/blob/master/README.md).
+
 
 License Information
 -------------------

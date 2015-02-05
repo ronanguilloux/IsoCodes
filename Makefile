@@ -30,7 +30,12 @@ RESETC      := $(shell tput sgr0)
 ############################################################################
 # Mandatory tasks:
 
-all: .git/hook/pre-commit vendor/autoload.php help done
+all: build .git/hook/pre-commit vendor/autoload.php help done
+
+
+build:
+	@mkdir -p build/cov
+	@mkdir -p build/logs
 
 vendor/autoload.php:
 	@composer self-update
