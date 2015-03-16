@@ -373,6 +373,7 @@ class IbanTest extends \PHPUnit_Framework_TestCase
             array('DE6070051755000000722'),
             array('DE10002300A1023502601'),
             array('PL12100500000123456789'),
+            array('DE912371399260788663742'),
             array(''),
             array(' '),
             array(null)
