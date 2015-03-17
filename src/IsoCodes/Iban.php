@@ -103,7 +103,7 @@ class Iban implements IsoCodeInterface
         /*On récupère la règle de validation en fonction du pays*/
         $check = substr($iban, 4);
         /*Si la règle n'est pas bonne l'IBAN n'est pas valide*/
-        if (preg_match('~' . $rules[$ctr] . '~', $check) !== 1) {
+        if (preg_match('~^' . $rules[$ctr] . '$~', $check) !== 1) {
             return false;
         }
         /*On récupère la chaine qui permet de calculer la validation*/
