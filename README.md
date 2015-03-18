@@ -39,7 +39,9 @@ Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scruti
 Requirements
 ------------
 
-PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematics checks (Iban & BBan ISO-codes). 
+PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematics checks (Iban & BBan ISO-codes).
+
+Note that common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
 Usage
 -----
