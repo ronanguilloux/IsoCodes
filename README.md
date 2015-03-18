@@ -36,6 +36,11 @@ Build status
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
 
+Requirements
+------------
+
+PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematics checks (Iban & BBan ISO-codes). 
+
 Usage
 -----
 
