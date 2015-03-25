@@ -10,7 +10,7 @@ PHP libray providing various ISO codes validators
 * UK : National Insurance Number (NINO)
 * Belgian structured communication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
-* Zipcode for many countries: US, Canada, France, Netherlands, etc.
+* Zipcode for many countries: US, Canada, France, Netherlands,  Portugal, Spain, etc.
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
