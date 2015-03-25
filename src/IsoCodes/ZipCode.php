@@ -115,7 +115,7 @@ class ZipCode
      */
     public static function validatePortugal($zipcode)
     {
-        $regexp = "[0-9]{4}-[0-9]{3}";
+        $regexp = "/^[0-9]{4}-[0-9]{3}$/";
 
         return (boolean) preg_match($regexp, $zipcode);
     }
@@ -127,7 +127,7 @@ class ZipCode
      */
     public static function validateSpain($zipcode)
     {
-        $regexp = "/[0-9]{5}/";
+        $regexp = "/^[0-9]{5}$/";
 
         return (boolean) preg_match($regexp, $zipcode);
     }
