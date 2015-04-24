@@ -4,6 +4,8 @@ namespace IsoCodes;
 
 /**
  * Interface IsoCodeInterface.
+ *
+ * @codeCoverageIgnore
  */
 interface IsoCodeInterface
 {

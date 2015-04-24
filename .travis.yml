@@ -17,6 +17,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
+  - mkdir -p build/cov
   - phpunit -c phpunit.xml.dist
 
 after_script:
