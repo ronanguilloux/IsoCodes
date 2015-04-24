@@ -81,7 +81,7 @@ Create a composer.json file:
 
 ```json
     {
-        "require": {"ronanguilloux/isocodes": "dev-master"}
+        "require": {"ronanguilloux/isocodes": "@stable"}
     }
 ```
 
