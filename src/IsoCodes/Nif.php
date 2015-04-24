@@ -64,6 +64,8 @@ class Nif implements IsoCodeInterface
      *
      * @param string $cif
      *
+     * @codeCoverageIgnore
+     *
      * @return mixed
      */
     public static function getCifSum($cif)

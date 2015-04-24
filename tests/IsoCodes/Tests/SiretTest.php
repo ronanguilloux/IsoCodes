@@ -6,6 +6,7 @@ use IsoCodes\Siret;
 
 /**
  * @covers IsoCodes\Siret
+ * @uses IsoCodes\Siren
  */
 class SiretTest extends \PHPUnit_Framework_TestCase
 {
