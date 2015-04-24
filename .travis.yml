@@ -9,7 +9,7 @@ php:
 
 matrix:
     allow_failures:
-        - php: hhvm
+        - php: 5.3
 
 before_script:
   - curl -s http://getcomposer.org/installer | php
