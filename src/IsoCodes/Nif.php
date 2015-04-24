@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Nif
+ * Class Nif.
  *
  * El Número de Identificación Fiscal (NIF) es la manera de identificación tributaria
  * utilizada en España para las personas físicas (con documento nacional de identidad (DNI)
@@ -12,19 +12,19 @@ namespace IsoCodes;
  * El Real Decreto 338/1990, de 9 de marzo, regula la composición y la forma de uso del NIF,
  * hasta la entrada en vigor en enero de 2008 del Real Decreto 1065/2007, de 27 de julio.
  *
- * @package IsoCodes
  * @source  https://github.com/alrik11es/spanish-utils
+ *
  * @link    http://es.wikipedia.org/wiki/NIF
  */
 class Nif implements IsoCodeInterface
 {
     /**
-    * NIF and DNI validation
-    *
-    * @param string $nif The NIF or NIE
-    *
-    * @return bool
-    */
+     * NIF and DNI validation.
+     *
+     * @param string $nif The NIF or NIE
+     *
+     * @return bool
+     */
     public static function validate($nif)
     {
         $nifCodes = 'TRWAGMYFPDXBNJZSQVHLCKE';
@@ -45,7 +45,7 @@ class Nif implements IsoCodeInterface
         } elseif (preg_match('/^[XYZ][0-9]{7}[A-Z]{1}$/', $nif)) {
             // NIEs normales
             $tmp = substr($nif, 1, 7);
-            $tmp = strtr(substr($nif, 0, 1), 'XYZ', '012') . $tmp;
+            $tmp = strtr(substr($nif, 0, 1), 'XYZ', '012').$tmp;
 
             return ($nif[8] == $nifCodes[$tmp % 23]);
         } elseif (preg_match('/^[KLM]{1}/', $nif)) {
@@ -60,7 +60,7 @@ class Nif implements IsoCodeInterface
     }
 
     /**
-     * Used to calculate the sum of the CIF, DNI and NIE
+     * Used to calculate the sum of the CIF, DNI and NIE.
      *
      * @param string $cif
      *
@@ -72,7 +72,7 @@ class Nif implements IsoCodeInterface
     {
         $sum = $cif[2] + $cif[4] + $cif[6];
 
-        for ($i = 1; $i<8; $i += 2) {
+        for ($i = 1; $i < 8; $i += 2) {
             $tmp = (string) (2 * $cif[$i]);
             $tmp = $tmp[0] + ((strlen($tmp) == 2) ?  $tmp[1] : 0);
             $sum += $tmp;

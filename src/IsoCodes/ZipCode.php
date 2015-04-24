@@ -3,27 +3,25 @@
 namespace IsoCodes;
 
 /**
- * Class ZipCode
- *
- * @package IsoCodes
+ * Class ZipCode.
  */
 class ZipCode
 {
-
     /**
      * @param $zipcode
      * @param $country
      *
      * @return mixed
+     *
      * @throws \InvalidArgumentException
      */
     public static function validate($zipcode, $country)
     {
         $zipcode = trim($zipcode);
         if (empty($zipcode)) {
-            throw new \InvalidArgumentException("ERROR: The zipcode value cannot be empty.");
+            throw new \InvalidArgumentException('ERROR: The zipcode value cannot be empty.');
         }
-        $methodName = "validate" . trim(ucfirst(strtolower($country)));
+        $methodName = 'validate'.trim(ucfirst(strtolower($country)));
         if (!is_callable(array(__CLASS__, $methodName))) {
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
@@ -32,13 +30,12 @@ class ZipCode
     }
 
     /**
-     * US "ZIP+4" zipcode validator
+     * US "ZIP+4" zipcode validator.
      *
      * @param string $zipcode
      *
-     * @return boolean
+     * @return bool
      */
-
     public static function validateUS($zipcode)
     {
         $regexp = "/^\d{5}(-\d{4})?$/";
@@ -48,7 +45,7 @@ class ZipCode
 
     /**
      * Canadian zipcode validator
-     * Pay attention to many exceptions & particularities, see @link
+     * Pay attention to many exceptions & particularities, see @link.
      *
      * The postal code is a six-character alpha-numeric code in the format "ANA NAN"
      * where "A" represents an alphabetic character and "N" represents a numeric character.
@@ -68,18 +65,18 @@ class ZipCode
      * @link http://en.wikipedia.org/wiki/Postal_codes_in_Canada
      * @link http://en.wikipedia.org/wiki/List_of_A_postal_codes_of_Canada
      *
-     * @return boolean
+     * @return bool
      */
     public static function validateCanada($zipcode)
     {
-        $regexp = "/^[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$/";
+        $regexp = '/^[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$/';
 
         return (boolean) preg_match($regexp, $zipcode);
     }
 
     /**
      * "CODE POSTAL" French zipcode validator
-     * Pay attention to many exceptions & particularities, see @link
+     * Pay attention to many exceptions & particularities, see @link.
      *
      * variant : "/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/"
      *
@@ -87,11 +84,11 @@ class ZipCode
      *
      * @link http://fr.wikipedia.org/wiki/Code_postal_en_France
      *
-     * @return boolean
+     * @return bool
      */
     public static function validateFrance($zipcode)
     {
-        $regexp = "/^[0-9]{5}$/";
+        $regexp = '/^[0-9]{5}$/';
 
         return (boolean) preg_match($regexp, $zipcode);
     }
@@ -115,7 +112,7 @@ class ZipCode
      */
     public static function validatePortugal($zipcode)
     {
-        $regexp = "/^[0-9]{4}-[0-9]{3}$/";
+        $regexp = '/^[0-9]{4}-[0-9]{3}$/';
 
         return (boolean) preg_match($regexp, $zipcode);
     }
@@ -127,9 +124,8 @@ class ZipCode
      */
     public static function validateSpain($zipcode)
     {
-        $regexp = "/^[0-9]{5}$/";
+        $regexp = '/^[0-9]{5}$/';
 
         return (boolean) preg_match($regexp, $zipcode);
     }
-
 }

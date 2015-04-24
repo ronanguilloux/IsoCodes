@@ -3,25 +3,23 @@
 namespace IsoCodes;
 
 /**
- * Class CreditCard
- *
- * @package IsoCodes
+ * Class CreditCard.
  */
 class CreditCard implements IsoCodeInterface
 {
     /**
-     * Credit Card validator
+     * Credit Card validator.
      *
      * @param string $creditCard
      *
      * @author ronan.guilloux
+     *
      * @link   http://www.prometee-creation.com/tutoriels/fonction-de-luhn-en-php.html
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($creditCard)
     {
-
         if (trim($creditCard) === '') {
             return false;
         }

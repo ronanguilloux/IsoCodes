@@ -3,16 +3,14 @@
 namespace IsoCodes;
 
 /**
- * Interface IsoCodeInterface
- *
- * @package IsoCodes
+ * Interface IsoCodeInterface.
  */
 interface IsoCodeInterface
 {
     /**
      * @param $value
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($value);
 }

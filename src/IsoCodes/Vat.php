@@ -11,11 +11,11 @@ namespace IsoCodes;
  */
 class Vat
 {
-
     /**
-     * Regular expression patterns per country code
+     * Regular expression patterns per country code.
      *
-     * @var  array
+     * @var array
+     *
      * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
      * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
      * @link http://en.wikipedia.org/wiki/VAT_identification_number
@@ -80,11 +80,11 @@ class Vat
 
     /**
      * validate
-     * Checks if $vat is a valid, European Union VAT number
+     * Checks if $vat is a valid, European Union VAT number.
      *
      * @param mixed $vat
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($vat)
     {
@@ -98,7 +98,7 @@ class Vat
         }
 
         $vat = substr($vat, 2);
-        if (0 === preg_match('/^' . self::$patterns[$countryCode] . '$/', $vat)) {
+        if (0 === preg_match('/^'.self::$patterns[$countryCode].'$/', $vat)) {
             return false;
         }
 
@@ -106,7 +106,7 @@ class Vat
     }
 
     /**
-     * Returns true if value is valid country code, false otherwise
+     * Returns true if value is valid country code, false otherwise.
      *
      * @param string $vat
      *

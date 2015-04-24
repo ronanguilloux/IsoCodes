@@ -3,20 +3,17 @@
 namespace IsoCodes;
 
 /**
- * Class OrganismeType12NormeB2
- *
- * @package IsoCodes
+ * Class OrganismeType12NormeB2.
  */
 class OrganismeType12NormeB2 implements IsoCodeInterface
 {
-
     /**
      * validate Clef type 1-2 Norme B2 Securité Sociale
      * n° établissement, centre de santé, praticien, laboratoire, pharmacien, trasnporteur, fournisseur,
      * n° accident du travail, n° d'organisme complémentaire.
      *
-     * @param string  $code
-     * @param integer $clef
+     * @param string $code
+     * @param int    $clef
      *
      * @return bool
      */
@@ -56,6 +53,5 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
         $clefValide = 10 - array_pop($clefValide);
 
         return ($clef === $clefValide);
-
     }
 }

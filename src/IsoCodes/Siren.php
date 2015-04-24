@@ -7,21 +7,20 @@ namespace IsoCodes;
  * En France, le SIREN (Système d’Identification du Répertoire des Entreprises)
  * est un code Insee unique qui sert à identifier une entreprise française.
  * Il existe au sein d'un répertoire géré par l'Insee : SIRENE.
- *
- * @package IsoCodes
  */
 class Siren implements IsoCodeInterface
 {
     /**
-     * SIREN validator
+     * SIREN validator.
      *
      * @param string $insee
      * @param int    $length
      *
      * @author ronan.guilloux
+     *
      * @link   http://fr.wikipedia.org/wiki/SIREN
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($insee, $length = 9)
     {

@@ -3,15 +3,13 @@
 namespace IsoCodes;
 
 /**
- * Class Uknin
- *
- * @package IsoCodes
+ * Class Uknin.
  */
 class Uknin implements IsoCodeInterface
 {
     /**
      * UK's National Insurance Number validator
-     * Also known as NINO
+     * Also known as NINO.
      *
      * @param string $uknin
      *
@@ -22,7 +20,8 @@ class Uknin implements IsoCodeInterface
      *
      * @see    http://www.hmrc.gov.uk/manuals/nimmanual/nim39110.htm
      * @see    http://stackoverflow.com/a/17929051/490589
-     * @return boolean
+     *
+     * @return bool
      */
     public static function validate($uknin)
     {

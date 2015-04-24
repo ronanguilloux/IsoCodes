@@ -18,11 +18,9 @@ namespace IsoCodes;
  * echo $ssn->validate('557-26-9048');
  *
  * @source  : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
- * @package IsoCodes
  */
 class Ssn
 {
-
     // Populate this variable with the high group list provided by the Social Security Administration:
     // http://www.ssa.gov/employer/ssnvhighgroup.htm
 
@@ -210,7 +208,7 @@ EOT;
         'WA' => array(531, 532, 533, 534, 535, 536, 537, 538, 539),
         'WI' => array(387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399),
         'WV' => array(232, 233, 234, 235, 236),
-        'WY' => array(520)
+        'WY' => array(520),
     );
 
     public $states = array('AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY');
@@ -245,11 +243,10 @@ EOT;
                 }
             }
         }
-
     }
 
     /**
-     * Generate an SSN based on state
+     * Generate an SSN based on state.
      *
      * @param mixed  $state
      * @param string $separator
@@ -281,17 +278,17 @@ EOT;
         $group = $possibleGroups[mt_rand(0, array_search($highgroup[$area], $possibleGroups))]; // Generate valid group number
 
         // Generate last four
-        $lastfour = sprintf("%04s", trim(mt_rand(0, 9999)));
+        $lastfour = sprintf('%04s', trim(mt_rand(0, 9999)));
 
-        return sprintf("%03s", $area) . $separator . sprintf("%02s", $group) . $separator . $lastfour;
+        return sprintf('%03s', $area).$separator.sprintf('%02s', $group).$separator.$lastfour;
     }
 
     /**
-     * Validate a SSN
+     * Validate a SSN.
      *
      * @param mixed $ssn
      *
-     * @return boolean : false, or two letter state abbreviation if it is valid
+     * @return bool : false, or two letter state abbreviation if it is valid
      */
     public function validate($ssn)
     {

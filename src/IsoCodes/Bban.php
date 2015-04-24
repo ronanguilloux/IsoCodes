@@ -3,23 +3,22 @@
 namespace IsoCodes;
 
 /**
- * Class Bban
- *
- * @package IsoCodes
+ * Class Bban.
  */
 class Bban implements IsoCodeInterface
 {
     /**
-     * Bban validator
+     * Bban validator.
      *
      * @param string $bban
      *
      * @author  petitchevalroux
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
+     *
      * @link    http://dev.petitchevalroux.net/php/valider-bban-php.359.html
      * @link    http://fr.wikipedia.org/wiki/Relev%C3%A9_d%27identit%C3%A9_bancaire
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($bban)
     {

@@ -37,7 +37,7 @@ class SpainTest extends \PHPUnit_Framework_TestCase
             array( 'a0a1a0',    'Spain', false ),
             // good:
             array( '03099',   'Spain' , true ),
-            array( '03201',    'Spain' , true ), 
+            array( '03201',    'Spain' , true ),
             array( '29640',   'Spain', true ),
 
         );

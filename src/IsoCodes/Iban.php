@@ -3,22 +3,21 @@
 namespace IsoCodes;
 
 /**
- * Class Iban
- *
- * @package IsoCodes
+ * Class Iban.
  */
 class Iban implements IsoCodeInterface
 {
     /**
-     * Iban validator
+     * Iban validator.
      *
      * @author  petitchevalroux
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
+     *
      * @link    http://dev.petitchevalroux.net/php/validation-iban-php.356.html + comments & links
      *
      * @param string $iban
      *
-     * @return boolean
+     * @return bool
      */
     public static function validate($iban)
     {
@@ -89,7 +88,7 @@ class Iban implements IsoCodeInterface
             'TR' => '[0-9]{5}[0-9A-Z]{17}',
             'AE' => '[0-9]{19}',
             'GB' => '[A-Z]{4}[0-9]{14}',
-            'CI' => '[0-9A-Z]{2}[0-9]{22}'
+            'CI' => '[0-9A-Z]{2}[0-9]{22}',
         );
         /*On vérifie la longueur minimale*/
         if (mb_strlen($iban) < 15) {
@@ -103,11 +102,11 @@ class Iban implements IsoCodeInterface
         /*On récupère la règle de validation en fonction du pays*/
         $check = substr($iban, 4);
         /*Si la règle n'est pas bonne l'IBAN n'est pas valide*/
-        if (preg_match('~^' . $rules[$ctr] . '$~', $check) !== 1) {
+        if (preg_match('~^'.$rules[$ctr].'$~', $check) !== 1) {
             return false;
         }
         /*On récupère la chaine qui permet de calculer la validation*/
-        $check = $check . substr($iban, 0, 4);
+        $check = $check.substr($iban, 0, 4);
         /*On remplace les caractères alpha par leurs valeurs décimales*/
         $check = str_replace(
             array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),

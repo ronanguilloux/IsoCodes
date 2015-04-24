@@ -39,7 +39,7 @@ class PortugalTest extends \PHPUnit_Framework_TestCase
             array( 'a0a1a0',    'Portugal', false ),
             // good:
             array( '1000-001',   'Portugal' , true ),
-            array( '1900-078',    'Portugal' , true ), 
+            array( '1900-078',    'Portugal' , true ),
             array( '1250-789',   'Portugal', true ),
 
         );
