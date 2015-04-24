@@ -36,10 +36,12 @@ class SpainTest extends \PHPUnit_Framework_TestCase
             array( 'A0A1a0',    'Spain', false ),
             array( 'a0a1a0',    'Spain', false ),
             // good:
-            array( '03099',   'Spain' , true ),
-            array( '03201',    'Spain' , true ),
-            array( '29640',   'Spain', true ),
-
+            array( '03099',     'Spain' , true ),
+            array( '03201',     'Spain' , true ),
+            array( '29640',     'Spain', true ),
+            array( null,        'Spain', false ),
+            array( '',          'Spain', false ),
+            array( '  ',        'Spain', false ),
         );
     }
 
@@ -57,22 +59,6 @@ class SpainTest extends \PHPUnit_Framework_TestCase
     public function testSpanishZipCode($code, $country, $result)
     {
         $this->assertEquals(ZipCode::validate($code, $country), $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEmptyZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate('', 'Spain'), false);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBlankZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate(' ', 'Spain'), false);
     }
 
     /**

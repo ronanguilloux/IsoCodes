@@ -42,6 +42,9 @@ class USTest extends \PHPUnit_Framework_TestCase
             array('A0A1A 0',    'US', false),
             array('A0A1a0',     'US', false),
             array('a0a1a0',     'US', false),
+            array( null,        'US', false ),
+            array( '',          'US', false ),
+            array( '  ',        'US', false ),
         );
     }
 
@@ -59,22 +62,6 @@ class USTest extends \PHPUnit_Framework_TestCase
     public function testUSZipCode($code, $country, $result)
     {
         $this->assertEquals(ZipCode::validate($code, $country), $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEmptyZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate('', 'US'), false);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBlankZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate(' ', 'US'), false);
     }
 
     /**

@@ -44,7 +44,10 @@ class FranceTest extends \PHPUnit_Framework_TestCase
             array( 'A5600A',    'France', false ),
             array( 'AAA',       'France', false ),
             array( 'AAAA',      'France', false ),
-            array( 'AAAAA',     'France', false )
+            array( 'AAAAA',     'France', false ),
+            array( null,        'France', false ),
+            array( '',          'France', false ),
+            array( '  ',        'France', false ),
         );
     }
 
@@ -62,22 +65,6 @@ class FranceTest extends \PHPUnit_Framework_TestCase
     public function testFrenchZipCode($zipcode, $country, $result)
     {
         $this->assertEquals(ZipCode::validate($zipcode, $country), $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testZipCodeExceptionsIfEmpty()
-    {
-        $this->assertEquals(ZipCode::validate('', 'France'), false);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testZipCodeExceptionsIfSpace()
-    {
-        $this->assertEquals(ZipCode::validate(' ', 'France'), false);
     }
 
     /**
