@@ -64,8 +64,10 @@ Usage
 ```
 
 
-Installing via GitHub
----------------------
+Installing
+----------
+
+### Via GitHub
 
 ```bash
     $ git clone git@github.com:ronanguilloux/IsoCodes.git
@@ -73,8 +75,7 @@ Installing via GitHub
 
 Autoloading is PSR-0 friendly.
 
-Installing via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes) & [Composer](http://getcomposer.org/doc/00-intro.md)
------------------------------------
+### Via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes) & [Composer](http://getcomposer.org/doc/00-intro.md)
 
 Create a composer.json file:
 
@@ -96,6 +97,10 @@ Run install (will build the autoloading):
     $ php composer.phar install
 ```
 
+### With Symfony Validator
+
+Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator) library
+to get IsoCodes working as Validator for **Symfony** and **Silex**.
 
 Unit testing
 ------------
