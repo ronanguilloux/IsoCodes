@@ -18,11 +18,11 @@ class UkninTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidUknin()
     {
-        return array(
-            array('AB123456C'),
-            array('EH123456A'),
-            array('HG123456B')
-        );
+        return [
+            ['AB123456C'],
+            ['EH123456A'],
+            ['HG123456B']
+        ];
     }
 
     /**
@@ -32,18 +32,18 @@ class UkninTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidUknin()
     {
-        return array(
-            array('AD123456CA'),
-            array('AD12345C'),
-            array('AD123456'),
-            array('AF123456C'),
-            array('AB123456F'),
-            array('TN011258F'),
-            array(''),
-            array(' '),
-            array(null),
-            array('azertyuiop')
-        );
+        return [
+            ['AD123456CA'],
+            ['AD12345C'],
+            ['AD123456'],
+            ['AF123456C'],
+            ['AB123456F'],
+            ['TN011258F'],
+            [''],
+            [' '],
+            [null],
+            ['azertyuiop']
+        ];
     }
 
     /**

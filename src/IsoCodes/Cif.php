@@ -35,10 +35,10 @@ class Cif implements IsoCodeInterface
         $n = (10 - substr($sum, -1)) % 10;
 
         if (preg_match('/^[ABCDEFGHJKNPQRSUVW]{1}/', $cif)) {
-            if (in_array($cif[0], array('A', 'B', 'E', 'H'))) {
+            if (in_array($cif[0], ['A', 'B', 'E', 'H'])) {
                 // Numerico
                 return ($cif[8] == $n);
-            } elseif (in_array($cif[0], array('K', 'P', 'Q', 'S'))) {
+            } elseif (in_array($cif[0], ['K', 'P', 'Q', 'S'])) {
                 // Letras
                 return ($cif[8] == $cifCodes[$n]);
             } else {

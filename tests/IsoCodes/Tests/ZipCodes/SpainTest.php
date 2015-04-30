@@ -19,30 +19,30 @@ class SpainTest extends \PHPUnit_Framework_TestCase
      */
     public function zipCodes()
     {
-        return array(
+        return [
             // bad:
-            array( '560',       'Spain', false ),
-            array( '5600',      'Spain', false ),
-            array( '560000',    'Spain', false ),
-            array( 'A56000',    'Spain', false ),
-            array( '56000A',    'Spain', false ),
-            array( 'A5600A',    'Spain', false ),
-            array( 'AAA',       'Spain', false ),
-            array( 'AAAA',      'Spain', false ),
-            array( 'A 0A1A0',   'Spain', false ),
-            array( 'A0 A1A0',   'Spain', false ),
-            array( 'A0A1 A0',   'Spain', false ),
-            array( 'A0A1A 0',   'Spain', false ),
-            array( 'A0A1a0',    'Spain', false ),
-            array( 'a0a1a0',    'Spain', false ),
+            ['560',       'Spain', false],
+            ['5600',      'Spain', false],
+            ['560000',    'Spain', false],
+            ['A56000',    'Spain', false],
+            ['56000A',    'Spain', false],
+            ['A5600A',    'Spain', false],
+            ['AAA',       'Spain', false],
+            ['AAAA',      'Spain', false],
+            ['A 0A1A0',   'Spain', false],
+            ['A0 A1A0',   'Spain', false],
+            ['A0A1 A0',   'Spain', false],
+            ['A0A1A 0',   'Spain', false],
+            ['A0A1a0',    'Spain', false],
+            ['a0a1a0',    'Spain', false],
             // good:
-            array( '03099',     'Spain' , true ),
-            array( '03201',     'Spain' , true ),
-            array( '29640',     'Spain', true ),
-            array( null,        'Spain', false ),
-            array( '',          'Spain', false ),
-            array( '  ',        'Spain', false ),
-        );
+            ['03099',     'Spain' , true],
+            ['03201',     'Spain' , true],
+            ['29640',     'Spain', true],
+            [null,        'Spain', false],
+            ['',          'Spain', false],
+            ['  ',        'Spain', false],
+        ];
     }
 
     /**

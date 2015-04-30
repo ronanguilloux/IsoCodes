@@ -19,32 +19,32 @@ class PortugalTest extends \PHPUnit_Framework_TestCase
      */
     public function zipCodes()
     {
-        return array(
+        return [
             // bad:
-            array( '560',       'Portugal', false ),
-            array( '5600',      'Portugal', false ),
-            array( '560000',    'Portugal', false ),
-            array( 'A56000',    'Portugal', false ),
-            array( 'A5600',     'Portugal', false ),
-            array( '56000A',    'Portugal', false ),
-            array( 'A5600A',    'Portugal', false ),
-            array( 'AAA',       'Portugal', false ),
-            array( 'AAAA',      'Portugal', false ),
-            array( 'AAAAA',     'Portugal', false ),
-            array( 'A 0A1A0',   'Portugal', false ),
-            array( 'A0 A1A0',   'Portugal', false ),
-            array( 'A0A1 A0',   'Portugal', false ),
-            array( 'A0A1A 0',   'Portugal', false ),
-            array( 'A0A1a0',    'Portugal', false ),
-            array( 'a0a1a0',    'Portugal', false ),
+            ['560',       'Portugal', false],
+            ['5600',      'Portugal', false],
+            ['560000',    'Portugal', false],
+            ['A56000',    'Portugal', false],
+            ['A5600',     'Portugal', false],
+            ['56000A',    'Portugal', false],
+            ['A5600A',    'Portugal', false],
+            ['AAA',       'Portugal', false],
+            ['AAAA',      'Portugal', false],
+            ['AAAAA',     'Portugal', false],
+            ['A 0A1A0',   'Portugal', false],
+            ['A0 A1A0',   'Portugal', false],
+            ['A0A1 A0',   'Portugal', false],
+            ['A0A1A 0',   'Portugal', false],
+            ['A0A1a0',    'Portugal', false],
+            ['a0a1a0',    'Portugal', false],
             // good:
-            array( '1000-001',   'Portugal' , true ),
-            array( '1900-078',   'Portugal' , true ),
-            array( '1250-789',   'Portugal', true ),
-            array( null,         'Portugal', false ),
-            array( '',           'Portugal', false ),
-            array( '  ',         'Portugal', false ),
-        );
+            ['1000-001',   'Portugal' , true],
+            ['1900-078',   'Portugal' , true],
+            ['1250-789',   'Portugal', true],
+            [null,         'Portugal', false],
+            ['',           'Portugal', false],
+            ['  ',         'Portugal', false],
+        ];
     }
 
     /**

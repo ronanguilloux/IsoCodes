@@ -22,11 +22,11 @@ class ZipCode
             return false;
         }
         $methodName = 'validate'.trim(ucfirst(strtolower($country)));
-        if (!is_callable(array(__CLASS__, $methodName))) {
+        if (!is_callable([__CLASS__, $methodName])) {
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
 
-        return call_user_func_array(array(__CLASS__, $methodName), array($zipcode));
+        return call_user_func_array([__CLASS__, $methodName], [$zipcode]);
     }
 
     /**

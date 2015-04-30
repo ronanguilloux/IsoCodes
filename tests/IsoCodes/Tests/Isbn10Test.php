@@ -18,13 +18,13 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      */
     public function getValidIsbn10()
     {
-        return array(
-            array('8881837188'),
-            array('2266111566'),
-            array('2123456802'),
-            array('888 18 3 7 1-88'),
-            array('2-7605-1028-X')
-        );
+        return [
+            ['8881837188'],
+            ['2266111566'],
+            ['2123456802'],
+            ['888 18 3 7 1-88'],
+            ['2-7605-1028-X']
+        ];
     }
 
     /**
@@ -34,19 +34,19 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidIsbn10()
     {
-        return array(
-            array('8881837187'),
-            array('888183718A'),
-            array('stringof10'),
-            array(888183718),       // not a string
-            array(88818371880),     // not 10 chars found
-            array('88818371880'),   // not 10 chars found
-            array('8881837188A'),   // not numeric-only
-            array('8881837189'),    // bad checksum digit
-            array(''),
-            array(' '),
-            array(null)
-        );
+        return [
+            ['8881837187'],
+            ['888183718A'],
+            ['stringof10'],
+            [888183718],       // not a string
+            [88818371880],     // not 10 chars found
+            ['88818371880'],   // not 10 chars found
+            ['8881837188A'],   // not numeric-only
+            ['8881837189'],    // bad checksum digit
+            [''],
+            [' '],
+            [null]
+        ];
     }
 
     /**
