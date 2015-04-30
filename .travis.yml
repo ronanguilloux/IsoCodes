@@ -18,10 +18,10 @@ before_script:
 script:
   - mkdir -p build/logs
   - mkdir -p build/cov
-  - phpunit -c phpunit.xml.dist
+  - php bin/phpunit -c phpunit.xml.dist
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - php bin/coveralls -v
 
 notifications:
   email:

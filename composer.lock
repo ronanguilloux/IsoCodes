@@ -5,9 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "e858ba4178dbd90c28b19b1234cbe8d0",
-    "packages": [
-
-    ],
+    "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -723,16 +721,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.4",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/163232991e652e6efed2f8470326fffa61e848e2",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -791,7 +789,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-11 05:23:21"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2060,9 +2058,7 @@
             "time": "2014-09-13 10:57:19"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "squizlabs/php_codesniffer": 20,
@@ -2076,7 +2072,5 @@
         "php": ">=5.3.0",
         "ext-bcmath": "*"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
