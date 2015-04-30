@@ -15,7 +15,7 @@ PHP libray providing various ISO codes validators
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
 
-IsoCodes is PHP 5.3 to 5.6 compatible & supports hhvm.
+IsoCodes is PHP 5.4 to 5.6 compatible & supports hhvm.
 
 
 Build status
