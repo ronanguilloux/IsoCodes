@@ -42,6 +42,7 @@ PHP is required to be compiled with "--enable-bcmath" for some arbitrary precisi
 
 Note that common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
+
 Usage
 -----
 
@@ -100,6 +101,7 @@ Run install (will build the autoloading):
 
 Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator) library
 to get IsoCodes working as Validator for **Symfony** and **Silex**.
+
 
 Unit testing
 ------------
@@ -178,6 +180,8 @@ Even one-off contributors will be fully credited (& probably blessed through thr
 
 Special thanks
 --------------
+
+[Contributors list](https://github.com/ronanguilloux/IsoCodes/graphs/contributors): Many thanks to all!
 
 Many thanks to [IntelliJ/JetBrains/PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development!
 Any contributor having an accepted PR may receive an Open Source License Key for [PhpStorm IDE](http://www.jetbrains.com/phpstorm/download/).
