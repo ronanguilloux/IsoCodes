@@ -19,7 +19,7 @@ class ZipCode
     {
         $zipcode = trim($zipcode);
         if (empty($zipcode)) {
-            throw new \InvalidArgumentException('ERROR: The zipcode value cannot be empty.');
+            return false;
         }
         $methodName = 'validate'.trim(ucfirst(strtolower($country)));
         if (!is_callable(array(__CLASS__, $methodName))) {

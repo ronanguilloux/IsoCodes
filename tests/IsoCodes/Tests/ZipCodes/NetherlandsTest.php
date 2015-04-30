@@ -41,6 +41,9 @@ class NetherlandsTest extends \PHPUnit_Framework_TestCase
             array( '1234AA',     'Netherlands', true ),
             array( '1234 AA',    'Netherlands', true ), // Some people add a space
             array( '1023 AA',    'Netherlands', true ),
+            array( null,         'Netherlands', false ),
+            array( '',           'Netherlands', false ),
+            array( '  ',         'Netherlands', false ),
         );
     }
 
@@ -58,22 +61,6 @@ class NetherlandsTest extends \PHPUnit_Framework_TestCase
     public function testNetherlandsZipCode($code, $country, $result)
     {
         $this->assertEquals(ZipCode::validate($code, $country), $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEmptyZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate('', 'Netherlands'), false);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBlankZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate(' ', 'Netherlands'), false);
     }
 
     /**

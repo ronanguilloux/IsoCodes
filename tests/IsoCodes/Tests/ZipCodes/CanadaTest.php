@@ -37,6 +37,9 @@ class CanadaTest extends \PHPUnit_Framework_TestCase
             array( 'A0A1A 0',   'Canada', false ),
             array( 'A0A1a0',    'Canada', false ),
             array( 'a0a1a0',    'Canada', false ),
+            array( null,        'Canada', false ),
+            array( '',          'Canada', false ),
+            array( '  ',        'Canada', false ),
             // good:
             array( 'A0A 1A0',   'Canada' , true ), // Aquaforte, Avalon Peninsula, Newfoundland and Labrador
             array( 'A0A1A0',    'Canada' , true ), // Some Canadian people put a space in the middle, some don't
@@ -62,22 +65,6 @@ class CanadaTest extends \PHPUnit_Framework_TestCase
     public function testCanadianZipCode($code, $country, $result)
     {
         $this->assertEquals(ZipCode::validate($code, $country), $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testEmptyZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate('', 'Canada'), false);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testBlankZipCodeAsInvalid()
-    {
-        $this->assertEquals(ZipCode::validate(' ', 'Canada'), false);
     }
 
     /**
