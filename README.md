@@ -47,20 +47,20 @@ Usage
 -----
 
 ```php
-    // Is this bank account number ok?
-    $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
+// Is this bank account number ok?
+$isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
-    // Will my letter reach the Labrador Islands ?
-    $isCanadian = ZipCode::validate( 'A0A 1A0', 'Canada');
+// Will my letter reach the Labrador Islands ?
+$isCanadian = ZipCode::validate( 'A0A 1A0', 'Canada');
 
-    // Worldwide money transfer, anyone ?
-    $isBankable = CreditCard::validate( '12345679123456' );
+// Worldwide money transfer, anyone ?
+$isBankable = CreditCard::validate( '12345679123456' );
 
-    // Paying your taxes in Madrid?
-    $isTaxableInSpain = Nif::validate('A999999L');
+// Paying your taxes in Madrid?
+$isTaxableInSpain = Nif::validate('A999999L');
 
-    // Does this book just exists?
-    $isPublished = Isbn10::validate('2-2110-4199-X')
+// Does this book just exists?
+$isPublished = Isbn10::validate('2-2110-4199-X')
 ```
 
 
@@ -70,7 +70,7 @@ Installing
 ### Via GitHub
 
 ```bash
-    $ git clone git@github.com:ronanguilloux/IsoCodes.git
+$ git clone git@github.com:ronanguilloux/IsoCodes.git
 ```
 
 Autoloading is PSR-0 friendly.
@@ -80,21 +80,21 @@ Autoloading is PSR-0 friendly.
 Create a composer.json file:
 
 ```json
-    {
-        "require": {"ronanguilloux/isocodes": "@stable"}
-    }
+{
+    "require": {"ronanguilloux/isocodes": "@stable"}
+}
 ```
 
 Grab composer:
 
 ```bash
-    $ curl -s http://getcomposer.org/installer | php
+$ curl -s http://getcomposer.org/installer | php
 ```
 
 Run install (will build the autoloading):
 
 ```bash
-    $ php composer.phar install
+$ php composer.phar install
 ```
 
 ### With Symfony Validator
@@ -107,7 +107,7 @@ Unit testing
 ------------
 
 ```bash
-    $ phpunit --testdox --coverage-text
+$ phpunit --testdox --coverage-text
 ```
 
 
@@ -153,7 +153,7 @@ The `composer.json` already includes these  [Php Quality Assurance Toolchain](ht
 Just run:
 
 ```bash
-    $ make stats -i
+$ make stats -i
 ```
 
 XML report outputs are then generated in a new `./build` folder
