@@ -30,6 +30,8 @@ Build status
 [![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Daily Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/daily.png)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Reference Status](https://www.versioneye.com/php/ronanguilloux:isocodes/reference_badge.svg?style=flat)](https://www.versioneye.com/php/ronanguilloux:isocodes/references)
+[![Dependency Status](https://www.versioneye.com/php/ronanguilloux:isocodes/1.1.4/badge.svg)](https://www.versioneye.com/php/ronanguilloux:isocodes/1.1.4)
 
 
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
