@@ -32,10 +32,9 @@ class Siren implements IsoCodeInterface
             return false;
         }
 
-        $len = strlen($insee);
         $sum = 0;
-        for ($i = 0; $i < $len; $i++) {
-            $indice = ($len - $i);
+        for ($i = 0; $i < $length; $i++) {
+            $indice = ($length - $i);
             $tmp    = (2 - ($indice % 2)) * $insee[$i];
             if ($tmp >= 10) {
                 $tmp -= 9;
