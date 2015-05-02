@@ -29,6 +29,9 @@
         "fabpot/php-cs-fixer":                      "@stable",
         "satooshi/php-coveralls":                   "dev-master"
     },
+    "suggest": {
+        "sllh/iso-codes-validator": "For Symfony or Silex integration with ease"
+    },
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
     },
