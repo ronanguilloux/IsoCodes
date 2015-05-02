@@ -19,15 +19,15 @@ class SwifBicTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidSwiftBic()
     {
-        return array(
-            array('RBOSGGSX'),
-            array('RZTIAT22263'),
-            array('BCEELULL'),
-            array('MARKDEFF'),
-            array('GENODEF1JEV'),
-            array('UBSWCHZH80A'),
-            array('CEDELULLXXX'),
-        );
+        return [
+            ['RBOSGGSX'],
+            ['RZTIAT22263'],
+            ['BCEELULL'],
+            ['MARKDEFF'],
+            ['GENODEF1JEV'],
+            ['UBSWCHZH80A'],
+            ['CEDELULLXXX'],
+        ];
     }
 
     /**
@@ -37,13 +37,13 @@ class SwifBicTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidSwiftBic()
     {
-        return array(
-            array('CE1EL2LLFFF'),
-            array('E31DCLLFFF'),
-            array(''),
-            array(' '),
-            array(null)
-        );
+        return [
+            ['CE1EL2LLFFF'],
+            ['E31DCLLFFF'],
+            [''],
+            [' '],
+            [null]
+        ];
     }
 
     /**

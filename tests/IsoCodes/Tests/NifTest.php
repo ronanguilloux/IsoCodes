@@ -19,13 +19,13 @@ class NifTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidNifs()
     {
-        return array(
-            array('04381012H'),     // DNI
-            array('04381012h'),     // CAPS is not required
-            array('12345678Z'),     // DNI
-            array('99999999R'),     // DNI
-            array('Z6171167L'),     // NIE Z
-        );
+        return [
+            ['04381012H'],     // DNI
+            ['04381012h'],     // CAPS is not required
+            ['12345678Z'],     // DNI
+            ['99999999R'],     // DNI
+            ['Z6171167L'],     // NIE Z
+        ];
     }
 
     /**
@@ -35,19 +35,19 @@ class NifTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidNifs()
     {
-        return array(
-            array('A08000143'),     // NIF is not CIF (Código de identificación fiscal)
-            array('12345678'),      // no end control
-            array('9999999L'),      // to few numbers
-            array('999999999L'),    // to many numbers
-            array('12345678W'),     // DNI: last control digit KO
-            array('L9999999K'),     // NIF: first digit OK, end control digit KO
-            array('A9999999L'),     // NIF: first digit KO, end control digit KO
-            array('A9999999L'),     // NIF: first digit KO, end control digit OK
-            array(' '),
-            array(''),
-            array(null)
-        );
+        return [
+            ['A08000143'],     // NIF is not CIF (Código de identificación fiscal)
+            ['12345678'],      // no end control
+            ['9999999L'],      // to few numbers
+            ['999999999L'],    // to many numbers
+            ['12345678W'],     // DNI: last control digit KO
+            ['L9999999K'],     // NIF: first digit OK, end control digit KO
+            ['A9999999L'],     // NIF: first digit KO, end control digit KO
+            ['A9999999L'],     // NIF: first digit KO, end control digit OK
+            [' '],
+            [''],
+            [null]
+        ];
     }
 
     /**

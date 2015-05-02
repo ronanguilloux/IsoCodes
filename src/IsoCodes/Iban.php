@@ -22,7 +22,7 @@ class Iban implements IsoCodeInterface
     public static function validate($iban)
     {
         /*Régles de validation par pays*/
-        static $rules = array(
+        static $rules = [
             'AL' => '[0-9]{8}[0-9A-Z]{16}',
             'AD' => '[0-9]{8}[0-9A-Z]{12}',
             'AT' => '[0-9]{16}',
@@ -89,7 +89,7 @@ class Iban implements IsoCodeInterface
             'AE' => '[0-9]{19}',
             'GB' => '[A-Z]{4}[0-9]{14}',
             'CI' => '[0-9A-Z]{2}[0-9]{22}',
-        );
+        ];
         /*On vérifie la longueur minimale*/
         if (mb_strlen($iban) < 15) {
             return false;
@@ -109,8 +109,8 @@ class Iban implements IsoCodeInterface
         $check = $check.substr($iban, 0, 4);
         /*On remplace les caractères alpha par leurs valeurs décimales*/
         $check = str_replace(
-            array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
-            array('10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'),
+            ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+            ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'],
             $check
         );
 

@@ -24,13 +24,13 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     public function getValidSsn()
     {
         // generated here : http://fr.fakenamegenerator.com/social-security-number.php
-        return array(
-            array('423-05-9675'),
-            array('432-01-5257'),
-            array('600-01-4950'),
-            array('619-01-7173'),
-            array('651-01-3431')
-        );
+        return [
+            ['423-05-9675'],
+            ['432-01-5257'],
+            ['600-01-4950'],
+            ['619-01-7173'],
+            ['651-01-3431']
+        ];
     }
 
     /**
@@ -40,16 +40,16 @@ class SsnTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidSsn()
     {
-        return array(
-            array('574-09-0776'),
-            array('123-45-6789'),
-            array('1234-567-89'),
-            array('123456789'),
-            array('773-45-6789'),
-            array(''),
-            array(' '),
-            array(null)
-        );
+        return [
+            ['574-09-0776'],
+            ['123-45-6789'],
+            ['1234-567-89'],
+            ['123456789'],
+            ['773-45-6789'],
+            [''],
+            [' '],
+            [null]
+        ];
     }
 
     /**

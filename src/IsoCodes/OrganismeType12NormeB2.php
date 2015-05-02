@@ -37,11 +37,11 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
 
         $chiffres         = str_split($code);
         $rang             = array_reverse(array_keys($chiffres));
-        $chiffresOrdonnes = array();
+        $chiffresOrdonnes = [];
         foreach ($rang as $i => $valeurRang) {
             $chiffresOrdonnes[$valeurRang + 1] = $chiffres[$i];
         }
-        $resultats = array();
+        $resultats = [];
         foreach ($chiffresOrdonnes as $cle => $valeur) {
             $resultats[$valeur] = ($cle % 2 == 0) ? ($valeur * 1) : ($valeur * 2);
         }

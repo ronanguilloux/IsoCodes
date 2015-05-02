@@ -18,16 +18,16 @@ class IPTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidIPV4s()
     {
-        return array(
-            array('93.184.220.20'),     // 中华人民共和国
-            array('161.148.172.130'),   // www.brazil.gov.br
-            array('161.148.172.130'),   // www.brazil.gov.br
-            array('73.194.66.94'),      // google.co.uk
-            array('60.92.167.193'),     // france.fr
-            array('92.168.1.1'),        // LAN
-            array('0.0.0.0'),
-            array('55.255.255.255')
-        );
+        return [
+            ['93.184.220.20'],     // 中华人民共和国
+            ['161.148.172.130'],   // www.brazil.gov.br
+            ['161.148.172.130'],   // www.brazil.gov.br
+            ['73.194.66.94'],      // google.co.uk
+            ['60.92.167.193'],     // france.fr
+            ['92.168.1.1'],        // LAN
+            ['0.0.0.0'],
+            ['55.255.255.255']
+        ];
     }
 
     /**
@@ -37,15 +37,15 @@ class IPTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidIPV4s()
     {
-        return array(
-            array('000.000.000.000'),
-            array('256.255.255.255'),
-            array('2001:0db8:0000:85a3:0000:0000:ac1f:8001'),
-            array('2001:db8:0:85a3:0:0:ac1f:8001'),
-            array(''),
-            array(' '),
-            array(null)
-        );
+        return [
+            ['000.000.000.000'],
+            ['256.255.255.255'],
+            ['2001:0db8:0000:85a3:0000:0000:ac1f:8001'],
+            ['2001:db8:0:85a3:0:0:ac1f:8001'],
+            [''],
+            [' '],
+            [null]
+        ];
     }
 
     /**
@@ -55,10 +55,10 @@ class IPTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidIPV6s()
     {
-        return array(
-            array('2001:0db8:0000:85a3:0000:0000:ac1f:8001'),
-            array('2001:db8:0:85a3:0:0:ac1f:8001') // equivalent
-        );
+        return [
+            ['2001:0db8:0000:85a3:0000:0000:ac1f:8001'],
+            ['2001:db8:0:85a3:0:0:ac1f:8001'] // equivalent
+        ];
     }
 
     /**
@@ -68,14 +68,14 @@ class IPTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidIPV6s()
     {
-        return array(
-            array('0db8:0000:85a3:0000:0000:ac1f:8001'),
-            array('2001:0db8:0000:85a3:0000:0000:ac1f'),
-            array('93.184.220.20'),
-            array(''),
-            array(' '),
-            array(null)
-        );
+        return [
+            ['0db8:0000:85a3:0000:0000:ac1f:8001'],
+            ['2001:0db8:0000:85a3:0000:0000:ac1f'],
+            ['93.184.220.20'],
+            [''],
+            [' '],
+            [null]
+        ];
     }
 
     /**

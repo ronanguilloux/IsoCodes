@@ -20,7 +20,7 @@ class Vat
      * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
      * @link http://en.wikipedia.org/wiki/VAT_identification_number
      */
-    public static $patterns = array(
+    public static $patterns = [
         'AT' => 'U[A-Z\d]{8}',
         'BE' => '0\d{9}',
         'BG' => '\d{9,10}',
@@ -76,7 +76,7 @@ class Vat
         'GT' => '\d{7}-\d',
         'MX' => '\d{3} \d{6} \d{3}',
         'VE' => '[JGVE]-\d{8}-?\d',
-    );
+    ];
 
     /**
      * validate

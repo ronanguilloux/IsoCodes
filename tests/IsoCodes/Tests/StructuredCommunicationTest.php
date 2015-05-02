@@ -19,11 +19,11 @@ class StructuredCommunicationTest extends \PHPUnit_Framework_TestCase
      */
     public function getValidStructuredCommunication()
     {
-        return array(
-            array(101327481006),
-            array('101327481006'),
-            array('123456789002')
-        );
+        return [
+            [101327481006],
+            ['101327481006'],
+            ['123456789002']
+        ];
     }
 
     /**
@@ -33,18 +33,18 @@ class StructuredCommunicationTest extends \PHPUnit_Framework_TestCase
      */
     public function getInvalidStructuredCommunication()
     {
-        return array(
-            array('12345678902'),
-            array(12345678902),
-            array(123456789020),
-            array(10132748100),
-            array(10132748107),
-            array(1013274810067),
-            array(101374810060),
-            array(''),
-            array(' '),
-            array(null),
-        );
+        return [
+            ['12345678902'],
+            [12345678902],
+            [123456789020],
+            [10132748100],
+            [10132748107],
+            [1013274810067],
+            [101374810060],
+            [''],
+            [' '],
+            [null],
+        ];
     }
 
     /**
