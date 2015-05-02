@@ -4,8 +4,7 @@
     "keywords": ["ISO codes", "IBAN", "SWIFT", "BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "VAT", "NSS", "Siren", "Siret", "Ssn", "Uknin", "ZipCode", "EAN13"],
     "type": "library",
     "homepage": "https://github.com/ronanguilloux/IsoCodes",
-    "version": "1.0.0",
-    "time": "2012-10-10",
+    "version": "1.1.0",
     "authors": [
     {
         "name": "Ronan Guilloux",
