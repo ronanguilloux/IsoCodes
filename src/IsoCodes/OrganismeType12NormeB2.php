@@ -8,22 +8,21 @@ namespace IsoCodes;
 class OrganismeType12NormeB2 implements IsoCodeInterface
 {
     /**
-     * validate Clef type 1-2 Norme B2 Securité Sociale
-     * n° établissement, centre de santé, praticien, laboratoire, pharmacien, trasnporteur, fournisseur,
-     * n° accident du travail, n° d'organisme complémentaire.
+     * validate 1-2 type keys, based on Social Scurity B2 Norm
+     * French & Belgian "Clef type 1-2 Norme B2 Securité Sociale".
      *
      * @param string $code
-     * @param int    $clef
+     * @param int    $key
      *
      * @return bool
      */
-    public static function validate($code = '', $clef = -1)
+    public static function validate($code = '', $key = -1)
     {
-        if (strlen($clef) < 1) {
+        if (strlen($key) < 1) {
             return false;
         }
 
-        if (!is_numeric($clef)) {
+        if (!is_numeric($key)) {
             return false;
         }
 
@@ -35,23 +34,23 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
             return false;
         }
 
-        $chiffres         = str_split($code);
-        $rang             = array_reverse(array_keys($chiffres));
-        $chiffresOrdonnes = array();
-        foreach ($rang as $i => $valeurRang) {
-            $chiffresOrdonnes[$valeurRang + 1] = $chiffres[$i];
+        $numerals         = str_split($code);
+        $rank             = array_reverse(array_keys($numerals));
+        $orderedNumerals = array();
+        foreach ($rank as $i => $rankValue) {
+            $orderedNumerals[$rankValue + 1] = $numerals[$i];
         }
-        $resultats = array();
-        foreach ($chiffresOrdonnes as $cle => $valeur) {
-            $resultats[$valeur] = ($cle % 2 == 0) ? ($valeur * 1) : ($valeur * 2);
+        $results = array();
+        foreach ($orderedNumerals as $cle => $value) {
+            $results[$value] = ($cle % 2 == 0) ? ($value * 1) : ($value * 2);
         }
-        $addition = 0;
-        foreach ($resultats as $cle => $valeur) {
-            $addition += array_sum(str_split($valeur));
+        $sum = 0;
+        foreach ($results as $cle => $value) {
+            $sum += array_sum(str_split($value));
         }
-        $clefValide = str_split($addition);
-        $clefValide = 10 - array_pop($clefValide);
+        $validKey = str_split($sum);
+        $validKey = 10 - array_pop($validKey);
 
-        return ($clef === $clefValide);
+        return ($key === $validKey);
     }
 }

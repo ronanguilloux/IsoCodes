@@ -5,16 +5,18 @@ namespace IsoCodes;
 /**
  * Class Nif.
  *
- * El Número de Identificación Fiscal (NIF) es la manera de identificación tributaria
- * utilizada en España para las personas físicas (con documento nacional de identidad (DNI)
- * o número de identificación de extranjero (NIE) asignados por el Ministerio del Interior)
- * y las personas jurídicas.1 El antecedente del NIF es el CIF, utilizado en personas jurídicas.
- * El Real Decreto 338/1990, de 9 de marzo, regula la composición y la forma de uso del NIF,
- * hasta la entrada en vigor en enero de 2008 del Real Decreto 1065/2007, de 27 de julio.
+ * About Tax Identification Number (Spain's Número de Identificación Fiscal, NIF)
+ * or Foreign Identification Number (Spain's Número de Identificación de Extranjeror, NIE):
+ * The applicable Spanish legislation currently requires that any individual
+ * or legal entity with economic or professional interests in Spain,
+ * or involved in a relevant way for tax purposes,
+ * must hold a tax identification number (in the case of legal entities)
+ * or a foreigner identity number (for individuals).
  *
  * @source  https://github.com/alrik11es/spanish-utils
  *
  * @link    http://es.wikipedia.org/wiki/NIF
+ * @link    http://www.investinspain.org/guidetobusiness/en/2/art_2_3.html
  */
 class Nif implements IsoCodeInterface
 {
