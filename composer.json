@@ -16,10 +16,10 @@
     },
     "license": "GPL-3.0+",
     "require": {
-        "php": ">=5.4.0",
-        "ext-bcmath": "*"
+        "php": ">=5.4.0"
     },
     "require-dev": {
+        "ext-bcmath":                               "*",
         "phpunit/phpunit":                          "~4.6",
         "squizlabs/php_codesniffer":                "2.0.x-dev",
         "sebastian/phpcpd":                         "*",
@@ -30,6 +30,7 @@
         "satooshi/php-coveralls":                   "dev-master"
     },
     "suggest": {
+        "ext-bcmath": "Needed to get Iban and Bban validator working properly",
         "sllh/iso-codes-validator": "For Symfony or Silex integration with ease"
     },
     "autoload": {
