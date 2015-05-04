@@ -22,6 +22,10 @@ class Bban implements IsoCodeInterface
      */
     public static function validate($bban)
     {
+        if (!function_exists('bcmod')) {
+            throw new \RuntimeException('You should install php-bcmath to use Bban validator.');
+        }
+
         if (mb_strlen($bban) !== 23) {
             return false;
         }

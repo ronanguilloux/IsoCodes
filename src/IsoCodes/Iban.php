@@ -21,6 +21,10 @@ class Iban implements IsoCodeInterface
      */
     public static function validate($iban)
     {
+        if (!function_exists('bcmod')) {
+            throw new \RuntimeException('You should install php-bcmath to use Iban validator.');
+        }
+
         /*Régles de validation par pays*/
         static $rules = array(
             'AL' => '[0-9]{8}[0-9A-Z]{16}',
