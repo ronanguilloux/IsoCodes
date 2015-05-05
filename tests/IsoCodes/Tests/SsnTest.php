@@ -52,6 +52,64 @@ class SsnTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function getStatesToGenerate()
+    {
+        return [
+            [false],
+            ['AK'],
+            ['AL'],
+            ['AR'],
+            ['AZ'],
+            ['CA'],
+            ['CO'],
+            ['CT'],
+            ['DC'],
+            ['DE'],
+            ['FL'],
+            ['GA'],
+            ['HI'],
+            ['IA'],
+            ['ID'],
+            ['IL'],
+            ['IN'],
+            ['KS'],
+            ['KY'],
+            ['LA'],
+            ['MA'],
+            ['MD'],
+            ['ME'],
+            ['MI'],
+            ['MN'],
+            ['MO'],
+            ['MS'],
+            ['MT'],
+            ['NC'],
+            ['ND'],
+            ['NE'],
+            ['NH'],
+            ['NJ'],
+            ['NM'],
+            ['NV'],
+            ['NY'],
+            ['OH'],
+            ['OK'],
+            ['OR'],
+            ['PA'],
+            ['RI'],
+            ['SC'],
+            ['SD'],
+            ['TN'],
+            ['TX'],
+            ['UT'],
+            ['VA'],
+            ['VT'],
+            ['WA'],
+            ['WI'],
+            ['WV'],
+            ['WY'],
+        ];
+    }
+
     /**
      * testValidSsn
      *
@@ -64,6 +122,7 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     public function testValidSsn($ssn)
     {
         $this->assertTrue($this->ssn->validate($ssn));
+        $this->assertTrue(Ssn::validate($ssn));
     }
 
     /**
@@ -78,14 +137,35 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     public function testInvalidSsn($ssn)
     {
         $this->assertFalse($this->ssn->validate($ssn));
+        $this->assertFalse(Ssn::validate($ssn));
     }
 
     /**
-     * {@inheritdoc}
+     * run generate function to verify it not crash
+     *
+     * @param $state
+     *
+     * @dataProvider getStatesToGenerate
      */
+    public function testGenerate($state)
+    {
+        $this->ssn->generate($state);
+    }
+
+    /**
+     * Old constructor test. To be remove on 2.0.
+     */
+    public function testOldConstructor()
+    {
+        \PHPUnit_Framework_Error_Deprecated::$enabled = false;
+        $ssn = new Ssn();
+        \PHPUnit_Framework_Error_Deprecated::$enabled = true;
+
+        $this->assertInstanceOf('IsoCodes\Ssn', $ssn);
+    }
+
     protected function setUp()
     {
-        parent::setUp();
-        $this->ssn = new Ssn();
+        $this->ssn = Ssn::getInstance();
     }
 }
