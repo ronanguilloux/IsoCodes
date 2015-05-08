@@ -104,6 +104,11 @@ $ php composer.phar install
 Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator) library
 to get IsoCodes working as Validator for **Symfony** and **Silex**.
 
+### With CakePHP 3 project
+
+Install [gourmet/validation](https://github.com/gourmet/validation) library
+to get IsoCodes working with **CakePHP 3** validation.
+
 
 Unit testing
 ------------

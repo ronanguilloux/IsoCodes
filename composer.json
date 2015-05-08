@@ -30,7 +30,8 @@
         "satooshi/php-coveralls":                   "dev-master"
     },
     "suggest": {
-        "sllh/iso-codes-validator": "For Symfony or Silex integration with ease"
+        "sllh/iso-codes-validator": "For Symfony or Silex integration with ease",
+        "gourmet/validation": "For CakePHP 3 integration"
     },
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
