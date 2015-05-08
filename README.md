@@ -146,8 +146,7 @@ Quality assurance report
 
 Isocodes quality plan is mainly based on phpunit: it runs +/- 750 tests & assertions,
 with separated valid & invalid entries sets.
-Tests values are mainly real data or documented examples
-from standards documentation, and a few handmade values.
+Tests values are mainly real data or documented examples from standards documentation, and a few handmade values.
 
 The `composer.json` already includes these  [Php Quality Assurance Toolchain](http://phpqatools.org) libraries:
 
@@ -179,10 +178,7 @@ License Information
 Contributing Code
 -----------------
 
-The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues
-All contributors will be fully credited. Just sign up for a github account, create a fork and hack away at the codebase.
-Submit patches to: ronan.guilloux@gmail.com
-Even one-off contributors will be fully credited (& probably blessed through three generations).
+The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. All contributors will be fully credited. Just sign up for a github account, create a fork and hack away at the codebase. Submit patches to: ronan.guilloux@gmail.com. Even one-off contributors will be fully credited (& blessed through three generations).
 
 
 Special thanks
@@ -190,15 +186,4 @@ Special thanks
 
 [Contributors list](https://github.com/ronanguilloux/IsoCodes/graphs/contributors): Many thanks to all!
 
-Many thanks to [IntelliJ/JetBrains/PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development!
-Any contributor having an accepted PR may receive an Open Source License Key for [PhpStorm IDE](http://www.jetbrains.com/phpstorm/download/).
-Just ping [Ronan Guilloux via email](mailto:ronan.guilloux@gmail.com) to get one.
-
-
-TODO
-----
-
-* Various iso codes listed in http://www.credit-card.be/BankAccount/ValidationRules.htm
-* ISBN13
-* Add UK PostCode, UK Tax Code (http://www.braemoor.co.uk/software/vat.shtml)
-* US phone number : /^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/
+Many thanks to [IntelliJ/JetBrains/PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library during its first year of development!
