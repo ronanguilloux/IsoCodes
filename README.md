@@ -10,7 +10,7 @@ PHP libray providing various ISO codes validators
 * UK : National Insurance Number (NINO)
 * Belgian structured communication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
-* Zipcode for many countries: US, Canada, France, Netherlands,  Portugal, Spain, etc.
+* Zipcode for 175+ countries
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
@@ -53,7 +53,7 @@ Usage
 $isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
 
 // Will my letter reach the Labrador Islands ?
-$isCanadian = ZipCode::validate( 'A0A 1A0', 'Canada');
+$isCanadian = ZipCode::validate( 'A0A 1A0', 'CA');
 
 // Worldwide money transfer, anyone ?
 $isBankable = CreditCard::validate( '12345679123456' );
