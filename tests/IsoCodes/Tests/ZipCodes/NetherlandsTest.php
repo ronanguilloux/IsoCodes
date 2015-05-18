@@ -21,29 +21,29 @@ class NetherlandsTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // bad:
-            array( '1234',       'Netherlands', false ),
-            array( '1234A',      'Netherlands', false ),
-            array( 'AA1234',     'Netherlands', false ),
-            array( 'A1234A',     'Netherlands', false ),
-            array( '1A2A3A',     'Netherlands', false ),
-            array( '1234ABC',    'Netherlands', false ),
-            array( '123AB',      'Netherlands', false ),
-            array( '123456',     'Netherlands', false ),
-            array( 'AAAA',       'Netherlands', false ),
-            array( 'ABCD12',     'Netherlands', false ),
-            array( '1234 ABC',   'Netherlands', false ),
-            array( '12345A',     'Netherlands', false ),
-            array( '1234 5A',    'Netherlands', false ),
-            array( '0123 AA',    'Netherlands', false ), // Zipcodes cannot start with 0
-            array( '1234aa',     'Netherlands', false ),
+            array( '1234',       'NL', false ),
+            array( '1234A',      'NL', false ),
+            array( 'AA1234',     'NL', false ),
+            array( 'A1234A',     'NL', false ),
+            array( '1A2A3A',     'NL', false ),
+            array( '1234ABC',    'NL', false ),
+            array( '123AB',      'NL', false ),
+            array( '123456',     'NL', false ),
+            array( 'AAAA',       'NL', false ),
+            array( 'ABCD12',     'NL', false ),
+            array( '1234 ABC',   'NL', false ),
+            array( '12345A',     'NL', false ),
+            array( '1234 5A',    'NL', false ),
+            array( '0123 AA',    'NL', false ), // Zipcodes cannot start with 0
+            array( '1234aa',     'NL', false ),
 
             // good:
-            array( '1234AA',     'Netherlands', true ),
-            array( '1234 AA',    'Netherlands', true ), // Some people add a space
-            array( '1023 AA',    'Netherlands', true ),
-            array( null,         'Netherlands', false ),
-            array( '',           'Netherlands', false ),
-            array( '  ',         'Netherlands', false ),
+            array( '1234AA',     'NL', true ),
+            array( '1234 AA',    'NL', true ), // Some people add a space
+            array( '1023 AA',    'NL', true ),
+            array( null,         'NL', false ),
+            array( '',           'NL', false ),
+            array( '  ',         'NL', false ),
         );
     }
 
