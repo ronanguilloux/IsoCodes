@@ -39,7 +39,7 @@ class ZipCodeTest extends \PHPUnit_Framework_TestCase
     }
   
     /**
-     * testUSZipCode
+     * testZipCodeCountryMethod
      *
      * @param mixed  $code
      * @param string $country
@@ -51,6 +51,8 @@ class ZipCodeTest extends \PHPUnit_Framework_TestCase
      */
     public function testZipCodeCountryMethod($code, $country, $result)
     {
+        $this->setExpectedException("PHPUnit_Framework_Error_Deprecated");
+
         $methodName = "validate{$country}";
         $this->assertEquals(ZipCode::$methodName($code), $result);
     }

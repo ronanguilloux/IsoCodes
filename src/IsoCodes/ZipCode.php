@@ -236,10 +236,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated use validate($zipcode, 'US')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validateUS($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "US") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'US');
     }
 
@@ -247,10 +249,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated validate($zipcode, 'CA')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validateCanada($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "CA") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'CA');
     }
 
@@ -258,10 +262,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated validate($zipcode, 'FR')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validateFrance($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "FR") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'FR');
     }
 
@@ -269,10 +275,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated validate($zipcode, 'NL')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validateNetherlands($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "NL") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'NL');
     }
 
@@ -280,10 +288,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated validate($zipcode, 'PT')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validatePortugal($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "PT") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'PT');
     }
 
@@ -291,10 +301,12 @@ class ZipCode
      * @param $zipcode
      *
      * @return bool
-     * @deprecated validate($zipcode, 'ES')
+     * @deprecated since 1.2, to be removed in 2.0
      */
     public static function validateSpain($zipcode)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "ES") method instead.', E_USER_DEPRECATED);
+
         return self::validate($zipcode, 'ES');
     }
 }
