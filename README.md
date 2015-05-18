@@ -79,24 +79,10 @@ Autoloading is PSR-0 friendly.
 
 ### Via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes) & [Composer](http://getcomposer.org/doc/00-intro.md)
 
-Create a composer.json file:
-
-```json
-{
-    "require": {"ronanguilloux/isocodes": "@stable"}
-}
-```
-
-Grab composer:
+Require the latest version of `ronanguilloux/isocodes` with Composer
 
 ```bash
-$ curl -s http://getcomposer.org/installer | php
-```
-
-Run install (will build the autoloading):
-
-```bash
-$ php composer.phar install
+composer require ronanguilloux/isocodes:~1.1
 ```
 
 ### With Symfony Validator
