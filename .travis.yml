@@ -24,7 +24,7 @@ before_script:
 script:
   - mkdir -p build/logs
   - mkdir -p build/cov
-  - php bin/phpunit
+  - php bin/phpunit -d error_reporting=16384
 
 after_script:
   - php bin/coveralls -v
