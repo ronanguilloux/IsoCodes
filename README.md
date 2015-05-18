@@ -82,7 +82,7 @@ Autoloading is PSR-0 friendly.
 Require the latest version of `ronanguilloux/isocodes` with Composer
 
 ```bash
-composer require ronanguilloux/isocodes
+composer require ronanguilloux/isocodes:~1.1
 ```
 
 ### With Symfony Validator
