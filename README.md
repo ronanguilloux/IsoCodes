@@ -172,4 +172,4 @@ Special thanks
 
 [Contributors list](https://github.com/ronanguilloux/IsoCodes/graphs/contributors): Many thanks to all!
 
-Many thanks to [IntelliJ/JetBrains/PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library during its first year of development!
+Many thanks to [JetBrains PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development from the very beginning! Any contributor having an accepted PR may receive an Open Source License Key for [PhpStorm IDE](http://www.jetbrains.com/phpstorm/download/). Just ping [Ronan via email](mailto:ronan.guilloux@gmail.com) to get one.
