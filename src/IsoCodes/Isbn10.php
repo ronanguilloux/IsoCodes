@@ -4,6 +4,8 @@ namespace IsoCodes;
 
 /**
  * Class Isbn10.
+ *
+ * @deprecated since 1.2, to be removed in 2.0.
  */
 class Isbn10 implements IsoCodeInterface
 {
@@ -14,25 +16,8 @@ class Isbn10 implements IsoCodeInterface
      */
     public static function validate($isbn10)
     {
-        // removing hyphens
-        $isbn10 = str_replace(' ', '', $isbn10);
-        $isbn10 = str_replace('-', '', $isbn10); // this is a dash
-        $isbn10 = str_replace('‐', '', $isbn10); // this is an authentic hyphen
-        if (strlen($isbn10) != 10) {
-            return false;
-        }
+        trigger_error('Isbn10::validate validator is deprecated since 1.2 and will be removed in 2.0. Use Isbn::validate($value, 10) instead.', E_USER_DEPRECATED);
 
-        if (!preg_match('/\\d{9}[0-9xX]/i', $isbn10)) {
-            return false;
-        }
-        $check = 0;
-        for ($i = 0; $i < 10; $i++) {
-            if ($isbn10[$i] == 'X') {
-                $check += 10 * intval(10 - $i);
-            }
-            $check += intval($isbn10[$i]) * intval(10 - $i);
-        }
-
-        return $check % 11 == 0;
+        return Isbn::validate($isbn10, 10);
     }
 }

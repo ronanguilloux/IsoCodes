@@ -8,6 +8,7 @@ use IsoCodes\Isbn10;
  * Isbn10Test
  *
  * @covers Isocodes\Isbn10
+ * @deprecated since 1.2, to be removed in 2.0.
  */
 class Isbn10Test extends \PHPUnit_Framework_TestCase
 {
@@ -60,7 +61,9 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      */
     public function testValidIsbn10($isbn10)
     {
+        \PHPUnit_Framework_Error_Deprecated::$enabled = false;
         $this->assertTrue(Isbn10::validate($isbn10));
+        \PHPUnit_Framework_Error_Deprecated::$enabled = true;
     }
 
     /**
@@ -74,7 +77,9 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidIsbn10($isbn10)
     {
+        \PHPUnit_Framework_Error_Deprecated::$enabled = false;
         $this->assertFalse(Isbn10::validate($isbn10));
+        \PHPUnit_Framework_Error_Deprecated::$enabled = true;
     }
 
     /**
