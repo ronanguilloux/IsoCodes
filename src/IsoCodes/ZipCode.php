@@ -233,6 +233,14 @@ class ZipCode
     }
 
     /**
+     * @return array The available countries code list. ['FR', 'US', 'ZA', ...]
+     */
+    public static function getAvailableCountries()
+    {
+        return array_keys(self::$patterns);
+    }
+
+    /**
      * @param $zipcode
      *
      * @return bool

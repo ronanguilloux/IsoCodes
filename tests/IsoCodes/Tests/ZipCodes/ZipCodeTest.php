@@ -37,7 +37,7 @@ class ZipCodeTest extends \PHPUnit_Framework_TestCase
             array( '5600',      'US', false),
         );
     }
-  
+
     /**
      * testZipCodeCountryMethod
      *
@@ -83,14 +83,23 @@ class ZipCodeTest extends \PHPUnit_Framework_TestCase
      * testZipCodeException
      *
      * @expectedException InvalidArgumentException
-     * 
+     *
      * @return void
      */
     public function testZipCodeException()
     {
         $this->assertEquals(ZipCode::validate('ABC12', 'Unkown'), $result);
     }
-    
+
+    public function testGetAvailableCountries()
+    {
+        $countries = ZipCode::getAvailableCountries();
+
+        $this->assertTrue(is_array($countries));
+        $this->assertContains('FR', $countries);
+        $this->assertContains('US', $countries);
+    }
+
     /**
      * {@inheritdoc}
      */
