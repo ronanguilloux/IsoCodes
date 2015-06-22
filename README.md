@@ -50,13 +50,13 @@ Usage
 
 ```php
 // Is this bank account number ok?
-$isSwiftBic = SwiftBic::validate( 'CEDELULLXXX' );
+$isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 
 // Will my letter reach the Labrador Islands ?
-$isCanadian = ZipCode::validate( 'A0A 1A0', 'CA');
+$isCanadian = ZipCode::validate('A0A 1A0', 'CA');
 
 // Worldwide money transfer, anyone ?
-$isBankable = CreditCard::validate( '12345679123456' );
+$isBankable = CreditCard::validate('12345679123456');
 
 // Paying your taxes in Madrid?
 $isTaxableInSpain = Nif::validate('A999999L');
