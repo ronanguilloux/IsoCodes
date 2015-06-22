@@ -10,7 +10,7 @@ namespace IsoCodes;
 interface IsoCodeInterface
 {
     /**
-     * @param $value
+     * @param mixed $value
      *
      * @return bool
      */
