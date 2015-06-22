@@ -3,7 +3,7 @@ IsoCodes
 
 PHP libray providing various ISO codes validators
 
-* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, EAN13
+* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, ISBN (10 & 13), EAN13
 * European : various VAT number formats
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
@@ -62,7 +62,7 @@ $isBankable = CreditCard::validate( '12345679123456' );
 $isTaxableInSpain = Nif::validate('A999999L');
 
 // Does this book just exists?
-$isPublished = Isbn10::validate('2-2110-4199-X')
+$isPublished = Isbn::validate('2-2110-4199-X')
 ```
 
 
