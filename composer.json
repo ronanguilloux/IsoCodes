@@ -26,7 +26,7 @@
         "phploc/phploc" :                           "*",
         "phpmd/phpmd" :                             "@stable",
         "pdepend/pdepend" :                         "~2.1",
-        "fabpot/php-cs-fixer":                      "2.0.x-dev",
+        "fabpot/php-cs-fixer":                      "~1.9",
         "satooshi/php-coveralls":                   "v0.6.1"
     },
     "suggest": {

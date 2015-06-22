@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "909fe0050b47db97c3ce39f148daa108",
+    "hash": "5ca07f9b532fc8f89efe71ac3174b3aa",
     "packages": [
 
     ],
@@ -65,16 +65,16 @@
         },
         {
             "name": "fabpot/php-cs-fixer",
-            "version": "dev-master",
+            "version": "v1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "6c3710b95fb1a7ee38ef00827b313715e2cb47ca"
+                "reference": "ef528b9d3f1dd66197baabf8f77c8402c62bb9fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/6c3710b95fb1a7ee38ef00827b313715e2cb47ca",
-                "reference": "6c3710b95fb1a7ee38ef00827b313715e2cb47ca",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ef528b9d3f1dd66197baabf8f77c8402c62bb9fc",
+                "reference": "ef528b9d3f1dd66197baabf8f77c8402c62bb9fc",
                 "shasum": ""
             },
             "require": {
@@ -95,11 +95,6 @@
                 "php-cs-fixer"
             ],
             "type": "application",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\CS\\": "Symfony/CS/"
@@ -120,7 +115,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2015-06-22 19:20:36"
+            "time": "2015-06-13 09:30:19"
         },
         {
             "name": "guzzle/guzzle",
@@ -2049,8 +2044,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phpmd/phpmd": 0,
-        "fabpot/php-cs-fixer": 20
+        "phpmd/phpmd": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
