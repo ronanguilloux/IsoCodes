@@ -219,17 +219,11 @@ class ZipCode
         }
 
         $country = strtoupper($country);
-        if (isset(self::$patterns[$country])) {
-            $regexp = '/^'.self::$patterns[$country].'$/';
-
-            return (boolean) preg_match($regexp, $zipcode);
-        }
-
-        $methodName = 'validate'.trim(ucfirst(strtolower($country)));
-        if (!is_callable(array(__CLASS__, $methodName))) {
+        if (!isset(self::$patterns[$country])) {
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
-        return call_user_func_array(array(__CLASS__, $methodName), array($zipcode));
+
+        return (boolean) preg_match('/^'.self::$patterns[$country].'$/', $zipcode);
     }
 
     /**
@@ -238,83 +232,5 @@ class ZipCode
     public static function getAvailableCountries()
     {
         return array_keys(self::$patterns);
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validateUS($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "US") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'US');
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validateCanada($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "CA") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'CA');
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validateFrance($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "FR") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'FR');
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validateNetherlands($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "NL") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'NL');
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validatePortugal($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "PT") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'PT');
-    }
-
-    /**
-     * @param $zipcode
-     *
-     * @return bool
-     * @deprecated since 1.2, to be removed in 2.0
-     */
-    public static function validateSpain($zipcode)
-    {
-        trigger_error('The '.__METHOD__.' method is deprecated since version 1.2 and will be removed in 2.0. You should use the validate($zipcode, "ES") method instead.', E_USER_DEPRECATED);
-
-        return self::validate($zipcode, 'ES');
     }
 }
