@@ -5,9 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "5ca07f9b532fc8f89efe71ac3174b3aa",
-    "packages": [
-
-    ],
+    "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -1456,16 +1454,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "e96d8579fbed0c95ecf2a0501ec4f307a4aa6404"
+                "reference": "c1a26c729508f73560c1a4f767f60b8ab6b4a666"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/e96d8579fbed0c95ecf2a0501ec4f307a4aa6404",
-                "reference": "e96d8579fbed0c95ecf2a0501ec4f307a4aa6404",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/c1a26c729508f73560c1a4f767f60b8ab6b4a666",
+                "reference": "c1a26c729508f73560c1a4f767f60b8ab6b4a666",
                 "shasum": ""
             },
             "require": {
@@ -1526,7 +1524,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2015-04-28 23:28:20"
+            "time": "2015-06-24 03:16:23"
         },
         {
             "name": "symfony/config",
@@ -2039,9 +2037,7 @@
             "time": "2015-05-27 22:58:02"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "phpmd/phpmd": 0
@@ -2052,7 +2048,5 @@
         "php": ">=5.4.0",
         "ext-bcmath": "*"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
