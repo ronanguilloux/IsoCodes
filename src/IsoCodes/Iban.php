@@ -21,7 +21,7 @@ class Iban implements IsoCodeInterface
      */
     public static function validate($iban)
     {
-        /*Régles de validation par pays*/
+        // Per country validation rules
         static $rules = array(
             'AL' => '[0-9]{8}[0-9A-Z]{16}',
             'AD' => '[0-9]{8}[0-9A-Z]{12}',
@@ -90,32 +90,30 @@ class Iban implements IsoCodeInterface
             'GB' => '[A-Z]{4}[0-9]{14}',
             'CI' => '[0-9A-Z]{2}[0-9]{22}',
         );
-        /*On vérifie la longueur minimale*/
+        // Min length check
         if (mb_strlen($iban) < 15) {
             return false;
         }
-        /*On récupère le code ISO du pays*/
+        // Fetch country code from IBAN
         $ctr = substr($iban, 0, 2);
         if (isset($rules[$ctr]) === false) {
             return false;
         }
-        /*On récupère la règle de validation en fonction du pays*/
+        // Fetch country validation rule
         $check = substr($iban, 4);
-        /*Si la règle n'est pas bonne l'IBAN n'est pas valide*/
         if (preg_match('~^'.$rules[$ctr].'$~', $check) !== 1) {
             return false;
         }
-        /*On récupère la chaine qui permet de calculer la validation*/
+        // Fetch needed string for validation
         $check = $check.substr($iban, 0, 4);
-        /*On remplace les caractères alpha par leurs valeurs décimales*/
+        // Replace characters by decimal values
         $check = str_replace(
             array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             array('10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'),
             $check
         );
 
-        /*On effectue la vérification finale*/
-
+        // Final check
         return bcmod($check, 97) === '1';
     }
 }
