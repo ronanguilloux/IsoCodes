@@ -63,6 +63,7 @@ class SsnTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidSsn($ssn)
     {
+        $this->assertTrue(Ssn::validate($ssn));
         $this->assertTrue($this->ssn->validate($ssn));
     }
 
@@ -77,6 +78,7 @@ class SsnTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidSsn($ssn)
     {
+        $this->assertFalse(Ssn::validate($ssn));
         $this->assertFalse($this->ssn->validate($ssn));
     }
 
