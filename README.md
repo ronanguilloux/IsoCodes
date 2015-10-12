@@ -1,9 +1,9 @@
 IsoCodes
 --------
 
-PHP libray providing various ISO codes validators
+PHP library providing various ISO code validators
 
-* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, ISBN (10 & 13), EAN13
+* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, ISBN (10 & 13) and EAN13
 * European : various VAT number formats
 * France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US : Social Security number
@@ -40,7 +40,7 @@ Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scruti
 Requirements
 ------------
 
-PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematics checks (Iban & BBan ISO-codes).
+PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematic checks (IBAN & BBAN ISO-codes).
 
 Note that common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
@@ -61,7 +61,7 @@ $isBankable = CreditCard::validate('12345679123456');
 // Paying your taxes in Madrid?
 $isTaxableInSpain = Nif::validate('A999999L');
 
-// Does this book just exists?
+// Does this book just exist?
 $isPublished = Isbn::validate('2-2110-4199-X')
 ```
 
@@ -121,7 +121,7 @@ Usual tasks:
 Other specific tasks:
 
 	To evaluate code coverage:			        make codecoverage
-	To run a simple continuous tests server:	mak continuous
+	To run a simple continuous tests server:	make continuous
 	To dry-fix code style issues:			    make dry-fix
 	To evaluate code quality stats:			    make stats
 	To update vendors using Composer:		    make update
@@ -131,8 +131,8 @@ Quality assurance report
 ------------------------
 
 Isocodes quality plan is mainly based on phpunit: it runs +/- 750 tests & assertions,
-with separated valid & invalid entries sets.
-Tests values are mainly real data or documented examples from standards documentation, and a few handmade values.
+with separated valid & invalid entry sets.
+Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 
 The `composer.json` already includes these  [Php Quality Assurance Toolchain](http://phpqatools.org) libraries:
 
