@@ -56,14 +56,13 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      * @param mixed $isbn10
      *
      * @dataProvider getValidIsbn10
+     * @group legacy
      *
      * @return void
      */
     public function testValidIsbn10($isbn10)
     {
-        \PHPUnit_Framework_Error_Deprecated::$enabled = false;
         $this->assertTrue(Isbn10::validate($isbn10));
-        \PHPUnit_Framework_Error_Deprecated::$enabled = true;
     }
 
     /**
@@ -72,14 +71,13 @@ class Isbn10Test extends \PHPUnit_Framework_TestCase
      * @param mixed $isbn10
      *
      * @dataProvider getInvalidIsbn10
+     * @group legacy
      *
      * @return void
      */
     public function testInvalidIsbn10($isbn10)
     {
-        \PHPUnit_Framework_Error_Deprecated::$enabled = false;
         $this->assertFalse(Isbn10::validate($isbn10));
-        \PHPUnit_Framework_Error_Deprecated::$enabled = true;
     }
 
     /**

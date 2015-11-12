@@ -27,7 +27,8 @@
         "phpmd/phpmd" :                             "@stable",
         "pdepend/pdepend" :                         "~2.1",
         "fabpot/php-cs-fixer":                      "~1.9",
-        "satooshi/php-coveralls":                   "v0.6.1"
+        "satooshi/php-coveralls":                   "v0.6.1",
+        "symfony/phpunit-bridge":                   "^2.7.4"
     },
     "suggest": {
         "sllh/iso-codes-validator": "For Symfony or Silex integration with ease",
