@@ -8,22 +8,27 @@ php:
   - 7.0
   - hhvm
 
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: hhvm
+sudo: false
 
 cache:
   directories:
     - $HOME/.composer/cache
 
+matrix:
+  include:
+    - php: 5.4
+      env: COMPOSER_FLAGS="--prefer-lowest"
+  allow_failures:
+    - php: 7.0
+    - php: hhvm
+
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction
+  - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - composer config -q github-oauth.github.com $GITHUB_OAUTH_TOKEN
+  - travis_wait composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
-  - mkdir -p build/logs
-  - mkdir -p build/cov
+  - mkdir -p build/logs build/cov
   - php bin/phpunit -d error_reporting=16384
 
 after_script:
