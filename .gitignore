@@ -1,7 +1,4 @@
-# Composer
-composer.phar
-
+composer.lock
 vendor/*
 build/*
 bin/*
-
