@@ -76,7 +76,7 @@ unit: vendor/autoload.php
 
 continuous: vendor/autoload.php
 	@echo "Starting continuous tests..."
-	@while true; do bin/phpunit -c build/phpunit.xml -v; done
+	@while true; do bin/phpunit -v; done
 
 sniff: vendor/autoload.php
 	@bin/phpcs --standard=PSR2 src -n
@@ -94,7 +94,7 @@ cs-fix:
 quality: sniff dry-fix
 
 # packagist-based dev tools to add to your composer.json. See http://phpqatools.org
-stats: quality done
+stats: build quality done
 	@echo "Some stats about code quality"
 	@bin/phploc src
 	@bin/phploc tests
