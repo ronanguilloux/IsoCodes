@@ -217,10 +217,29 @@ EOT;
     public $possibleGroups = array(1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 2, 4, 6, 8, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99);
 
     /**
-     * Cleans the high group number list so it is useful.
+     * @return Ssn
      */
-    public function __construct()
+    public static function getInstance()
     {
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new Ssn(true);
+        }
+
+        return $instance;
+    }
+
+    /**
+     * Cleans the high group number list so it is useful.
+     *
+     * @param bool $fromInstance DO NOT USE IT. It's a flag to determine if constructor is called from getInstance or not.
+     */
+    public function __construct($fromInstance = false)
+    {
+        if ($fromInstance !== true) {
+            trigger_error('Manual instantiation of '.__CLASS__.' is deprecated since version 1.2 and will be removed in 2.0. Use the Ssn::getInstance or Ssn::validate instead.', E_USER_DEPRECATED);
+        }
+
         $highgroup = $this->highgroup;
 
         // Trim the high group list and remove asterisks, fix space/tabs, and replace new lines with tabs.
@@ -243,6 +262,14 @@ EOT;
                 }
             }
         }
+    }
+
+    private function __clone()
+    {
+    }
+
+    private function __wakeup()
+    {
     }
 
     /**
@@ -290,7 +317,7 @@ EOT;
      *
      * @return bool : false, or two letter state abbreviation if it is valid
      */
-    public function validate($ssn)
+    public static function validate($ssn)
     {
         if (!is_string($ssn)) {
             return false;
@@ -298,9 +325,11 @@ EOT;
         if (trim($ssn) === '') {
             return false;
         }
-        $statePrefixes = $this->statePrefixes;
-        $highgroup      = $this->highgroup;
-        $possibleGroups = $this->possibleGroups;
+
+        $validator = self::getInstance();
+        $statePrefixes = $validator->statePrefixes;
+        $highgroup      = $validator->highgroup;
+        $possibleGroups = $validator->possibleGroups;
 
         // Split up the SSN
         // If not 9 or 11 long, then return false
