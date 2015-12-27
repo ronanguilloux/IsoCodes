@@ -4,29 +4,29 @@ namespace IsoCodes;
 
 /**
  * @example :
- * Instantiate the class
- * $ssn = new ssn();
  * // Generate a SSN for California
- * echo "\n" . $ssn->generate('AK');
- * echo "\n" . $ssn->generate('AL');
- * echo "\n" . $ssn->generate('AR');
- * echo "\n" . $ssn->generate('AZ');
- * echo "\n" . $ssn->generate('CA');
- * echo "\n" . $ssn->generate('CO');
+ * echo "\n" . Ssn::generate('AK');
+ * echo "\n" . Ssn::generate('AL');
+ * echo "\n" . Ssn::generate('AR');
+ * echo "\n" . Ssn::generate('AZ');
+ * echo "\n" . Ssn::generate('CA');
+ * echo "\n" . Ssn::generate('CO');
  * echo '--';
  * // Validate a SSN
- * echo $ssn->validate('557-26-9048');
+ * echo Ssn::validate('557-26-9048');
  *
  * @source  : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
  */
-class Ssn
+class Ssn implements IsoCodeInterface
 {
+    protected static $initialized = false;
+
     // Populate this variable with the high group list provided by the Social Security Administration:
     // http://www.ssa.gov/employer/ssnvhighgroup.htm
 
     // We only want the numbers. Omit the explanatory text at the beginning of the file.
     // This list is from September 2007
-    public $highgroup = <<<EOT
+    public static $highgroup = <<<EOT
 001 06 002 04	003 04	004 08	005 08	006 08
         007 06 008 90	009 90 010 90 011 90 012 90
         013 90	014 90	015 90	016 90	017 90	018 90
@@ -157,7 +157,7 @@ EOT;
 
     // This information is obtained from:
     // http://www.ssa.gov/employer/stateweb.htm
-    public $statePrefixes = array(
+    public static $statePrefixes = array(
         'AK' => array(574),
         'AL' => array(416, 417, 418, 419, 420, 421, 422, 423, 424),
         'AR' => array(429, 430, 431, 432, 676, 677, 678, 679),
@@ -211,17 +211,22 @@ EOT;
         'WY' => array(520),
     );
 
-    public $states = array('AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY');
+    public static $states = array('AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY');
 
     // The SSA uses a funky method of figuring out what group number to use next. This area has them in the proper order and makes it easier to generate a SSN.
-    public $possibleGroups = array(1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 2, 4, 6, 8, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99);
+    public static $possibleGroups = array(1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 2, 4, 6, 8, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99);
+
+    public function __construct()
+    {
+        @trigger_error('Instantiating Ssn validator is deprecated since version 1.3. Use Ssn::validate($ssn) instead.', E_USER_DEPRECATED);
+    }
 
     /**
      * Cleans the high group number list so it is useful.
      */
-    public function __construct()
+    protected static function initialize()
     {
-        $highgroup = $this->highgroup;
+        $highgroup = static::$highgroup;
 
         // Trim the high group list and remove asterisks, fix space/tabs, and replace new lines with tabs.
         // The data isn't formatted well so we have to do quite a bit of random replacing.
@@ -239,7 +244,7 @@ EOT;
                 $temp = explode(' ', $value);
                 if (isset($temp[1])) {
                     $cleangroup[(int) trim($temp[0])] = (int) trim($temp[1]);
-                    $this->highgroup                  = (string) $cleangroup;
+                    static::$highgroup                = (string) $cleangroup;
                 }
             }
         }
@@ -253,12 +258,17 @@ EOT;
      *
      * @return false|string (false: bad state found)
      */
-    public function generate($state = false, $separator = '-')
+    public static function generate($state = false, $separator = '-')
     {
-        $states         = $this->states;
-        $statePrefixes  = $this->statePrefixes;
-        $highgroup      = $this->highgroup;
-        $possibleGroups = $this->possibleGroups;
+        if (!static::$initialized) {
+            static::initialize();
+            static::$initialized = true;
+        }
+
+        $states         = static::$states;
+        $statePrefixes  = static::$statePrefixes;
+        $highgroup      = static::$highgroup;
+        $possibleGroups = static::$possibleGroups;
 
         if ($state === false) {
             $state = $states[mt_rand(0, count($states) - 1)];
@@ -290,17 +300,22 @@ EOT;
      *
      * @return bool : false, or two letter state abbreviation if it is valid
      */
-    public function validate($ssn)
+    public static function validate($ssn)
     {
+        if (!static::$initialized) {
+            static::initialize();
+            static::$initialized = true;
+        }
+
         if (!is_string($ssn)) {
             return false;
         }
         if (trim($ssn) === '') {
             return false;
         }
-        $statePrefixes = $this->statePrefixes;
-        $highgroup      = $this->highgroup;
-        $possibleGroups = $this->possibleGroups;
+        $statePrefixes  = static::$statePrefixes;
+        $highgroup      = static::$highgroup;
+        $possibleGroups = static::$possibleGroups;
 
         // Split up the SSN
         // If not 9 or 11 long, then return false
