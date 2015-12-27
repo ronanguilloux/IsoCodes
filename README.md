@@ -11,6 +11,7 @@ PHP library providing various ISO code validators
 * Belgian structured communication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 * Zipcode for 175+ countries
+* SEDOL: Stock Exchange Daily Official List
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
