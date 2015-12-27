@@ -20,14 +20,14 @@
         "ext-bcmath": "*"
     },
     "require-dev": {
-        "phpunit/phpunit":                          "~4.7",
+        "phpunit/phpunit":                          "~5.1",
         "squizlabs/php_codesniffer":                "~2.3",
         "sebastian/phpcpd":                         "*",
         "phploc/phploc" :                           "*",
         "phpmd/phpmd" :                             "@stable",
         "pdepend/pdepend" :                         "~2.1",
         "fabpot/php-cs-fixer":                      "~1.9",
-        "satooshi/php-coveralls":                   "v0.6.1",
+        "satooshi/php-coveralls":                   "~0.7",
         "symfony/phpunit-bridge":                   "^2.7.4"
     },
     "suggest": {
