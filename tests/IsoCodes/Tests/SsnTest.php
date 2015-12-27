@@ -11,10 +11,6 @@ use IsoCodes\Ssn;
  */
 class SsnTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var Ssn
-     */
-    protected $ssn;
 
     /**
      * getValidSSN: data Provider
@@ -64,7 +60,6 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     public function testValidSsn($ssn)
     {
         $this->assertTrue(Ssn::validate($ssn));
-        $this->assertTrue($this->ssn->validate($ssn));
     }
 
     /**
@@ -79,15 +74,6 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     public function testInvalidSsn($ssn)
     {
         $this->assertFalse(Ssn::validate($ssn));
-        $this->assertFalse($this->ssn->validate($ssn));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->ssn = new Ssn();
-    }
 }
