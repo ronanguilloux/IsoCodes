@@ -29,7 +29,7 @@ class CreditCard implements IsoCodeInterface
 
         //resultat de l'addition de tous les chiffres
         $tot = 0;
-        for ($i = $length - 1; $i >= 0; $i--) {
+        for ($i = $length - 1; $i >= 0; --$i) {
             $digit = substr($creditCard, $i, 1);
 
             if ((($length - $i) % 2) == 0) {
@@ -41,6 +41,6 @@ class CreditCard implements IsoCodeInterface
             $tot += (int) $digit;
         }
 
-        return (($tot % 10) == 0);
+        return ($tot % 10) == 0;
     }
 }

@@ -37,16 +37,16 @@ class Cif implements IsoCodeInterface
         if (preg_match('/^[ABCDEFGHJKNPQRSUVW]{1}/', $cif)) {
             if (in_array($cif[0], array('A', 'B', 'E', 'H'))) {
                 // Numerico
-                return ($cif[8] == $n);
+                return $cif[8] == $n;
             } elseif (in_array($cif[0], array('K', 'P', 'Q', 'S'))) {
                 // Letras
-                return ($cif[8] == $cifCodes[$n]);
+                return $cif[8] == $cifCodes[$n];
             } else {
                 // Alfanumérico
                 if (is_numeric($cif[8])) {
-                    return ($cif[8] == $n);
+                    return $cif[8] == $n;
                 } else {
-                    return ($cif[8] == $cifCodes[$n]);
+                    return $cif[8] == $cifCodes[$n];
                 }
             }
         }

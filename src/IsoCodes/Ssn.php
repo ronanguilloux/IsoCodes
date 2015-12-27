@@ -244,7 +244,7 @@ EOT;
                 $temp = explode(' ', $value);
                 if (isset($temp[1])) {
                     $cleangroup[(int) trim($temp[0])] = (int) trim($temp[1]);
-                    static::$highgroup                = (string) $cleangroup;
+                    static::$highgroup = (string) $cleangroup;
                 }
             }
         }
@@ -265,9 +265,9 @@ EOT;
             static::$initialized = true;
         }
 
-        $states         = static::$states;
-        $statePrefixes  = static::$statePrefixes;
-        $highgroup      = static::$highgroup;
+        $states = static::$states;
+        $statePrefixes = static::$statePrefixes;
+        $highgroup = static::$highgroup;
         $possibleGroups = static::$possibleGroups;
 
         if ($state === false) {
@@ -313,27 +313,27 @@ EOT;
         if (trim($ssn) === '') {
             return false;
         }
-        $statePrefixes  = static::$statePrefixes;
-        $highgroup      = static::$highgroup;
+        $statePrefixes = static::$statePrefixes;
+        $highgroup = static::$highgroup;
         $possibleGroups = static::$possibleGroups;
 
         // Split up the SSN
         // If not 9 or 11 long, then return false
         $length = strlen($ssn);
         if ($length == 9) {
-            $areaNumber  = substr($ssn, 0, 3);
+            $areaNumber = substr($ssn, 0, 3);
             $groupNumber = substr($ssn, 3, 2);
-            $lastFour    = substr($ssn, 5);
+            $lastFour = substr($ssn, 5);
         } elseif ($length == 11) {
-            $areaNumber  = substr($ssn, 0, 3);
+            $areaNumber = substr($ssn, 0, 3);
             $groupNumber = substr($ssn, 4, 2);
-            $lastFour    = substr($ssn, 7);
+            $lastFour = substr($ssn, 7);
         } else {
             return false;
         }
 
         // Strip leading zeros
-        $areaNumber  = ltrim($areaNumber, 0);
+        $areaNumber = ltrim($areaNumber, 0);
         $groupNumber = ltrim($groupNumber, 0);
 
         // Check if parts are numeric

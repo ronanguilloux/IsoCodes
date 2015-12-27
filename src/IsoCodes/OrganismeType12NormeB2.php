@@ -34,8 +34,8 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
             return false;
         }
 
-        $numerals         = str_split($code);
-        $rank             = array_reverse(array_keys($numerals));
+        $numerals = str_split($code);
+        $rank = array_reverse(array_keys($numerals));
         $orderedNumerals = array();
         foreach ($rank as $i => $rankValue) {
             $orderedNumerals[$rankValue + 1] = $numerals[$i];
@@ -51,6 +51,6 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
         $validKey = str_split($sum);
         $validKey = 10 - array_pop($validKey);
 
-        return ($key === $validKey);
+        return $key === $validKey;
     }
 }

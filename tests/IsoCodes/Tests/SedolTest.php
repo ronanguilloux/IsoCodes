@@ -1,6 +1,7 @@
 <?php
 
 namespace IsoCodes\Tests;
+
 use IsoCodes\Sedol;
 
 /**

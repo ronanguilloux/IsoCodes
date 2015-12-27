@@ -31,6 +31,6 @@ class Sedol implements IsoCodeInterface
         }
         $check = (10 - $sum % 10) % 10;
 
-        return $value === $char6 . $check;
+        return $value === $char6.$check;
     }
 }

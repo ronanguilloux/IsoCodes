@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Isbn
+ * Class Isbn.
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
@@ -11,7 +11,7 @@ class Isbn implements IsoCodeInterface
 {
     /**
      * @param string   $isbn
-     * @param int|null $type  10 or 13. Leave empty for both.
+     * @param int|null $type 10 or 13. Leave empty for both.
      *
      * @return bool
      */
@@ -45,7 +45,7 @@ class Isbn implements IsoCodeInterface
             return false;
         }
         $check = 0;
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             if ($isbn10[$i] == 'X') {
                 $check += 10 * intval(10 - $i);
             }

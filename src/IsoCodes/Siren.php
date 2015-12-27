@@ -33,15 +33,15 @@ class Siren implements IsoCodeInterface
         }
 
         $sum = 0;
-        for ($i = 0; $i < $length; $i++) {
+        for ($i = 0; $i < $length; ++$i) {
             $indice = ($length - $i);
-            $tmp    = (2 - ($indice % 2)) * $insee[$i];
+            $tmp = (2 - ($indice % 2)) * $insee[$i];
             if ($tmp >= 10) {
                 $tmp -= 9;
             }
             $sum += $tmp;
         }
 
-        return (($sum % 10) == 0);
+        return ($sum % 10) == 0;
     }
 }

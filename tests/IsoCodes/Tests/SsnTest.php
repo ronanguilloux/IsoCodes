@@ -75,5 +75,4 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertFalse(Ssn::validate($ssn));
     }
-
 }

@@ -25,9 +25,9 @@ class Bban implements IsoCodeInterface
         if (mb_strlen($bban) !== 23) {
             return false;
         }
-        $key     = substr($bban, -2);
-        $bank    = substr($bban, 0, 5);
-        $branch  = substr($bban, 5, 5);
+        $key = substr($bban, -2);
+        $bank = substr($bban, 0, 5);
+        $branch = substr($bban, 5, 5);
         $account = substr($bban, 10, 11);
         $account = strtr(
             $account,

@@ -8,7 +8,7 @@ namespace IsoCodes;
 class ZipCode
 {
     /**
-     * ZipCode patterns, generated from http://i18napis.appspot.com (updated: 2015-05-08)
+     * ZipCode patterns, generated from http://i18napis.appspot.com (updated: 2015-05-08).
      *
      * <code>
      *  $patterns = [];
@@ -23,7 +23,7 @@ class ZipCode
      *  var_export($patterns);
      * </code>
      */
-    protected static $patterns = array (
+    protected static $patterns = array(
       'AC' => 'ASCN 1ZZ',
       'AD' => 'AD[1-7]0\\d',
       'AF' => '\\d{4}',
@@ -204,8 +204,8 @@ class ZipCode
     );
 
     /**
-     * @param  string $zipcode
-     * @param  string $country
+     * @param string $zipcode
+     * @param string $country
      *
      * @return bool
      *
