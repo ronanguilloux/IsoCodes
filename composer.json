@@ -16,7 +16,7 @@
     },
     "license": "GPL-3.0+",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.6.0",
         "ext-bcmath": "*"
     },
     "require-dev": {
