@@ -21,6 +21,7 @@ matrix:
       env: COMPOSER_FLAGS="--prefer-lowest"
   allow_failures:
     - php: nightly
+  fast_finish: true
 
 before_script:
   - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
