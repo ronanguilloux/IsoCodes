@@ -24,6 +24,7 @@ class IsinTest extends \PHPUnit_Framework_TestCase
             array('de0008474008'), // DWS INVESTA Fonds Kurs
             array('LU0056994014'), // ABN AMRO CHINA EQUITY Fonds
             array('AU0000XVGZA3'), // Treasury Corporation of Victoria
+            array('AU0000VXGZA3'), // same, mis-typed, still OK even though two letters have been transposed
             array('GB0002634946'), // BAE Systems plc
             array('GB0004005475'), // HSBC HOLDINGS PLC
             array('FR0004038099'), // GFI Informatique
