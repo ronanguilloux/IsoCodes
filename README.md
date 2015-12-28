@@ -12,6 +12,7 @@ PHP library providing various ISO code validators
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 * Zipcode for 175+ countries
 * SEDOL: Stock Exchange Daily Official List
+* ISIN: International Securities Identification Number
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
@@ -50,6 +51,9 @@ Usage
 -----
 
 ```php
+// Is Apple Inc. a tradable financial asset?
+$isISIN = Isin::validate('US0378331005');
+
 // Is this bank account number ok?
 $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 
