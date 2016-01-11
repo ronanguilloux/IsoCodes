@@ -53,7 +53,8 @@ class Isin implements IsoCodeInterface
         // Multiply the group containing the rightmost character
         $simple = ('left' === $rightmost) ? $right : $left;
         $doubled = ('left' === $rightmost) ? $left : $right;
-        for ($i = 0; $i < count($doubled); ++$i) {
+        $doubledCount = count($doubled);
+        for ($i = 0; $i < $doubledCount; ++$i) {
             $digit = $doubled[$i] * 2;
             if ($digit > 9) {
                 $digit = array_sum(str_split($digit));
