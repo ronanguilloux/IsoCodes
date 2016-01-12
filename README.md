@@ -11,6 +11,7 @@ PHP library providing various ISO code validators
 * Belgian structured communication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 * Zipcode for 175+ countries
+* PhoneNumber for for all countries/regions of the world
 * SEDOL: Stock Exchange Daily Official List
 * ISIN: International Securities Identification Number
 
@@ -66,8 +67,11 @@ $isBankable = CreditCard::validate('12345679123456');
 // Paying your taxes in Madrid?
 $isTaxableInSpain = Nif::validate('A999999L');
 
-// Does this book just exist?
+// Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
+
+// Calling a phone number somewhere in Palo Alto?
+$isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 ```
 
 
