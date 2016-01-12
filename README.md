@@ -1,19 +1,46 @@
-IsoCodes
---------
+# IsoCodes
 
-PHP library providing various ISO code validators
+PHP library providing various ISO code validators (list below)
 
-* International : IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, ISBN (10 & 13) and EAN13
-* European : various VAT number formats
-* France : Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
-* US : Social Security number
-* UK : National Insurance Number (NINO)
-* Belgian structured communication ("communication structurée")
-* Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
-* Zipcode for 175+ countries
-* PhoneNumber for for all countries/regions of the world
-* SEDOL: Stock Exchange Daily Official List
+## Usage
+
+```php
+// Will my letter reach the Labrador Islands ?
+$isCanadian = ZipCode::validate('A0A 1A0', 'CA');
+
+// Worldwide money transfer, anyone ?
+$isBankable = CreditCard::validate('12345679123456');
+
+// Paying your taxes in Madrid?
+$isTaxableInSpain = Nif::validate('A999999L');
+
+// Publishing books?
+$isPublished = Isbn::validate('2-2110-4199-X')
+
+// Calling phone numbers in Palo Alto?
+$isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
+
+// Should I buy Apple stock?
+$isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
+
+// Is this bank account number ok?
+$isSwiftBic = SwiftBic::validate('CEDELULLXXX');
+```
+
+
+## ISO code Validations available:
+
+* International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
+* ZIP code validators for 175+ countries
+* Phone number validation for for all countries/regions of the world
+* Industry standards: ISBN (10 & 13) and EAN13
 * ISIN: International Securities Identification Number
+* European VAT / tax system: various VAT number formats
+* France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
+* US: Social Security number
+* UK: National Insurance Number (NINO)
+* Belgium: Structured Ccommunication ("communication structurée")
+* Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
@@ -21,8 +48,8 @@ Each validator is illustrated by a unit test case.
 IsoCodes is compatible with all versions of PHP that are [actively supported](http://php.net/supported-versions.php) by the PHP project, plus hhvm.
 
 
-Build status
-------------
+## Build status
+
 
 [![License](https://poser.pugx.org/ronanguilloux/isocodes/license.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Latest Stable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/stable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
@@ -40,43 +67,14 @@ Build status
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
 
-Requirements
-------------
+## Requirements
 
 PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematic checks (IBAN & BBAN ISO-codes).
 
 Note that common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
 
-Usage
------
-
-```php
-// Is Apple Inc. a tradable financial asset?
-$isISIN = Isin::validate('US0378331005');
-
-// Is this bank account number ok?
-$isSwiftBic = SwiftBic::validate('CEDELULLXXX');
-
-// Will my letter reach the Labrador Islands ?
-$isCanadian = ZipCode::validate('A0A 1A0', 'CA');
-
-// Worldwide money transfer, anyone ?
-$isBankable = CreditCard::validate('12345679123456');
-
-// Paying your taxes in Madrid?
-$isTaxableInSpain = Nif::validate('A999999L');
-
-// Publishing books?
-$isPublished = Isbn::validate('2-2110-4199-X')
-
-// Calling a phone number somewhere in Palo Alto?
-$isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
-```
-
-
-Installing
-----------
+## Installing
 
 ### Via GitHub
 
@@ -105,16 +103,14 @@ Install [gourmet/validation](https://github.com/gourmet/validation) library
 to get IsoCodes working with **CakePHP 3** validation.
 
 
-Unit testing
-------------
+## Unit testing
 
 ```bash
 $ phpunit --testdox --coverage-text
 ```
 
 
-Make utilities
---------------
+## Make utilities
 
 For development & contribution purpose only,
 a Makefile provides various tools to check your code style, quality & test coverage:
@@ -136,10 +132,10 @@ Other specific tasks:
 	To update vendors using Composer:		    make update
 ```
 
-Quality assurance report
-------------------------
 
-Isocodes quality plan is mainly based on phpunit: it runs +/- 750 tests & assertions,
+## Quality assurance report
+
+Isocodes quality plan is mainly based on phpunit: it runs 900+ unit tests,
 with separated valid & invalid entry sets.
 Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 
@@ -163,21 +159,18 @@ Code covering report built using [Coveralls.io](https://coveralls.io/r/ronanguil
 [How-to generate such code coverage report using PHPUnit](https://github.com/satooshi/php-coveralls/blob/master/README.md).
 
 
-License Information
--------------------
+## License Information
 
 * GNU GPL v3
 * You can find a copy of this software here: https://github.com/ronanguilloux/IsoCodes
 
 
-Contributing Code
------------------
+## Contributing Code
 
 The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. All contributors will be fully credited. Just sign up for a github account, create a fork and hack away at the codebase. Submit patches to: ronan.guilloux@gmail.com. Even one-off contributors will be fully credited (& blessed through three generations).
 
 
-Special thanks
---------------
+## Special thanks
 
 [Contributors list](https://github.com/ronanguilloux/IsoCodes/graphs/contributors): Many thanks to all!
 
