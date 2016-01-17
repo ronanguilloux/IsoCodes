@@ -10,9 +10,9 @@ class Isin implements IsoCodeInterface
     /**
      * Validate an ISIN (International Securities Identification Number, ISO 6166).
      *
-     * @see https://en.wikipedia.org/wiki/International_Securities_Identification_Number#Examples
-     *
      * @param string $isin ISIN to be validated
+     *
+     * @see https://en.wikipedia.org/wiki/International_Securities_Identification_Number#Examples
      *
      * @return bool true if ISIN is valid
      */

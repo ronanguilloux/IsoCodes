@@ -9,7 +9,7 @@ namespace IsoCodes;
  *
  * @see http://ec.europa.eu/taxation_customs/vies/faq.html
  */
-class Vat
+class Vat implements IsoCodeInterface
 {
     /**
      * Regular expression patterns per country code.
