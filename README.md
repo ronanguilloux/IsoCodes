@@ -167,7 +167,8 @@ Code covering report built using [Coveralls.io](https://coveralls.io/r/ronanguil
 
 ## Contributing Code
 
-The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. All contributors will be fully credited. Just sign up for a github account, create a fork and hack away at the codebase. Submit patches to: ronan.guilloux@gmail.com. Even one-off contributors will be fully credited (& blessed through three generations).
+The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. 
+See [Contributing.md](Contributing.md).
 
 
 ## Special thanks
