@@ -32,7 +32,7 @@ $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 
 * International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
 * ZIP code validators for 175+ countries
-* Phone number validation for for all countries/regions of the world
+* Phone number validation for all countries/regions of the world
 * Industry standards: ISBN (10 & 13) and EAN13
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
