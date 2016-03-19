@@ -17,6 +17,9 @@ $isTaxableInSpain = Nif::validate('A999999L');
 // Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
 
+// Trading items in GS-1 system? (GTIN-13, EAN·UCC-13, EAN-13, CIP, etc)
+$isEAN13 = Gtin13::validate('4719512002889')
+
 // Calling phone numbers in Palo Alto?
 $isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 
@@ -33,7 +36,7 @@ $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 * International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
-* Industry standards: ISBN (10 & 13) and EAN13
+* GS-1 Industry standards: ISBN-10, ISBN-13, GTIN-13, EAN-13, UCC-13, GTIN-14, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2

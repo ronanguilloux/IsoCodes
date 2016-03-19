@@ -3,33 +3,22 @@
 namespace IsoCodes;
 
 /**
- * Class Ean13.
+ * Class Ean13 for former EAN/UCC-13 European/International Article Number, 13 digits long codes.
+ *
+ * @link https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
+ * @link https://en.wikipedia.org/wiki/Global_Trade_Item_Number
  */
-class Ean13 implements IsoCodeInterface
+class Ean13 extends Gtin13 implements IsoCodeInterface
 {
     /**
      * @param mixed $ean13
+     *
+     * @deprecated in favor of Gtin13 - maintained for BC purpose un til next major release.
      *
      * @return bool
      */
     public static function validate($ean13)
     {
-        // removing hyphens
-        $ean13 = str_replace(' ', '', $ean13);
-        $ean13 = str_replace('-', '', $ean13); // this is a dash
-        $ean13 = str_replace('‐', '', $ean13); // this is an authentic hyphen
-        if (strlen($ean13) != 13) {
-            return false;
-        }
-        if (!preg_match('/\\d{13}/i', $ean13)) {
-            return false;
-        }
-        $check = 0;
-        for ($i = 0; $i < 13; $i += 2) {
-            $check += (int) substr($ean13, $i, 1);
-            $check += 3 * substr($ean13, $i + 1, 1);
-        }
-
-        return $check % 10 == 0;
+        return parent::check($ean13, 13);
     }
 }
