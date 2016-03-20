@@ -11,8 +11,14 @@ $isCanadian = ZipCode::validate('A0A 1A0', 'CA');
 // Checking out your e-commerce shopping cart?
 $isBankable = CreditCard::validate('12345679123456');
 
+// Transferring money worldwide?
+$isSwiftBic = SwiftBic::validate('CEDELULLXXX');
+
 // Paying your taxes in Madrid?
 $isTaxableInSpain = Nif::validate('A999999L');
+
+// Receiving containers from Port of Shanghai?
+$isShippingContainerCode = Sscc::validate('806141411234567896');
 
 // Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
@@ -25,9 +31,6 @@ $isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 
 // Buying Apple stocks?
 $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
-
-// Transferring money worldwide?
-$isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 ```
 
 
