@@ -1,6 +1,6 @@
 # IsoCodes
 
-PHP library providing various ISO code validators (list below)
+PHP library providing various ISO code validators - see full list below
 
 ## Usage
 
@@ -34,12 +34,13 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 ```
 
 
-## ISO code Validations available:
+## ISO Codes Validations available:
 
 * International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
-* GS1 / GTIN Industry standards: ISBN-10/13, GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, UPC-A, UCC-13, DUN-14, ITF, CIP
+* Book Industry standards: ISBN-10, ISBN-13
+* EAN / GS-1 and Global Trade Item Numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, UPC-A, UCC-13, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
