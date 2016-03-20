@@ -36,7 +36,7 @@ $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 * International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
-* GS-1 / GTIN Industry standards: ISBN-10, ISBN-13, GTIN-13, EAN-13, UCC-13, GTIN-14, DUN-14, ITF, CIP
+* GS1 / GTIN Industry standards: ISBN-10/13, GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, UPC-A, UCC-13, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
@@ -139,7 +139,7 @@ Other specific tasks:
 
 ## Quality assurance report
 
-Isocodes quality plan is mainly based on phpunit: it runs 900+ unit tests,
+Isocodes quality plan is mainly based on phpunit: it runs 930+ unit tests,
 with separated valid & invalid entry sets.
 Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 

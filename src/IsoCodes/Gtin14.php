@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Gtin14 for European/International Article Number, 13 digits long code.
+ * Class Gtin14 for European/International Article Number, 14 digits long code.
  *
  * @link https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
  */
