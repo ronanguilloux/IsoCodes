@@ -5,10 +5,10 @@ PHP library providing various ISO code validators (list below)
 ## Usage
 
 ```php
-// Will my letter reach the Labrador Islands ?
+// Sending letters to the Labrador Islands ?
 $isCanadian = ZipCode::validate('A0A 1A0', 'CA');
 
-// Worldwide money transfer, anyone ?
+// Checking out your e-commerce shopping cart?
 $isBankable = CreditCard::validate('12345679123456');
 
 // Paying your taxes in Madrid?
@@ -17,16 +17,16 @@ $isTaxableInSpain = Nif::validate('A999999L');
 // Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
 
-// Trading items in GS-1 system? (GTIN-13, EAN·UCC-13, EAN-13, CIP, etc)
-$isEAN13 = Gtin13::validate('4719512002889')
+// Trading items with GTIN barcode in GS-1 system? 
+$isBarcode = Ean13::validate('4719512002889')
 
 // Calling phone numbers in Palo Alto?
 $isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 
-// Should I buy Apple stock?
+// Buying Apple stocks?
 $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 
-// Is this bank account number ok?
+// Transferring money worldwide?
 $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 ```
 
@@ -36,7 +36,7 @@ $isSwiftBic = SwiftBic::validate('CEDELULLXXX');
 * International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
-* GS-1 Industry standards: ISBN-10, ISBN-13, GTIN-13, EAN-13, UCC-13, GTIN-14, DUN-14, ITF, CIP
+* GS-1 / GTIN Industry standards: ISBN-10, ISBN-13, GTIN-13, EAN-13, UCC-13, GTIN-14, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2

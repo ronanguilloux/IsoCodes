@@ -63,7 +63,6 @@ help:
 	@echo "\tTo fix code style:\tmake cs-fix"
 
 	@echo "\n${GREEN}Other specific tasks:${RESETC}\n"
-	@echo "\tTo evaluate code coverage:\t\t\tmake codecoverage"
 	@echo "\tTo run a simple continuous tests server:\tmake continuous"
 	@echo "\tTo dry-fix code style issues:\t\t\tmake dry-fix"
 	@echo "\tTo evaluate code quality stats:\t\t\tmake stats"
