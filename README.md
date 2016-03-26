@@ -1,6 +1,6 @@
 # IsoCodes
 
-PHP library providing various ISO code validators - see full list below
+PHP library providing various validators for ISO, International Finance, Public Administrations, GS1, Book Industry, Phone numbers & Zipcodes for many countries
 
 ## Usage
 
