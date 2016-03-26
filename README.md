@@ -36,18 +36,43 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 
 ## ISO Codes Validations available:
 
-* International Finance: IBAN, SWIFT/BIC, BBAN (RIB), Credit Card number, SEDOL (Stock Exchange codes)
-* ZIP code validators for 175+ countries
-* Phone number validation for all countries/regions of the world
-* Book Industry standards: ISBN-10, ISBN-13
-* GTIN / GS1 trade item numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, GLN, GRAI, UPC-A, UCC-13, DUN-14, ITF, CIP
-* ISIN: International Securities Identification Number
+### International Finance
+
+* IBAN
+* SWIFT/BIC
+* BBAN (RIB),
+* Credit Card number
+* SEDOL (Stock Exchange codes)
+
+### Book Industry
+
+* ISBN-10
+* ISBN-13
+
+### Public Administrations
+
+* ISIN - International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US: Social Security number
 * UK: National Insurance Number (NINO)
 * Belgium: Structured Ccommunication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
+
+### GS1 specific numbers/identifiers
+
+* GTIN - Global Trade Item Number: GTIN-8, GTIN-12, GTIN-13, GTIN-14
+* GLN - Global Location Number
+* SSCC - Serial Shipping Container Code
+* GRAI - Global Returnable Asset Identifier
+* GSRN - Global Service Relation Number
+* GDTI - Global Document Type Identifier
+* Older/deprecated identifiers, now in GTIN: EAN-8, EAN-13, UCC-13, UPC-A, DUN-14, ITF-14
+
+### Miscellaneous
+
+* ZIP code validators for 175+ countries
+* Phone number validation for all countries/regions of the world
 
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
@@ -142,7 +167,7 @@ Other specific tasks:
 
 ## Quality assurance report
 
-Isocodes quality plan is mainly based on phpunit: it runs 960+ unit tests,
+Isocodes quality plan is mainly based on phpunit: it runs 980+ unit tests,
 with separated valid & invalid entry sets.
 Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 

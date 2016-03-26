@@ -19,9 +19,9 @@ class GraiTest extends \PHPUnit_Framework_TestCase
     public function getValidGrai()
     {
         return array(
-            array('4719512002889 1234567890 123456'), // valid GTIN13 + valid random optional serial number
-            array('4719512002889-1234567890-123456'), // hyphens are OK (dash)
-            array('4719512002889 1234567890 123456'), // hyphens are OK (space)
+            array('04719512002889 1234567890 123456'), // valid GTIN13 + valid random optional serial number
+            array('04719512002889-1234567890-123456'), // hyphens are OK (dash)
+            array('04719512002889 1234567890 123456'), // hyphens are OK (space)
         );
     }
 
@@ -33,12 +33,10 @@ class GraiTest extends \PHPUnit_Framework_TestCase
     public function getInvalidGrai()
     {
         return array(
-            array('471951200288-1234567890-123456'),    // not 13 chars found in GTIN13 component
-            array(4719512002881234567890123456),        // same, but integer
-            array('4719512002889-1234567890-1234567'),  // optional serial component is to long
-            array('A719512002889-1234567890-123456'),   // GTIN13 component is not numeric-only
-            array('4719512002888-1234567890-123456'),   // bad checksum digit
-            array('4719512002889.1234567890.123456\''), // dot hyphens are not OK.
+            array('0471951200288-1234567890-123456'),// not 13 chars found in GTIN13 component
+            array(4719512002881234567890123456), // same, but integer
+            array('04719512002888-1234567890-123456'), // bad checksum digit
+            array('04719512002889.1234567890.123456'),  // dot hyphens are not OK.
             array(''),
             array(' ')
         );
