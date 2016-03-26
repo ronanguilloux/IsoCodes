@@ -23,7 +23,7 @@ $isShippingContainerCode = Sscc::validate('806141411234567896');
 // Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
 
-// Trading items with GTIN barcode in GS-1 system? 
+// Trading items with GTIN barcodes in GS1 system? 
 $isBarcode = Ean13::validate('4719512002889')
 
 // Calling phone numbers in Palo Alto?
@@ -40,7 +40,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
 * Book Industry standards: ISBN-10, ISBN-13
-* EAN / GS-1 and Global Trade Item Numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, UPC-A, UCC-13, DUN-14, ITF, CIP
+* GTIN / GS1 trade item numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, GLN, UPC-A, UCC-13, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
@@ -78,8 +78,7 @@ Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scruti
 ## Requirements
 
 PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematic checks (IBAN & BBAN ISO-codes).
-
-Note that common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
+Usually, you already have `bcmath` bundled in your PHP version, since many common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
 
 ## Installing
