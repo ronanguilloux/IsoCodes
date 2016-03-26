@@ -1,7 +1,7 @@
 {
     "name": "ronanguilloux/isocodes",
     "description": "PHP library - Validators for standards from ISO, International Finance, Public Administrations, GS1, Book Industry, Phone numbers & Zipcodes for many countries",
-    "keywords": ["validator", "standard", "ISO", "Finance", "Public Administrations", "GS1", "Book", "IBAN", "SWIFT", "BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "VAT", "NSS", "Siren", "Siret", "Ssn", "NINO", "ZipCode", "ISBN", "SSCC", "GS1", "GS-1", "EAN13", "GTIN", "GLN", "GRAI", "GDTI", "GSRN", "DUN", "ITF", "UPC-A", "UCC-13", "DUN-14", "ITF" ,"CIF", "NIF", "SEDOL", "ISIN", "phone number", "zipcode"],
+    "keywords": ["validator", "standard", "ISO", "Finance", "Public Administrations", "GS1", "Book", "IBAN", "SWIFT", "BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "VAT", "NSS", "Siren", "Siret", "Ssn", "NINO", "ZipCode", "ISBN", "SSCC", "GS1", "GS-1", "UDI", "EAN13", "GTIN", "GLN", "GRAI", "GDTI", "GSRN", "DUN", "ITF", "UPC-A", "UCC-13", "DUN-14", "ITF" ,"CIF", "NIF", "SEDOL", "ISIN", "phone number", "zipcode"],
     "type": "library",
     "homepage": "https://github.com/ronanguilloux/IsoCodes",
     "authors": [

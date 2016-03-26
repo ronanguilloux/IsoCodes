@@ -67,6 +67,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * GRAI - Global Returnable Asset Identifier
 * GSRN - Global Service Relation Number
 * GDTI - Global Document Type Identifier
+* UDI - Unique Device Identification (the GTIN part of it)
 * Older/deprecated identifiers, now in GTIN: EAN-8, EAN-13, UCC-13, UPC-A, DUN-14, ITF-14
 
 ### Miscellaneous
