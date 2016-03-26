@@ -40,7 +40,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * ZIP code validators for 175+ countries
 * Phone number validation for all countries/regions of the world
 * Book Industry standards: ISBN-10, ISBN-13
-* GTIN / GS1 trade item numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, GLN, UPC-A, UCC-13, DUN-14, ITF, CIP
+* GTIN / GS1 trade item numbers: GTIN-8, GTIN-12, GTIN-13, GTIN-14, EAN-8, EAN-13, GLN, GRAI, UPC-A, UCC-13, DUN-14, ITF, CIP
 * ISIN: International Securities Identification Number
 * European VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
@@ -142,7 +142,7 @@ Other specific tasks:
 
 ## Quality assurance report
 
-Isocodes quality plan is mainly based on phpunit: it runs 930+ unit tests,
+Isocodes quality plan is mainly based on phpunit: it runs 960+ unit tests,
 with separated valid & invalid entry sets.
 Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 

@@ -1,7 +1,7 @@
 {
     "name": "ronanguilloux/isocodes",
-    "description": "PHP library, validating various ISO codes, such as IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, VAT, NSS, Siren, Siret, Ssn, NINO, Zipcode (US, Canada, France...), ISBN, EAN13, UPC-A, GS1 / GTIN, GLN, SSCC, Spanish CIF & NIF, SEDOL, ISIN, Phone number",
-    "keywords": ["ISO codes", "IBAN", "SWIFT", "BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "VAT", "NSS", "Siren", "Siret", "Ssn", "NINO", "ZipCode", "ISBN", "SSCC", "GS1", "GS-1", "EAN13", "GTIN", "GLN", "UPC-A", "UCC-13", "DUN-14", "ITF" ,"CIF", "NIF", "SEDOL", "ISIN", "Phone number"],
+    "description": "PHP library, validating various ISO codes, such as IBAN, SWIFT/BIC, BBAN, RIB, Credit Card number, INSEE, VAT, NSS, Siren, Siret, Ssn, NINO, Zipcode (US, Canada, France...), ISBN, EAN13, UPC-A, GS1 / GTIN, GLN, GRAI, SSCC, Spanish CIF & NIF, SEDOL, ISIN, Phone number",
+    "keywords": ["ISO codes", "IBAN", "SWIFT", "BIC", "BBAN", "RIB", "Credit Card number", "INSEE", "VAT", "NSS", "Siren", "Siret", "Ssn", "NINO", "ZipCode", "ISBN", "SSCC", "GS1", "GS-1", "EAN13", "GTIN", "GLN", "GRAI", "UPC-A", "UCC-13", "DUN-14", "ITF" ,"CIF", "NIF", "SEDOL", "ISIN", "Phone number"],
     "type": "library",
     "homepage": "https://github.com/ronanguilloux/IsoCodes",
     "authors": [
