@@ -30,11 +30,11 @@ abstract class Luhn
         $check = 0;
         for ($i = 0; $i < $length; $i += 2) {
             if ($length % 2 == 0) {
-                $check += 3 * substr($luhn, $i, 1);
+                $check += 3 * (int) substr($luhn, $i, 1);
                 $check += (int) substr($luhn, $i + 1, 1);
             } else {
                 $check += (int) substr($luhn, $i, 1);
-                $check += 3 * substr($luhn, $i + 1, 1);
+                $check += 3 * (int) substr($luhn, $i + 1, 1);
             }
         }
 

@@ -44,10 +44,11 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * Credit Card number
 * SEDOL (Stock Exchange codes)
 
-### Book Industry
+### Book / Music Industries
 
-* ISBN-10
-* ISBN-13
+* ISBN - International Standard Book Number, both 10 & 13 digits
+* ISMN - International Standard Music Number 
+* ISWC - International Standard Musical Work Code
 
 ### Public Administrations
 
