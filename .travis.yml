@@ -19,6 +19,7 @@ matrix:
       env: COMPOSER_FLAGS="--prefer-lowest"
   allow_failures:
     - php: nightly
+    - php: hhvm
   fast_finish: true
 
 before_script:
