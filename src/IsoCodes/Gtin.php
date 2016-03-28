@@ -7,50 +7,23 @@ namespace IsoCodes;
  *
  * @link http://www.gs1.org/how-calculate-check-digit-manually
  */
-abstract class Gtin
+abstract class Gtin extends Luhn
 {
-    /**
-     * @param string $gtin
-     * @param int    $length
-     *
-     * @return bool
-     */
-    public static function check($gtin, $length)
-    {
-        $gtin = self::unDecorate($gtin);
-        if (strlen($gtin) != $length) {
-            return false;
-        }
-        $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $gtin)) {
-            return false;
-        }
-        $check = 0;
-        for ($i = 0; $i < $length; $i += 2) {
-            if ($length % 2 == 0) {
-                $check += 3 * substr($gtin, $i, 1);
-                $check += (int) substr($gtin, $i + 1, 1);
-            } else {
-                $check += (int) substr($gtin, $i, 1);
-                $check += 3 * substr($gtin, $i + 1, 1);
-            }
-        }
+    const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
 
-        return $check % 10 == 0;
+    /**
+     * {@inheritdoc}
+     */
+    public static function check($gtin, $length, $unDecorate = true, $hyphens = self::HYPHENS)
+    {
+        return parent::check($gtin, $length, true, $hyphens);
     }
 
     /**
-     * @param string $gtin
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public static function unDecorate($gtin)
+    public static function unDecorate($gtin, $hyphens = self::HYPHENS)
     {
-        // removing hyphens
-        $gtin = str_replace(' ', '', $gtin);
-        $gtin = str_replace('-', '', $gtin); // this is a dash
-        $gtin = str_replace('‐', '', $gtin); // this is an authentic hyphen
-
-        return $gtin;
+        return parent::unDecorate($gtin, $hyphens);
     }
 }
