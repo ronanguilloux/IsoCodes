@@ -2,6 +2,7 @@
 
 namespace IsoCodes;
 
+use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberUtil;
 
 /**
@@ -25,7 +26,11 @@ class PhoneNumber
         }
         $country = strtoupper($country);
         $phoneUtil = PhoneNumberUtil::getInstance();
-        $numberProto = $phoneUtil->parse($phoneNumber, $country);
+        try {
+            $numberProto = $phoneUtil->parse($phoneNumber, $country);
+        } catch (NumberParseException $e) {
+            return false;
+        }
 
         return $phoneUtil->isValidNumber($numberProto);
     }
