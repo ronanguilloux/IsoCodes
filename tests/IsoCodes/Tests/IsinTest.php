@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Isin;
-
 /**
  * IsinTest.
  *
  * @covers Isocodes\Isin
  */
-class IsinTest extends \PHPUnit_Framework_TestCase
+class IsinTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidIsins: data Provider.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidIsins()
+    public function getValidValues()
     {
         return array(
             array('US0378331005'), // Apple Inc.
@@ -32,44 +28,15 @@ class IsinTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIsins: data Provider.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidIsins()
+    public function getInvalidValues()
     {
         return array(
             array('LU0056994010'),
             array('XX0056994010'),
             array('US0378331004'),
             array('AA0000XVGZA3'),
-            array(''),
-            array(' '),
-            array(null),
         );
-    }
-
-    /**
-     * testValidIsins.
-     *
-     * @param mixed $isin
-     *
-     * @dataProvider getValidIsins
-     */
-    public function testValidIsins($isin)
-    {
-        $this->assertTrue(Isin::validate($isin));
-    }
-
-    /**
-     * testInvalidIsins.
-     *
-     * @param mixed $isin
-     *
-     * @dataProvider getInvalidIsins
-     */
-    public function testInvalidIsins($isin)
-    {
-        $this->assertFalse(Isin::validate($isin));
     }
 }

@@ -2,21 +2,16 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Siret;
-
 /**
  * @covers IsoCodes\Siret
  * @uses IsoCodes\Siren
  */
-class SiretTest extends \PHPUnit_Framework_TestCase
+class SiretTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidSirets dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidSirets()
+    public function getValidValues()
     {
         return array(
             array(44079707400026),
@@ -30,11 +25,9 @@ class SiretTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidSirets dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidSirets()
+    public function getInvalidValues()
     {
         return array(
             array(440797074000),
@@ -46,45 +39,7 @@ class SiretTest extends \PHPUnit_Framework_TestCase
             array('33493272000018'),
             array('44028837100015'),
             array('51743954300012'),
-            array(''),
-            array(' '),
             array('azertyuiopqsdf')
         );
-    }
-
-    /**
-     * testValidSiret
-     *
-     * @param mixed $siret
-     *
-     * @dataProvider getValidSirets
-     *
-     * return void
-     */
-    public function testValidSiret($siret)
-    {
-        $this->assertTrue(Siret::validate($siret));
-    }
-
-    /**
-     * testInvalidSiret
-     *
-     * @param mixed $siret
-     *
-     * @dataProvider getInvalidSirets
-     *
-     * return void
-     */
-    public function testInvalidSiret($siret)
-    {
-        $this->assertFalse(Siret::validate($siret));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

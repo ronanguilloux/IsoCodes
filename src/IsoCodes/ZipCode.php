@@ -211,10 +211,11 @@ class ZipCode
      *
      * @throws \InvalidArgumentException
      */
-    public static function validate($zipcode, $country)
+    public static function validate($zipcode, $country = null)
     {
         $zipcode = trim($zipcode);
-        if (empty($zipcode)) {
+        $country = trim($country);
+        if (empty($zipcode) || empty($country)) {
             return false;
         }
 

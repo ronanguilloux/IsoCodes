@@ -2,19 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Sedol;
-
 /**
  * @covers Isocodes\Sedol
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
-class SedolTest extends \PHPUnit_Framework_TestCase
+class SedolTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidSedols()
+    public function getValidValues()
     {
         return [
             // http://rosettacode.org/wiki/SEDOLs
@@ -36,9 +34,9 @@ class SedolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidSedols()
+    public function getInvalidValues()
     {
         return [
             ['71-8894'],    // Invalid chars
@@ -46,29 +44,6 @@ class SedolTest extends \PHPUnit_Framework_TestCase
             ['7108899J'],   // 8 chars
             ['0263496'],    // Wrong check digit
             ['B0WNLYF'],    // Non-digit at end
-            [''],
-            [' '],
-            [null],
         ];
-    }
-
-    /**
-     * @param string $sedol
-     *
-     * @dataProvider getValidSedols
-     */
-    public function testValidSedol($sedol)
-    {
-        $this->assertTrue(Sedol::validate($sedol));
-    }
-
-    /**
-     * @param string $sedol
-     *
-     * @dataProvider getInvalidSedols
-     */
-    public function testInvalidSedol($sedol)
-    {
-        $this->assertFalse(Sedol::validate($sedol));
     }
 }

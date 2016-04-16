@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Udi;
-
 /**
  * UdiTest
  *
  * @covers Isocodes\Udi
  */
-class UdiTest extends \PHPUnit_Framework_TestCase
+class UdiTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidUdi: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidUdi()
+    public function getValidValues()
     {
         return [
             ['07610221010301'],  // https://accessgudid.nlm.nih.gov/devices/07610221010301
@@ -27,11 +23,9 @@ class UdiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidUdi: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidUdi()
+    public function getInvalidValues()
     {
         return [
             [10381780064595],       // bad checksum digit
@@ -39,44 +33,6 @@ class UdiTest extends \PHPUnit_Framework_TestCase
             ['0761022101030'],    // not 13 chars found (string)
             ['0761022101030A'],     // not numeric-only
             ['1038178.0064596'],   // dot hyphens are not OK.
-            [''],
-            [' ']
         ];
-    }
-
-    /**
-     * testValidUdi
-     *
-     * @param mixed $di
-     *
-     * @dataProvider getValidUdi
-     *
-     * @return void
-     */
-    public function testValidUdi($di)
-    {
-        $this->assertTrue(Udi::validate($di));
-    }
-
-    /**
-     * testInvalidUdi
-     *
-     * @param mixed $di
-     *
-     * @dataProvider getInvalidUdi
-     *
-     * @return void
-     */
-    public function testInvalidUdi($di)
-    {
-        $this->assertFalse(Udi::validate($di));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

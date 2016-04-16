@@ -2,25 +2,19 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Iban;
-
 /**
  * IbanTest
  *
  * @covers Isocodes\Iban
  */
-class IbanTest extends \PHPUnit_Framework_TestCase
+class IbanTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidIbans: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidIbans()
+    public function getValidValues()
     {
         return array(
-
             // source: http://www.mobilefish.com/download/iban/random_generated_iban.txt
             array('AL86751639367318444714198669'),
             array('AL89515635252277023782748302'),
@@ -361,11 +355,9 @@ class IbanTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIbans: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidIbans()
+    public function getInvalidValues()
     {
         return array(
             array('15459 45000 0411700920U 62'),
@@ -374,45 +366,6 @@ class IbanTest extends \PHPUnit_Framework_TestCase
             array('DE10002300A1023502601'),
             array('PL12100500000123456789'),
             array('DE912371399260788663742'),
-            array(''),
-            array(' '),
-            array(null)
         );
-    }
-
-    /**
-     * testValidIban
-     *
-     * @param string $iban
-     *
-     * @dataProvider getValidIbans
-     *
-     * @return void
-     */
-    public function testValidIban($iban)
-    {
-        $this->assertTrue(Iban::validate($iban));
-    }
-
-    /**
-     * testInvalidIban
-     *
-     * @param string $iban
-     *
-     * @dataProvider getInvalidIbans
-     *
-     * @return void
-     */
-    public function testInvalidIban($iban)
-    {
-        $this->assertFalse(Iban::validate($iban));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

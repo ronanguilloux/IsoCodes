@@ -2,22 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Vat;
-
 /**
  * VatTest
  *
  * @covers IsoCodes\Vat
  */
-class VatTest extends \PHPUnit_Framework_TestCase
+class VatTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidVat: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidVat()
+    public function getValidValues()
     {
         return [
             ['DE123456789'],
@@ -69,16 +64,11 @@ class VatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidVat: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidVat()
+    public function getInvalidValues()
     {
         return [
-            [''],
-            [' '],
-            [null],
             [[]],
             [999999999],
             [9999.9999],
@@ -141,41 +131,5 @@ class VatTest extends \PHPUnit_Framework_TestCase
             ['XX1234579'], // unknown
             ['de123456789'] // lowercase is invalid
         ];
-    }
-
-    /**
-     * testValidVat
-     *
-     * @param mixed $vat
-     *
-     * @dataProvider getValidVat
-     *
-     * return void
-     */
-    public function testValidVat($vat)
-    {
-        $this->assertTrue(Vat::validate($vat));
-    }
-
-    /**
-     * testInvalidVat
-     *
-     * @param mixed $vat
-     *
-     * @dataProvider getInvalidVat
-     *
-     * return void
-     */
-    public function testInvalidVat($vat)
-    {
-        $this->assertFalse(Vat::validate($vat));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setUp()
-    {
-        parent::setUp();
     }
 }

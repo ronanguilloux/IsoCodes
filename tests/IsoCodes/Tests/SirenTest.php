@@ -2,22 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Siren;
-
 /**
  * SirenTest
  *
  * @covers IsoCodes\Siren
  */
-class SirenTest extends \PHPUnit_Framework_TestCase
+class SirenTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidSirens dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidSirens()
+    public function getValidValues()
     {
         return array(
             array('432167567'),
@@ -30,11 +25,9 @@ class SirenTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidSirens dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidSirens()
+    public function getInvalidValues()
     {
         return array(
             array('44079707'),
@@ -47,45 +40,7 @@ class SirenTest extends \PHPUnit_Framework_TestCase
             array('334932721'),
             array('440288372'),
             array('517439544'),
-            array(''),
-            array(' '),
             array('azertyuio'),
         );
-    }
-
-    /**
-     * testValidSiren
-     *
-     * @param mixed $siren
-     *
-     * @dataProvider getValidSirens
-     *
-     * return void
-     */
-    public function testValidSiren($siren)
-    {
-        $this->assertTrue(Siren::validate($siren));
-    }
-
-    /**
-     * testInvalidSiren
-     *
-     * @param mixed $siren
-     *
-     * @dataProvider getInvalidSirens
-     *
-     * return void
-     */
-    public function testInvalidSiren($siren)
-    {
-        $this->assertFalse(Siren::validate($siren));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

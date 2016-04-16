@@ -18,7 +18,7 @@ class PhoneNumber
      *
      * @throws \InvalidArgumentException
      */
-    public static function validate($phoneNumber, $country)
+    public static function validate($phoneNumber, $country = null)
     {
         $phoneNumber = trim($phoneNumber);
         if (empty($phoneNumber)) {

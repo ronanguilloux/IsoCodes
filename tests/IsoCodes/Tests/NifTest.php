@@ -2,22 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Nif;
-
 /**
  * NifTest
  *
  * @covers Isocodes\Nif
  */
-class NifTest extends \PHPUnit_Framework_TestCase
+class NifTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidNifs: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidNifs()
+    public function getValidValues()
     {
         return array(
             array('04381012H'),     // DNI
@@ -29,11 +24,9 @@ class NifTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getValidNifs: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidNifs()
+    public function getInvalidValues()
     {
         return array(
             array('A08000143'),     // NIF is not CIF (Código de identificación fiscal)
@@ -44,45 +37,6 @@ class NifTest extends \PHPUnit_Framework_TestCase
             array('L9999999K'),     // NIF: first digit OK, end control digit KO
             array('A9999999L'),     // NIF: first digit KO, end control digit KO
             array('A9999999L'),     // NIF: first digit KO, end control digit OK
-            array(' '),
-            array(''),
-            array(null)
         );
-    }
-
-    /**
-     * testValidNif
-     *
-     * @param string $nif
-     *
-     * @dataProvider getValidNifs
-     *
-     * @return void
-     */
-    public function testValidNif($nif)
-    {
-        $this->assertTrue(Nif::validate($nif));
-    }
-
-    /**
-     * testInvalidNif
-     *
-     * @param string $nif
-     *
-     * @dataProvider getInvalidNifs
-     *
-     * @return void
-     */
-    public function testInvalidNif($nif)
-    {
-        $this->assertFalse(Nif::validate($nif));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

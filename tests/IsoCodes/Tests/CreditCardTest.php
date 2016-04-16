@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\CreditCard;
-
 /**
  * CreditCardTest
  *
  * @covers Isocodes\CreditCard
  */
-class CreditCardTest extends \PHPUnit_Framework_TestCase
+class CreditCardTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidCreditCards: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidCreditCards()
+    public function getValidValues()
     {
         return array(
             array('340000000000009'),   //American Express
@@ -35,53 +31,13 @@ class CreditCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidCreditCards: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidCreditCards()
+    public function getInvalidValues()
     {
         return array(
             array('CE1EL2LLFFF'),
             array('E31DCLLFFF'),
-            array(''),
-            array(' ')
         );
-    }
-
-    /**
-     * testValidCreditCard
-     *
-     * @param mixed $creditCard
-     *
-     * @dataProvider getValidCreditCards
-     *
-     * @return void
-     */
-    public function testValidCreditCard($creditCard)
-    {
-        $this->assertTrue(CreditCard::validate($creditCard));
-    }
-
-    /**
-     * testInvalidCreditCard
-     *
-     * @param mixed $creditCard
-     *
-     * @dataProvider getInvalidCreditCards
-     *
-     * @return void
-     */
-    public function testInvalidCreditCard($creditCard)
-    {
-        $this->assertFalse(CreditCard::validate($creditCard));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

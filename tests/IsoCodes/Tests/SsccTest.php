@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Sscc;
-
 /**
  * SsccTest
  *
  * @covers Isocodes\Sscc
  */
-class SsccTest extends \PHPUnit_Framework_TestCase
+class SsccTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidSscc: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidSscc()
+    public function getValidValues()
     {
         return [
             ['806141411234567896'],  // http://www.gs1.org/docs/barcodes/RFID_Barcode_Interoperability_Guidelines.pdf, p.11
@@ -27,11 +23,9 @@ class SsccTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidSscc: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidSscc()
+    public function getInvalidValues()
     {
         return [
             [806141411234567897],       // bad checksum digit
@@ -39,44 +33,6 @@ class SsccTest extends \PHPUnit_Framework_TestCase
             ['8061414112345678961'],    // not 13 chars found
             ['A06141411234567896'],     // not numeric-only
             ['806141411.2345678961'],   // dot hyphens are not OK.
-            [''],
-            [' ']
         ];
-    }
-
-    /**
-     * testValidSscc
-     *
-     * @param mixed $sscc
-     *
-     * @dataProvider getValidSscc
-     *
-     * @return void
-     */
-    public function testValidSscc($sscc)
-    {
-        $this->assertTrue(Sscc::validate($sscc));
-    }
-
-    /**
-     * testInvalidSscc
-     *
-     * @param mixed $sscc
-     *
-     * @dataProvider getInvalidSscc
-     *
-     * @return void
-     */
-    public function testInvalidSscc($sscc)
-    {
-        $this->assertFalse(Sscc::validate($sscc));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

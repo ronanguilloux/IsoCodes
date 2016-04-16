@@ -2,24 +2,19 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Cif;
-
 /**
  * CifTest
  *
  * @covers Isocodes\Cif
  */
-class CifTest extends \PHPUnit_Framework_TestCase
+class CifTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidCifs: data provider
+     * {@inheritdoc}
      *
      * @link http://www.linguee.fr/anglais-francais/traduction/cif+number.html
-     *
-     * @return array
      */
-    public function getValidCifs()
+    public function getValidValues()
     {
         return array(
             array('N0032484H'), // non-resident
@@ -34,11 +29,9 @@ class CifTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getValidCifs: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidCifs()
+    public function getInvalidValues()
     {
         return array(
             array('K11111111'), // Spanish children under the age of 14 who need a fiscal number
@@ -49,45 +42,6 @@ class CifTest extends \PHPUnit_Framework_TestCase
             array('N0032484I'),     // NIF: first digit OK, end control digit KO
             array('M0032484I'),     // NIF: first digit KO, end control digit KO
             array('M0032484H'),     // NIF: first digit KO, end control digit OK
-            array(' '),
-            array(''),
-            array(null)
         );
-    }
-
-    /**
-     * testValidCif
-     *
-     * @param string $cif
-     *
-     * @dataProvider getValidCifs
-     *
-     * @return void
-     */
-    public function testValidCif($cif)
-    {
-        $this->assertTrue(Cif::validate($cif));
-    }
-
-    /**
-     * testInvalidCif
-     *
-     * @param string $cif
-     *
-     * @dataProvider getInvalidCifs
-     *
-     * @return void
-     */
-    public function testInvalidCif($cif)
-    {
-        $this->assertFalse(Cif::validate($cif));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }
