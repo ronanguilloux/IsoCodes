@@ -26,6 +26,6 @@ class Mac implements IsoCodeInterface
     {
         $pattern = '/^(([a-f0-9]{2}-){5}[a-f0-9]{2}|([A-F0-9]{2}-){5}[A-Z0-9]{2}|([a-f0-9]{2}:){5}[a-z0-9]{2}|([A-F0-9]{2}:){5}[A-Z0-9]{2})$/';
 
-        return (bool) preg_match($pattern, $mac);
+        return boolval(preg_match($pattern, $mac));
     }
 }
