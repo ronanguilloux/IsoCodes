@@ -19,6 +19,10 @@ class FRTest extends \PHPUnit_Framework_TestCase
         return array(
             //good:
             array('0123456789', 'FR', true),
+            // Country code have to be given
+            array('0123456789', null, false),
+            // Too long phone number (catch exception)
+            array(implode('', range(0, 200)), null, false),
         );
     }
 
