@@ -26,7 +26,6 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
             ['4903010000000009'],       //Switch
             ['4111111111111111'],       //Visa
             ['6304100000000008'],       //Laser
-            [6304100000000008],         //Laser
             ['4917300800000000'],       // VisaElectron
             ['6759649826438453'],       // Maestro (long)
             ['6799990100000000019'],    // maestro (short)
@@ -34,6 +33,21 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
             ['5019717010103742'],       // Dankort
             ['6271136264806203568']     // UnionPay
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLegacyValidValues()
+    {
+        $values = [];
+
+        // To be removed on 4.0.
+        if (8 === PHP_INT_SIZE) { // This test will success only on 64bits systems.
+            $values[] = [6304100000000008]; // Laser
+        }
+
+        return $values;
     }
 
     /**
