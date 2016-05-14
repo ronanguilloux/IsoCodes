@@ -2,22 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Insee;
-
 /**
  * InseeTest
  *
  * @covers Isocodes\Insee
  */
-class InseeTest extends \PHPUnit_Framework_TestCase
+class InseeTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getInsees: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidInsees()
+    public function getValidValues()
     {
         return array(
             array('177022A00100229'),   // Corse: 2A
@@ -29,54 +24,13 @@ class InseeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInsees: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidInsees()
+    public function getInvalidValues()
     {
         return array(
             array('353072B07300483'),
             array('253072C07300483'),
-            array(''),
-            array(' '),
-            array(null),
         );
-    }
-
-    /**
-     * testValidInsee
-     *
-     * @param mixed $insee
-     *
-     * @dataProvider getValidInsees
-     *
-     * @return void
-     */
-    public function testValidInsee($insee)
-    {
-        $this->assertTrue(Insee::validate($insee));
-    }
-
-    /**
-     * testValidInsee
-     *
-     * @param mixed $insee
-     *
-     * @dataProvider getInvalidInsees
-     *
-     * @return void
-     */
-    public function testInvalidInsee($insee)
-    {
-        $this->assertFalse(Insee::validate($insee));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

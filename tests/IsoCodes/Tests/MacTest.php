@@ -2,19 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Mac;
-
 /**
  * Class MacTest.
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
-class MacTest extends \PHPUnit_Framework_TestCase
+class MacTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidMacAddresses()
+    public function getValidValues()
     {
         return [
             ['01-2d-4c-ef-89-ab'],
@@ -27,14 +25,11 @@ class MacTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidMacAddresses()
+    public function getInvalidValues()
     {
         return [
-            [''],
-            [' '],
-            [null],
             [999999999],
             [9999.9999],
             ['01-2d-4c-ef-89-ab-06'],   // Only 6 groups of digits
@@ -43,25 +38,5 @@ class MacTest extends \PHPUnit_Framework_TestCase
             ['01-2d-4C-ef-89-ab'],      // Mixed cases are not allowed
             ['01-2dc-4c-ef-89-ab'],     // Only 2 digits per group
         ];
-    }
-
-    /**
-     * @dataProvider getValidMacAddresses
-     *
-     * @param string $mac
-     */
-    public function testValidMacAddress($mac)
-    {
-        $this->assertTrue(Mac::validate($mac));
-    }
-
-    /**
-     * @dataProvider getInvalidMacAddresses
-     *
-     * @param string $mac
-     */
-    public function testInvalidMacAddress($mac)
-    {
-        $this->assertFalse(Mac::validate($mac));
     }
 }

@@ -2,24 +2,20 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Ssn;
-
 /**
  * SsnTest
  *
  * @covers IsoCodes\Ssn
  */
-class SsnTest extends \PHPUnit_Framework_TestCase
+class SsnTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidSSN: data Provider
+     * {@inheritdoc}
      *
-     * @return array
+     * @link http://fr.fakenamegenerator.com/social-security-number.php
      */
-    public function getValidSsn()
+    public function getValidValues()
     {
-        // generated here : http://fr.fakenamegenerator.com/social-security-number.php
         return array(
             array('423-05-9675'),
             array('432-01-5257'),
@@ -30,11 +26,9 @@ class SsnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidSsn: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidSsn()
+    public function getInvalidValues()
     {
         return array(
             array('574-09-0776'),
@@ -42,37 +36,6 @@ class SsnTest extends \PHPUnit_Framework_TestCase
             array('1234-567-89'),
             array('123456789'),
             array('773-45-6789'),
-            array(''),
-            array(' '),
-            array(null)
         );
-    }
-
-    /**
-     * testValidSsn
-     *
-     * @param mixed $ssn
-     *
-     * @dataProvider getValidSsn
-     *
-     * return void
-     */
-    public function testValidSsn($ssn)
-    {
-        $this->assertTrue(Ssn::validate($ssn));
-    }
-
-    /**
-     * testInvalidSsn
-     *
-     * @param mixed $ssn
-     *
-     * @dataProvider getInvalidSsn
-     *
-     * return void
-     */
-    public function testInvalidSsn($ssn)
-    {
-        $this->assertFalse(Ssn::validate($ssn));
     }
 }

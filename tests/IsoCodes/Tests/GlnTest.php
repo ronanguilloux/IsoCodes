@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Gln;
-
 /**
  * GlnTest
  *
  * @covers Isocodes\Gln
  */
-class GlnTest extends \PHPUnit_Framework_TestCase
+class GlnTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidGln: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidGln()
+    public function getValidValues()
     {
         return array(
             array('0614141000012'),     // Checked using http://www.gs1.org/check-digit-calculator
@@ -28,11 +24,9 @@ class GlnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidGln: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidGln()
+    public function getInvalidValues()
     {
         return array(
             array(061414100001),        // not 13 chars found
@@ -40,44 +34,6 @@ class GlnTest extends \PHPUnit_Framework_TestCase
             array('A614141000016'),     // not numeric-only
             array('0614141000015'),     // bad checksum digit
             array('0614141.00001.6'),   // dot hyphens are not OK.
-            array(''),
-            array(' ')
         );
-    }
-
-    /**
-     * testValidGln
-     *
-     * @param mixed $gln
-     *
-     * @dataProvider getValidGln
-     *
-     * @return void
-     */
-    public function testValidGln($gln)
-    {
-        $this->assertTrue(Gln::validate($gln));
-    }
-
-    /**
-     * testInvalidGln
-     *
-     * @param mixed $gln
-     *
-     * @dataProvider getInvalidGln
-     *
-     * @return void
-     */
-    public function testInvalidGln($gln)
-    {
-        $this->assertFalse(Gln::validate($gln));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

@@ -9,15 +9,12 @@ use IsoCodes\OrganismeType12NormeB2;
  *
  * @covers IsoCodes\OrganismeType12NormeB2
  */
-class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
+class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
 {
-
     /**
-     * getValidClefs dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidClefs()
+    public function getValidValues()
     {
         return array(
             array("76031208", 2),
@@ -25,11 +22,9 @@ class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidClefs dataProvider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidClefs()
+    public function getInvalidValues()
     {
         return array(
             array("76031208", "2"),
@@ -49,11 +44,11 @@ class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
      * @param string $code
      * @param int    $clef
      *
-     * @dataProvider getValidClefs
+     * @dataProvider getValidValues
      *
      * @return void
      */
-    public function testValidOrganismeType12NormeB2($code = "", $clef = 0)
+    public function testValidValues($code = "", $clef = 0)
     {
         $this->assertTrue(OrganismeType12NormeB2::validate($code, $clef));
     }
@@ -64,20 +59,12 @@ class OrganismeType12NormeB2Test extends \PHPUnit_Framework_TestCase
      * @param string $code
      * @param int    $clef
      *
-     * @dataProvider getInvalidClefs
+     * @dataProvider getInvalidValues
      *
      * @return void
      */
-    public function testInvalidOrganismeType12NormeB2($code = "", $clef = 0)
+    public function testInvalidValues($code = "", $clef = 0)
     {
         $this->assertFalse(OrganismeType12NormeB2::validate($code, $clef));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

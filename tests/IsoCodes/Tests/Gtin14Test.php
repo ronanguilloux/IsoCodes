@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Gtin14;
-
 /**
  * Gtin14Test
  *
  * @covers Isocodes\Gtin14
  */
-class Gtin14Test extends \PHPUnit_Framework_TestCase
+class Gtin14Test extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidGtin14: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidGtin14()
+    public function getValidValues()
     {
         return [
             ['12345678901231'],
@@ -25,11 +21,9 @@ class Gtin14Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidGtin14: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidGtin14()
+    public function getInvalidValues()
     {
         return [
             [12345678901232],       // bad checksum digit
@@ -37,44 +31,6 @@ class Gtin14Test extends \PHPUnit_Framework_TestCase
             ['1234567890123'],      // not 13 chars found
             ['A1234567890123'],     // not numeric-only
             ['12345.67890.1231'],   // dot hyphens are not OK.
-            [''],
-            [' ']
         ];
-    }
-
-    /**
-     * testValidGtin14
-     *
-     * @param mixed $gtin14
-     *
-     * @dataProvider getValidGtin14
-     *
-     * @return void
-     */
-    public function testValidGtin14($gtin14)
-    {
-        $this->assertTrue(Gtin14::validate($gtin14));
-    }
-
-    /**
-     * testInvalidGtin14
-     *
-     * @param mixed $gtin14
-     *
-     * @dataProvider getInvalidGtin14
-     *
-     * @return void
-     */
-    public function testInvalidGtin14($gtin14)
-    {
-        $this->assertFalse(Gtin14::validate($gtin14));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

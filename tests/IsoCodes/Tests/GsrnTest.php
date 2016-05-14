@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Gsrn;
-
 /**
  * GsrnTest
  *
  * @covers Isocodes\Gsrn
  */
-class GsrnTest extends \PHPUnit_Framework_TestCase
+class GsrnTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidGsrn: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidGsrn()
+    public function getValidValues()
     {
         return [
             ['735005385000000011'],
@@ -26,11 +22,9 @@ class GsrnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidGsrn: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidGsrn()
+    public function getInvalidValues()
     {
         return array(
             array('73500538500000001'),     // not 18 chars found
@@ -39,44 +33,6 @@ class GsrnTest extends \PHPUnit_Framework_TestCase
             array('735005385-A0000001-1'),  // not numeric-only
             array('735005385-00000001-2'),  // bad checksum digit
             array('735005385-00000001.1'),  // dot hyphens are not OK.
-            array(''),
-            array(' ')
         );
-    }
-
-    /**
-     * testValidGsrn
-     *
-     * @param mixed $gsrn
-     *
-     * @dataProvider getValidGsrn
-     *
-     * @return void
-     */
-    public function testValidGsrn($gsrn)
-    {
-        $this->assertTrue(Gsrn::validate($gsrn));
-    }
-
-    /**
-     * testInvalidGsrn
-     *
-     * @param mixed $gsrn
-     *
-     * @dataProvider getInvalidGsrn
-     *
-     * @return void
-     */
-    public function testInvalidGsrn($gsrn)
-    {
-        $this->assertFalse(Gsrn::validate($gsrn));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
     }
 }

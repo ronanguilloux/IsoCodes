@@ -9,14 +9,12 @@ use IsoCodes\Isbn;
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
-class IsbnTest extends \PHPUnit_Framework_TestCase
+class IsbnTest extends AbstractIsoCodeTest
 {
     /**
-     * getValidIsbn: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidIsbn()
+    public function getValidValues()
     {
         return [
             ['8881837188', 10],
@@ -46,11 +44,9 @@ class IsbnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIsbn: data provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidIsbn()
+    public function getInvalidValues()
     {
         return [
             ['8881837187'],
@@ -74,9 +70,6 @@ class IsbnTest extends \PHPUnit_Framework_TestCase
             ['978-88-8183-718-2', 10],
             ['978-2-7605-1028-9', 10],
             ['2112345678900', 10],
-            [''],
-            [' '],
-            [null],
         ];
     }
 
@@ -86,11 +79,11 @@ class IsbnTest extends \PHPUnit_Framework_TestCase
      * @param mixed    $isbn
      * @param int|null $type
      *
-     * @dataProvider getValidIsbn
+     * @dataProvider getValidValues
      *
      * @return void
      */
-    public function testValidIsbn($isbn, $type = null)
+    public function testValidValues($isbn, $type = null)
     {
         $this->assertTrue(Isbn::validate($isbn, $type));
     }
@@ -101,10 +94,10 @@ class IsbnTest extends \PHPUnit_Framework_TestCase
      * @param mixed    $isbn
      * @param int|null $type
      *
-     * @dataProvider getInvalidIsbn
+     * @dataProvider getInvalidValues
      *
      */
-    public function testInvalidIsbn($isbn, $type = null)
+    public function testInvalidValues($isbn, $type = null)
     {
         $this->assertFalse(Isbn::validate($isbn, $type));
     }

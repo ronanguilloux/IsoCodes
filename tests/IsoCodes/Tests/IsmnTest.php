@@ -2,22 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Ismn;
-
 /**
  * IsmnTest
  *
  * @covers IsoCodes\Ismn
  */
-class IsmnTest extends \PHPUnit_Framework_TestCase
+class IsmnTest extends AbstractIsoCodeInterfaceTest
 {
-
     /**
-     * getValidSSN: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidIsmn()
+    public function getValidValues()
     {
         return [
             ['979-0-2600-0043-8'],  // Wikipedia
@@ -28,48 +23,15 @@ class IsmnTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIsmn: data Provider
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidIsmn()
+    public function getInvalidValues()
     {
         return [
 
             ['979-0-060-11561-4'],  // bad check digit
             ['979-0-9016791-5'],    // missing digit
             ['979.0.9016791.7.7'],  // bad dot hyphen
-            [' '],
-            [''],
-            [null]
         ];
-    }
-
-    /**
-     * testValidIsmn
-     *
-     * @param mixed $ssn
-     *
-     * @dataProvider getValidIsmn
-     *
-     * return void
-     */
-    public function testValidIsmn($ssn)
-    {
-        $this->assertTrue(Ismn::validate($ssn));
-    }
-
-    /**
-     * testInvalidIsmn
-     *
-     * @param mixed $ssn
-     *
-     * @dataProvider getInvalidIsmn
-     *
-     * return void
-     */
-    public function testInvalidIsmn($ssn)
-    {
-        $this->assertFalse(Ismn::validate($ssn));
     }
 }

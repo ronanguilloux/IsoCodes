@@ -2,21 +2,17 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\Iswc;
-
 /**
  * IswcTest.
  *
  * @covers IsoCodes\Iswc
  */
-class IswcTest extends \PHPUnit_Framework_TestCase
+class IswcTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * getValidSSN: data Provider.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getValidIswc()
+    public function getValidValues()
     {
         return [
             ['T-000.000.001-0'],    // The first ISWC was assigned in 1995, for the song "Dancing Queen" by ABBA.
@@ -28,49 +24,15 @@ class IswcTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * getInvalidIswc: data Provider.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function getInvalidIswc()
+    public function getInvalidValues()
     {
         return [
-
             ['-000.000.001-0'],     // Missing mandatory 'T'
             ['T-802.987.480-4'],    // Bad check digit
             ['T-802.987.480'],      // Missing digit
             ['T-345346800_1'],      // bad underscore hyphen
-            [' '],
-            [''],
-            [null],
         ];
-    }
-
-    /**
-     * testValidIswc.
-     *
-     * @param mixed $iswc
-     *
-     * @dataProvider getValidIswc
-     *
-     * return void
-     */
-    public function testValidIswc($iswc)
-    {
-        $this->assertTrue(Iswc::validate($iswc));
-    }
-
-    /**
-     * testInvalidIswc.
-     *
-     * @param mixed $iswc
-     *
-     * @dataProvider getInvalidIswc
-     *
-     * return void
-     */
-    public function testInvalidIswc($iswc)
-    {
-        $this->assertFalse(Iswc::validate($iswc));
     }
 }
