@@ -9,6 +9,7 @@ abstract class AbstractIsoCodeInterfaceTest extends AbstractIsoCodeTest
 {
     /**
      * @dataProvider getValidValues
+     * @dataProvider getLegacyValidValues
      */
     final public function testValidValues($value)
     {
@@ -18,6 +19,7 @@ abstract class AbstractIsoCodeInterfaceTest extends AbstractIsoCodeTest
 
     /**
      * @dataProvider getInvalidValues
+     * @dataProvider getLegacyInvalidValidValues
      */
     final public function testInvalidValues($value)
     {
