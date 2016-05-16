@@ -118,7 +118,7 @@ $ git clone git@github.com:ronanguilloux/IsoCodes.git
 
 Autoloading is PSR-0 friendly.
 
-### Via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes) & [Composer](http://getcomposer.org/doc/00-intro.md)
+### Via [Packagist](https://packagist.org/packages/ronanguilloux/isocodes) & [Composer](https://getcomposer.org/doc/00-intro.md)
 
 Require the latest version of `ronanguilloux/isocodes` with Composer
 
@@ -179,7 +179,7 @@ The `composer.json` already includes these  [Php Quality Assurance Toolchain](ht
 * [phpmd](https://github.com/phpmd/phpmd)
 * [phpcpd](https://github.com/sebastianbergmann/phpcpd)
 * [pdepend](https://github.com/pdepend/pdepend)
-* [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
+* [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 
 Just run:
 
