@@ -7,7 +7,7 @@ namespace IsoCodes\Tests;
  *
  * @author Albert Bakker <hello@abbert.nl>
  */
-class BsnTest extends AbstractIsoCodeInterfaceTest
+final class BsnTest extends AbstractIsoCodeInterfaceTest
 {
     /**
      * {@inheritdoc}
@@ -37,10 +37,10 @@ class BsnTest extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
-            ['2018453'],     // < 8 chars
-            ['0124707154'],   // > 9 chars
-            ['09569086'],    // https://nl.wikipedia.org/wiki/Elfproef
-            ['054368017a'],    // Not numeric
+            ['2018453'],    // < 8 chars
+            ['0124707154'], // > 9 chars
+            ['09569086'],   // https://nl.wikipedia.org/wiki/Elfproef
+            ['054368017a'], // Not numeric
         ];
     }
 }
