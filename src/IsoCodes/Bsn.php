@@ -18,6 +18,8 @@ final class Bsn implements IsoCodeInterface
      * @param string $value
      *
      * @return bool
+     *
+     * @link http://datavaluetalk.com/data-quality/remarkable-facts-on-dutch-national-personal-identification-number-burgerservicenummer-bsn/
      */
     public static function validate($value)
     {
