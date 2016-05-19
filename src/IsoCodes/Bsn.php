@@ -7,6 +7,8 @@ namespace IsoCodes;
  * allocated to everyone registered in the Municipal Personal Records Database.
  *
  * @link https://www.government.nl/topics/identification-documents/contents/the-citizen-service-number
+ *
+ * @author  Albert Bakker <hello@abbert.nl>
  */
 final class Bsn implements IsoCodeInterface
 {
@@ -14,8 +16,6 @@ final class Bsn implements IsoCodeInterface
      * BSN validator.
      *
      * @param string $value
-     *
-     * @author  Albert Bakker <hello@abbert.nl>
      *
      * @return bool
      */
