@@ -7,6 +7,9 @@ namespace IsoCodes;
  * allocated to everyone registered in the Municipal Personal Records Database.
  *
  * @link https://www.government.nl/topics/identification-documents/contents/the-citizen-service-number
+ * @link https://nl.wikipedia.org/wiki/Elfproef (dutch)
+ * @link https://nl.wikipedia.org/wiki/Burgerservicenummer (dutch)
+ * @link http://datavaluetalk.com/data-quality/remarkable-facts-on-dutch-national-personal-identification-number-burgerservicenummer-bsn/
  *
  * @author  Albert Bakker <hello@abbert.nl>
  */
@@ -16,8 +19,6 @@ final class Bsn implements IsoCodeInterface
      * @param string $value
      *
      * @return bool
-     *
-     * @link http://datavaluetalk.com/data-quality/remarkable-facts-on-dutch-national-personal-identification-number-burgerservicenummer-bsn/
      */
     public static function validate($value)
     {
