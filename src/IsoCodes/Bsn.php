@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Bsn: In the Netherlands, the citizen service number (BSN) is a unique personal number
+ * In the Netherlands, the citizen service number (BSN) is a unique personal number
  * allocated to everyone registered in the Municipal Personal Records Database.
  *
  * @link https://www.government.nl/topics/identification-documents/contents/the-citizen-service-number
@@ -13,8 +13,6 @@ namespace IsoCodes;
 final class Bsn implements IsoCodeInterface
 {
     /**
-     * BSN validator.
-     *
      * @param string $value
      *
      * @return bool
