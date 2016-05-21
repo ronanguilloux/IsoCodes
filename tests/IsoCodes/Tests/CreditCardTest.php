@@ -38,6 +38,7 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
         return array(
             array('CE1EL2LLFFF'),
             array('E31DCLLFFF'),
+            array('qwertyu#$%^&@.[]@'), // https://github.com/ronanguilloux/IsoCodes/issues/99
         );
     }
 }

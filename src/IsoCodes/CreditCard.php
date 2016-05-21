@@ -20,7 +20,7 @@ class CreditCard implements IsoCodeInterface
      */
     public static function validate($creditCard)
     {
-        if (trim($creditCard) === '') {
+        if (trim($creditCard) === '' || !is_numeric($creditCard)) {
             return false;
         }
 
