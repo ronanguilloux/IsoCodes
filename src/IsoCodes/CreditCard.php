@@ -12,15 +12,15 @@ class CreditCard implements IsoCodeInterface
      *
      * @param string $creditCard
      *
-     * @author ronan.guilloux
-     *
-     * @link   http://www.prometee-creation.com/tutoriels/fonction-de-luhn-en-php.html
-     *
      * @return bool
      */
     public static function validate($creditCard)
     {
         if (trim($creditCard) === '') {
+            return false;
+        }
+
+        if (!boolval(preg_match('/.*[1-9].*/', $creditCard))) {
             return false;
         }
 
