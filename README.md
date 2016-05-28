@@ -126,16 +126,22 @@ Require the latest version of `ronanguilloux/isocodes` with Composer
 $ composer require ronanguilloux/isocodes
 ```
 
+## Wrappers
+
 ### With Symfony Validator
 
-Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator) library
+Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator)
 to get IsoCodes working as Validator for **Symfony** and **Silex**.
 
-### With CakePHP 3 project
+### With CakePHP 3
 
-Install [gourmet/validation](https://github.com/gourmet/validation) library
-to get IsoCodes working with **CakePHP 3** validation.
+Install [gourmet/validation](https://github.com/gourmet/validation)
+to get IsoCodes working with **CakePHP 3** as a validator.
 
+### With Laravel
+
+Install [pixelpeter/laravel5-isocodes-validation](https://github.com/pixelpeter/laravel5-isocodes-validation)
+to get IsoCodes working with **Laravel 5** as a validator.
 
 ## Unit testing
 
