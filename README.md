@@ -59,6 +59,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * UK: National Insurance Number (NINO)
 * Belgium: Structured Ccommunication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
+* Netherlands: Burgerservicenummer / Citizen Service Number (BSN)
 
 ### GS1 specific numbers/identifiers
 
