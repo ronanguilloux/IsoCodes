@@ -33,7 +33,8 @@
     },
     "suggest": {
         "sllh/iso-codes-validator": "For Symfony or Silex integration with ease",
-        "gourmet/validation": "For CakePHP 3 integration"
+        "gourmet/validation": "For CakePHP 3 integration",
+        "pixelpeter/laravel5-isocodes-validation": "For Laravel 5 integration"
     },
     "autoload": {
         "psr-0": {"IsoCodes": "src/"}
