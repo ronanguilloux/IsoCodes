@@ -209,7 +209,7 @@ Code covering report built using [Coveralls.io](https://coveralls.io/r/ronanguil
 ## Contributing Code
 
 The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. 
-See [Contributing.md](Contributing.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 ## Special thanks
