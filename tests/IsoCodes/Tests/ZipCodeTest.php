@@ -52,6 +52,11 @@ class ZipCodeTest extends AbstractIsoCodeTest
             array('10001',      'US'), // New York City
             array('20008',      'US'), // Washington, D.C.
             array('99950',      'US'), // Ketchikan, Alaska (the highest ZIP code)
+
+            array('D04 TN34',   'IE'), // Ireland, Dublin
+            array('D04TN34',    'IE'), // Ireland, Dublin (without space)
+            array('N91 A2Y3',   'IE'), // Ireland, Mullingar
+            array('A92 VWK5',   'IE'), // Ireland, Drogheda
         ];
     }
 
@@ -153,6 +158,16 @@ class ZipCodeTest extends AbstractIsoCodeTest
             array('A0A1A 0',    'US'),
             array('A0A1a0',     'US'),
             array('a0a1a0',     'US'),
+
+            array('',           'IE'),
+            array('N91',        'IE'),
+            array('VWK5',       'IE'),
+            array('D04TN3',     'IE'),
+            array('D04TN345',   'IE'),
+            array('A923 VWK5',  'IE'),
+            array('A92  VWK5',  'IE'),
+            array('A92 VWK56',  'IE'),
+            array('A923 VWK56', 'IE'),
         ];
     }
 
