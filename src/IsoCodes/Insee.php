@@ -30,7 +30,7 @@ class Insee implements IsoCodeInterface
                     (?<departement>[02][1-9]|2[AB]|[1345678][0-9]|9[012345789]) # le département : 01 à 19, 2A ou 2B, 21 à 95, 99 (attention, cas particulier hors métro traité hors expreg)
                     (?<numcommune>[0-9]{3})                                     # numéro d\'ordre de la commune (attention car particuler pour hors métro  traité hors expression régulière)
                     (?<numacte>00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})               # numéro d\'ordre d\'acte de naissance dans le mois et la commune ou pays
-                    (?<clef>0[1-9]|[1-8][1-9]|9[1-7])?                          # numéro de contrôle (facultatif)
+                    (?<clef>0[1-9]|[1-8][0-9]|9[1-7])?                          # numéro de contrôle (facultatif)
                     $                                                           # fin de chaîne
                     /x';
         //références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
@@ -75,9 +75,9 @@ class Insee implements IsoCodeInterface
                 break;
 
             case $return['departement'] == 97 || $return['departement'] == 98:
-                $return['departement'] .= substr($return['numcommun'], 0, 1);
-                $return['numcommun'] = substr($return['numcommun'], 1, 2);
-                if ($return['numcommun'] > 90) {
+                $return['departement'] .= substr($return['numcommune'], 0, 1);
+                $return['numcommune'] = substr($return['numcommune'], 1, 2);
+                if ($return['numcommune'] > 90) {
                     //90 = commune inconnue
                     return false;
                 }
@@ -85,15 +85,15 @@ class Insee implements IsoCodeInterface
 
             case $return['departement'] == 99:
                 $return['pays'] = $match['numcommune'];
-                if ($return['numcommun'] > 990) {
+                if ($return['numcommune'] > 990) {
                     //990 = pays inconnu
                     return false;
                 }
                 break;
 
             default:
-                if (isset($return['numcommun'])) {
-                    if ($return['numcommun'] > 990) {
+                if (isset($return['numcommune'])) {
+                    if ($return['numcommune'] > 990) {
                         //990 = commune inconnue
                         return false;
                     }
