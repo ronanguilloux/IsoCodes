@@ -24,6 +24,6 @@ class SwiftBic implements IsoCodeInterface
     {
         $regexp = '/^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$/';
 
-        return (boolean) preg_match($regexp, $swiftbic);
+        return (bool) preg_match($regexp, $swiftbic);
     }
 }

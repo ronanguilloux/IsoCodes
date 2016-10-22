@@ -27,6 +27,6 @@ class Uknin implements IsoCodeInterface
     {
         $regexpMustCheck = "/^(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]$/";
 
-        return (boolean) preg_match($regexpMustCheck, $uknin);
+        return (bool) preg_match($regexpMustCheck, $uknin);
     }
 }

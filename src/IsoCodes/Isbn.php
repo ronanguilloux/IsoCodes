@@ -11,7 +11,7 @@ class Isbn implements IsoCodeInterface
 {
     /**
      * @param string   $isbn
-     * @param int|null $type 10 or 13. Leave empty for both.
+     * @param int|null $type 10 or 13. Leave empty for both
      *
      * @return bool
      */

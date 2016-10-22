@@ -26,7 +26,7 @@ class Ssn implements IsoCodeInterface
 
     // We only want the numbers. Omit the explanatory text at the beginning of the file.
     // This list is from September 2007
-    public static $highgroup = <<<EOT
+    public static $highgroup = <<<'EOT'
 001 06 002 04	003 04	004 08	005 08	006 08
         007 06 008 90	009 90 010 90 011 90 012 90
         013 90	014 90	015 90	016 90	017 90	018 90

@@ -76,7 +76,7 @@ class Nif implements IsoCodeInterface
 
         for ($i = 1; $i < 8; $i += 2) {
             $tmp = (string) (2 * $cif[$i]);
-            $tmp = $tmp[0] + ((strlen($tmp) == 2) ?  $tmp[1] : 0);
+            $tmp = $tmp[0] + ((strlen($tmp) == 2) ? $tmp[1] : 0);
             $sum += $tmp;
         }
 
