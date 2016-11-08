@@ -20,6 +20,7 @@ class NifTest extends AbstractIsoCodeInterfaceTest
             array('12345678Z'),     // DNI
             array('99999999R'),     // DNI
             array('Z6171167L'),     // NIE Z
+            array('TA1B2C3D4')      // NIE with a T
         );
     }
 

@@ -32,6 +32,7 @@ class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
             array("76031208", null),
             array(1, 1),
             array("", "2"),
+            array("76031208", "STRING"),
             array(null, 2),
             array(null, 0),
             array(null, null),

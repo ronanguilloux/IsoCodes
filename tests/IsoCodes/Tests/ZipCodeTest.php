@@ -168,6 +168,8 @@ class ZipCodeTest extends AbstractIsoCodeTest
             array('A92  VWK5',  'IE'),
             array('A92 VWK56',  'IE'),
             array('A923 VWK56', 'IE'),
+
+            array('zipCode',    'ZZ')  // invalid country
         ];
     }
 
