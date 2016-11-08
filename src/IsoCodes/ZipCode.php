@@ -225,7 +225,7 @@ class ZipCode
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
 
-        return (bool) preg_match('/^'.self::$patterns[$country].'$/', $zipcode);
+        return (bool) preg_match('/^('.self::$patterns[$country].')$/', $zipcode);
     }
 
     /**
