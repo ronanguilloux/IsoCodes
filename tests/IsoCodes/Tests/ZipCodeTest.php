@@ -57,6 +57,15 @@ class ZipCodeTest extends AbstractIsoCodeTest
             array('D04TN34',    'IE'), // Ireland, Dublin (without space)
             array('N91 A2Y3',   'IE'), // Ireland, Mullingar
             array('A92 VWK5',   'IE'), // Ireland, Drogheda
+
+            array('CR0 3RL',   'GB'), // UK, Croydon
+            array('BS5 7EX',   'GB'), // UK, Bristol
+            array('NG4 1EP',   'GB'), // UK, Gedling
+            array('W1D 1AX',   'GB'), // UK, Holborn (W1 format has extra letter in third position)
+            array('WC1A 1BA',  'GB'), // UK, Holborn (WC format has extra letter in fourth position)
+            array('GIR 0AA',   'GB'), // UK, Girobank/Santander (quirk)
+            array('BFPO 23',   'GB'), // UK, BFPO (quirk)
+            
         ];
     }
 
@@ -168,6 +177,12 @@ class ZipCodeTest extends AbstractIsoCodeTest
             array('A92  VWK5',  'IE'),
             array('A92 VWK56',  'IE'),
             array('A923 VWK56', 'IE'),
+            
+            array('CR0 3RL1',     'GB'), // Extra digit at end
+            array('BS5 7EX junk', 'GB'), // Ensure the regex is anchored to end (issue #108)
+            array('junk BS5 7EX', 'GB'), // Ensure the regex is anchored to start (issue #108)
+            array('NG4 EP1',       'GB'), // Letters and numbers transposed
+            array('ZZ0 0ZZ',       'GB'), // Dummy "overseas" postcode sometimes used to skirt form validation
         ];
     }
 
