@@ -59,7 +59,6 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * UK: National Insurance Number (NINO)
 * Belgium: Structured Ccommunication ("communication structurée")
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
-* Netherlands: Burgerservicenummer / Citizen Service Number (BSN)
 
 ### GS1 specific numbers/identifiers
 
@@ -127,22 +126,20 @@ Require the latest version of `ronanguilloux/isocodes` with Composer
 $ composer require ronanguilloux/isocodes
 ```
 
-## Wrappers
-
 ### With Symfony Validator
 
-Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator)
+Install [Soullivaneuh/IsoCodesValidator](https://github.com/Soullivaneuh/IsoCodesValidator) library
 to get IsoCodes working as Validator for **Symfony** and **Silex**.
 
-### With CakePHP 3
+### With CakePHP 3 project
 
-Install [gourmet/validation](https://github.com/gourmet/validation)
-to get IsoCodes working with **CakePHP 3** as a validator.
+Install [gourmet/validation](https://github.com/gourmet/validation) library
+to get IsoCodes working with **CakePHP 3** validation.
 
-### With Laravel
+### With Laravel 5 project
 
-Install [pixelpeter/laravel5-isocodes-validation](https://github.com/pixelpeter/laravel5-isocodes-validation)
-to get IsoCodes working with **Laravel 5** as a validator.
+Install [pixelpeter/laravel5-isocodes-validation](https://github.com/pixelpeter/laravel5-isocodes-validation) library
+to get IsoCodes working with **Laravel 5** validation.
 
 ## Unit testing
 
