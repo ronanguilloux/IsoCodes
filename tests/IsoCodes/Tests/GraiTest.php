@@ -5,6 +5,7 @@ namespace IsoCodes\Tests;
 /**
  * GraiTest
  *
+ * @group grai
  * @covers Isocodes\Grai
  */
 class GraiTest extends AbstractIsoCodeInterfaceTest
@@ -14,11 +15,14 @@ class GraiTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('04719512002889 1234567890 123456'), // valid GTIN13 + valid random optional serial number
-            array('04719512002889-1234567890-123456'), // hyphens are OK (dash)
-            array('04719512002889 1234567890 123456'), // hyphens are OK (space)
-        );
+        return [
+            ['04719512002889 1234567890 12345A'], // valid GTIN13 + valid random optional alphanum serial number
+            ['04719512002889-1234567890-123456'], // hyphens are OK (dash)
+            ['04719512002889 1234567890 123456'], // hyphens are OK (space)
+            ['012345678900051234AX01'], // 50 litre aluminium beer keg + valid random optional alphanum serial number
+            ['012345678900051234AX02'], // 50 litre aluminium beer keg + valid random optional alphanum serial number
+            ['012345678900051234AX02'], // 50 litre aluminium beer keg + valid random optional alphanum serial number
+        ];
     }
 
     /**
@@ -26,11 +30,12 @@ class GraiTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('0471951200288-1234567890-123456'),// not 13 chars found in GTIN13 component
-            array(4719512002881234567890123456), // same, but integer
-            array('04719512002888-1234567890-123456'), // bad checksum digit
-            array('04719512002889.1234567890.123456'),  // dot hyphens are not OK.
-        );
+        return [
+            ['0471951200288-1234567890-123456'],// not 13 chars found in GTIN13 component
+            [4719512002881234567890123456], // same, but integer
+            ['04719512002888-1234567890-123456'], // bad checksum digit
+            ['04719512002889.1234567890.123456'],  // dot hyphens are not OK.
+            ['0471951200288-1234567890-12345;'], // invalid non-alphanum serial number
+        ];
     }
 }

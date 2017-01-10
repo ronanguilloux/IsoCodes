@@ -31,6 +31,9 @@ class Grai extends Gtin13 implements IsoCodeInterface
             return false;
         }
         $gtin13 = substr($grai, 0, 13);
+        if (!ctype_alnum(substr($grai, 13, strlen($grai)))) {
+            return false;
+        }
 
         return parent::check($gtin13, 13); // optional serial component not to be checked
     }
