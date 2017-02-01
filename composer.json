@@ -17,7 +17,6 @@
     "license": "GPL-3.0+",
     "require": {
         "php": "^5.6 || ^7.0",
-        "ext-bcmath": "*",
         "giggsey/libphonenumber-for-php": "^7.2|~8.0"
     },
     "require-dev": {
