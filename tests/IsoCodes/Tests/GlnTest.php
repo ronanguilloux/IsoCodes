@@ -14,13 +14,13 @@ class GlnTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('0614141000012'),     // Checked using http://www.gs1.org/check-digit-calculator
-            array('0614141000029'),     // Checked using http://www.gs1.org/check-digit-calculator
-            array('0614141000036'),     // Checked using http://www.gs1.org/check-digit-calculator
-            array('0614141 00002 9'),   // hyphens are OK (space)
-            array('0614141-00003-6'),   // hyphens are OK (dash)
-        );
+        return [
+            ['0614141000012'],     // Checked using http://www.gs1.org/check-digit-calculator
+            ['0614141000029'],     // Checked using http://www.gs1.org/check-digit-calculator
+            ['0614141000036'],     // Checked using http://www.gs1.org/check-digit-calculator
+            ['0614141 00002 9'],   // hyphens are OK (space)
+            ['0614141-00003-6'],   // hyphens are OK (dash)
+        ];
     }
 
     /**
@@ -28,12 +28,14 @@ class GlnTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array(061414100001),        // not 13 chars found
-            array('061414100001'),      // not 13 chars found
-            array('A614141000016'),     // not numeric-only
-            array('0614141000015'),     // bad checksum digit
-            array('0614141.00001.6'),   // dot hyphens are not OK.
-        );
+        return [
+            [0000000000000],       // 13 zeros only
+            ['0000000000000'],     // string containing 13 zeros
+            [061414100001],        // not 13 chars found
+            ['061414100001'],      // not 13 chars found
+            ['A614141000016'],     // not numeric-only
+            ['0614141000015'],     // bad checksum digit
+            ['0614141.00001.6'],   // dot hyphens are not OK.
+        ];
     }
 }

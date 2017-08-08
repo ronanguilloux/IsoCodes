@@ -14,14 +14,14 @@ class Ean13Test extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('4719512002889'),     // Source: Wikipedia
-            array('9782868890061'),     // Source: Wikipedia
-            array('4006381333931'),     // Stabilo Point 88 Art. No. 88/57
-            array('978-2-1234-5680-3'), // hyphens are OK (dash)
-            array('4719-5120-0288-9'),  // hyphens are OK (dash)
-            array('978 2 1234 5680 3'), // hyphens are OK (space
-        );
+        return [
+            ['4719512002889'],     // Source: Wikipedia
+            ['9782868890061'],     // Source: Wikipedia
+            ['4006381333931'],     // Stabilo Point 88 Art. No. 88/57
+            ['978-2-1234-5680-3'], // hyphens are OK (dash)
+            ['4719-5120-0288-9'],  // hyphens are OK (dash)
+            ['978 2 1234 5680 3'], // hyphens are OK (space
+        ];
     }
 
     /**
@@ -31,12 +31,14 @@ class Ean13Test extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array(2266111566),          // not 13 chars found
-            array('2266111566'),        // not 13 chars found
-            array('A782868890061'),     // not numeric-only
-            array('4006381333932'),     // bad checksum digit
-            array('4719.5120.0288.9'),  // dot hyphens are not OK.
-        );
+        return [
+            [0000000000000],       // 13 zeros only
+            ['0000000000000'],     // string containing 13 zeros
+            [2266111566],          // not 13 chars found
+            ['2266111566'],        // not 13 chars found
+            ['A782868890061'],     // not numeric-only
+            ['4006381333932'],     // bad checksum digit
+            ['4719.5120.0288.9'],  // dot hyphens are not OK.
+        ];
     }
 }

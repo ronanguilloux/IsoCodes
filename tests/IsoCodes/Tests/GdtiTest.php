@@ -14,11 +14,11 @@ class GdtiTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('4719512002889 1234567890 123456'), // valid GTIN13 + valid random optional serial number
-            array('4719512002889-1234567890-123456'), // hyphens are OK (dash)
-            array('4719512002889 1234567890 123456'), // hyphens are OK (space)
-        );
+        return [
+            ['4719512002889 1234567890 123456'], // valid GTIN13 + valid random optional serial number
+            ['4719512002889-1234567890-123456'], // hyphens are OK (dash)
+            ['4719512002889 1234567890 123456'], // hyphens are OK (space)
+        ];
     }
 
     /**
@@ -26,11 +26,12 @@ class GdtiTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('471951200288-1234567890-123456'),// not 13 chars found in GTIN13 component
-            array(4719512002881234567890123456), // same, but integer
-            array('4719512002888-1234567890-123456'), // bad checksum digit
-            array('4719512002889.1234567890.123456'),  // dot hyphens are not OK.
-        );
+        return [
+            ['0000000000000 1234567890 123456'], // string containing 13 zeros + valid random optional serial number
+            ['471951200288-1234567890-123456'],// not 13 chars found in GTIN13 component
+            [4719512002881234567890123456], // same, but integer
+            ['4719512002888-1234567890-123456'], // bad checksum digit
+            ['4719512002889.1234567890.123456'],  // dot hyphens are not OK.
+        ];
     }
 }

@@ -28,6 +28,8 @@ class SsccTest extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
+            [000000000000000000],       // zeros only
+            ['000000000000000000'],     // string containing all zeros
             [806141411234567897],       // bad checksum digit
             [8061414112345678961],      // not 13 chars found
             ['8061414112345678961'],    // not 13 chars found

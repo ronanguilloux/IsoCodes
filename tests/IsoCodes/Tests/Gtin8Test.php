@@ -27,6 +27,8 @@ class Gtin8Test extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
+            [00000000],       // zeros only
+            ['00000000'],     // string containing all zeros
             [42345670],       // bad checksum digit
             [423456712],        // not 13 chars found
             ['423456712'],      // not 13 chars found

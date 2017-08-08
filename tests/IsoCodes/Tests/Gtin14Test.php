@@ -26,7 +26,8 @@ class Gtin14Test extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
-            [00000000000000],       // bad checksum digit
+            [00000000000000],       // zeros only
+            ['00000000000000'],     // string containing all zeros
             [12345678901232],       // bad checksum digit
             [1234567890123],        // not 13 chars found
             ['1234567890123'],      // not 13 chars found

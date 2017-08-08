@@ -28,11 +28,13 @@ class UdiTest extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
+            [0000000000000],        // 13 zeros only
+            ['0000000000000'],      // string containing 13 zeros
             [10381780064595],       // bad checksum digit
-            [1038178006459],      // not 13 chars found
-            ['0761022101030'],    // not 13 chars found (string)
+            [1038178006459],        // not 13 chars found
+            ['0761022101030'],      // not 13 chars found (string)
             ['0761022101030A'],     // not numeric-only
-            ['1038178.0064596'],   // dot hyphens are not OK.
+            ['1038178.0064596'],    // dot hyphens are not OK.
         ];
     }
 }
