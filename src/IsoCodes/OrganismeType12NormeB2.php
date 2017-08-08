@@ -42,7 +42,7 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
         }
         $results = array();
         foreach ($orderedNumerals as $cle => $value) {
-            $results[$value] = ($cle % 2 == 0) ? ($value * 1) : ($value * 2);
+            $results[$value] = ($cle % 2 == 0) ? ((int) $value * 1) : ((int) $value * 2);
         }
         $sum = 0;
         foreach ($results as $cle => $value) {
