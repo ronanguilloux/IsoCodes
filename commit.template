@@ -1,3 +1,5 @@
+fix 9999 <Rest of your commit title here>
+
 | Q             | A
 | ------------- | ---
 | Bug fix?      | yes/no
@@ -6,3 +8,5 @@
 | Deprecations? | no
 | Tests pass?   | yes
 | Fixed tickets | #1234
+
+<Your commit description here>
