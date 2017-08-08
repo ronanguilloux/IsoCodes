@@ -21,8 +21,7 @@ Before proposing a pull request, check the following:
 Please checkout [Guidelines for submitting a pull request][3].
 
 
-## [Pull Request Template][4]: Template header to use in your pull request
-  description;
+## [Pull Request Template][4]: Template header to use in your pull request description;
 
 ```markdown
 | Q             | A
@@ -33,6 +32,12 @@ Please checkout [Guidelines for submitting a pull request][3].
 | Deprecations? | no
 | Tests pass?   | yes
 | Fixed tickets | #1234
+```
+
+See [commit.template] to be used that way:
+
+```bash
+git commit [your options...] -t commit.template
 ```
 
 Please squash all your commits in a unique one, per-contribution commit.
