@@ -12,6 +12,17 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
     /**
      * {@inheritdoc}
      */
+    protected function setUp()
+    {
+        if (!extension_loaded('bcmath')) {
+            $this->markTestSkipped('The bcmath extension is needed.');
+        }
+        parent::setUp();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getValidValues()
     {
         return array(

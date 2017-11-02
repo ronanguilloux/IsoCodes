@@ -22,6 +22,10 @@ class Bban implements IsoCodeInterface
      */
     public static function validate($bban)
     {
+        if (!extension_loaded('bcmath')) {
+            throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
+        }
+
         if (mb_strlen($bban) !== 23) {
             return false;
         }
