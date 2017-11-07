@@ -57,7 +57,8 @@ class Isbn implements IsoCodeInterface
 
     private static function validateIsbn13($isbn13)
     {
-        if (strlen($isbn13) != 13 || !ctype_digit($isbn13)) {
+        $prefix = substr($isbn13, 0, 3);
+        if (strlen($isbn13) != 13 || !ctype_digit($isbn13) || !in_array($prefix, ['978', '979'])) {
             return false;
         }
 
