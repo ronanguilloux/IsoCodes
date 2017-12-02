@@ -27,7 +27,6 @@ class IsbnTest extends AbstractIsoCodeTest
             ['978-2-12-345680-3', 13],
             ['978-88-8183-718-2', 13],
             ['978-2-7605-1028-9', 13],
-            ['2112345678900', 13],
             // Same but with 'both' option
             ['8881837188'],
             ['2266111566'],
@@ -39,7 +38,6 @@ class IsbnTest extends AbstractIsoCodeTest
             ['978-2-12-345680-3'],
             ['978-88-8183-718-2'],
             ['978-2-7605-1028-9'],
-            ['2112345678900'],
         ];
     }
 
@@ -57,6 +55,7 @@ class IsbnTest extends AbstractIsoCodeTest
             ['88818371880'],   // not 10 chars found
             ['8881837188A'],   // not numeric-only
             ['8881837189'],    // bad checksum digit
+            ['2112345678900'], // 13 chars wrong prefix
             // Valid ISBN-10 but not ISBN-13
             ['8881837188', 13],
             ['2266111566', 13],
