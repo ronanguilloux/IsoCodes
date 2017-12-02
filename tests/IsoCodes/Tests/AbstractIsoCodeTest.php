@@ -2,10 +2,12 @@
 
 namespace IsoCodes\Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
-abstract class AbstractIsoCodeTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractIsoCodeTest extends TestCase
 {
     /**
      * @return array[]

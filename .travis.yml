@@ -24,7 +24,6 @@ matrix:
 
 before_script:
   - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - composer config -q github-oauth.github.com $GITHUB_OAUTH_TOKEN
   - travis_wait composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
