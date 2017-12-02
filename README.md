@@ -38,9 +38,9 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 
 ### International Finance
 
-* IBAN
+* IBAN (requires `bcmath` PHP extension)
 * SWIFT/BIC
-* BBAN (RIB),
+* BBAN (RIB, requires `bcmath` PHP extension)
 * Credit Card number
 * SEDOL (Stock Exchange codes)
 
@@ -103,9 +103,9 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
 
-## Requirements
+## bcmath as an optional extension for certain validators
 
-PHP is required to be compiled with "--enable-bcmath" for some arbitrary precision mathematic checks (IBAN & BBAN ISO-codes).
+For IBAN & BBAN ISO-codes, PHP is required to be compiled with "--enable-bcmath" for arbitrary precision mathematic checks.
 Usually, you already have `bcmath` bundled in your PHP version, since many common PHP packages (`php-cli`, `php-fpm`, `php5-cgi`, `libapache2-mod-php5`, etc.) in stable GNU/Linux distribution releases (such as Debian) are listed as having `bcmath` built in to them, as an included module.
 
 
