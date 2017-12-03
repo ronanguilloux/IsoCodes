@@ -6,7 +6,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
-  - hhvm
+  - hhvm-3.19
   - nightly
 
 sudo: false
