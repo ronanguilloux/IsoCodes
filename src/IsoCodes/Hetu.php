@@ -57,7 +57,7 @@ class Hetu implements IsoCodeInterface
         }
 
         if (!array_key_exists($centuryCode, static::$centuryCodes)) {
-            return $centuryCode;
+            return false;
         }
 
         $hetuChecksumKey = $id % strlen(static::$validationKeys);
