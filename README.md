@@ -97,8 +97,6 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 [![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Daily Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/daily.png)](https://packagist.org/packages/ronanguilloux/isocodes)
-[![Reference Status](https://www.versioneye.com/php/ronanguilloux:isocodes/reference_badge.svg?style=flat)](https://www.versioneye.com/php/ronanguilloux:isocodes/references)
-[![Dependency Status](https://www.versioneye.com/user/projects/568018dfeb4f47003c0000ef/badge.svg?style=flat)](https://www.versioneye.com/user/projects/568018dfeb4f47003c0000ef)
 
 
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
