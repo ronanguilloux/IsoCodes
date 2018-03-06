@@ -38,6 +38,7 @@ class HetuTest extends AbstractIsoCodeInterfaceTest
             ['111123A6862'],
             ['040795-679ML'],
             ['AAAAAAAAAAA'],
+            ['231040|507K'],
         ];
     }
 }
