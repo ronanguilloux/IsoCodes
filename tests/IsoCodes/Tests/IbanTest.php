@@ -378,6 +378,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             array('DE10002300A1023502601'),
             array('PL12100500000123456789'),
             array('DE912371399260788663742'),
+            array('BR912371399260788663742'),
         );
     }
 }
