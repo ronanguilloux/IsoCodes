@@ -57,6 +57,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             array('BG30XCMJ43923350257238'),
             array('BG66ZKSV96204746173581'),
             array('BG62TOZJ59790808155256'),
+            array('BR2301137514445981860933159P9'),
             array('HR9118658081801951861'),
             array('HR7093391174762888131'),
             array('HR6824554207539191367'),
@@ -358,7 +359,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             array('SM86U0322509800000000270100'),
             array('TN5914207207100707129648'),
             array('TR330006100519786457841326'),
-            
+
             // Found at https://www.nordea.com/Our+services/Cash+Management/Products+and+services/IBAN+countries/908462.html
             array('CI05A00060174100178530011852'),
             array('CI37CI0070103050794859274815'),
@@ -377,6 +378,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             array('DE10002300A1023502601'),
             array('PL12100500000123456789'),
             array('DE912371399260788663742'),
+            array('BR912371399260788663742'),
         );
     }
 }
