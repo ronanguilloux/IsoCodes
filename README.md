@@ -179,7 +179,7 @@ Isocodes quality plan is mainly based on phpunit: it runs 980+ unit tests,
 with separated valid & invalid entry sets.
 Test values are mainly real data or documented examples from standard documentation, and a few handmade values.
 
-The `composer.json` already includes these  [Php Quality Assurance Toolchain](http://phpqatools.org) libraries:
+The `composer.json` already includes these  [Php Quality Assurance Toolchain](https://phpqa.io/) libraries:
 
 * [phploc](https://github.com/sebastianbergmann/phploc)
 * [phpmd](https://github.com/phpmd/phpmd)
@@ -215,4 +215,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 [Contributors list](https://github.com/ronanguilloux/IsoCodes/graphs/contributors): Many thanks to all!
 
-Many thanks to [JetBrains PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development from the very beginning! Any contributor having an accepted PR may receive an Open Source License Key for [PhpStorm IDE](http://www.jetbrains.com/phpstorm/download/). Just ping [Ronan via email](mailto:ronan.guilloux@gmail.com) to get one.
+Many thanks to [JetBrains PhpStorm](http://www.jetbrains.com/phpstorm/) for having sponsored the IsoCode library development from the very beginning!
