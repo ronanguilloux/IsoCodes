@@ -40,6 +40,7 @@ class ModN
             }
         }
         $check = $iso7064[$lastProduct];
+        //var_dump(join('-', [$val, $key, $check, $mod]));
 
         return $key === $check;
     }

@@ -56,6 +56,7 @@ class Isan extends ModN implements IsoCodeInterface
      *
      * @link    http://www.isan.org/docs/isan_user_guide.pdf
      * @link    http://www.isan.org/docs/ISAN_FAQ.pdf
+     * @link    http://www.isan.org/template/1.2/goToPublicSearch.do?resetForm=1
      * @link    https://en.wikipedia.org/wiki/International_Standard_Audiovisual_Number
      * @link    https://en.wikipedia.org/wiki/ISO_7064
      *

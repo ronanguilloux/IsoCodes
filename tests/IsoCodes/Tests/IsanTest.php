@@ -16,7 +16,7 @@ class IsanTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return [
+        return [ // see http://www.isan.org/template/1.2/goToPublicSearch.do?resetForm=1
             ['ISAN B159-D8FA-0124-0000-K'],
             ['ISAN B159 D8FA 0124 0000 K'],
             ['ISAN 0000-0004-C9C0-0000-9'],
