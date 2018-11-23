@@ -22,6 +22,7 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
             array('GENODEF1JEV'),
             array('UBSWCHZH80A'),
             array('CEDELULLXXX'),
+            array('ABNANL2A'),
         );
     }
 
@@ -33,6 +34,7 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
         return array(
             array('CE1EL2LLFFF'),
             array('E31DCLLFFF'),
+            array('ABNANL13'),
         );
     }
 }

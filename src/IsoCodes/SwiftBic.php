@@ -12,17 +12,15 @@ class SwiftBic implements IsoCodeInterface
      *
      * @param string $swiftbic
      *
-     * variant BIC Regex : ([a-zA-Z]{4}[a-zA-Z]{2}[a-zA-Z0-9]{2}([a-zA-Z0-9]{3})?)
-     *
      * @author ronan.guilloux
      *
-     * @link   http://networking.mydesigntool.com/viewtopic.php?tid=301&id=31
+     * @link   https://www.iso20022.org
      *
      * @return bool
      */
     public static function validate($swiftbic)
     {
-        $regexp = '/^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$/';
+        $regexp = '/^[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}$/i';
 
         return (bool) preg_match($regexp, $swiftbic);
     }
