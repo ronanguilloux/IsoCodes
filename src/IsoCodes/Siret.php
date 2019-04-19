@@ -18,6 +18,7 @@ class Siret extends Siren implements IsoCodeInterface
      * @author ronan.guilloux
      *
      * @link   http://fr.wikipedia.org/wiki/SIRET
+     * @link   https://fr.wikipedia.org/wiki/SIRET#Calcul_et_validit%C3%A9_d'un_num%C3%A9ro_SIRET
      *
      * @return bool
      */

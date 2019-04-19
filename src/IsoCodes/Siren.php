@@ -32,6 +32,16 @@ class Siren implements IsoCodeInterface
             return false;
         }
 
+        /**
+         * La poste support (French mail company)
+         * @link https://fr.wikipedia.org/wiki/SIRET#Calcul_et_validit%C3%A9_d'un_num%C3%A9ro_SIRET
+         * @link https://blog.pagesd.info/2012/09/05/verifier-numero-siret-poste/
+         */
+        $laPosteSiren = '356000000';
+        if(strpos($insee, $laPosteSiren) === 0){
+            return $laPosteSiren === (string) $insee ? true : array_sum(str_split($insee)) % 5 === 0;
+        }
+
         $sum = 0;
         for ($i = 0; $i < $length; ++$i) {
             $indice = ($length - $i);
@@ -41,7 +51,6 @@ class Siren implements IsoCodeInterface
             }
             $sum += $tmp;
         }
-
         return ($sum % 10) == 0;
     }
 }

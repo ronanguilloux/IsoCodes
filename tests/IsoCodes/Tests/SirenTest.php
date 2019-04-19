@@ -20,7 +20,8 @@ class SirenTest extends AbstractIsoCodeInterfaceTest
             array('417625639'),
             array('334932720'),
             array('440288371'),
-            array('517439543')
+            array('517439543'),
+            array('356000000')// La poste
         );
     }
 
