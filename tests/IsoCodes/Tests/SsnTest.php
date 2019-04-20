@@ -17,7 +17,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
     public function getValidValues()
     {
         return array(
-            array('574-09-0776'),
+            array('423-05-9675'),
             array('432-01-5257'),
             array('600-01-4950'),
             array('619-01-7173'),
@@ -31,7 +31,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return array(
-            array('423-05-9675'),
+            array('574-09-0776'),
             array('123-45-6789'),
             array('1234-567-89'),
             array('123456789'),
