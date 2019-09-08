@@ -19,7 +19,8 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
             array('253012B073004'),     // Corse: 2B, clef optionnelle omise
             array('177025626004544'),
             array('253077507300483'),
-            array('188057208107893')
+            array('188057208107893'),
+            array('192077501720490'),
         );
     }
 
