@@ -57,3 +57,4 @@ Thank you for your contribution! Isocodes wouldn't be so great without you.
 [4]: https://symfony.com/doc/current/contributing/code/patches.html#make-a-pull-request
 [5]: https://symfony.com/doc/current/contributing/code/patches.html#rework-your-patch
 [6]: https://github.com/ronanguilloux/IsoCodes/graphs/contributors
+

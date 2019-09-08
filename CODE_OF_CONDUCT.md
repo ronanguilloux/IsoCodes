@@ -40,3 +40,4 @@ Our open source community prioritizes marginalized people’s safety over privil
 * Criticizing racist, sexist, cissexist, or otherwise oppressive behavior or assumptions
 
 See more at [opencodeofconduct](http://todogroup.org/opencodeofconduct/#IsoCodes/ronan.guilloux@gmail.com)
+

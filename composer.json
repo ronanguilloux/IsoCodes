@@ -14,7 +14,7 @@
     "support": {
         "email": "ronan.guilloux@gmail.com"
     },
-    "license": "GPL-3.0+",
+    "license": "GPL-3.0-or-later",
     "require": {
         "php": "^5.6 || ^7.0",
         "giggsey/libphonenumber-for-php": "^7.2|~8.0"

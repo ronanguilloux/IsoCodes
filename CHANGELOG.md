@@ -18,3 +18,4 @@ instead of deprecated `1.*`
 $this->ssn = new Ssn();
 $this->ssn->validate($ssn)
 ```
+
