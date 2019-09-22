@@ -111,7 +111,8 @@ tests: vendor/autoload.php
 	@bin/phpunit -v --coverage-html ./build/codecoverage
 	@echo "\n${GREEN}Check code coverage:${RESETC}\n"
 	@echo "\t(OS X)\t\topen build/codecoverage/index.html"
-	@echo "\t(Linux)\t\txdg-open build/codecoverage/index.html\n"
+	@echo "\t(Linux)\t\txdg-open build/codecoverage/index.html"
+	@echo "\t(available only if a code coverage driver was available)\n"
 
 ############################################################################
 # .PHONY tasks list
