@@ -4,10 +4,8 @@ namespace IsoCodes;
 
 /**
  * VAT
- * The Value Added Tax, or VAT, in the European Union is a general, broadly based consumption tax
+ * The Value Added Tax, or VAT, is a general, broadly based consumption tax
  * assessed on the value added to goods and services.
- *
- * @see http://ec.europa.eu/taxation_customs/vies/faq.html
  */
 class Vat implements IsoCodeInterface
 {
@@ -80,7 +78,7 @@ class Vat implements IsoCodeInterface
 
     /**
      * validate
-     * Checks if $vat is a valid, European Union VAT number.
+     * Checks if $vat is a valid Union VAT number.
      *
      * @param mixed $vat
      *

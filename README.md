@@ -53,7 +53,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 ### Public Administrations
 
 * ISIN - International Securities Identification Number
-* European VAT / tax system: various VAT number formats
+* Country-specific VAT / tax system: various VAT number formats
 * France: Numéro de Sécurité Sociale / INSEE, SIREN, SIRET, Codes postaux, Clef Type 1/2 Norme B2
 * US: Social Security number
 * UK: National Insurance Number (NINO)
