@@ -22,6 +22,7 @@ BUILD_PATH  := $(PWD)/build
 NOW         := $(shell date +%Y-%m-%d--%H-%M-%S)
 REPO        := "https://github.com/ronanguilloux/php-gpio"
 BRANCH      := 'master'
+PHP_CS_OPTS := '$()'
 # Colors
 YELLOW      := $(shell tput bold ; tput setaf 3)
 GREEN       := $(shell tput bold ; tput setaf 2)
@@ -72,7 +73,6 @@ unit: vendor/autoload.php
 	@echo "Run unit tests..."
 	@php bin/phpunit -v
 
-
 continuous: vendor/autoload.php
 	@echo "Starting continuous tests..."
 	@while true; do bin/phpunit -v; done
@@ -82,12 +82,12 @@ sniff: vendor/autoload.php
 	@bin/phpcs --standard=PSR2 tests -n
 
 dry-fix:
-	@bin/php-cs-fixer fix . --config=sf23 --dry-run -vv
+	@bin/php-cs-fixer fix . --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
 
 cs-fix:
 	@bin/phpcbf --standard=PSR2 src
 	@bin/phpcbf --standard=PSR2 tests
-	@bin/php-cs-fixer fix . --config=sf23 -vv
+	@bin/php-cs-fixer fix . --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
 
 #quality must remain quiet, as far as it's used in a pre-commit hook validation
 quality: sniff dry-fix
