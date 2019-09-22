@@ -24,7 +24,7 @@ class Insee implements IsoCodeInterface
         //Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
         //mais corigée par mes soins pour respecter plus scrupuleusement le format
         $regexp = '/^                                           # début de chaîne
-            (?<sexe>[1278])                                             # 1 et 7 pour les hommes ou 2 et 8 pour les femmes
+            (?<sexe>[123478])                                             #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                          # année de naissance
             (?<mois>0[1-9]|1[0-2]|20)                                   # mois de naissance (si >= 20, c\'est qu\'on ne connaissait pas le mois de naissance de la personne
                     (?<departement>[02][1-9]|2[AB]|[1345678][0-9]|9[012345789]) # le département : 01 à 19, 2A ou 2B, 21 à 95, 99 (attention, cas particulier hors métro traité hors expreg)
