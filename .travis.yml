@@ -1,4 +1,5 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+# Travis is used to check supported versions of PHP only.
 language: php
 
 php:
