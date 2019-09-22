@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
-<phpunit verbose="true" backupGlobals="false" backupStaticAttributes="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" stopOnError="false" stopOnIncomplete="false" stopOnSkipped="false" syntaxCheck="false" bootstrap="tests/bootstrap.php">
+<phpunit verbose="true" backupGlobals="false" backupStaticAttributes="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" stopOnError="false" stopOnIncomplete="false" stopOnSkipped="false" bootstrap="tests/bootstrap.php">
     <testsuites>
         <testsuite name="IsoCodes">
-            <testsuite>
-                <directory>tests/IsoCodes/Tests</directory>
-            </testsuite>
+            <directory>tests/IsoCodes/Tests</directory>
         </testsuite>
     </testsuites>
 
