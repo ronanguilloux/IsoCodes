@@ -30,8 +30,8 @@ script:
   - mkdir -p build/logs build/cov
   - php bin/phpunit -c phpunit.xml.dist
 
-after_success:
-  - travis_retry php bin/php-coveralls -v
+#after_success:
+#  - travis_retry php bin/php-coveralls -v
 
 notifications:
   email:
