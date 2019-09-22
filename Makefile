@@ -82,12 +82,12 @@ sniff: vendor/autoload.php
 	@bin/phpcs --standard=PSR2 tests -n
 
 dry-fix:
-	@bin/php-cs-fixer fix . --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
+	@bin/php-cs-fixer fix --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
 
 cs-fix:
 	@bin/phpcbf --standard=PSR2 src
 	@bin/phpcbf --standard=PSR2 tests
-	@bin/php-cs-fixer fix . --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
+	@bin/php-cs-fixer fix --config=.php_cs.php --stop-on-violation --using-cache=no -vv
 
 #quality must remain quiet, as far as it's used in a pre-commit hook validation
 quality: sniff dry-fix
