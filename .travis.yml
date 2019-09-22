@@ -28,10 +28,10 @@ before_script:
 
 script:
   - mkdir -p build/logs build/cov
-  - php bin/phpunit -d error_reporting=16384
+  - php bin/phpunit -c phpunit.xml.dist
 
-after_script:
-  - php bin/coveralls -v
+after_success:
+  - travis_retry php bin/php-coveralls -v
 
 notifications:
   email:
