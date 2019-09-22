@@ -16,6 +16,15 @@ class CreditCard implements IsoCodeInterface
      */
     public static function validate($creditCard)
     {
+        if (!is_string($creditCard) && !empty($creditCard)) {
+            @trigger_error(
+                'Passing other values than a string on '.__METHOD__.' is deprecated since version 2.2.'
+                .' It will be considered as invalid on version 3.0.',
+                E_USER_DEPRECATED
+            );
+        }
+
+        // Add !is_string($creditCard) to the condition on 3.0.
         if (trim($creditCard) === '') {
             return false;
         }
