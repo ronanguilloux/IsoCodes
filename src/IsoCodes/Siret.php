@@ -13,7 +13,7 @@ class Siret extends Siren implements IsoCodeInterface
      * SIRET validator.
      *
      * @param string $insee
-     * @param int    $length
+     * @param int $length
      *
      * @author ronan.guilloux
      *
