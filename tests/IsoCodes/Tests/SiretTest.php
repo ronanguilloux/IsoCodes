@@ -4,12 +4,13 @@ namespace IsoCodes\Tests;
 
 /**
  * @covers IsoCodes\Siret
- * @uses IsoCodes\Siren
+ * @uses   IsoCodes\Siren
  */
 class SiretTest extends AbstractIsoCodeInterfaceTest
 {
     /**
      * {@inheritdoc}
+     * Source of truth: https://data.opendatasoft.com/explore/dataset/sirene_v3%40public/
      */
     public function getValidValues()
     {
@@ -21,8 +22,9 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
             array('33493272000017'),
             array('44028837100014'),
             array('51743954300011'),
-            array('35600000049837'),// La poste
-            array('35600000087349')// La poste
+            array('35600000000048'),  // La Poste - Paris XV
+            array('35600000049837'),  // La Poste - Viry Chatillon
+            array('35600053914285'),  // La Poste - Rennes, SIREN '356 000 539' between '356 000 000' and '356 000 999'
         );
     }
 
@@ -41,9 +43,8 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
             array('33493272000018'),
             array('44028837100015'),
             array('51743954300012'),
-            array('azertyuiopqsdf'),
-            array('35600000049838'),// La poste
-            array('35600000013374') // La poste
+            array('35600000049838'),  // La Poste - Viry Chatillon + w/ wrong sum
+            array('azertyuiopqsdf')
         );
     }
 }
