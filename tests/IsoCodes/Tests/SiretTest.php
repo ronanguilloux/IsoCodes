@@ -20,7 +20,9 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
             array('41762563900030'),
             array('33493272000017'),
             array('44028837100014'),
-            array('51743954300011')
+            array('51743954300011'),
+            array('35600000049837'),// La poste
+            array('35600000087349')// La poste
         );
     }
 
@@ -39,7 +41,9 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
             array('33493272000018'),
             array('44028837100015'),
             array('51743954300012'),
-            array('azertyuiopqsdf')
+            array('azertyuiopqsdf'),
+            array('35600000049838'),// La poste
+            array('35600000013374') // La poste
         );
     }
 }
