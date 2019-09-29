@@ -5,9 +5,9 @@ namespace IsoCodes\Tests;
 use IsoCodes\IP;
 
 /**
- * IPTest
+ * Class IPTest
  *
- * @covers IsoCodes\IP
+ * @covers \IsoCodes\IP
  */
 class IPTest extends AbstractIsoCodeTest
 {

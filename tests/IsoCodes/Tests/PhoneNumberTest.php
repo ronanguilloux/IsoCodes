@@ -5,6 +5,9 @@ namespace IsoCodes\Tests;
 use IsoCodes\PhoneNumber;
 
 /**
+ * Class PhoneNumberTest
+ *
+ * @covers \IsoCodes\PhoneNumber
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class PhoneNumberTest extends AbstractIsoCodeTest
@@ -16,7 +19,6 @@ class PhoneNumberTest extends AbstractIsoCodeTest
     {
         return [
             ['0123456789',         'FR'],
-
             ['+1-650-798-2800',    'US'],
             ['1-650-798-2800',     'US'],
             ['+1 650-798-2800',    'US'],

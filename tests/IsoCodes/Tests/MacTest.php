@@ -3,8 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class MacTest.
+ * Class MacTest
  *
+ * @covers \IsoCodes\Mac
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class MacTest extends AbstractIsoCodeInterfaceTest

@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * Gtin8Test
+ * Class Gtin8Test
  *
- * @covers Isocodes\Gtin8
+ * @covers \IsoCodes\Gtin8
  */
 class Gtin8Test extends AbstractIsoCodeInterfaceTest
 {

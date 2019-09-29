@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * GlnTest
+ * Class GlnTest
  *
- * @covers Isocodes\Gln
+ * @covers \IsoCodes\Gln
  */
 class GlnTest extends AbstractIsoCodeInterfaceTest
 {

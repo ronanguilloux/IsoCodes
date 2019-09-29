@@ -3,8 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * @covers Isocodes\Bsn
+ * Class BsnTest
  *
+ * @covers \IsoCodes\Bsn
  * @author Albert Bakker <hello@abbert.nl>
  */
 final class BsnTest extends AbstractIsoCodeInterfaceTest

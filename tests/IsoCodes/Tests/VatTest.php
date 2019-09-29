@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * VatTest
+ * Class VatTest
  *
- * @covers IsoCodes\Vat
+ * @covers \IsoCodes\Vat
  */
 class VatTest extends AbstractIsoCodeInterfaceTest
 {

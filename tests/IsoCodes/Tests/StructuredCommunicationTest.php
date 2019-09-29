@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * StructuredCommunicationTest
+ * Class StructuredCommunicationTest
  *
- * @covers Isocodes\StructuredCommunication
+ * @covers \IsoCodes\StructuredCommunication
  */
 class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
 {
@@ -14,11 +14,11 @@ class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array(101327481006),
-            array('101327481006'),
-            array('123456789002')
-        );
+        return [
+            [101327481006],
+            ['101327481006'],
+            ['123456789002'],
+        ];
     }
 
     /**
@@ -26,14 +26,14 @@ class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('12345678902'),
-            array(12345678902),
-            array(123456789020),
-            array(10132748100),
-            array(10132748107),
-            array(1013274810067),
-            array(101374810060),
-        );
+        return [
+            ['12345678902'],
+            [12345678902],
+            [123456789020],
+            [10132748100],
+            [10132748107],
+            [1013274810067],
+            [101374810060],
+        ];
     }
 }

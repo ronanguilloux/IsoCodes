@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * SirenTest
+ * Class SirenTest
  *
- * @covers IsoCodes\Siren
+ * @covers \IsoCodes\Siren
  */
 class SirenTest extends AbstractIsoCodeInterfaceTest
 {
@@ -14,15 +14,15 @@ class SirenTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('432167567'),
-            array(432167567),
-            array('417625639'),
-            array('334932720'),
-            array('440288371'),
-            array('517439543'),
-            array('356000000')  // La Poste
-        );
+        return [
+            ['432167567'],
+            [432167567],
+            ['417625639'],
+            ['334932720'],
+            ['440288371'],
+            ['517439543'],
+            ['356000000'],  // La Poste
+        ];
     }
 
     /**
@@ -30,18 +30,18 @@ class SirenTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('44079707'),
-            array(44079707),
-            array('4407970745'),
-            array('440797075'),
-            array('488537813'),
-            array('432167568'),
-            array('417625630'),
-            array('334932721'),
-            array('440288372'),
-            array('517439544'),
-            array('azertyuio'),
-        );
+        return [
+            ['44079707'],
+            [44079707],
+            ['4407970745'],
+            ['440797075'],
+            ['488537813'],
+            ['432167568'],
+            ['417625630'],
+            ['334932721'],
+            ['440288372'],
+            ['517439544'],
+            ['azertyuio'],
+        ];
     }
 }

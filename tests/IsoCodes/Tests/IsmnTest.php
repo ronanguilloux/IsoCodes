@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * IsmnTest
+ * Class IsmnTest
  *
- * @covers IsoCodes\Ismn
+ * @covers \IsoCodes\Ismn
  */
 class IsmnTest extends AbstractIsoCodeInterfaceTest
 {

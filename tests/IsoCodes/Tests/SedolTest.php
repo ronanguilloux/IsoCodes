@@ -3,8 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * @covers Isocodes\Sedol
+ * Class SedolTest
  *
+ * @covers \IsoCodes\Sedol
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class SedolTest extends AbstractIsoCodeInterfaceTest

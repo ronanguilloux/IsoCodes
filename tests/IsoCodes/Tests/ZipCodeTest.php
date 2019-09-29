@@ -5,6 +5,9 @@ namespace IsoCodes\Tests;
 use IsoCodes\ZipCode;
 
 /**
+ * Class ZipCodeTest
+ *
+ * @covers \IsoCodes\ZipCode
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class ZipCodeTest extends AbstractIsoCodeTest
@@ -15,56 +18,56 @@ class ZipCodeTest extends AbstractIsoCodeTest
     public function getValidValues()
     {
         return [
-            array('A0A 1A0',    'CA'), // Aquaforte, Avalon Peninsula, Newfoundland and Labrador
-            array('A0A1A0',     'CA'), // Some Canadian people put a space in the middle, some don't
-            array('H0H 0H0',    'CA'), // North Pole (for Santa Claus only)
-            array('A0A 1A0',    'CA'),
-            array('A0A1A0',     'CA'),
-            array('A0A 1A0',    'CA'),
+            ['A0A 1A0',    'CA'], // Aquaforte, Avalon Peninsula, Newfoundland and Labrador
+            ['A0A1A0',     'CA'], // Some Canadian people put a space in the middle, some don't
+            ['H0H 0H0',    'CA'], // North Pole (for Santa Claus only)
+            ['A0A 1A0',    'CA'],
+            ['A0A1A0',     'CA'],
+            ['A0A 1A0',    'CA'],
 
-            array('06000',      'FR'),
-            array('56000',      'FR'),
-            array('56420',      'FR'),
-            array('20000',      'FR'), // Ajaccio: ZIP code (20000,20090) is not an INSEE code
-            array('97114',      'FR'), // 971 - 14, Trois-Rivières, Guadeloupe
-            array('99999',      'FR'), // Service consommateurs
-            array('99123',      'FR'), // Paris - Concours
-            array('98000',      'FR'), // Monaco
-            array('00100',      'FR'), // Armée
-            array('01000',      'FR'),
-            array('01000',      'FR'),
-            array('01000',      'FR'),
+            ['06000',      'FR'],
+            ['56000',      'FR'],
+            ['56420',      'FR'],
+            ['20000',      'FR'], // Ajaccio: ZIP code (20000,20090) is not an INSEE code
+            ['97114',      'FR'], // 971 - 14, Trois-Rivières, Guadeloupe
+            ['99999',      'FR'], // Service consommateurs
+            ['99123',      'FR'], // Paris - Concours
+            ['98000',      'FR'], // Monaco
+            ['00100',      'FR'], // Armée
+            ['01000',      'FR'],
+            ['01000',      'FR'],
+            ['01000',      'FR'],
 
-            array('1234AA',     'NL'),
-            array('1234 AA',    'NL'), // Some people add a space
-            array('1023 AA',    'NL'),
+            ['1234AA',     'NL'],
+            ['1234 AA',    'NL'], // Some people add a space
+            ['1023 AA',    'NL'],
 
-            array('1000-001',   'PT'),
-            array('1900-078',   'PT'),
-            array('1250-789',   'PT'),
+            ['1000-001',   'PT'],
+            ['1900-078',   'PT'],
+            ['1250-789',   'PT'],
 
-            array('03099',      'ES'),
-            array('03201',      'ES'),
-            array('29640',      'ES'),
+            ['03099',      'ES'],
+            ['03201',      'ES'],
+            ['29640',      'ES'],
 
-            array('99801',      'US'), // Juneau, Alaska
-            array('02115',      'US'), // Boston
-            array('10001',      'US'), // New York City
-            array('20008',      'US'), // Washington, D.C.
-            array('99950',      'US'), // Ketchikan, Alaska (the highest ZIP code)
+            ['99801',      'US'], // Juneau, Alaska
+            ['02115',      'US'], // Boston
+            ['10001',      'US'], // New York City
+            ['20008',      'US'], // Washington, D.C.
+            ['99950',      'US'], // Ketchikan, Alaska (the highest ZIP code)
 
-            array('D04 TN34',   'IE'), // Ireland, Dublin
-            array('D04TN34',    'IE'), // Ireland, Dublin (without space)
-            array('N91 A2Y3',   'IE'), // Ireland, Mullingar
-            array('A92 VWK5',   'IE'), // Ireland, Drogheda
+            ['D04 TN34',   'IE'], // Ireland, Dublin
+            ['D04TN34',    'IE'], // Ireland, Dublin (without space)
+            ['N91 A2Y3',   'IE'], // Ireland, Mullingar
+            ['A92 VWK5',   'IE'], // Ireland, Drogheda
 
-            array('CR0 3RL',   'GB'), // UK, Croydon
-            array('BS5 7EX',   'GB'), // UK, Bristol
-            array('NG4 1EP',   'GB'), // UK, Gedling
-            array('W1D 1AX',   'GB'), // UK, Holborn (W1 format has extra letter in third position)
-            array('WC1A 1BA',  'GB'), // UK, Holborn (WC format has extra letter in fourth position)
-            array('GIR 0AA',   'GB'), // UK, Girobank/Santander (quirk)
-            array('BFPO 23',   'GB'), // UK, BFPO (quirk)
+            ['CR0 3RL',   'GB'], // UK, Croydon
+            ['BS5 7EX',   'GB'], // UK, Bristol
+            ['NG4 1EP',   'GB'], // UK, Gedling
+            ['W1D 1AX',   'GB'], // UK, Holborn (W1 format has extra letter in third position)
+            ['WC1A 1BA',  'GB'], // UK, Holborn (WC format has extra letter in fourth position)
+            ['GIR 0AA',   'GB'], // UK, Girobank/Santander (quirk)
+            ['BFPO 23',   'GB'], // UK, BFPO (quirk)
             
         ];
     }
@@ -75,114 +78,114 @@ class ZipCodeTest extends AbstractIsoCodeTest
     public function getInvalidValues()
     {
         return [
-            array('560',        'CA'),
-            array('5600',       'CA'),
-            array('560000',     'CA'),
-            array('A56000',     'CA'),
-            array('A5600',      'CA'),
-            array('56000A',     'CA'),
-            array('A5600A',     'CA'),
-            array('AAA',        'CA'),
-            array('AAAA',       'CA'),
-            array('AAAAA',      'CA'),
-            array('A 0A1A0',    'CA'),
-            array('A0 A1A0',    'CA'),
-            array('A0A1 A0',    'CA'),
-            array('A0A1A 0',    'CA'),
-            array('A0A1a0',     'CA'),
-            array('a0a1a0',     'CA'),
+            ['560',        'CA'],
+            ['5600',       'CA'],
+            ['560000',     'CA'],
+            ['A56000',     'CA'],
+            ['A5600',      'CA'],
+            ['56000A',     'CA'],
+            ['A5600A',     'CA'],
+            ['AAA',        'CA'],
+            ['AAAA',       'CA'],
+            ['AAAAA',      'CA'],
+            ['A 0A1A0',    'CA'],
+            ['A0 A1A0',    'CA'],
+            ['A0A1 A0',    'CA'],
+            ['A0A1A 0',    'CA'],
+            ['A0A1a0',     'CA'],
+            ['a0a1a0',     'CA'],
 
-            array('2A004',      'FR'), // Ajaccio: INSEE code (2A004) is not a ZIP code (20000,20090)
-            array('560',        'FR'),
-            array('5600',       'FR'),
-            array('560000',     'FR'),
-            array('A56000',     'FR'),
-            array('A5600',      'FR'),
-            array('56000A',     'FR'),
-            array('A5600A',     'FR'),
-            array('AAA',        'FR'),
-            array('AAAA',       'FR'),
-            array('AAAAA',      'FR'),
+            ['2A004',      'FR'], // Ajaccio: INSEE code (2A004) is not a ZIP code (20000,20090)
+            ['560',        'FR'],
+            ['5600',       'FR'],
+            ['560000',     'FR'],
+            ['A56000',     'FR'],
+            ['A5600',      'FR'],
+            ['56000A',     'FR'],
+            ['A5600A',     'FR'],
+            ['AAA',        'FR'],
+            ['AAAA',       'FR'],
+            ['AAAAA',      'FR'],
 
-            array('1234',       'NL'),
-            array('1234A',      'NL'),
-            array('AA1234',     'NL'),
-            array('A1234A',     'NL'),
-            array('1A2A3A',     'NL'),
-            array('1234ABC',    'NL'),
-            array('123AB',      'NL'),
-            array('123456',     'NL'),
-            array('AAAA',       'NL'),
-            array('ABCD12',     'NL'),
-            array('1234 ABC',   'NL'),
-            array('12345A',     'NL'),
-            array('1234 5A',    'NL'),
-            array('0123 AA',    'NL'), // Zipcodes cannot start with 0
-            array('1234aa',     'NL'),
+            ['1234',       'NL'],
+            ['1234A',      'NL'],
+            ['AA1234',     'NL'],
+            ['A1234A',     'NL'],
+            ['1A2A3A',     'NL'],
+            ['1234ABC',    'NL'],
+            ['123AB',      'NL'],
+            ['123456',     'NL'],
+            ['AAAA',       'NL'],
+            ['ABCD12',     'NL'],
+            ['1234 ABC',   'NL'],
+            ['12345A',     'NL'],
+            ['1234 5A',    'NL'],
+            ['0123 AA',    'NL'], // Zipcodes cannot start with 0
+            ['1234aa',     'NL'],
 
-            array('560',        'PT'),
-            array('5600',       'PT'),
-            array('560000',     'PT'),
-            array('A56000',     'PT'),
-            array('A5600',      'PT'),
-            array('56000A',     'PT'),
-            array('A5600A',     'PT'),
-            array('AAA',        'PT'),
-            array('AAAA',       'PT'),
-            array('AAAAA',      'PT'),
-            array('A 0A1A0',    'PT'),
-            array('A0 A1A0',    'PT'),
-            array('A0A1 A0',    'PT'),
-            array('A0A1A 0',    'PT'),
-            array('A0A1a0',     'PT'),
-            array('a0a1a0',     'PT'),
+            ['560',        'PT'],
+            ['5600',       'PT'],
+            ['560000',     'PT'],
+            ['A56000',     'PT'],
+            ['A5600',      'PT'],
+            ['56000A',     'PT'],
+            ['A5600A',     'PT'],
+            ['AAA',        'PT'],
+            ['AAAA',       'PT'],
+            ['AAAAA',      'PT'],
+            ['A 0A1A0',    'PT'],
+            ['A0 A1A0',    'PT'],
+            ['A0A1 A0',    'PT'],
+            ['A0A1A 0',    'PT'],
+            ['A0A1a0',     'PT'],
+            ['a0a1a0',     'PT'],
 
-            array('560',        'ES'),
-            array('5600',       'ES'),
-            array('560000',     'ES'),
-            array('A56000',     'ES'),
-            array('56000A',     'ES'),
-            array('A5600A',     'ES'),
-            array('AAA',        'ES'),
-            array('AAAA',       'ES'),
-            array('A 0A1A0',    'ES'),
-            array('A0 A1A0',    'ES'),
-            array('A0A1 A0',    'ES'),
-            array('A0A1A 0',    'ES'),
-            array('A0A1a0',     'ES'),
-            array('a0a1a0',     'ES'),
+            ['560',        'ES'],
+            ['5600',       'ES'],
+            ['560000',     'ES'],
+            ['A56000',     'ES'],
+            ['56000A',     'ES'],
+            ['A5600A',     'ES'],
+            ['AAA',        'ES'],
+            ['AAAA',       'ES'],
+            ['A 0A1A0',    'ES'],
+            ['A0 A1A0',    'ES'],
+            ['A0A1 A0',    'ES'],
+            ['A0A1A 0',    'ES'],
+            ['A0A1a0',     'ES'],
+            ['a0a1a0',     'ES'],
 
-            array('5600',       'US'),
-            array('560000',     'US'),
-            array('A56000',     'US'),
-            array('A5600',      'US'),
-            array('56000A',     'US'),
-            array('A5600A',     'US'),
-            array('AAA',        'US'),
-            array('AAAA',       'US'),
-            array('AAAAA',      'US'),
-            array('A 0A1A0',    'US'),
-            array('A0 A1A0',    'US'),
-            array('A0A1 A0',    'US'),
-            array('A0A1A 0',    'US'),
-            array('A0A1a0',     'US'),
-            array('a0a1a0',     'US'),
+            ['5600',       'US'],
+            ['560000',     'US'],
+            ['A56000',     'US'],
+            ['A5600',      'US'],
+            ['56000A',     'US'],
+            ['A5600A',     'US'],
+            ['AAA',        'US'],
+            ['AAAA',       'US'],
+            ['AAAAA',      'US'],
+            ['A 0A1A0',    'US'],
+            ['A0 A1A0',    'US'],
+            ['A0A1 A0',    'US'],
+            ['A0A1A 0',    'US'],
+            ['A0A1a0',     'US'],
+            ['a0a1a0',     'US'],
 
-            array('',           'IE'),
-            array('N91',        'IE'),
-            array('VWK5',       'IE'),
-            array('D04TN3',     'IE'),
-            array('D04TN345',   'IE'),
-            array('A923 VWK5',  'IE'),
-            array('A92  VWK5',  'IE'),
-            array('A92 VWK56',  'IE'),
-            array('A923 VWK56', 'IE'),
+            ['',           'IE'],
+            ['N91',        'IE'],
+            ['VWK5',       'IE'],
+            ['D04TN3',     'IE'],
+            ['D04TN345',   'IE'],
+            ['A923 VWK5',  'IE'],
+            ['A92  VWK5',  'IE'],
+            ['A92 VWK56',  'IE'],
+            ['A923 VWK56', 'IE'],
             
-            array('CR0 3RL1',     'GB'), // Extra digit at end
-            array('BS5 7EX junk', 'GB'), // Ensure the regex is anchored to end (issue #108)
-            array('junk BS5 7EX', 'GB'), // Ensure the regex is anchored to start (issue #108)
-            array('NG4 EP1',       'GB'), // Letters and numbers transposed
-            array('ZZ0 0ZZ',       'GB'), // Dummy "overseas" postcode sometimes used to skirt form validation
+            ['CR0 3RL1',     'GB'], // Extra digit at end
+            ['BS5 7EX junk', 'GB'], // Ensure the regex is anchored to end (issue #108)
+            ['junk BS5 7EX', 'GB'], // Ensure the regex is anchored to start (issue #108)
+            ['NG4 EP1',       'GB'], // Letters and numbers transposed
+            ['ZZ0 0ZZ',       'GB'], // Dummy "overseas" postcode sometimes used to skirt form validation
         ];
     }
 

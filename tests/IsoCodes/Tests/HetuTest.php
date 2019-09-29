@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * HetuTest.
+ * Class HetuTest
  *
- * @covers \Isocodes\Hetu
+ * @covers \IsoCodes\Hetu
  */
 class HetuTest extends AbstractIsoCodeInterfaceTest
 {

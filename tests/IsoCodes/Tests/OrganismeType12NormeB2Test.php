@@ -5,9 +5,9 @@ namespace IsoCodes\Tests;
 use IsoCodes\OrganismeType12NormeB2;
 
 /**
- * OrganismeType12NormeB2Test
+ * Class OrganismeType12NormeB2Test
  *
- * @covers IsoCodes\OrganismeType12NormeB2
+ * @covers \IsoCodes\OrganismeType12NormeB2
  */
 class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
 {
@@ -16,9 +16,9 @@ class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
      */
     public function getValidValues()
     {
-        return array(
-            array("76031208", 2),
-        );
+        return [
+            ["76031208", 2],
+        ];
     }
 
     /**
@@ -26,16 +26,16 @@ class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array("76031208", "2"),
-            array("76031208", 0),
-            array("76031208", null),
-            array(1, 1),
-            array("", "2"),
-            array(null, 2),
-            array(null, 0),
-            array(null, null),
-        );
+        return [
+            ["76031208", "2"],
+            ["76031208", 0],
+            ["76031208", null],
+            [1, 1],
+            ["", "2"],
+            [null, 2],
+            [null, 0],
+            [null, null],
+        ];
     }
 
     /**

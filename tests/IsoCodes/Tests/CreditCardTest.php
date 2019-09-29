@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * CreditCardTest
+ * Class CreditCardTest
  *
- * @covers Isocodes\CreditCard
+ * @covers \IsoCodes\CreditCard
  */
 class CreditCardTest extends AbstractIsoCodeInterfaceTest
 {

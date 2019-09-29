@@ -7,6 +7,7 @@ use IsoCodes\Isbn;
 /**
  * Class IsbnTest
  *
+ * @covers \IsoCodes\Isbn
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class IsbnTest extends AbstractIsoCodeTest

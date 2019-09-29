@@ -3,10 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * GraiTest
+ * Class GraiTest
  *
- * @group grai
- * @covers Isocodes\Grai
+ * @covers \IsoCodes\Grai
  */
 class GraiTest extends AbstractIsoCodeInterfaceTest
 {

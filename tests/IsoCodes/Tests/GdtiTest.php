@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * GdtiTest
+ * Class GdtiTest
  *
- * @covers Isocodes\Gdti
+ * @covers \IsoCodes\Gdti
  */
 class GdtiTest extends AbstractIsoCodeInterfaceTest
 {

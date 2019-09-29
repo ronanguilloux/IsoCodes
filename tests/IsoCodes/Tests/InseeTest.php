@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * InseeTest
+ * Class InseeTest
  *
- * @covers Isocodes\Insee
+ * @covers \IsoCodes\Insee
  */
 class InseeTest extends AbstractIsoCodeInterfaceTest
 {
@@ -14,14 +14,14 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('177022A00100229'),   // Corse: 2A
-            array('253012B073004'),     // Corse: 2B, clef optionnelle omise
-            array('177025626004544'),
-            array('253077507300483'),
-            array('188057208107893'),
-            array('192077501720490'),
-        );
+        return [
+            ['177022A00100229'],   // Corse: 2A
+            ['253012B073004'],     // Corse: 2B, clef optionnelle omise
+            ['177025626004544'],
+            ['253077507300483'],
+            ['188057208107893'],
+            ['192077501720490'],
+        ];
     }
 
     /**
@@ -29,9 +29,9 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('353072B07300483'),
-            array('253072C07300483'),
-        );
+        return [
+            ['353072B07300483'],
+            ['253072C07300483'],
+        ];
     }
 }

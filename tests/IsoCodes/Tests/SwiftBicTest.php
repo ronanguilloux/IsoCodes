@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * SwiftBicTest
+ * Class SwiftBicTest
  *
- * @covers IsoCodes\SwiftBic
+ * @covers \IsoCodes\SwiftBic
  */
 class SwiftBicTest extends AbstractIsoCodeInterfaceTest
 {
@@ -14,16 +14,16 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
      */
     public function getValidValues()
     {
-        return array(
-            array('RBOSGGSX'),
-            array('RZTIAT22263'),
-            array('BCEELULL'),
-            array('MARKDEFF'),
-            array('GENODEF1JEV'),
-            array('UBSWCHZH80A'),
-            array('CEDELULLXXX'),
-            array('ABNANL2A'),
-        );
+        return [
+            ['RBOSGGSX'],
+            ['RZTIAT22263'],
+            ['BCEELULL'],
+            ['MARKDEFF'],
+            ['GENODEF1JEV'],
+            ['UBSWCHZH80A'],
+            ['CEDELULLXXX'],
+            ['ABNANL2A'],
+        ];
     }
 
     /**
@@ -31,10 +31,10 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
      */
     public function getInvalidValues()
     {
-        return array(
-            array('CE1EL2LLFFF'),
-            array('E31DCLLFFF'),
-            array('ABNANL13'),
-        );
+        return [
+            ['CE1EL2LLFFF'],
+            ['E31DCLLFFF'],
+            ['ABNANL13'],
+        ];
     }
 }

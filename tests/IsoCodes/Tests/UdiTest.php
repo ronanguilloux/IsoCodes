@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * UdiTest
+ * Class UdiTest
  *
- * @covers Isocodes\Udi
+ * @covers \IsoCodes\Udi
  */
 class UdiTest extends AbstractIsoCodeInterfaceTest
 {

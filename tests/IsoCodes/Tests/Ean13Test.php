@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * Ean13Test
+ * Class Ean13Test
  *
- * @covers Isocodes\Ean13
+ * @covers \IsoCodes\Ean13
  */
 class Ean13Test extends AbstractIsoCodeInterfaceTest
 {

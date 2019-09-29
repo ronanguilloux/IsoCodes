@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * IswcTest.
+ * Class IswcTest
  *
- * @covers IsoCodes\Iswc
+ * @covers \IsoCodes\Iswc
  */
 class IswcTest extends AbstractIsoCodeInterfaceTest
 {

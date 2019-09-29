@@ -3,9 +3,9 @@
 namespace IsoCodes\Tests;
 
 /**
- * AbnTest
+ * Class AbnTest
  *
- * @covers IsoCodes\Abn
+ * @covers \IsoCodes\Abn
  */
 class AbnTest extends AbstractIsoCodeInterfaceTest
 {

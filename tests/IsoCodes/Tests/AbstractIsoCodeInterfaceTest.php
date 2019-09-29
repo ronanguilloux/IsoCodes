@@ -3,6 +3,8 @@
 namespace IsoCodes\Tests;
 
 /**
+ * Class AbstractIsoCodeInterfaceTest
+ *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 abstract class AbstractIsoCodeInterfaceTest extends AbstractIsoCodeTest

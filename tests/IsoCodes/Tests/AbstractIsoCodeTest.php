@@ -5,6 +5,8 @@ namespace IsoCodes\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * Class AbstractIsoCodeTest
+ *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 abstract class AbstractIsoCodeTest extends TestCase
@@ -19,6 +21,9 @@ abstract class AbstractIsoCodeTest extends TestCase
      */
     abstract public function getInvalidValues();
 
+    /**
+     *
+     */
     final public function testEmptyValues()
     {
         $class = $this->getIsoCodesClass();
@@ -40,6 +45,9 @@ abstract class AbstractIsoCodeTest extends TestCase
         ];
     }
 
+    /**
+     * @return string
+     */
     final protected function getIsoCodesClass()
     {
         $testClassTab = explode('\\', get_class($this));
