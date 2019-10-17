@@ -33,7 +33,7 @@ class Vat implements IsoCodeInterface
         'ES' => '[A-Z]\d{7}[A-Z]|\d{8}[A-Z]|[A-Z]\d{8}',
 
         'FI' => '\d{8}',
-        'FR' => '([A-Z]{2}|\d{2})\d{9}',
+        'FR' => '([A-HJ-NP-Z0-9]{2})\d{9}',
         'GB' => '\d{9}|\d{12}|(GD|HA)\d{3}',
         'HU' => '\d{8}',
 
