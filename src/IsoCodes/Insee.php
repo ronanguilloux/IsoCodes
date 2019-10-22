@@ -27,7 +27,7 @@ class Insee implements IsoCodeInterface
             (?<sexe>[123478])                                             #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                          # année de naissance
             (?<mois>0[1-9]|1[0-2]|20)                                   # mois de naissance (si >= 20, c\'est qu\'on ne connaissait pas le mois de naissance de la personne
-                    (?<departement>[02][1-9]|2[AB]|[1345678][0-9]|9[012345789]) # le département : 01 à 19, 2A ou 2B, 21 à 95, 99 (attention, cas particulier hors métro traité hors expreg)
+                    (?<departement>[02][1-9]|2[AB]|[12345678][0-9]|9[012345789]) # le département : 01 à 20, 2A ou 2B, 21 à 95, 99 (attention, cas particulier hors métro traité hors expreg)
                     (?<numcommune>[0-9]{3})                                     # numéro d\'ordre de la commune (attention car particuler pour hors métro  traité hors expression régulière)
                     (?<numacte>00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})               # numéro d\'ordre d\'acte de naissance dans le mois et la commune ou pays
                     (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?                          # numéro de contrôle (facultatif)
