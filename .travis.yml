@@ -1,6 +1,7 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 # Travis is used to check supported versions of PHP only.
 language: php
+sudo: false
 
 php:
   - 7.1
@@ -16,10 +17,11 @@ cache:
 
 matrix:
   include:
+    - php: 7.2
+      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
     - php: 7.1
-      env: COMPOSER_FLAGS="--prefer-lowest"
-  allow_failures:
-    - php: nightly
+      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
+
   fast_finish: true
 
 before_script:

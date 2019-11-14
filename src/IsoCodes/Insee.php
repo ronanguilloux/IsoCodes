@@ -23,15 +23,15 @@ class Insee implements IsoCodeInterface
     {
         //Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
         //mais corigée par mes soins pour respecter plus scrupuleusement le format
-        $regexp = '/^                                           # début de chaîne
-            (?<sexe>[123478])                                             #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
-            (?<annee>[0-9]{2})                                          # année de naissance
-            (?<mois>0[1-9]|1[0-2]|20)                                   # mois de naissance (si >= 20, c\'est qu\'on ne connaissait pas le mois de naissance de la personne
-                    (?<departement>[02][1-9]|2[AB]|[1345678][0-9]|9[012345789]) # le département : 01 à 19, 2A ou 2B, 21 à 95, 99 (attention, cas particulier hors métro traité hors expreg)
-                    (?<numcommune>[0-9]{3})                                     # numéro d\'ordre de la commune (attention car particuler pour hors métro  traité hors expression régulière)
-                    (?<numacte>00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})               # numéro d\'ordre d\'acte de naissance dans le mois et la commune ou pays
-                    (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?                          # numéro de contrôle (facultatif)
-                    $                                                           # fin de chaîne
+        $regexp = '/^                                              # début de chaîne
+            (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
+            (?<annee>[0-9]{2})                                     # année de naissance
+            (?<mois>0[1-9]|1[0-2]|3[1-9]|4[0-2]|[5-9][0-9]|20)     # mois de naissance: de 01 (janvier) à 12 (décembre) ou entre 30 et 42 ou entre 50 et 99 ou égal à 20 pour un mois non connu
+                    (?<departement>[0][1-9]|2[AB]|[1-9][0-9])      # le département : de 01 à 95, ou 2A ou 2B pour la Corse après le 1er janvier 1976, ou 96 à 98 pour des naissances hors France métropolitaine et 99 pour des naissances à l\'étranger. Attention, cas particuliers supplémentaire outre-mer traité plus loin, hors expreg
+                    (?<numcommune>[0-9]{3})                        # numéro d\'ordre de la commune (attention car particuler pour hors métro  traité hors expression régulière)
+                    (?<numacte>00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})  # numéro d\'ordre d\'acte de naissance dans le mois et la commune ou pays
+                    (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?             # numéro de contrôle (facultatif)
+                    $                                              # fin de chaîne
                     /x';
         //références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
@@ -74,6 +74,7 @@ class Insee implements IsoCodeInterface
                 $aChecker -= 2000000;
                 break;
 
+            // département de naissance en outre-mer: de 970 à 989
             case $return['departement'] == 97 || $return['departement'] == 98:
                 $return['departement'] .= substr($return['numcommune'], 0, 1);
                 $return['numcommune'] = substr($return['numcommune'], 1, 2);
@@ -83,6 +84,7 @@ class Insee implements IsoCodeInterface
                 }
                 break;
 
+            // naissance hors de France
             case $return['departement'] == 99:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
