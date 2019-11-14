@@ -7,22 +7,20 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - nightly
-
-sudo: false
 
 cache:
   directories:
     - $HOME/.composer/cache/files
 
 matrix:
+  fast_finish: true
   include:
+    - php: 7.3
+      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
     - php: 7.2
       env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
     - php: 7.1
       env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
-
-  fast_finish: true
 
 before_script:
   - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
