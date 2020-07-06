@@ -40,9 +40,9 @@ class Hetu implements IsoCodeInterface
         $dd = substr($hetu, 0, 2);
         $mm = substr($hetu, 2, 2);
         $yy = substr($hetu, 4, 2);
-        $centuryCode = strtoupper($hetu[0]);
+        $centuryCode = strtoupper($hetu[6]);
         $id = (int) ($dd.$mm.$yy.substr($hetu, 7, 3));
-        $checksum = strtoupper($hetu[0]);
+        $checksum = strtoupper($hetu[10]);
 
         if ($dd < 1 || $dd > 31) {
             return false;
