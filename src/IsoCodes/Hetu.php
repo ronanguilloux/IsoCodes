@@ -61,8 +61,8 @@ class Hetu implements IsoCodeInterface
         }
 
         $hetuChecksumKey = $id % strlen(static::$validationKeys);
-        if (!isset(static::$validationKeys{$hetuChecksumKey})
-            || static::$validationKeys{$hetuChecksumKey} !== $checksum
+        if (!isset(static::$validationKeys[$hetuChecksumKey])
+            || static::$validationKeys[$hetuChecksumKey] !== $checksum
         ) {
             return false;
         }
