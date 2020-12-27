@@ -143,6 +143,11 @@ to get IsoCodes working with **CakePHP 3** as a validator.
 Install [pixelpeter/laravel5-isocodes-validation](https://github.com/pixelpeter/laravel5-isocodes-validation)
 to get IsoCodes working with **Laravel 5** as a validator.
 
+## Supported PHP versions
+
+- 7.3
+- 7.4
+
 ## Unit testing
 
 ```bash
