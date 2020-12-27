@@ -17,7 +17,7 @@ class Isbn implements IsoCodeInterface
      */
     public static function validate($isbn, $type = null)
     {
-        if ($type !== null && !in_array($type, [10, 13], true)) {
+        if (null !== $type && !in_array($type, [10, 13], true)) {
             throw new \InvalidArgumentException('ISBN type option must be 10 or 13');
         }
 
@@ -25,10 +25,10 @@ class Isbn implements IsoCodeInterface
         $isbn = str_replace('-', '', $isbn); // this is a dash
         $isbn = str_replace('‐', '', $isbn); // this is an authentic hyphen
 
-        if ($type === 10) {
+        if (10 === $type) {
             return self::validateIsbn10($isbn);
         }
-        if ($type === 13) {
+        if (13 === $type) {
             return self::validateIsbn13($isbn);
         }
 
@@ -37,7 +37,7 @@ class Isbn implements IsoCodeInterface
 
     private static function validateIsbn10($isbn10)
     {
-        if (strlen($isbn10) != 10) {
+        if (10 != strlen($isbn10)) {
             return false;
         }
 
@@ -46,19 +46,19 @@ class Isbn implements IsoCodeInterface
         }
         $check = 0;
         for ($i = 0; $i < 10; ++$i) {
-            if ($isbn10[$i] == 'X') {
+            if ('X' == $isbn10[$i]) {
                 $check += 10 * intval(10 - $i);
             }
             $check += intval($isbn10[$i]) * intval(10 - $i);
         }
 
-        return $check % 11 == 0;
+        return 0 == $check % 11;
     }
 
     private static function validateIsbn13($isbn13)
     {
         $prefix = substr($isbn13, 0, 3);
-        if (strlen($isbn13) != 13 || !ctype_digit($isbn13) || !in_array($prefix, ['978', '979'])) {
+        if (13 != strlen($isbn13) || !ctype_digit($isbn13) || !in_array($prefix, ['978', '979'])) {
             return false;
         }
 

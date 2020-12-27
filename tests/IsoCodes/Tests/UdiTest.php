@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class UdiTest
+ * Class UdiTest.
  *
  * @covers \IsoCodes\Udi
  */

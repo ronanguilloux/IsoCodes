@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class NifTest
+ * Class NifTest.
  *
  * @covers \IsoCodes\Nif
  */

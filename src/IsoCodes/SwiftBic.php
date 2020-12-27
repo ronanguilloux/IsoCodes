@@ -14,7 +14,7 @@ class SwiftBic implements IsoCodeInterface
      *
      * @author ronan.guilloux
      *
-     * @link   https://www.iso20022.org
+     * @see   https://www.iso20022.org
      *
      * @return bool
      */

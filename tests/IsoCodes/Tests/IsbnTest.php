@@ -5,9 +5,10 @@ namespace IsoCodes\Tests;
 use IsoCodes\Isbn;
 
 /**
- * Class IsbnTest
+ * Class IsbnTest.
  *
  * @covers \IsoCodes\Isbn
+ *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class IsbnTest extends AbstractIsoCodeTest
@@ -74,7 +75,7 @@ class IsbnTest extends AbstractIsoCodeTest
     }
 
     /**
-     * testValidIsbn
+     * testValidIsbn.
      *
      * @param mixed    $isbn
      * @param int|null $type
@@ -89,25 +90,15 @@ class IsbnTest extends AbstractIsoCodeTest
     }
 
     /**
-     * testInvalidIsbn
+     * testInvalidIsbn.
      *
      * @param mixed    $isbn
      * @param int|null $type
      *
      * @dataProvider getInvalidValues
-     *
      */
     public function testInvalidValues($isbn, $type = null)
     {
         $this->assertFalse(Isbn::validate($isbn, $type));
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage ISBN type option must be 10 or 13
-     */
-    public function testInvalidTypeOption()
-    {
-        Isbn::validate('', 0);
     }
 }

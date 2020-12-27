@@ -15,8 +15,8 @@ class Bban implements IsoCodeInterface
      * @author  petitchevalroux
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
      *
-     * @link    http://dev.petitchevalroux.net/php/valider-bban-php.359.html
-     * @link    http://fr.wikipedia.org/wiki/Relev%C3%A9_d%27identit%C3%A9_bancaire
+     * @see    http://dev.petitchevalroux.net/php/valider-bban-php.359.html
+     * @see    http://fr.wikipedia.org/wiki/Relev%C3%A9_d%27identit%C3%A9_bancaire
      *
      * @return bool
      */
@@ -26,7 +26,7 @@ class Bban implements IsoCodeInterface
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
 
-        if (mb_strlen($bban) !== 23) {
+        if (23 !== mb_strlen($bban)) {
             return false;
         }
         $key = substr($bban, -2);

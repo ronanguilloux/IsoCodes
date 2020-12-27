@@ -5,7 +5,7 @@ namespace IsoCodes;
 /**
  * Abstract Class Gtin Global Trade Item Numbers.
  *
- * @link http://www.gs1.org/how-calculate-check-digit-manually
+ * @see http://www.gs1.org/how-calculate-check-digit-manually
  */
 abstract class Gtin extends Luhn
 {

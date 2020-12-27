@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class AbnTest
+ * Class AbnTest.
  *
  * @covers \IsoCodes\Abn
  */
@@ -19,7 +19,7 @@ class AbnTest extends AbstractIsoCodeInterfaceTest
             ['63 384 330 717'], // AFSA's ABN from https://www.ppsr.gov.au/abn-australian-business-number
             ['70 107 422 631'], // BigCommerce, NSW
             ['85 153 233 053'], // BagPiper Company, VIC
-            ['60 103 455 643']  // Crozier Bagpipes
+            ['60 103 455 643'],  // Crozier Bagpipes
         ];
     }
 
@@ -29,7 +29,7 @@ class AbnTest extends AbstractIsoCodeInterfaceTest
     public function getInvalidValues()
     {
         return [
-            ['51 824 753 557']
+            ['51 824 753 557'],
         ];
     }
 }

@@ -8,9 +8,9 @@ namespace IsoCodes;
  * Their data structures require up to 14-digit fields
  * and all GTIN processing software should allow for 14 digits.
  *
- * @link http://www.idtechnology.com/uploads/whitepapers/UDI_eBook.pdf
- * @link https://accessgudid.nlm.nih.gov/about-gudid#what-is-udi
- * @link http://www.gs1.org/healthcare/udi
+ * @see http://www.idtechnology.com/uploads/whitepapers/UDI_eBook.pdf
+ * @see https://accessgudid.nlm.nih.gov/about-gudid#what-is-udi
+ * @see http://www.gs1.org/healthcare/udi
  */
 class Udi extends Gtin14 implements IsoCodeInterface
 {

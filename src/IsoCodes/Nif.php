@@ -15,8 +15,8 @@ namespace IsoCodes;
  *
  * @source  https://github.com/alrik11es/spanish-utils
  *
- * @link    http://es.wikipedia.org/wiki/NIF
- * @link    http://www.investinspain.org/guidetobusiness/en/2/art_2_3.html
+ * @see    http://es.wikipedia.org/wiki/NIF
+ * @see    http://www.investinspain.org/guidetobusiness/en/2/art_2_3.html
  */
 class Nif implements IsoCodeInterface
 {
@@ -76,7 +76,7 @@ class Nif implements IsoCodeInterface
 
         for ($i = 1; $i < 8; $i += 2) {
             $tmp = (string) (2 * $cif[$i]);
-            $tmp = $tmp[0] + ((strlen($tmp) == 2) ? $tmp[1] : 0);
+            $tmp = $tmp[0] + ((2 == strlen($tmp)) ? $tmp[1] : 0);
             $sum += $tmp;
         }
 

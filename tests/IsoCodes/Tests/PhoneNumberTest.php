@@ -5,9 +5,10 @@ namespace IsoCodes\Tests;
 use IsoCodes\PhoneNumber;
 
 /**
- * Class PhoneNumberTest
+ * Class PhoneNumberTest.
  *
  * @covers \IsoCodes\PhoneNumber
+ *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class PhoneNumberTest extends AbstractIsoCodeTest

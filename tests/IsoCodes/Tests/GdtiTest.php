@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class GdtiTest
+ * Class GdtiTest.
  *
  * @covers \IsoCodes\Gdti
  */
@@ -28,7 +28,7 @@ class GdtiTest extends AbstractIsoCodeInterfaceTest
     {
         return [
             ['0000000000000 1234567890 123456'], // string containing 13 zeros + valid random optional serial number
-            ['471951200288-1234567890-123456'],// not 13 chars found in GTIN13 component
+            ['471951200288-1234567890-123456'], // not 13 chars found in GTIN13 component
             [4719512002881234567890123456], // same, but integer
             ['4719512002888-1234567890-123456'], // bad checksum digit
             ['4719512002889.1234567890.123456'],  // dot hyphens are not OK.

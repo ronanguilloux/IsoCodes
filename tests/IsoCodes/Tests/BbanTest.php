@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class BbanTest
+ * Class BbanTest.
  *
  * @covers \IsoCodes\Bban
  */
@@ -12,7 +12,7 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!extension_loaded('bcmath')) {
             $this->markTestSkipped('The bcmath extension is needed.');
@@ -27,7 +27,7 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
     {
         return [
             ['15459450000411700920U62'],
-            ['10207000260402601177083']
+            ['10207000260402601177083'],
         ];
     }
 

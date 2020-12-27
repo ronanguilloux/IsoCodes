@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class IsinTest
+ * Class IsinTest.
  *
  * @covers \IsoCodes\Isin
  */
@@ -26,7 +26,7 @@ class IsinTest extends AbstractIsoCodeInterfaceTest
             ['FR0004038099'], // GFI Informatique
             ['US5949181045'], // Microsoft
             ['FR0003500008'], // CAC40
-            ['FR0000133308']  // France Telecom
+            ['FR0000133308'],  // France Telecom
         ];
     }
 
@@ -39,7 +39,7 @@ class IsinTest extends AbstractIsoCodeInterfaceTest
             ['LU0056994010'],
             ['XX0056994010'],
             ['US0378331004'],
-            ['AA0000XVGZA3']
+            ['AA0000XVGZA3'],
         ];
     }
 }

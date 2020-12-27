@@ -3,16 +3,17 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class SiretTest
+ * Class SiretTest.
  *
  * @covers \IsoCodes\Siret
+ *
  * @uses   \IsoCodes\Siren
  */
 class SiretTest extends AbstractIsoCodeInterfaceTest
 {
     /**
      * {@inheritdoc}
-     * Source of truth: https://data.opendatasoft.com/explore/dataset/sirene_v3%40public/
+     * Source of truth: https://data.opendatasoft.com/explore/dataset/sirene_v3%40public/.
      */
     public function getValidValues()
     {

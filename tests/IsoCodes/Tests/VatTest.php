@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class VatTest
+ * Class VatTest.
  *
  * @covers \IsoCodes\Vat
  */
@@ -62,7 +62,7 @@ class VatTest extends AbstractIsoCodeInterfaceTest
             ['RO4594917'],
             ['GB123456789'],
             ['GB123456789012'],
-            ['SE123456789012']
+            ['SE123456789012'],
         ];
     }
 
@@ -75,7 +75,7 @@ class VatTest extends AbstractIsoCodeInterfaceTest
             [[]],
             [999999999],
             [9999.9999],
-            ["aaa"],
+            ['aaa'],
             ["&é\"'[-è_çà$^$*,;:!¨£%µ?./§¹~#{[|->\^@]}¤->^̣··´"],
             ['DE12345678'],
             ['EE1234567'],
@@ -134,7 +134,7 @@ class VatTest extends AbstractIsoCodeInterfaceTest
             ['SE1234567890123'],
             ['1234579'],
             ['XX1234579'], // unknown
-            ['de123456789'] // lowercase is invalid
+            ['de123456789'], // lowercase is invalid
         ];
     }
 }

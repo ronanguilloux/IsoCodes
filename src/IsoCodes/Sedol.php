@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * @link https://en.wikipedia.org/wiki/SEDOL
+ * @see https://en.wikipedia.org/wiki/SEDOL
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
@@ -14,7 +14,7 @@ class Sedol implements IsoCodeInterface
      */
     public static function validate($value)
     {
-        if (strlen($value) !== 7) {
+        if (7 !== strlen($value)) {
             return false;
         }
 

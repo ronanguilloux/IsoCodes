@@ -3,3 +3,6 @@
 /build/*
 /bin/*
 /phpunit.xml
+.phpunit.result.cache
+.php_cs.cache
+

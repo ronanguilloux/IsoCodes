@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class IswcTest
+ * Class IswcTest.
  *
  * @covers \IsoCodes\Iswc
  */

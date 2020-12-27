@@ -5,9 +5,10 @@ namespace IsoCodes\Tests;
 use IsoCodes\ZipCode;
 
 /**
- * Class ZipCodeTest
+ * Class ZipCodeTest.
  *
  * @covers \IsoCodes\ZipCode
+ *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
 class ZipCodeTest extends AbstractIsoCodeTest
@@ -68,7 +69,6 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['WC1A 1BA',  'GB'], // UK, Holborn (WC format has extra letter in fourth position)
             ['GIR 0AA',   'GB'], // UK, Girobank/Santander (quirk)
             ['BFPO 23',   'GB'], // UK, BFPO (quirk)
-            
         ];
     }
 
@@ -180,7 +180,7 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['A92  VWK5',  'IE'],
             ['A92 VWK56',  'IE'],
             ['A923 VWK56', 'IE'],
-            
+
             ['CR0 3RL1',     'GB'], // Extra digit at end
             ['BS5 7EX junk', 'GB'], // Ensure the regex is anchored to end (issue #108)
             ['junk BS5 7EX', 'GB'], // Ensure the regex is anchored to start (issue #108)

@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class AbstractIsoCodeInterfaceTest
+ * Class AbstractIsoCodeInterfaceTest.
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */

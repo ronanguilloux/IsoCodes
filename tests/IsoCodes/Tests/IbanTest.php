@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class IbanTest
+ * Class IbanTest.
  *
  * @covers \IsoCodes\Iban
  */
@@ -12,7 +12,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!extension_loaded('bcmath')) {
             $this->markTestSkipped('The bcmath extension is needed.');

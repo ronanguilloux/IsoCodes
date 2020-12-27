@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class GlnTest
+ * Class GlnTest.
  *
  * @covers \IsoCodes\Gln
  */

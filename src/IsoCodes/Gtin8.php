@@ -8,9 +8,9 @@ namespace IsoCodes;
  * GTIN-8 (formerly EAN-8) is derived from EAN-13, introduced for use on small packages where an EAN-13 barcode would be too large;
  * for example on cigarettes, pencils, and chewing gum packets.
  *
- * @link https://en.wikipedia.org/wiki/EAN-8
- * @link https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
- * @link https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+ * @see https://en.wikipedia.org/wiki/EAN-8
+ * @see https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
+ * @see https://en.wikipedia.org/wiki/Global_Trade_Item_Number
  */
 class Gtin8 extends Gtin implements IsoCodeInterface
 {

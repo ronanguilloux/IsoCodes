@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class SsccTest
+ * Class SsccTest.
  *
  * @covers \IsoCodes\Sscc
  */

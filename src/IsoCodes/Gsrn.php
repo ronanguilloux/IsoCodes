@@ -8,9 +8,9 @@ namespace IsoCodes;
  * (such as doctors who work for a hospital) and individual service clients
  * (such as the metering points of an electricity company, or the loyalty account members of a retailer.).
  *
- * @link https://en.wikipedia.org/wiki/Global_Service_Relationship_Number
- * @link http://www.gs1.org/global-service-relation-number-gsrn
- * @link http://www.gs1.org/docs/idkeys/GS1_GSRN_Executive_Summary.pdf
+ * @see https://en.wikipedia.org/wiki/Global_Service_Relationship_Number
+ * @see http://www.gs1.org/global-service-relation-number-gsrn
+ * @see http://www.gs1.org/docs/idkeys/GS1_GSRN_Executive_Summary.pdf
  */
 class Gsrn extends Gtin implements IsoCodeInterface
 {

@@ -23,7 +23,7 @@ class ZipCode
      *  var_export($patterns);
      * </code>
      */
-    protected static $patterns = array(
+    protected static $patterns = [
       'AC' => 'ASCN 1ZZ',
       'AD' => 'AD[1-7]0\\d',
       'AF' => '\\d{4}',
@@ -202,7 +202,7 @@ class ZipCode
       'YT' => '976\\d{2}',
       'ZA' => '\\d{4}',
       'ZM' => '\\d{5}',
-    );
+    ];
 
     /**
      * @param string $zipcode

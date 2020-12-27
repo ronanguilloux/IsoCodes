@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Utils
+ * Utils.
  */
 class Utils
 {

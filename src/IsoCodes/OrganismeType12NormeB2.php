@@ -36,13 +36,13 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
 
         $numerals = str_split($code);
         $rank = array_reverse(array_keys($numerals));
-        $orderedNumerals = array();
+        $orderedNumerals = [];
         foreach ($rank as $i => $rankValue) {
             $orderedNumerals[$rankValue + 1] = $numerals[$i];
         }
-        $results = array();
+        $results = [];
         foreach ($orderedNumerals as $cle => $value) {
-            $results[$value] = ($cle % 2 == 0) ? ((int) $value * 1) : ((int) $value * 2);
+            $results[$value] = (0 == $cle % 2) ? ((int) $value * 1) : ((int) $value * 2);
         }
         $sum = 0;
         foreach ($results as $cle => $value) {

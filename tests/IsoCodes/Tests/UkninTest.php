@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class UkninTest
+ * Class UkninTest.
  *
  * @covers \IsoCodes\Uknin
  */

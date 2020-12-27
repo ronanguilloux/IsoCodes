@@ -5,8 +5,8 @@ namespace IsoCodes;
 /**
  * Class Hetu, Finnish personal identity code (HETU, Henkilötunnus).
  *
- * @link https://en.wikipedia.org/wiki/National_identification_number#Finland
- * @link http://vrk.fi/en/personal-identity-code1
+ * @see https://en.wikipedia.org/wiki/National_identification_number#Finland
+ * @see http://vrk.fi/en/personal-identity-code1
  */
 class Hetu implements IsoCodeInterface
 {
@@ -33,7 +33,7 @@ class Hetu implements IsoCodeInterface
      */
     public static function validate($hetu)
     {
-        if (!is_string($hetu) || strlen($hetu) != 11) {
+        if (!is_string($hetu) || 11 != strlen($hetu)) {
             return false;
         }
 

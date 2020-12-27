@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class SirenTest
+ * Class SirenTest.
  *
  * @covers \IsoCodes\Siren
  */

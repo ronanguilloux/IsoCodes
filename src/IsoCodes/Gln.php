@@ -7,8 +7,8 @@ namespace IsoCodes;
  * It is a simple tool used to identify a location and can identify locations uniquely where required.
  * The mechanism for GLN is the same as GTIN-13.
  *
- * @link https://en.wikipedia.org/wiki/Global_Location_Number
- * @link https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+ * @see https://en.wikipedia.org/wiki/Global_Location_Number
+ * @see https://en.wikipedia.org/wiki/Global_Trade_Item_Number
  */
 class Gln extends Gtin13 implements IsoCodeInterface
 {

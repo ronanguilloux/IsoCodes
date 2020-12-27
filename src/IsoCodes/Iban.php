@@ -13,7 +13,7 @@ class Iban implements IsoCodeInterface
      * @author  petitchevalroux
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
      *
-     * @link    http://dev.petitchevalroux.net/php/validation-iban-php.356.html + comments & links
+     * @see    http://dev.petitchevalroux.net/php/validation-iban-php.356.html + comments & links
      *
      * @param string $iban
      *
@@ -26,7 +26,7 @@ class Iban implements IsoCodeInterface
         }
 
         // Per country validation rules
-        static $rules = array(
+        static $rules = [
             'AL' => '[0-9]{8}[0-9A-Z]{16}',
             'AD' => '[0-9]{8}[0-9A-Z]{12}',
             'AT' => '[0-9]{16}',
@@ -94,31 +94,31 @@ class Iban implements IsoCodeInterface
             'GB' => '[A-Z]{4}[0-9]{14}',
             'CI' => '[0-9A-Z]{2}[0-9]{22}',
             'BR' => '[0-9]{8}[0-9]{5}[0-9]{10}[A-Z]{1}[A-Z0-9]{1}',
-        );
+        ];
         // Min length check
         if (mb_strlen($iban) < 15) {
             return false;
         }
         // Fetch country code from IBAN
         $ctr = substr($iban, 0, 2);
-        if (isset($rules[$ctr]) === false) {
+        if (false === isset($rules[$ctr])) {
             return false;
         }
         // Fetch country validation rule
         $check = substr($iban, 4);
-        if (preg_match('~^'.$rules[$ctr].'$~', $check) !== 1) {
+        if (1 !== preg_match('~^'.$rules[$ctr].'$~', $check)) {
             return false;
         }
         // Fetch needed string for validation
         $check = $check.substr($iban, 0, 4);
         // Replace characters by decimal values
         $check = str_replace(
-            array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
-            array('10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'),
+            ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+            ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'],
             $check
         );
 
         // Final check
-        return bcmod($check, 97, 0) === '1';
+        return '1' === bcmod($check, 97, 0);
     }
 }

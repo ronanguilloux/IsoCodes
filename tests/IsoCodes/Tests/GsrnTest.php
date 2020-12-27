@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class GsrnTest
+ * Class GsrnTest.
  *
  * @covers \IsoCodes\Gsrn
  */
@@ -17,7 +17,7 @@ class GsrnTest extends AbstractIsoCodeInterfaceTest
         return [
             ['735005385000000011'],
             ['735005385 00000001 1'],
-            ['735005385-00000001-1']
+            ['735005385-00000001-1'],
         ];
     }
 

@@ -6,9 +6,9 @@ namespace IsoCodes;
  * Class Grai for Global Returnable Asset Identifier, from GS1
  * Used for the management of reusable transport items, transport equipment, and tools.
  *
- * @link http://www.gs1.org/grai
- * @link http://www.gs1.org/docs/idkeys/GS1_GRAI_Executive_Summary.pdf
- * @link https://en.wikipedia.org/wiki/Global_Returnable_Asset_Identifier
+ * @see http://www.gs1.org/grai
+ * @see http://www.gs1.org/docs/idkeys/GS1_GRAI_Executive_Summary.pdf
+ * @see https://en.wikipedia.org/wiki/Global_Returnable_Asset_Identifier
  */
 class Grai extends Gtin13 implements IsoCodeInterface
 {

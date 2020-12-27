@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class InseeTest
+ * Class InseeTest.
  *
  * @covers \IsoCodes\Insee
  */
@@ -22,7 +22,7 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
             ['253077507300483'],
             ['188057208107893'],
             ['192077501720490'],
-            ['260072000100289']    // Corse, après le 01/01/1976
+            ['260072000100289'],    // Corse, après le 01/01/1976
         ];
     }
 

@@ -12,7 +12,7 @@ class IP implements IsoCodeInterface
      *
      * @param string $ipv4
      *
-     * @link http://php.net/manual/fr/function.filter-var.php
+     * @see http://php.net/manual/fr/function.filter-var.php
      *
      * @return bool
      */
@@ -26,7 +26,7 @@ class IP implements IsoCodeInterface
      *
      * @param string $ipv6
      *
-     * @link http://php.net/manual/fr/function.filter-var.php
+     * @see http://php.net/manual/fr/function.filter-var.php
      *
      * @return bool
      */

@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class SwiftBicTest
+ * Class SwiftBicTest.
  *
  * @covers \IsoCodes\SwiftBic
  */

@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class StructuredCommunicationTest
+ * Class StructuredCommunicationTest.
  *
  * @covers \IsoCodes\StructuredCommunication
  */

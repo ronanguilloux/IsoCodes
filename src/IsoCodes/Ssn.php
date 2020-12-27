@@ -7,7 +7,8 @@ namespace IsoCodes;
  * echo Ssn::validate('557-26-9048');
  *
  * As of 2011 SSN's are completely randomized
- * @link    : http://www.socialsecurity.gov/employer/randomization.html)
+ *
+ * @see    : http://www.socialsecurity.gov/employer/randomization.html)
  * @source  : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
  * @source  : https://gist.github.com/Kryptonit3/7b6bff5abab4a62e2b796a0e5a9ab94e
  *
@@ -15,11 +16,11 @@ namespace IsoCodes;
  * Numbers with all zeros in any digit group (000-##-####, ###-00-####, ###-##-0000).[36][37]
  * Numbers with 666 or 900–999 (Individual Taxpayer Identification Number) in the first digit group.[36]
  * special cases to care bout:
- * @link     : https://stackoverflow.com/questions/1517026/how-can-i-validate-us-social-security-number/18385786#18385786
+ *
+ * @see     : https://stackoverflow.com/questions/1517026/how-can-i-validate-us-social-security-number/18385786#18385786
  */
 class Ssn implements IsoCodeInterface
 {
-
     /**
      * SSN validation.
      *
@@ -32,20 +33,20 @@ class Ssn implements IsoCodeInterface
         $ssn = trim($ssn);
 
         // Must be in format AAA-GG-SSSS or AAAGGSSSS
-        if (!preg_match("/^([0-9]{9}|[0-9]{3}-[0-9]{2}-[0-9]{4})$/", $ssn)) {
+        if (!preg_match('/^([0-9]{9}|[0-9]{3}-[0-9]{2}-[0-9]{4})$/', $ssn)) {
             return false;
         }
 
         $forbidden = [
             '078-051-120', // Woolworth Wallet Fiasco
-            '219-099-999'  // Was used in an ad by the Social Security Administration
+            '219-099-999',  // Was used in an ad by the Social Security Administration
         ];
 
         if (in_array($ssn, $forbidden)) {
             return false;
         }
 
-        $ssnFormatted = (strlen($ssn) == 9) ? preg_replace("/^([0-9]{3})([0-9]{2})([0-9]{4})$/", "$1-$2-$3", $ssn) : $ssn;
+        $ssnFormatted = (9 == strlen($ssn)) ? preg_replace('/^([0-9]{3})([0-9]{2})([0-9]{4})$/', '$1-$2-$3', $ssn) : $ssn;
         $ssn_array = explode('-', $ssnFormatted);
 
         // number groups must follow these rules:
@@ -55,12 +56,12 @@ class Ssn implements IsoCodeInterface
         // * third group must be 0001-9999
 
         foreach ($ssn_array as $group) {
-            if ($group == 0) {
+            if (0 == $group) {
                 return false;
             }
         }
 
         // Forbidden numbers
-        return !($ssn_array[0] == 666 || $ssn_array[0] === '000' || $ssn_array[0] > 899);
+        return !(666 == $ssn_array[0] || '000' === $ssn_array[0] || $ssn_array[0] > 899);
     }
 }

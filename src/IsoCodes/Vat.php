@@ -14,11 +14,11 @@ class Vat implements IsoCodeInterface
      *
      * @var array
      *
-     * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
-     * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
-     * @link http://en.wikipedia.org/wiki/VAT_identification_number
+     * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
+     * @see http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @see http://en.wikipedia.org/wiki/VAT_identification_number
      */
-    public static $patterns = array(
+    public static $patterns = [
         'AT' => 'U[A-Z\d]{8}',
         'BE' => '0\d{9}',
         'BG' => '\d{9,10}',
@@ -74,7 +74,7 @@ class Vat implements IsoCodeInterface
         'GT' => '\d{7}-\d',
         'MX' => '\d{3} \d{6} \d{3}',
         'VE' => '[JGVE]-\d{8}-?\d',
-    );
+    ];
 
     /**
      * validate

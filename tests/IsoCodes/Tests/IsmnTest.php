@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class IsmnTest
+ * Class IsmnTest.
  *
  * @covers \IsoCodes\Ismn
  */

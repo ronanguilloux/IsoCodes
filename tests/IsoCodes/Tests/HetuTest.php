@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class HetuTest
+ * Class HetuTest.
  *
  * @covers \IsoCodes\Hetu
  */

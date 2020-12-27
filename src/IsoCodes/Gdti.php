@@ -6,9 +6,9 @@ namespace IsoCodes;
  * Class Gdti for GS1 Global Document Type Identifier (GDTI)
  * used by companies to identify documents, including the class or type of each document.
  *
- * @link http://www.gs1.org/global-document-type-identifier-gdti
- * @link http://www.gs1.org/docs/idkeys/GS1_GDTI_Executive_Summary.pdf
- * @link https://en.wikipedia.org/wiki/Global_Document_Type_Identifier
+ * @see http://www.gs1.org/global-document-type-identifier-gdti
+ * @see http://www.gs1.org/docs/idkeys/GS1_GDTI_Executive_Summary.pdf
+ * @see https://en.wikipedia.org/wiki/Global_Document_Type_Identifier
  */
 class Gdti extends Gtin13 implements IsoCodeInterface
 {

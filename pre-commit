@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# @source: https://gist.github.com/ronanguilloux/11f6a788358577474ab4
+# @link http://tech.zumba.com/2014/04/14/control-code-quality/
+
+
+PROJECT=`php -r "echo dirname(dirname(dirname(realpath('$0'))));"`
+STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php`
+
+# Determine if a file list is passed
+if [ "$#" -eq 1 ]
+then
+	oIFS=$IFS
+	IFS='
+	'
+	SFILES="$1"
+	IFS=$oIFS
+fi
+SFILES=${SFILES:-$STAGED_FILES_CMD}
+
+echo "Checking PHP Lint..."
+for FILE in $SFILES
+do
+	php -l -d display_errors=0 $PROJECT/$FILE
+	if [ $? != 0 ]
+	then
+		echo "Fix the error before commit."
+		exit 1
+	fi
+	FILES="$FILES $PROJECT/$FILE"
+done
+
+if [ "$FILES" != "" ]
+then
+    # --------------------------------------------------
+    # this is where magic happens,
+    # and you can add your own rules here:
+
+	bin/phpcs --standard=PSR2 src -n
+	bin/php-cs-fixer fix --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
+
+	# --------------------------------------------------
+	if [ $? != 0 ]
+	then
+		echo "Fix the error before commit."
+		exit 1
+	fi
+fi
+
+exit $?

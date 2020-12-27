@@ -50,7 +50,7 @@ update:
 	@composer install --optimize-autoloader
 
 .git/hook/pre-commit:
-	@curl -s -o .git/hooks/pre-commit https://raw.githubusercontent.com/polypodes/Build-and-Deploy/master/hooks/pre-commit
+	@cp -s -o .git/hooks/pre-commit pre-commit
 	@chmod +x .git/hooks/pre-commit
 
 ############################################################################
@@ -87,7 +87,7 @@ dry-fix:
 cs-fix:
 	@bin/phpcbf --standard=PSR2 src
 	@bin/phpcbf --standard=PSR2 tests
-	@bin/php-cs-fixer fix --config=.php_cs.php --stop-on-violation --using-cache=no -vv
+	@bin/php-cs-fixer fix --config=.php_cs.php --using-cache=no -vv
 
 #quality must remain quiet, as far as it's used in a pre-commit hook validation
 quality: sniff dry-fix

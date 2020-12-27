@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class GraiTest
+ * Class GraiTest.
  *
  * @covers \IsoCodes\Grai
  */

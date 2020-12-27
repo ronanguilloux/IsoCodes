@@ -16,7 +16,7 @@ class Mac implements IsoCodeInterface
      * Could be both lowercase or uppercase letters.
      * Mixed upper/lower cases and hyphens/colons are not allowed.
      *
-     * @link http://en.wikipedia.org/wiki/MAC_address#Notational_conventions
+     * @see http://en.wikipedia.org/wiki/MAC_address#Notational_conventions
      *
      * @param string $mac
      *

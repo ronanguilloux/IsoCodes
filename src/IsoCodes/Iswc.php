@@ -6,9 +6,9 @@ namespace IsoCodes;
  * Class Iswc for International Standard Musical Work Code (ISWC)
  * is a unique identifier for musical works, similar to ISBN. It is adopted as international standard ISO 15707.
  *
- * @link https://en.wikipedia.org/wiki/International_Standard_Musical_Work_Code
- * @link http://www.ismn-international.org/publications/newsletter10/othersys.html
- * @link http://jsfiddle.net/sN3TU/
+ * @see https://en.wikipedia.org/wiki/International_Standard_Musical_Work_Code
+ * @see http://www.ismn-international.org/publications/newsletter10/othersys.html
+ * @see http://jsfiddle.net/sN3TU/
  */
 class Iswc extends Luhn implements IsoCodeInterface
 {
@@ -32,7 +32,7 @@ class Iswc extends Luhn implements IsoCodeInterface
         }
 
         $rem = $sum % 10;
-        if ($rem !== 0) {
+        if (0 !== $rem) {
             $rem = 10 - $rem;
         }
 

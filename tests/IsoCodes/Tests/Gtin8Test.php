@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class Gtin8Test
+ * Class Gtin8Test.
  *
  * @covers \IsoCodes\Gtin8
  */

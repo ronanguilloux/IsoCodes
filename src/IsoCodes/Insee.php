@@ -15,7 +15,7 @@ class Insee implements IsoCodeInterface
      *
      * @author Webu (Dylann Cordel <d.cordel@webu.fr>) corrigé par Ronan
      *
-     * @link   http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/
+     * @see   http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/
      *
      * @return bool ou mieux mixed array avec les infos récupérées du num de sécu ou FALSE
      */
@@ -47,7 +47,7 @@ class Insee implements IsoCodeInterface
         // => clef = 18 (la valeur correcte, car fmod travaille avec des flottants)
          */
 
-        $return = array(
+        $return = [
             'sexe' => $match['sexe'], //7,8 => homme et femme ayant un num de sécu temporaire
             'annee' => $match['annee'], //année de naissance + ou - un siècle uhuh
             'mois' => $match['mois'], //20 = inconnu
@@ -56,7 +56,7 @@ class Insee implements IsoCodeInterface
             'numacte' => $match['numacte'], //001 à 999
             'clef' => isset($match['clef']) ? $match['clef'] : null, //00 à 97
             'pays' => 'fra', //par défaut, on change que pour le cas spécifique
-        );
+        ];
 
         //base du calcul par défaut pour la clef (est modifié pour la corse)
         $aChecker = floatval(substr($numero, 0, 13));
@@ -64,18 +64,18 @@ class Insee implements IsoCodeInterface
         /*Traitement des cas des personnes nées hors métropole ou en corse*/
         switch (true) {
             //départements corses. Le calcul de la cles est différent
-            case $return['departement'] == '2A':
+            case '2A' == $return['departement']:
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
                 break;
 
-            case $return['departement'] == '2B':
+            case '2B' == $return['departement']:
                 $aChecker = floatval(str_replace('B', 1, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
                 break;
 
             // département de naissance en outre-mer: de 970 à 989
-            case $return['departement'] == 97 || $return['departement'] == 98:
+            case 97 == $return['departement'] || 98 == $return['departement']:
                 $return['departement'] .= substr($return['numcommune'], 0, 1);
                 $return['numcommune'] = substr($return['numcommune'], 1, 2);
                 if ($return['numcommune'] > 90) {
@@ -85,7 +85,7 @@ class Insee implements IsoCodeInterface
                 break;
 
             // naissance hors de France
-            case $return['departement'] == 99:
+            case 99 == $return['departement']:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
                     //990 = pays inconnu

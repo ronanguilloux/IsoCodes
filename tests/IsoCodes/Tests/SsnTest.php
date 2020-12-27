@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class SsnTest
+ * Class SsnTest.
  *
  * @covers \IsoCodes\Ssn
  */
@@ -12,7 +12,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
     /**
      * {@inheritdoc}
      *
-     * @link http://fr.fakenamegenerator.com/social-security-number.php
+     * @see http://fr.fakenamegenerator.com/social-security-number.php
      */
     public function getValidValues()
     {
@@ -37,7 +37,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
             ['666-45-67890'],
             ['998-45-67890'],
             ['078-051-120'], // Woolworth Wallet Fiasco
-            ['219-099-999']  // Was used in an ad by the Social Security Administration
+            ['219-099-999'],  // Was used in an ad by the Social Security Administration
         ];
     }
 }

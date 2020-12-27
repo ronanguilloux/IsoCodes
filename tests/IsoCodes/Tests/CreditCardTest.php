@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class CreditCardTest
+ * Class CreditCardTest.
  *
  * @covers \IsoCodes\CreditCard
  */
@@ -32,7 +32,7 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
             ['6799990100000000019'],    // maestro (short)
             ['6007220000000004'],       // Forbrugsforeningen
             ['5019717010103742'],       // Dankort
-            ['6271136264806203568']     // UnionPay
+            ['6271136264806203568'],     // UnionPay
         ];
     }
 
@@ -45,7 +45,7 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
             ['ABCDEFJHIGK'],
             ['abcdefghijk'],
             ['CE1EL2LLFFF'],
-            ['E31DCLLFFF']
+            ['E31DCLLFFF'],
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class CifTest
+ * Class CifTest.
  *
  * @covers \IsoCodes\Cif
  */
@@ -12,7 +12,7 @@ class CifTest extends AbstractIsoCodeInterfaceTest
     /**
      * {@inheritdoc}
      *
-     * @link http://www.linguee.fr/anglais-francais/traduction/cif+number.html
+     * @see http://www.linguee.fr/anglais-francais/traduction/cif+number.html
      */
     public function getValidValues()
     {

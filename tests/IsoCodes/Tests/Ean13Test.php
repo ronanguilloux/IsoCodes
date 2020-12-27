@@ -3,7 +3,7 @@
 namespace IsoCodes\Tests;
 
 /**
- * Class Ean13Test
+ * Class Ean13Test.
  *
  * @covers \IsoCodes\Ean13
  */
@@ -25,7 +25,7 @@ class Ean13Test extends AbstractIsoCodeInterfaceTest
     }
 
     /**
-     * getInvalidEan13: data provider
+     * getInvalidEan13: data provider.
      *
      * @return array
      */
