@@ -4,7 +4,6 @@ language: php
 sudo: false
 
 php:
-  - 7.1
   - 7.2
   - 7.3
   - 7.4
@@ -21,8 +20,6 @@ matrix:
     - php: 7.3
       env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
     - php: 7.2
-      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
-    - php: 7.1
       env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
 
 before_script:
