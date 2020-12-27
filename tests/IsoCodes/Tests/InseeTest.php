@@ -17,6 +17,7 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
         return [
             ['177022A00100229'],   // Corse: 2A
             ['253012B073004'],     // Corse: 2B, clef optionnelle omise
+            ['278112B050002'],     // Corse 2B See http://xml.insee.fr/schema/nir.html
             ['177025626004544'],
             ['253077507300483'],
             ['188057208107893'],
