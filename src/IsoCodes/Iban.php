@@ -119,6 +119,6 @@ class Iban implements IsoCodeInterface
         );
 
         // Final check
-        return bcmod($check, 97) === '1';
+        return bcmod($check, 97, 0) === '1';
     }
 }
