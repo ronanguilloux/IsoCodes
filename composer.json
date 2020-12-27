@@ -28,7 +28,7 @@
         "pdepend/pdepend" :                         "~2.1",
         "friendsofphp/php-cs-fixer":                "@stable",
         "php-coveralls/php-coveralls":              "^2.0",
-        "symfony/phpunit-bridge":                   "^3.0"
+        "symfony/phpunit-bridge":                   "^4.1"
     },
     "suggest": {
         "sllh/iso-codes-validator": "For Symfony or Silex integration with ease",
