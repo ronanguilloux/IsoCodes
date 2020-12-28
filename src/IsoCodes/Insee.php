@@ -70,7 +70,7 @@ class Insee implements IsoCodeInterface
                 break;
 
             case '2B' == $return['departement']:
-                $aChecker = floatval(str_replace('B', 1, substr($numero, 0, 13)));
+                $aChecker = floatval(str_replace('B', 0, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
                 break;
 
