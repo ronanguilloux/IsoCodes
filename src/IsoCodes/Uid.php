@@ -4,7 +4,7 @@ namespace IsoCodes;
 
 /**
  * Class Uid:
- * Switzerland VAT Number (UID) Validation
+ * Switzerland Business Orgs VAT Number (UID) Validation
  * Business Identification Number (BID) or Unternehmens-Identifikationsnummer (UID).
  *
  * @see https://vatstack.com/articles/switzerland-vat-number-validation
