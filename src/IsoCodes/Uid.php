@@ -24,7 +24,7 @@ class Uid implements IsoCodeInterface
         $result = 0;
         $uid = Utils::unDecorate(strval($uid), [' ', '.', '-', '—']);
 
-        if (str_contains($uid, 'CHE') || str_contains($uid, 'ADM')) {
+        if (false !== strpos($uid, 'CHE', 0) || false !== strpos($uid, 'ADM', 0)) {
             $uid = substr(strval($uid), 3, 9);
         }
 
