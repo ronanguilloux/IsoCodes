@@ -33,10 +33,7 @@ class Imei implements IsoCodeInterface
     public static function validate($imei)
     {
         $imei = Utils::unDecorate($imei, self::HYPHENS);
-        $length = 15; // for EMEI only, IMEISV is +1
-        $divider = 10;
-        $weight = 2;
-        $sum = 0;
+        $length = 15; // for IMEI only; IMEISV = EMEI+1, and not Luhn check
 
         // IMEISV?
         if ($length + 1 === strlen($imei)) {
@@ -46,26 +43,6 @@ class Imei implements IsoCodeInterface
         }
 
         // IMEI?
-        $body = substr($imei, 0, $length - 1);
-        $check = substr($imei, $length - 1, 1);
-        $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $imei)) {
-            return false;
-        }
-
-        for ($i = 0; $i < strlen($body); ++$i) {
-            if (0 === $i % 2) {
-                $add = (int) substr($body, $i, 1);
-            } else {
-                $add = $weight * (int) substr($body, $i, 1);
-                if (10 <= $add) { // '18' = 1+8 = 9, etc.
-                    $strAdd = strval($add);
-                    $add = intval($strAdd[0]) + intval($strAdd[1]);
-                }
-            }
-            $sum += $add;
-        }
-
-        return 0 === ($sum + $check) % $divider;
+        return Utils::Luhn($imei, $length, 2, 10, self::HYPHENS);
     }
 }
