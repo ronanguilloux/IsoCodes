@@ -24,6 +24,8 @@ class Imei implements IsoCodeInterface
     const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
 
     /**
+     * Basic Luhn check.
+     *
      * @param mixed $imei
      *
      * @return bool
@@ -39,11 +41,8 @@ class Imei implements IsoCodeInterface
         // IMEISV?
         if ($length + 1 === strlen($imei)) {
             $expr = sprintf('/\\d{%d}/i', $length + 1);
-            if (preg_match($expr, $imei)) {
-                return true;
-            }
 
-            return false;
+            return boolval(preg_match($expr, $imei));
         }
 
         // IMEI?
@@ -53,22 +52,18 @@ class Imei implements IsoCodeInterface
         if (!preg_match($expr, $imei)) {
             return false;
         }
-        if (0 === (int) $imei) {
-            return false;
-        }
 
         for ($i = 0; $i < strlen($body); ++$i) {
             if (0 === $i % 2) {
                 $add = (int) substr($body, $i, 1);
-                $sum += $add;
             } else {
                 $add = $weight * (int) substr($body, $i, 1);
                 if (10 <= $add) { // '18' = 1+8 = 9, etc.
                     $strAdd = strval($add);
                     $add = intval($strAdd[0]) + intval($strAdd[1]);
                 }
-                $sum += $add;
             }
+            $sum += $add;
         }
 
         return 0 === ($sum + $check) % $divider;
