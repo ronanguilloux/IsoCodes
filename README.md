@@ -32,6 +32,9 @@ $isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 // Buying Apple stocks?
 $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 
+// Trading Apple products?
+$isCUSIP = Cusip::validate('037833100'); // Apple Inc. (AAPL)
+
 // Checking your iPhone device is valid?
 $isDevice = Imei::validate('352066060926230');
 ```
