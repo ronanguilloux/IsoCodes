@@ -5,6 +5,7 @@ namespace IsoCodes;
 /**
  * Class Cusip.
  * National Securities Identification Number for products issued from both the United States and Canada.
+ * The acronym, pronounced as "kyoo-sip," derives from Committee on Uniform Security Identification Procedures.
  *
  * @see https://www.investopedia.com/ask/answers/what-is-a-cusip-number/
  * @see https://en.wikipedia.org/wiki/CUSIP
