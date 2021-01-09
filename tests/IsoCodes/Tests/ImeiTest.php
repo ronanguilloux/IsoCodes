@@ -20,6 +20,7 @@ class ImeiTest extends AbstractIsoCodeInterfaceTest
             ['35-209900-176148-23'],    // same, IMEISV, last 2 digit are a software version, not a checksum
             ['3520990017614823'],       // same
             ['490154203237518'],        // https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
+            ['352066060926230'],        // iPhone6 https://www.imei-index.com/iphone-6-imei-checker-352066060926230-canada/
         ];
     }
 

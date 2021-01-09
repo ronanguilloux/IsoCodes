@@ -31,6 +31,9 @@ $isPhonable = PhoneNumber::validate('+1-650-798-2800', 'US')
 
 // Buying Apple stocks?
 $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
+
+// Checking your iPhone device is valid?
+$isDevice = Imei::validate('352066060926230');
 ```
 
 
@@ -44,11 +47,12 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * Credit Card number
 * SEDOL (Stock Exchange codes)
 
-### Book / Music Industries
+### Manufacturing Industries
 
 * ISBN - International Standard Book Number, both 10 & 13 digits
 * ISMN - International Standard Music Number 
 * ISWC - International Standard Musical Work Code
+* IMEI - International Mobile Equipment Identity
 
 ### Public Administrations
 
