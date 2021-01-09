@@ -14,15 +14,15 @@ abstract class Gtin extends Luhn
     /**
      * {@inheritdoc}
      */
-    public static function check($gtin, $length, $unDecorate = true, $hyphens = self::HYPHENS)
+    public static function check($gtin, $length, $unDecorate = true, $hyphens = self::HYPHENS): bool
     {
-        return parent::check($gtin, $length, true, $hyphens);
+        return Utils::LuhnforGTIN($gtin, $length, true, $hyphens);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function unDecorate($gtin, $hyphens = self::HYPHENS)
+    public static function unDecorate($gtin, $hyphens = self::HYPHENS): string
     {
         return parent::unDecorate($gtin, $hyphens);
     }

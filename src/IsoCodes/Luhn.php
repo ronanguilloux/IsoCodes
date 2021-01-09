@@ -14,10 +14,8 @@ abstract class Luhn
      * @param int    $length
      * @param bool   $unDecorate
      * @param array  $hyphens
-     *
-     * @return bool
      */
-    public static function check($luhn, $length, $unDecorate = true, $hyphens = [])
+    public static function check($luhn, $length, $unDecorate = true, $hyphens = []): bool
     {
         $luhn = $unDecorate ? self::unDecorate($luhn, $hyphens) : $luhn;
         if (strlen($luhn) != $length) {
@@ -32,6 +30,8 @@ abstract class Luhn
         }
         $check = 0;
 
+        // the multiplier get applied differently (even or odd) according the value length
+        // see https://blog.datafeedwatch.com/hubfs/blog/calculate-14-digit-gtin.png
         for ($i = 0; $i < $length; $i += 2) {
             if (0 == $length % 2) {
                 $check += 3 * (int) substr($luhn, $i, 1);
@@ -48,10 +48,8 @@ abstract class Luhn
     /**
      * @param string $luhn
      * @param array  $hyphens
-     *
-     * @return string
      */
-    public static function unDecorate($luhn, $hyphens = [])
+    public static function unDecorate($luhn, $hyphens = []): string
     {
         return Utils::unDecorate($luhn, $hyphens);
     }

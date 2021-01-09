@@ -13,6 +13,8 @@ namespace IsoCodes;
  */
 class Uid implements IsoCodeInterface
 {
+    const HYPHENS = [' ', '.', '-', '—']; // regular dash, authentic hyphen (rare!) and space
+
     /**
      * @param mixed $uid - Swiss Business Identification Number
      *
@@ -22,7 +24,7 @@ class Uid implements IsoCodeInterface
     {
         $multipliers = [5, 4, 3, 2, 7, 6, 5, 4];
         $result = 0;
-        $uid = Utils::unDecorate(strval($uid), [' ', '.', '-', '—']);
+        $uid = Utils::unDecorate(strval($uid), self::HYPHENS);
 
         if (false !== strpos($uid, 'CHE', 0) || false !== strpos($uid, 'ADM', 0)) {
             $uid = substr(strval($uid), 3, 9);
@@ -30,23 +32,6 @@ class Uid implements IsoCodeInterface
 
         $uid = substr($uid, 0, 9);
 
-        if (9 != strlen($uid)) {
-            return false;
-        }
-
-        foreach ($multipliers as $key => $multiplier) {
-            if (!is_numeric($uid[$key])) {
-                return false;
-            }
-            $result += $uid[$key] * $multiplier;
-        }
-
-        $rest = $result % 11;
-
-        if (0 === $rest) {
-            return true;
-        }
-
-        return intval($uid[8]) === 11 - $rest;
+        return Utils::LuhnWithWeights($uid, 9, $multipliers, 11, self::HYPHENS);
     }
 }
