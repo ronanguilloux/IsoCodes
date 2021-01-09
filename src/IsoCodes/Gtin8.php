@@ -16,10 +16,8 @@ class Gtin8 extends Gtin implements IsoCodeInterface
 {
     /**
      * @param mixed $gtin8
-     *
-     * @return bool
      */
-    public static function validate($gtin8)
+    public static function validate($gtin8): bool
     {
         return parent::check($gtin8, 8);
     }

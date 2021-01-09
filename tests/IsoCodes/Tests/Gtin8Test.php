@@ -30,8 +30,8 @@ class Gtin8Test extends AbstractIsoCodeInterfaceTest
             [00000000],       // zeros only
             ['00000000'],     // string containing all zeros
             [42345670],       // bad checksum digit
-            [423456712],        // not 13 chars found
-            ['423456712'],      // not 13 chars found
+            [423456712],        // not 8 chars found
+            ['423456712'],      // not 8 chars found
             ['12345671'],     // not numeric-only
             ['4234.5671'],   // dot hyphens are not OK.
         ];

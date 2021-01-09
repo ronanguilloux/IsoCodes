@@ -61,6 +61,7 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 * Spain: NIF, NIE (Número de Identificación Fiscal/Extranjero) & CIF (Código de identificación fiscal)
 * Netherlands: Burgerservicenummer / Citizen Service Number (BSN)
 * Finland: HETU, Henkilötunnus (Finnish personal identity code)
+* Switzerland: Business Orgs UID (VAT) Number / Unternehmens-Identifikationsnummer
 
 ### GS1 specific numbers/identifiers
 
