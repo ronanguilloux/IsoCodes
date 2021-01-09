@@ -27,10 +27,6 @@ class Utils
         $value = self::unDecorate($value, $hyphens);
         $digits = substr($value, 0, $length - 1);
         $check = substr($value, $length - 1, 1);
-        echo "\n ------------------------------------------";
-        echo "\n val=$value";
-        echo "\n digit=$digits";
-        echo "\n check=$check";
         $expr = sprintf('/\\d{%d}/i', $length);
         if (!preg_match($expr, $value)) {
             return false;
@@ -39,25 +35,16 @@ class Utils
         $sum = 0;
         for ($i = 0; $i < strlen($digits); ++$i) {
             if (0 === $i % 2) {
-                echo "\n %2 : add = ".(int) substr($digits, $i, 1);
                 $add = (int) substr($digits, $i, 1);
             } else {
                 $add = $weight * (int) substr($digits, $i, 1);
-                echo "\n weighted: $weight * ".(int) substr($digits, $i, 1).' = '.$weight * (int) substr($digits, $i, 1);
                 if (10 <= $add) { // '18' = 1+8 = 9, etc.
                     $strAdd = strval($add);
                     $add = intval($strAdd[0]) + intval($strAdd[1]);
-                    "\n double digit, add = ".intval($strAdd[0]).' + '.intval($strAdd[1]).' = '.$add;
                 }
             }
-            echo "\n old sum = $sum";
-            echo "\n add = $add";
             $sum += $add;
-            echo "\n new sum = $sum";
-            echo "\n ----";
         }
-
-        echo "\n ($sum + $check) % $divider= ".($sum + $check) % $divider;
 
         return 0 === ($sum + $check) % $divider;
     }
@@ -101,10 +88,6 @@ class Utils
         $digits = substr($value, 0, $length - 1);
         $check = substr($value, $length - 1, 1);
         $expr = sprintf('/\\d{%d}/i', $length);
-//        echo "\n ------------------------------------------";
-//        echo "\n val=$value";
-//        echo "\n digit=$digits";
-//        echo "\n check=$check";
         if (!preg_match($expr, $value)) {
             return false;
         }
@@ -112,23 +95,16 @@ class Utils
         $sum = 0;
         for ($i = 0; $i < strlen($digits); ++$i) {
             if (!is_numeric($digits[$i])) {
-//                echo "\n" . $digits[$i] . " is not an int";
                 return false;
             }
-//            echo "\n" . $weights[$i] . " * " . intval($digits[$i]) . " = " .  $weights[$i] * intval($digits[$i]);
             $sum += $weights[$i] * intval($digits[$i]);
-//            echo "\n new sum is $sum";
         }
 
         $rest = $sum % $divider;
 
         if (0 === $rest) {
-//            echo "\n rest is zero";
             $check = $divider;
         }
-
-//        echo "\n for value $value, rest = " . $rest;
-//        echo "\n IF check $check === divider $divider - rest $rest, all good";
 
         return intval($check) === $divider - $rest;
     }
