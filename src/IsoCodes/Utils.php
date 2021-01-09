@@ -8,10 +8,9 @@ namespace IsoCodes;
 class Utils
 {
     /**
-     * @param string $input
-     * @param array  $hyphens
+     * @param mixed $input: null or string
      */
-    public static function unDecorate($input, $hyphens = []): string
+    public static function unDecorate($input, array $hyphens = []): string
     {
         $hyphensLength = count($hyphens);
         // removing hyphens
@@ -22,7 +21,11 @@ class Utils
         return $input;
     }
 
-    public static function Luhn(string $value, int $length, int $weight, int $divider, $hyphens): bool
+    /**
+     * @param mixed $value: null or string
+     * @param $hyphens
+     */
+    public static function luhn($value, int $length, int $weight, int $divider, $hyphens): bool
     {
         $value = self::unDecorate($value, $hyphens);
         $digits = substr($value, 0, $length - 1);
@@ -49,7 +52,10 @@ class Utils
         return 0 === ($sum + $check) % $divider;
     }
 
-    public static function LuhnforGTIN($value, $length, $unDecorate = true, $hyphens = []): bool
+    /**
+     * @param mixed $value: null or string
+     */
+    public static function luhnForGTIN($value, int $length, bool $unDecorate = true, array $hyphens = []): bool
     {
         $value = $unDecorate ? self::unDecorate($value, $hyphens) : $value;
         $divider = 10;
@@ -82,7 +88,7 @@ class Utils
         return 0 === $sum % $divider;
     }
 
-    public static function LuhnWithWeights(string $value, int $length, array $weights, int $divider, $hyphens): bool
+    public static function luhnWithWeights(string $value, int $length, array $weights, int $divider, $hyphens): bool
     {
         $value = self::unDecorate($value, $hyphens);
         $digits = substr($value, 0, $length - 1);

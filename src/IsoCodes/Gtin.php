@@ -16,7 +16,7 @@ abstract class Gtin extends Luhn
      */
     public static function check($gtin, $length, $unDecorate = true, $hyphens = self::HYPHENS): bool
     {
-        return Utils::LuhnforGTIN($gtin, $length, true, $hyphens);
+        return Utils::luhnForGTIN($gtin, $length, true, $hyphens);
     }
 
     /**
