@@ -4,6 +4,7 @@ namespace IsoCodes;
 
 /**
  * @see https://en.wikipedia.org/wiki/SEDOL
+ * Stock Exchange Daily Official List
  *
  * @author Sullivan Senechal <soullivaneuh@gmail.com>
  */
