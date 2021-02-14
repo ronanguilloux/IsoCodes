@@ -38,7 +38,7 @@ $isCUSIP = Cusip::validate('037833100'); // Apple Inc. (AAPL)
 // Checking your iPhone device is valid?
 $isDevice = Imei::validate('352066060926230');
 
-// Selling Your Honda Civic?
+// Selling your Honda Civic?
 $isVin = VinNA::validate('1HGBH41JXMN109186');    
 ```
 
