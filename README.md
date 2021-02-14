@@ -37,6 +37,9 @@ $isCUSIP = Cusip::validate('037833100'); // Apple Inc. (AAPL)
 
 // Checking your iPhone device is valid?
 $isDevice = Imei::validate('352066060926230');
+
+// Selling Your Honda Civic?
+$isVin = VinNA::validate('1HGBH41JXMN109186');    
 ```
 
 
@@ -56,6 +59,7 @@ $isDevice = Imei::validate('352066060926230');
 * ISMN - International Standard Music Number 
 * ISWC - International Standard Musical Work Code
 * IMEI - International Mobile Equipment Identity
+* VIN  - Vehicle Identification Number – ISO 3779 & ISO 4030
 
 ### Public Administrations
 
