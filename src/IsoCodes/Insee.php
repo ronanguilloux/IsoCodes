@@ -85,7 +85,7 @@ class Insee implements IsoCodeInterface
                 break;
 
             // naissance hors de France
-            case 99 == $return['departement']:
+            case 99 == $return['departement'] || "00" == (string) $return['departement']:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
                     //990 = pays inconnu
