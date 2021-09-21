@@ -23,7 +23,7 @@ $isShippingContainerCode = Sscc::validate('806141411234567896');
 // Publishing books?
 $isPublished = Isbn::validate('2-2110-4199-X')
 
-// Trading items with GTIN barcodes in GS1 system? 
+// Trading items with GTIN barcodes in GS1 system?
 $isBarcode = Ean13::validate('4719512002889')
 
 // Calling phone numbers in Palo Alto?
@@ -56,7 +56,7 @@ $isVin = VinNA::validate('1HGBH41JXMN109186');
 ### Manufacturing Industries
 
 * ISBN - International Standard Book Number, both 10 & 13 digits
-* ISMN - International Standard Music Number 
+* ISMN - International Standard Music Number
 * ISWC - International Standard Musical Work Code
 * IMEI - International Mobile Equipment Identity
 * VIN  - Vehicle Identification Number – ISO 3779 & ISO 4030
@@ -102,9 +102,9 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 [![License](https://poser.pugx.org/ronanguilloux/isocodes/license.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Latest Stable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/stable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Latest Unstable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/unstable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
-[![Build Status](https://secure.travis-ci.org/ronanguilloux/IsoCodes.png?branch=master)](http://travis-ci.org/ronanguilloux/IsoCodes)
+[![Build Status](https://app.travis-ci.com/ronanguilloux/IsoCodes.svg?branch=master)](https://app.travis-ci.com/ronanguilloux/IsoCodes)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/fde42adb-344d-4055-b78d-20b598040ac8/mini.png)](https://insight.sensiolabs.com/projects/fde42adb-344d-4055-b78d-20b598040ac8)
+[![SensioLabsInsight](https://insight.symfony.com/account/widget?project=fde42adb-344d-4055-b78d-20b598040ac8)](https://insight.symfony.com/projects/fde42adb-344d-4055-b78d-20b598040ac8)
 [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.svg?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes?branch=master)
 [![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
@@ -224,7 +224,7 @@ Code covering report built using [Coveralls.io](https://coveralls.io/r/ronanguil
 
 ## Contributing Code
 
-The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues. 
+The issue queue can be found at: https://github.com/ronanguilloux/IsoCodes/issues.
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
