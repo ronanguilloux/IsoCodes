@@ -93,7 +93,7 @@ $isVin = VinNA::validate('1HGBH41JXMN109186');
 Each code has its own validator.
 Each validator is illustrated by a unit test case.
 
-IsoCodes is compatible with all versions of PHP that are [actively supported](http://php.net/supported-versions.php) by the PHP project, plus hhvm.
+IsoCodes is compatible with all versions of PHP that are [actively supported](http://php.net/supported-versions.php) by the PHP project.
 
 
 ## Build status

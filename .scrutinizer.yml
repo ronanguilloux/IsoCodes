@@ -1,14 +1,10 @@
 filter:
     excluded_paths: [vendor/*, tests/*, app/*, bin/*, library/*]
 
-tools:
-    # Similar Code Detector
-    php_sim: true
-    php_cpd: false
-
-    # Metrics
-    php_pdepend: true
-
-    # Some Metrics + Bug Detection/Auto-Fixes
-    php_analyzer: true
-
+#build:
+#  nodes:
+#    analysis:
+#      tests:
+#        override:
+#          - php-scrutinizer-run
+#          - phpcs-run
