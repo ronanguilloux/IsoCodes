@@ -2,14 +2,12 @@
 
 namespace IsoCodes\Tests;
 
-use IsoCodes\IP;
-
 /**
  * Class IPv6Test.
  *
  * @covers \IsoCodes\IPv6
  */
-class IPTest extends AbstractIsoCodeTest
+class IPv6Test extends AbstractIsoCodeTest
 {
     /**
      * {@inheritdoc}
