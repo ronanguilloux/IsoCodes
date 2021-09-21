@@ -1,6 +1,6 @@
 # Travis is used to check supported versions of PHP only.
 os: linux
-dist: trusty
+dist: xenial
 language: php
 
 php:
