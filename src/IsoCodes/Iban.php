@@ -94,6 +94,7 @@ class Iban implements IsoCodeInterface
             'GB' => '[A-Z]{4}[0-9]{14}',
             'CI' => '[0-9A-Z]{2}[0-9]{22}',
             'BR' => '[0-9]{8}[0-9]{5}[0-9]{10}[A-Z]{1}[A-Z0-9]{1}',
+            'UA' => '[0-9]{6}[A-Z0-9]{19}',
         ];
         // Min length check
         if (mb_strlen($iban) < 15) {
