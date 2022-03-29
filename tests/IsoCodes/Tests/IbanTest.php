@@ -308,6 +308,10 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             ['WF4041383920092945092359281'],
             ['WF0721812715683400832634716'],
             ['WF6876262234744814330049391'],
+            ['UA213223130000026007233566001'],
+            ['UA903052992990004149123456789'],
+            ['UA945895879374233131492394854'],
+
 
             // valid IBANs from standard-documents found at www.ecbs.org (all OK):
             ['AD1200012030200359100100'],
