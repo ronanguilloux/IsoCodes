@@ -23,6 +23,9 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
             ['188057208107893'],
             ['192077501720490'],
             ['260072000100289'],    // Corse, après le 01/01/1976
+            ['260072000100289'],    // Corse, après le 01/01/1976
+            ['718610018826448'],    // Etranger en cours d'immatriculation
+            ['818610017357342'],    // Etranger en cours d'immatriculation
         ];
     }
 
