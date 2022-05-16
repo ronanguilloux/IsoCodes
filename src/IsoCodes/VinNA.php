@@ -40,8 +40,8 @@ class VinNA implements IsoCodeInterface
         ];
 
         $sum = 0;
-
-        for ($i = 0; $i < strlen($vin); ++$i) {
+        $len = strlen($vin);
+        for ($i = 0; $i < $len; ++$i) {
             if (!is_numeric($vin[$i])) {
                 $sum += $letterVal[$vin[$i]] * $weights[$i];
             } else {

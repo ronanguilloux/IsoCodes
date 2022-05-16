@@ -36,7 +36,8 @@ class Utils
         }
 
         $sum = 0;
-        for ($i = 0; $i < strlen($digits); ++$i) {
+        $len = strlen($digits);
+        for ($i = 0; $i < $len; ++$i) {
             if (0 === $i % 2) {
                 $add = (int) substr($digits, $i, 1);
             } else {
@@ -99,7 +100,8 @@ class Utils
         }
 
         $sum = 0;
-        for ($i = 0; $i < strlen($digits); ++$i) {
+        $len = strlen($digits);
+        for ($i = 0; $i < $len; ++$i) {
             if (!is_numeric($digits[$i])) {
                 return false;
             }

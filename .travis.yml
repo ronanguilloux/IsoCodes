@@ -1,7 +1,7 @@
-# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 # Travis is used to check supported versions of PHP only.
+os: linux
+dist: xenial
 language: php
-sudo: false
 
 php:
   - 7.3
@@ -10,17 +10,16 @@ php:
 
 cache:
   directories:
-    - $HOME/.composer/cache/files
+    - $HOME/.composer/cache
 
-matrix:
+jobs:
   fast_finish: true
-  include:
-    - php: 7.4
-      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
 
-before_script:
-  - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - travis_wait composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
+env:
+  - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
+
+install:
+  - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
   - mkdir -p build/logs build/cov
