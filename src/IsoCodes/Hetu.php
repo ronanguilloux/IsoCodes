@@ -4,9 +4,10 @@ namespace IsoCodes;
 
 /**
  * Class Hetu, Finnish personal identity code (HETU, Henkilötunnus).
+ * New punctuation marks for personal identity codes 1 January 2023.
  *
  * @see https://en.wikipedia.org/wiki/National_identification_number#Finland
- * @see http://vrk.fi/en/personal-identity-code1
+ * @see https://dvv.fi/en/reform-of-personal-identity-code
  */
 class Hetu implements IsoCodeInterface
 {
@@ -16,7 +17,17 @@ class Hetu implements IsoCodeInterface
     public static $centuryCodes = [
         '+' => 1800,
         '-' => 1900,
+        'Y' => 1900,
+        'X' => 1900,
+        'W' => 1900,
+        'V' => 1900,
+        'U' => 1900,
         'A' => 2000,
+        'B' => 2000,
+        'C' => 2000,
+        'D' => 2000,
+        'E' => 2000,
+        'F' => 2000,
     ];
 
     /**
