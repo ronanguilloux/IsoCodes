@@ -27,7 +27,7 @@ class Insee implements IsoCodeInterface
             (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                     # année de naissance
             (?<mois>0[1-9]|1[0-2]|[2-3][0-9]|4[0-2]|[5-9][0-9])    # mois de naissance: de 01 (janvier) à 12 (décembre) ou entre 20 et 42 ou entre 50 et 99
-                    (?<departement>[0][1-9]|2[AB]|[1-9][0-9])      # le département : de 01 à 95, ou 2A ou 2B pour la Corse après le 1er janvier 1976, ou 96 à 98 pour des naissances hors France métropolitaine et 99 pour des naissances à l\'étranger. Attention, cas particuliers supplémentaire outre-mer traité plus loin, hors expreg
+                    (?<departement>[0][0-9]|2[AB]|[1-9][0-9])      # le département : de 01 à 95, ou 2A ou 2B pour la Corse après le 1er janvier 1976, ou 96 à 98 pour des naissances hors France métropolitaine et 99 pour des naissances à l\'étranger. 00 pour les personnes en cours d\'immatriculation. Attention, cas particuliers supplémentaire outre-mer traité plus loin, hors expreg
                     (?<numcommune>[0-9]{3})                        # numéro d\'ordre de la commune (attention car particuler pour hors métro  traité hors expression régulière)
                     (?<numacte>00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})  # numéro d\'ordre d\'acte de naissance dans le mois et la commune ou pays
                     (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?             # numéro de contrôle (facultatif)
@@ -85,7 +85,7 @@ class Insee implements IsoCodeInterface
                 break;
 
             // naissance hors de France
-            case 99 == $return['departement']:
+            case 99 == $return['departement'] || "00" == (string) $return['departement']:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
                     //990 = pays inconnu
