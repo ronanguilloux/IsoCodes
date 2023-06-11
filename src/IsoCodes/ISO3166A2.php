@@ -7,7 +7,7 @@ namespace IsoCodes;
  */
 class ISO3166A2 implements IsoCodeInterface
 {
-    protected $countries = ['AD',
+    private CONST COUNTRIES = ['AD',
         'AE',
         'AF',
         'AG',
@@ -270,6 +270,6 @@ class ISO3166A2 implements IsoCodeInterface
         if($alpha2 === null){
             return false;
         }
-        return in_array($alpha2);
+        return in_array($alpha2, self::COUNTRIES, true );
     }
 }
