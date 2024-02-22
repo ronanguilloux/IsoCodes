@@ -20,7 +20,7 @@ class Vat implements IsoCodeInterface
      */
     public static $patterns = [
         'AT' => 'U[A-Z\d]{8}',
-        'BE' => '0\d{9}',
+        'BE' => '(0|1)\d{9}',
         'BG' => '\d{9,10}',
         'CY' => '\d{8}[A-Z]',
         'CZ' => '\d{8,10}',
