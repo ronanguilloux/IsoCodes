@@ -21,6 +21,7 @@ class Udi extends Gtin14 implements IsoCodeInterface
      */
     public static function validate($di)
     {
+        $di = $di ?? '';
         $di = self::unDecorate($di);
         $validUdiLength = [8, 12, 13, 14];
         $length = strlen($di);

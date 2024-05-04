@@ -15,6 +15,8 @@ class Sedol implements IsoCodeInterface
      */
     public static function validate($value)
     {
+        $value = $value ?? '';
+
         if (7 !== strlen($value)) {
             return false;
         }

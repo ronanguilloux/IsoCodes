@@ -21,6 +21,8 @@ class Insee implements IsoCodeInterface
      */
     public static function validate($numero)
     {
+        $numero = $numero ?? '';
+
         //Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
         //mais corigée par mes soins pour respecter plus scrupuleusement le format
         $regexp = '/^                                              # début de chaîne

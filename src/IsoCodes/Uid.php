@@ -22,6 +22,7 @@ class Uid implements IsoCodeInterface
      */
     public static function validate($uid)
     {
+        $uid = $uid ?? '';
         $multipliers = [5, 4, 3, 2, 7, 6, 5, 4];
         $result = 0;
         $uid = Utils::unDecorate(strval($uid), self::HYPHENS);

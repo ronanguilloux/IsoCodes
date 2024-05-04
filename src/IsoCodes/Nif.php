@@ -29,6 +29,8 @@ class Nif implements IsoCodeInterface
      */
     public static function validate($nif)
     {
+        $nif = $nif ?? '';
+
         $nifCodes = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
         if (9 !== strlen($nif)) {

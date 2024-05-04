@@ -20,6 +20,8 @@ class PhoneNumber
      */
     public static function validate($phoneNumber, $country = null)
     {
+        $phoneNumber = $phoneNumber ?? '';
+        $country = $country ?? '';
         $phoneNumber = trim($phoneNumber);
         if (empty($phoneNumber)) {
             return false;

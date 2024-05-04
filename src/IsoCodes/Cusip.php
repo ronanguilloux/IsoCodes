@@ -14,6 +14,8 @@ class Cusip implements IsoCodeInterface
 {
     public static function validate($cusip)
     {
+        $cusip = $cusip ?? '';
+
         if (9 !== strlen($cusip)) {
             return false;
         }

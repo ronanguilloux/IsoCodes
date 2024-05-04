@@ -24,6 +24,7 @@ class Cif implements IsoCodeInterface
      */
     public static function validate($cif)
     {
+        $cif = $cif ?? '';
         $cifCodes = 'JABCDEFGHI';
 
         if (9 !== strlen($cif)) {
