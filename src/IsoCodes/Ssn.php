@@ -30,6 +30,8 @@ class Ssn implements IsoCodeInterface
      */
     public static function validate($ssn)
     {
+        $ssn = $ssn ?? '';
+
         $ssn = trim($ssn);
 
         // Must be in format AAA-GG-SSSS or AAAGGSSSS

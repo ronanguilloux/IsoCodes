@@ -12,6 +12,7 @@ class Utils
      */
     public static function unDecorate($input, array $hyphens = []): string
     {
+        $input = $input ?? '';
         $hyphensLength = count($hyphens);
         // removing hyphens
         for ($i = 0; $i < $hyphensLength; ++$i) {

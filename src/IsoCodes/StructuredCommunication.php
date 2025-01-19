@@ -14,7 +14,7 @@ class StructuredCommunication implements IsoCodeInterface
      */
     public static function validate($structure)
     {
-        if (12 !== strlen($structure)
+        if (12 !== strlen($structure ?? '')
         ) {
             return false;
         }

@@ -214,6 +214,8 @@ class ZipCode
      */
     public static function validate($zipcode, $country = null)
     {
+        $zipcode = $zipcode ?? '';
+        $country = $country ?? '';
         $zipcode = trim($zipcode);
         $country = trim($country);
         if (empty($zipcode) || empty($country)) {

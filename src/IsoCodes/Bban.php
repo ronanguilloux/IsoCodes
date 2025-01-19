@@ -26,6 +26,8 @@ class Bban implements IsoCodeInterface
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
 
+        $bban = $bban ?? '';
+
         if (23 !== mb_strlen($bban)) {
             return false;
         }

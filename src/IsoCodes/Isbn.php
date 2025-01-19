@@ -17,6 +17,8 @@ class Isbn implements IsoCodeInterface
      */
     public static function validate($isbn, $type = null)
     {
+        $isbn = $isbn ?? '';
+
         if (null !== $type && !in_array($type, [10, 13], true)) {
             throw new \InvalidArgumentException('ISBN type option must be 10 or 13');
         }

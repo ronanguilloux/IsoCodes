@@ -18,6 +18,9 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
      */
     public static function validate($code = '', $key = -1)
     {
+        $code = $code ?? '';
+        $key = $key ?? -1;
+
         if (strlen($key) < 1) {
             return false;
         }

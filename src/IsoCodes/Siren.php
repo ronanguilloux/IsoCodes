@@ -24,6 +24,8 @@ class Siren implements IsoCodeInterface
      */
     public static function validate($insee, $length = 9)
     {
+        $insee = $insee ?? '';
+
         if (!is_numeric($insee)) {
             return false;
         }

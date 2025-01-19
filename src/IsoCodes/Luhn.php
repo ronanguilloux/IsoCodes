@@ -17,6 +17,8 @@ abstract class Luhn
      */
     public static function check($luhn, $length, $unDecorate = true, $hyphens = []): bool
     {
+        $luhn = $luhn ?? '';
+
         $luhn = $unDecorate ? self::unDecorate($luhn, $hyphens) : $luhn;
         if (strlen($luhn) != $length) {
             return false;

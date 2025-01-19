@@ -25,6 +25,8 @@ class Iban implements IsoCodeInterface
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
 
+        $iban = $iban ?? '';
+
         // Per country validation rules
         static $rules = [
             'AL' => '[0-9]{8}[0-9A-Z]{16}',

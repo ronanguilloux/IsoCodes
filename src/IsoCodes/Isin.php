@@ -18,6 +18,8 @@ class Isin implements IsoCodeInterface
      */
     public static function validate($isin)
     {
+        $isin = $isin ?? '';
+
         $isin = strtoupper($isin);
         if (!preg_match('/^[A-Z]{2}[A-Z0-9]{9}[0-9]$/i', $isin)) {
             return false;
