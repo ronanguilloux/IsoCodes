@@ -97,8 +97,11 @@ class Iban implements IsoCodeInterface
         if (! extension_loaded('bcmath')) {
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
-        // Min length check
         if (mb_strlen($iban) < 15) {
+            return false;
+        }
+
+        if (! ctype_alnum($iban)) {
             return false;
         }
         // Fetch country code from IBAN

@@ -373,6 +373,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             ['PL12100500000123456789'],
             ['DE912371399260788663742'],
             ['BR912371399260788663742'],
+            ['DE)$270200011511683151'], // Issue #180
         ];
     }
 }
