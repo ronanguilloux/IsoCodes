@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class UdiTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['07610221010301'],  // https://accessgudid.nlm.nih.gov/devices/07610221010301
@@ -19,7 +19,7 @@ class UdiTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [0000000000000],        // 13 zeros only

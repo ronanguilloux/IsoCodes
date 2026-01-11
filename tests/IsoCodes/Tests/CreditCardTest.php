@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class CreditCardTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['340000000000009'],        // American Express
@@ -33,7 +33,7 @@ class CreditCardTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['ABCDEFJHIGK'],

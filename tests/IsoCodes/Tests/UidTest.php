@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class UidTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['CHE-116.281.710'],        // https://vatstack.com/articles/switzerland-vat-number-validation
@@ -20,7 +20,7 @@ class UidTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['116.281.71'],         // 8 digits only

@@ -11,14 +11,14 @@ use IsoCodes\OrganismeType12NormeB2;
  */
 class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['76031208', 2],
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['76031208', '2'],

@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class IsinTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['US0378331005'], // Apple Inc.
@@ -27,7 +27,7 @@ class IsinTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['LU0056994010'],

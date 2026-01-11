@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class SirenTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['432167567'],
@@ -22,7 +22,7 @@ class SirenTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['44079707'],

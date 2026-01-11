@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class InseeTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['177022A00100229'],   // Corse: 2A
@@ -26,7 +26,7 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['353072B07300483'],

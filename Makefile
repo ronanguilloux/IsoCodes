@@ -71,11 +71,11 @@ help:
 
 unit: vendor/autoload.php
 	@echo "Run unit tests..."
-	@php bin/phpunit -v
+	@php bin/phpunit
 
 continuous: vendor/autoload.php
 	@echo "Starting continuous tests..."
-	@while true; do bin/phpunit -v; done
+	@while true; do bin/phpunit; done
 
 sniff: vendor/autoload.php
 	@bin/phpcs --standard=PSR2 src -n
@@ -108,7 +108,7 @@ done:
 
 tests: vendor/autoload.php
 	@echo "Run tests & build code coverage report..."
-	@bin/phpunit -v --coverage-html ./build/codecoverage
+	@bin/phpunit
 	@echo "\n${GREEN}Check code coverage:${RESETC}\n"
 	@echo "\t(OS X)\t\topen build/codecoverage/index.html"
 	@echo "\t(Linux)\t\txdg-open build/codecoverage/index.html"

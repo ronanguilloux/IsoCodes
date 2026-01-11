@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class IPv6Test extends AbstractIsoCodeTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['2001:0db8:0000:85a3:0000:0000:ac1f:8001'],
@@ -17,7 +17,7 @@ class IPv6Test extends AbstractIsoCodeTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['000.000.000.000'],

@@ -12,7 +12,7 @@ class CifTest extends AbstractIsoCodeInterfaceTest
     /**
      * @see http://www.linguee.fr/anglais-francais/traduction/cif+number.html
      */
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['N0032484H'], // non-resident
@@ -26,7 +26,7 @@ class CifTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['K11111111'], // Spanish children under the age of 14 who need a fiscal number

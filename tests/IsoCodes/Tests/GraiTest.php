@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class GraiTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['04719512002889 1234567890 12345A'], // valid GTIN13 + valid random optional alphanum serial number
@@ -21,7 +21,7 @@ class GraiTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['0000000000000 1234567890 12345A'], // 13 zeros + valid random optional alphanum serial number

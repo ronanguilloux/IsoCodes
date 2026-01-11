@@ -11,7 +11,7 @@ namespace IsoCodes\Tests;
  */
 final class BsnTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['075278431'],
@@ -30,7 +30,7 @@ final class BsnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['2018453'],    // < 8 chars

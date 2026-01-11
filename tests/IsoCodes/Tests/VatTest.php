@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class VatTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['DE123456789'],
@@ -64,7 +64,7 @@ class VatTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [[]],

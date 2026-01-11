@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class Ean13Test extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['4719512002889'],     // Source: Wikipedia
@@ -26,7 +26,7 @@ class Ean13Test extends AbstractIsoCodeInterfaceTest
      *
      * @return array
      */
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [0000000000000],       // 13 zeros only

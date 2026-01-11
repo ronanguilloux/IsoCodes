@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class HetuTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['190402A6222'],
@@ -43,7 +43,7 @@ class HetuTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['190402A6221'],

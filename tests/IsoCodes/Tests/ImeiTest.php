@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class ImeiTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['35-209900-176148-1'],     // https://www.getnewidentity.com/validate-imei.php
@@ -21,7 +21,7 @@ class ImeiTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['35.209900.176148.1'],     // dot hyphens are not OK

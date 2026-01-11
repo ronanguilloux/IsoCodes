@@ -11,7 +11,7 @@ namespace IsoCodes\Tests;
  */
 class SedolTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             // http://rosettacode.org/wiki/SEDOLs
@@ -32,7 +32,7 @@ class SedolTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['71-8894'],    // Invalid chars

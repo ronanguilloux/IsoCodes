@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class Gtin8Test extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['42345671'],  // vi.Wikipedia
@@ -18,7 +18,7 @@ class Gtin8Test extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [00000000],       // zeros only

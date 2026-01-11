@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class GlnTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['0614141000012'],     // Checked using http://www.gs1.org/check-digit-calculator
@@ -20,7 +20,7 @@ class GlnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [0000000000000],       // 13 zeros only

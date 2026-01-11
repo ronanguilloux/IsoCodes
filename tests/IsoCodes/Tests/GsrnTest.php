@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class GsrnTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['735005385000000011'],
@@ -18,7 +18,7 @@ class GsrnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['73500538500000001'],     // not 18 chars found

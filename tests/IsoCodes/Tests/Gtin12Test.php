@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class Gtin12Test extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['614141000036'],       // http://www.gs1.org/barcodes/ean-upc
@@ -17,7 +17,7 @@ class Gtin12Test extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [000000000000],       // zeros only

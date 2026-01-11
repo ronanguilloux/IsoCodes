@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class SwiftBicTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['RBOSGGSX'],
@@ -23,7 +23,7 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['CE1EL2LLFFF'],

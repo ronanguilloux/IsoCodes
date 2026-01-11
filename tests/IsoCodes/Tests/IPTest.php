@@ -11,7 +11,7 @@ use IsoCodes\IP;
  */
 class IPTest extends AbstractIsoCodeTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['93.184.220.20', 4],     // 中华人民共和国
@@ -27,7 +27,7 @@ class IPTest extends AbstractIsoCodeTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['000.000.000.000', 4],

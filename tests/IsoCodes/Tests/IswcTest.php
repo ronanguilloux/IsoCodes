@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class IswcTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['T-000.000.001-0'],    // The first ISWC was assigned in 1995, for the song "Dancing Queen" by ABBA.
@@ -20,7 +20,7 @@ class IswcTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['-000.000.001-0'],     // Missing mandatory 'T'

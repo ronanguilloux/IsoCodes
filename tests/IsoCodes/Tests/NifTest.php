@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class NifTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['04381012H'],     // DNI
@@ -20,7 +20,7 @@ class NifTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['A08000143'],     // NIF is not CIF (Código de identificación fiscal)

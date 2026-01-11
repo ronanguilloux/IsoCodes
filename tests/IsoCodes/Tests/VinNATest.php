@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class VinNATest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['1M8GDM9AXKP042788'], // https://en.wikipedia.org/wiki/Vehicle_identification_number#Worked_example
@@ -18,7 +18,7 @@ class VinNATest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['1M8GDM9AYKP042788'], // wrong check

@@ -10,7 +10,7 @@ return $config
         'native_type_declaration_casing' => true,
         'class_attributes_separation' => true,
         'class_definition' => true,
-        'visibility_required' => true,
+        'modifier_keywords' => true,
         'no_blank_lines_after_class_opening' => true,
         'linebreak_after_opening_tag' => true,
         'ordered_imports' => true,

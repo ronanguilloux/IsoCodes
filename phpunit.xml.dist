@@ -1,22 +1,19 @@
-<?xml version="1.0"?>
-<phpunit verbose="true" backupGlobals="false" backupStaticAttributes="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" stopOnError="false" stopOnIncomplete="false" stopOnSkipped="false" bootstrap="tests/bootstrap.php">
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
     <testsuites>
         <testsuite name="IsoCodes">
             <directory>tests/IsoCodes/Tests</directory>
+            <exclude>tests/IsoCodes/Tests/AbstractIsoCodeInterfaceTest.php</exclude>
+            <exclude>tests/IsoCodes/Tests/AbstractIsoCodeTest.php</exclude>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>./src</directory>
-        </whitelist>
-    </filter>
-
-    <logging>
-        <!-- uncoment to generate code-ceverage stats in /tmp/report: -->
-        <!--<log type="coverage-html" target="/tmp/report" charset="UTF-8" yui="true" highliighlight="false" lowUpperBound="35" highLowerBound="70" />-->
-        <!--<log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>-->
-        <!--<log type="coverage-clover" target="build/logs/clover.xml"/>-->
-        <!--<log type="coverage-php" target="build/cov/coverage.cov"/>-->
-    </logging>
+    <source>
+        <include>
+            <directory>src</directory>
+        </include>
+    </source>
 </phpunit>

@@ -13,7 +13,7 @@ use IsoCodes\Isbn;
  */
 class IsbnTest extends AbstractIsoCodeTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['8881837188', 10],
@@ -40,7 +40,7 @@ class IsbnTest extends AbstractIsoCodeTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['8881837187'],

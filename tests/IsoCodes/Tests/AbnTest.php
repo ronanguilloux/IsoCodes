@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class AbnTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['51 824 753 556'], // From https://abr.business.gov.au/Help/AbnFormat
@@ -20,7 +20,7 @@ class AbnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['51 824 753 557'],

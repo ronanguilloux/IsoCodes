@@ -17,7 +17,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
         parent::setUp();
     }
 
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             // source: http://www.mobilefish.com/download/iban/random_generated_iban.txt
@@ -363,7 +363,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['15459 45000 0411700920U 62'],

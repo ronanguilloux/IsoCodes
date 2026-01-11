@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class SsccTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['806141411234567896'],  // http://www.gs1.org/docs/barcodes/RFID_Barcode_Interoperability_Guidelines.pdf, p.11
@@ -19,7 +19,7 @@ class SsccTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [000000000000000000],       // zeros only

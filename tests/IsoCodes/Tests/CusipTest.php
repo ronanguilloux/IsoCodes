@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class CusipTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['037833100'], // Apple Inc.
@@ -22,7 +22,7 @@ class CusipTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['037833101'],

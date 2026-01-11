@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             [101327481006],
@@ -18,7 +18,7 @@ class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['12345678902'],

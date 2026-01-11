@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class ISO3166A2Test extends AbstractIsoCodeTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['US'],
@@ -18,7 +18,7 @@ class ISO3166A2Test extends AbstractIsoCodeTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['ZZ'],      // Value doesn't exist

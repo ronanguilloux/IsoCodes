@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class GdtiTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['4719512002889 1234567890 123456'], // valid GTIN13 + valid random optional serial number
@@ -18,7 +18,7 @@ class GdtiTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['0000000000000 1234567890 123456'], // string containing 13 zeros + valid random optional serial number

@@ -12,7 +12,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
     /**
      * @see http://fr.fakenamegenerator.com/social-security-number.php
      */
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['423-05-9675'],
@@ -24,7 +24,7 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['123-45-67890'],

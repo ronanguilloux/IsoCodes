@@ -15,7 +15,7 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
      * {@inheritdoc}
      * Source of truth: https://data.opendatasoft.com/explore/dataset/sirene_v3%40public/.
      */
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             [44079707400026],
@@ -31,7 +31,7 @@ class SiretTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [440797074000],

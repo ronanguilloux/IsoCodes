@@ -9,7 +9,7 @@ namespace IsoCodes\Tests;
  */
 class UkninTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['AB123456C'],
@@ -18,7 +18,7 @@ class UkninTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             ['AD123456CA'],

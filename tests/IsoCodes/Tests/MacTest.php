@@ -11,7 +11,7 @@ namespace IsoCodes\Tests;
  */
 class MacTest extends AbstractIsoCodeInterfaceTest
 {
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['01-2d-4c-ef-89-ab'],
@@ -23,7 +23,7 @@ class MacTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [999999999],

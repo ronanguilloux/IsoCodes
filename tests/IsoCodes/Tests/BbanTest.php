@@ -17,7 +17,7 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
         parent::setUp();
     }
 
-    public function getValidValues()
+    public static function getValidValues()
     {
         return [
             ['15459450000411700920U62'],
@@ -25,7 +25,7 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    public function getInvalidValues()
+    public static function getInvalidValues()
     {
         return [
             [10207000260402601177083],

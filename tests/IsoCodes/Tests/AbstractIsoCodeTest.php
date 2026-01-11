@@ -14,12 +14,12 @@ abstract class AbstractIsoCodeTest extends TestCase
     /**
      * @return array[]
      */
-    abstract public function getValidValues();
+    abstract public static function getValidValues();
 
     /**
      * @return array[]
      */
-    abstract public function getInvalidValues();
+    abstract public static function getInvalidValues();
 
     final public function testEmptyValues()
     {
