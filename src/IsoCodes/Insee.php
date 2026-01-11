@@ -19,12 +19,7 @@ class Insee implements IsoCodeInterface
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
-    public static function validate($numero)
-    {
-        $numero = (string) $numero;
-        // Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
-        // mais corigée par mes soins pour respecter plus scrupuleusement le format
-        $regexp = '/^                                              # début de chaîne
+    private const PATTERN = '/^                                              # début de chaîne
             (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminine en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                     # année de naissance
             (?<mois>0[1-9]|1[0-2]|[2-3][0-9]|4[0-2]|[5-9][0-9])    # mois de naissance: de 01 (janvier) à 12 (décembre) ou entre 20 et 42 ou entre 50 et 99
@@ -34,9 +29,13 @@ class Insee implements IsoCodeInterface
                     (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?             # numéro de contrôle (facultatif)
                     $                                              # fin de chaîne
                     /x';
+
+    public static function validate($numero)
+    {
+        $numero = (string) $numero;
         // références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
-        if (! preg_match($regexp, $numero, $match)) {
+        if (! preg_match(self::PATTERN, $numero, $match)) {
             return false;
         }
         /* attention à l'overflow de php :)
