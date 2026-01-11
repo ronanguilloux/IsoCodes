@@ -25,6 +25,7 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['A0A 1A0',    'CA'],
             ['A0A1A0',     'CA'],
             ['A0A 1A0',    'CA'],
+            ['a0a 1a0',    'CA', true],
 
             ['06000',      'FR'],
             ['56000',      'FR'],
@@ -42,6 +43,7 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['1234AA',     'NL'],
             ['1234 AA',    'NL'], // Some people add a space
             ['1023 AA',    'NL'],
+            ['1023 aa',    'NL', true],
 
             ['1000-001',   'PT'],
             ['1900-078',   'PT'],
@@ -69,6 +71,7 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['WC1A 1BA',  'GB'], // UK, Holborn (WC format has extra letter in fourth position)
             ['GIR 0AA',   'GB'], // UK, Girobank/Santander (quirk)
             ['BFPO 23',   'GB'], // UK, BFPO (quirk)
+            ['bfpo 23',   'GB', true],
         ];
     }
 
@@ -192,12 +195,13 @@ class ZipCodeTest extends AbstractIsoCodeTest
     /**
      * @param mixed  $value
      * @param string $country
+     * @param bool   $caseSensitive
      *
      * @dataProvider getValidValues
      */
-    public function testValidValues($value, $country)
+    public function testValidValues($value, $country, $caseSensitive = false)
     {
-        $this->assertTrue(ZipCode::validate($value, $country));
+        $this->assertTrue(ZipCode::validate($value, $country, $caseSensitive));
     }
 
     /**
