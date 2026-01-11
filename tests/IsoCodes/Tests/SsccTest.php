@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class SsccTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -22,9 +19,6 @@ class SsccTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

@@ -9,27 +9,21 @@ namespace IsoCodes\Tests;
  */
 class ISO3166A2Test extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
             ['US'],
             ['DE'],
-            ['NL']
+            ['NL'],
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [
             ['ZZ'],      // Value doesn't exist
             ['ZZZ'],     // Value too long
-            [123]        // No string
+            [123],        // No string
         ];
     }
 }

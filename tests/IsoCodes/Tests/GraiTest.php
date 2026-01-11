@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class GraiTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -24,9 +21,6 @@ class GraiTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

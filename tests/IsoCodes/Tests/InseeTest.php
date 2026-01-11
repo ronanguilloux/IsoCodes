@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class InseeTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -29,9 +26,6 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

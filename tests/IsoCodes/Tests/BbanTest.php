@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class BbanTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         if (!extension_loaded('bcmath')) {
@@ -20,9 +17,6 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
         parent::setUp();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -31,9 +25,6 @@ class BbanTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

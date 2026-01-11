@@ -11,9 +11,6 @@ namespace IsoCodes\Tests;
  */
 class MacTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -26,9 +23,6 @@ class MacTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

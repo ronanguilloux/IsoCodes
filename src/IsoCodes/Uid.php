@@ -13,7 +13,7 @@ namespace IsoCodes;
  */
 class Uid implements IsoCodeInterface
 {
-    const HYPHENS = [' ', '.', '-', '—']; // regular dash, authentic hyphen (rare!) and space
+    public const HYPHENS = [' ', '.', '-', '—']; // regular dash, authentic hyphen (rare!) and space
 
     /**
      * @param mixed $uid - Swiss Business Identification Number

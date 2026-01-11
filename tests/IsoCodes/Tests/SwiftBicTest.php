@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class SwiftBicTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -26,9 +23,6 @@ class SwiftBicTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

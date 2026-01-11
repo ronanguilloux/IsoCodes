@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class IbanTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         if (!extension_loaded('bcmath')) {
@@ -20,9 +17,6 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
         parent::setUp();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -312,7 +306,6 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
             ['UA903052992990004149123456789'],
             ['UA945895879374233131492394854'],
 
-
             // valid IBANs from standard-documents found at www.ecbs.org (all OK):
             ['AD1200012030200359100100'],
             ['AT611904300234573201'],
@@ -370,9 +363,6 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

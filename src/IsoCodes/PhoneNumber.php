@@ -20,11 +20,11 @@ class PhoneNumber
      */
     public static function validate($phoneNumber, $country = null)
     {
-        $phoneNumber = trim($phoneNumber);
+        $phoneNumber = trim((string) $phoneNumber);
         if (empty($phoneNumber)) {
             return false;
         }
-        $country = strtoupper($country);
+        $country = strtoupper((string) $country);
         $phoneUtil = PhoneNumberUtil::getInstance();
         try {
             $numberProto = $phoneUtil->parse($phoneNumber, $country);

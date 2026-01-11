@@ -12,8 +12,6 @@ namespace IsoCodes;
 class Sscc extends Gtin implements IsoCodeInterface
 {
     /**
-     * @param mixed $sscc
-     *
      * @return bool
      */
     public static function validate($sscc)

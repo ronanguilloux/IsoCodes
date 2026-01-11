@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class Gtin12Test extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -20,9 +17,6 @@ class Gtin12Test extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

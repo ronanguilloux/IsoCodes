@@ -10,11 +10,9 @@ namespace IsoCodes;
  */
 class Sedol implements IsoCodeInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function validate($value)
     {
+        $value = (string) $value;
         if (7 !== strlen($value)) {
             return false;
         }

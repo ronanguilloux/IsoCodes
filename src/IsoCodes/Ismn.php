@@ -15,8 +15,6 @@ namespace IsoCodes;
 class Ismn extends Gtin13 implements IsoCodeInterface
 {
     /**
-     * @param mixed $ean13
-     *
      * @return bool
      */
     public static function validate($ean13)

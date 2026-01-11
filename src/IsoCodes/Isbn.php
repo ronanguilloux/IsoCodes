@@ -21,6 +21,7 @@ class Isbn implements IsoCodeInterface
             throw new \InvalidArgumentException('ISBN type option must be 10 or 13');
         }
 
+        $isbn = (string) $isbn;
         $isbn = str_replace(' ', '', $isbn);
         $isbn = str_replace('-', '', $isbn); // this is a dash
         $isbn = str_replace('‐', '', $isbn); // this is an authentic hyphen

@@ -13,9 +13,6 @@ use IsoCodes\PhoneNumber;
  */
 class PhoneNumberTest extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -39,9 +36,6 @@ class PhoneNumberTest extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [
@@ -54,7 +48,6 @@ class PhoneNumberTest extends AbstractIsoCodeTest
     }
 
     /**
-     * @param mixed  $value
      * @param string $country
      *
      * @dataProvider getValidValues
@@ -65,7 +58,6 @@ class PhoneNumberTest extends AbstractIsoCodeTest
     }
 
     /**
-     * @param mixed  $value
      * @param string $country
      *
      * @dataProvider getInvalidValues

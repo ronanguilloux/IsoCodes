@@ -10,8 +10,6 @@ namespace IsoCodes\Tests;
 class SsnTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * {@inheritdoc}
-     *
      * @see http://fr.fakenamegenerator.com/social-security-number.php
      */
     public function getValidValues()
@@ -26,9 +24,6 @@ class SsnTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

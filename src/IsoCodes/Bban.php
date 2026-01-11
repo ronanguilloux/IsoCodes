@@ -13,6 +13,7 @@ class Bban implements IsoCodeInterface
      * @param string $bban
      *
      * @author  petitchevalroux
+     *
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
      *
      * @see    http://dev.petitchevalroux.net/php/valider-bban-php.359.html
@@ -26,7 +27,7 @@ class Bban implements IsoCodeInterface
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
 
-        if (23 !== mb_strlen($bban)) {
+        if (23 !== mb_strlen((string) $bban)) {
             return false;
         }
         $key = substr($bban, -2);

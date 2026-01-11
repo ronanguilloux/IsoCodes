@@ -11,9 +11,6 @@ use IsoCodes\OrganismeType12NormeB2;
  */
 class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -21,9 +18,6 @@ class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

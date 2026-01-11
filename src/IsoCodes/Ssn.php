@@ -9,6 +9,7 @@ namespace IsoCodes;
  * As of 2011 SSN's are completely randomized
  *
  * @see    : http://www.socialsecurity.gov/employer/randomization.html)
+ *
  * @source  : http://haxorfreek.15.forumer.com/a/us-social-security-number-ssn-generator_post1847.html
  * @source  : https://gist.github.com/Kryptonit3/7b6bff5abab4a62e2b796a0e5a9ab94e
  *
@@ -30,7 +31,7 @@ class Ssn implements IsoCodeInterface
      */
     public static function validate($ssn)
     {
-        $ssn = trim($ssn);
+        $ssn = trim((string) $ssn);
 
         // Must be in format AAA-GG-SSSS or AAAGGSSSS
         if (!preg_match('/^([0-9]{9}|[0-9]{3}-[0-9]{2}-[0-9]{4})$/', $ssn)) {

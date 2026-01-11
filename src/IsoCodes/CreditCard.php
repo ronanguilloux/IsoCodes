@@ -16,7 +16,7 @@ class CreditCard implements IsoCodeInterface
      */
     public static function validate($creditCard)
     {
-        if ('' === trim($creditCard)) {
+        if ('' === trim((string) $creditCard)) {
             return false;
         }
 
@@ -24,10 +24,10 @@ class CreditCard implements IsoCodeInterface
             return false;
         }
 
-        //longueur de la chaine $creditCard
+        // longueur de la chaine $creditCard
         $length = strlen($creditCard);
 
-        //resultat de l'addition de tous les chiffres
+        // resultat de l'addition de tous les chiffres
         $tot = 0;
         for ($i = $length - 1; $i >= 0; --$i) {
             $digit = substr($creditCard, $i, 1);

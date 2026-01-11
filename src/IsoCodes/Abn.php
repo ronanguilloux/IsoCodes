@@ -21,6 +21,7 @@ class Abn implements IsoCodeInterface
      */
     public static function validate($abn)
     {
+        $abn = (string) $abn;
         $weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
         $sum = 0;
         $abn = preg_replace('/[^0-9]/', '', $abn);

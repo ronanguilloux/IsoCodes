@@ -9,19 +9,13 @@ namespace IsoCodes;
  */
 abstract class Gtin extends Luhn
 {
-    const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
+    public const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
 
-    /**
-     * {@inheritdoc}
-     */
     public static function check($gtin, $length, $unDecorate = true, $hyphens = self::HYPHENS): bool
     {
         return Utils::luhnForGTIN($gtin, $length, true, $hyphens);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function unDecorate($gtin, $hyphens = self::HYPHENS): string
     {
         return parent::unDecorate($gtin, $hyphens);

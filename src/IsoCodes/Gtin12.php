@@ -11,8 +11,6 @@ namespace IsoCodes;
 class Gtin12 extends Gtin implements IsoCodeInterface
 {
     /**
-     * @param mixed $gtin12
-     *
      * @return bool
      */
     public static function validate($gtin12)

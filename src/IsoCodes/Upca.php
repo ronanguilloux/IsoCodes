@@ -13,8 +13,6 @@ namespace IsoCodes;
 class Upca extends Gtin12 implements IsoCodeInterface
 {
     /**
-     * @param mixed $upca
-     *
      * @deprecated in favor of Gtin12
      *
      * @return bool

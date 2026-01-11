@@ -13,9 +13,6 @@ use IsoCodes\ZipCode;
  */
 class ZipCodeTest extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -75,9 +72,6 @@ class ZipCodeTest extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [
@@ -193,7 +187,6 @@ class ZipCodeTest extends AbstractIsoCodeTest
     }
 
     /**
-     * @param mixed  $value
      * @param string $country
      * @param bool   $caseSensitive
      *
@@ -205,7 +198,6 @@ class ZipCodeTest extends AbstractIsoCodeTest
     }
 
     /**
-     * @param mixed  $value
      * @param string $country
      *
      * @dataProvider getInvalidValues

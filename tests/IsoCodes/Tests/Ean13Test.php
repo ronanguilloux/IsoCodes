@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class Ean13Test extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [

@@ -11,8 +11,6 @@ namespace IsoCodes;
 class Dun14 extends Gtin14 implements IsoCodeInterface
 {
     /**
-     * @param mixed $dun14
-     *
      * @deprecated in favor of Gtin14
      *
      * @return bool

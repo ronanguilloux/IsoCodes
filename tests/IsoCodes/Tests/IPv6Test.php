@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class IPv6Test extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -20,9 +17,6 @@ class IPv6Test extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

@@ -15,8 +15,6 @@ namespace IsoCodes;
 class Gsrn extends Gtin implements IsoCodeInterface
 {
     /**
-     * @param mixed $gsrn
-     *
      * @return bool
      */
     public static function validate($gsrn)

@@ -12,8 +12,6 @@ namespace IsoCodes;
 class Ean13 extends Gtin13 implements IsoCodeInterface
 {
     /**
-     * @param mixed $ean13
-     *
      * @deprecated in favor of Gtin13
      *
      * @return bool

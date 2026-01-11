@@ -125,6 +125,7 @@ Usually, you already have `bcmath` bundled in your PHP version, since many commo
 
 ```bash
 $ git clone git@github.com:ronanguilloux/IsoCodes.git
+$ make # requires composer
 ```
 
 Autoloading is PSR-0 friendly.

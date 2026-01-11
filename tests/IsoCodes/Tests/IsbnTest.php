@@ -13,9 +13,6 @@ use IsoCodes\Isbn;
  */
 class IsbnTest extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -43,9 +40,6 @@ class IsbnTest extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [
@@ -77,7 +71,6 @@ class IsbnTest extends AbstractIsoCodeTest
     /**
      * testValidIsbn.
      *
-     * @param mixed    $isbn
      * @param int|null $type
      *
      * @dataProvider getValidValues
@@ -92,7 +85,6 @@ class IsbnTest extends AbstractIsoCodeTest
     /**
      * testInvalidIsbn.
      *
-     * @param mixed    $isbn
      * @param int|null $type
      *
      * @dataProvider getInvalidValues

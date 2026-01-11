@@ -24,6 +24,7 @@ class Mac implements IsoCodeInterface
      */
     public static function validate($mac)
     {
+        $mac = (string) $mac;
         $pattern = '/^(([a-f0-9]{2}-){5}[a-f0-9]{2}|([A-F0-9]{2}-){5}[A-Z0-9]{2}|([a-f0-9]{2}:){5}[a-z0-9]{2}|([A-F0-9]{2}:){5}[A-Z0-9]{2})$/';
 
         return boolval(preg_match($pattern, $mac));

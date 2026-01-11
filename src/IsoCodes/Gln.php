@@ -13,8 +13,6 @@ namespace IsoCodes;
 class Gln extends Gtin13 implements IsoCodeInterface
 {
     /**
-     * @param mixed $gln
-     *
      * @return bool
      */
     public static function validate($gln)

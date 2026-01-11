@@ -29,6 +29,7 @@ class Nif implements IsoCodeInterface
      */
     public static function validate($nif)
     {
+        $nif = (string) $nif;
         $nifCodes = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
         if (9 !== strlen($nif)) {
@@ -67,8 +68,6 @@ class Nif implements IsoCodeInterface
      * @param string $cif
      *
      * @codeCoverageIgnore
-     *
-     * @return mixed
      */
     public static function getCifSum($cif)
     {

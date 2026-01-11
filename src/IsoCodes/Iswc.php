@@ -13,12 +13,11 @@ namespace IsoCodes;
 class Iswc extends Luhn implements IsoCodeInterface
 {
     /**
-     * @param mixed $iswc
-     *
      * @return bool
      */
     public static function validate($iswc)
     {
+        $iswc = (string) $iswc;
         if (!boolval(preg_match('/^\s*T[\-.]?(\d)(\d)(\d)[\-.]?(\d)(\d)(\d)[\-.]?(\d)(\d)(\d)[\-.]?(\d)\s*$/i', $iswc))) {
             return false;
         }

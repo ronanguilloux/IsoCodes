@@ -12,6 +12,7 @@ class Utils
      */
     public static function unDecorate($input, array $hyphens = []): string
     {
+        $input = (string) $input;
         $hyphensLength = count($hyphens);
         // removing hyphens
         for ($i = 0; $i < $hyphensLength; ++$i) {
@@ -23,7 +24,6 @@ class Utils
 
     /**
      * @param mixed $value: null or string
-     * @param $hyphens
      */
     public static function luhn($value, int $length, int $weight, int $divider, $hyphens): bool
     {

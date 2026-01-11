@@ -9,9 +9,6 @@ namespace IsoCodes\Tests;
  */
 class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -21,9 +18,6 @@ class StructuredCommunicationTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

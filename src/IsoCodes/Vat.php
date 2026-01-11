@@ -80,8 +80,6 @@ class Vat implements IsoCodeInterface
      * validate
      * Checks if $vat is a valid Union VAT number.
      *
-     * @param mixed $vat
-     *
      * @return bool
      */
     public static function validate($vat)

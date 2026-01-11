@@ -13,12 +13,11 @@ namespace IsoCodes;
 class Gdti extends Gtin13 implements IsoCodeInterface
 {
     /**
-     * @param mixed $grai
-     *
      * @return bool
      */
     public static function validate($grai)
     {
+        $grai = (string) $grai;
         if (strlen($grai) < 13) {
             return false;
         }

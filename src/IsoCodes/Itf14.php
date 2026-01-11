@@ -13,8 +13,6 @@ namespace IsoCodes;
 class Itf14 extends Gtin14 implements IsoCodeInterface
 {
     /**
-     * @param mixed $itf14
-     *
      * @deprecated in favor of Gtin14
      *
      * @return bool

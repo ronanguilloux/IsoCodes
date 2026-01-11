@@ -3,11 +3,11 @@
 namespace IsoCodes;
 
 /**
- * Validate Country Codes in ISO 3166 Alpha 2 format
+ * Validate Country Codes in ISO 3166 Alpha 2 format.
  */
 class ISO3166A2 implements IsoCodeInterface
 {
-    private CONST COUNTRIES = ['AD',
+    private const COUNTRIES = ['AD',
         'AE',
         'AF',
         'AG',
@@ -258,18 +258,20 @@ class ISO3166A2 implements IsoCodeInterface
         'YT',
         'ZA',
         'ZM',
-        'ZW'
+        'ZW',
     ];
 
     /**
      * @param string $alpha2
+     *
      * @return bool
      */
     public static function validate($alpha2)
     {
-        if($alpha2 === null){
+        if (null === $alpha2) {
             return false;
         }
-        return in_array($alpha2, self::COUNTRIES, true );
+
+        return in_array($alpha2, self::COUNTRIES, true);
     }
 }

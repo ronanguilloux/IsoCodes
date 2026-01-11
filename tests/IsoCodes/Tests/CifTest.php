@@ -10,8 +10,6 @@ namespace IsoCodes\Tests;
 class CifTest extends AbstractIsoCodeInterfaceTest
 {
     /**
-     * {@inheritdoc}
-     *
      * @see http://www.linguee.fr/anglais-francais/traduction/cif+number.html
      */
     public function getValidValues()
@@ -28,9 +26,6 @@ class CifTest extends AbstractIsoCodeInterfaceTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [

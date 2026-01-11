@@ -21,12 +21,10 @@ namespace IsoCodes;
  */
 class Imei implements IsoCodeInterface
 {
-    const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
+    public const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
 
     /**
      * Basic Luhn check.
-     *
-     * @param mixed $imei
      *
      * @return bool
      */

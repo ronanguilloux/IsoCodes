@@ -10,8 +10,6 @@ namespace IsoCodes;
 interface IsoCodeInterface
 {
     /**
-     * @param mixed $value
-     *
      * @return bool
      */
     public static function validate($value);

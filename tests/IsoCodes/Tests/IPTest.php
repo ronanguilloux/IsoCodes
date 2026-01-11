@@ -11,9 +11,6 @@ use IsoCodes\IP;
  */
 class IPTest extends AbstractIsoCodeTest
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValidValues()
     {
         return [
@@ -30,9 +27,6 @@ class IPTest extends AbstractIsoCodeTest
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getInvalidValues()
     {
         return [
@@ -47,24 +41,22 @@ class IPTest extends AbstractIsoCodeTest
     }
 
     /**
-     * @param mixed $value
-     * @param int   $type
+     * @param int $type
      *
      * @dataProvider getValidValues
      */
     public function testValidValues($value, $type)
     {
-        $this->assertTrue(6 === $type ? Ip::validateIPV6($value) : Ip::validate($value));
+        $this->assertTrue(6 === $type ? IP::validateIPV6($value) : IP::validate($value));
     }
 
     /**
-     * @param mixed $value
-     * @param int   $type
+     * @param int $type
      *
      * @dataProvider getInvalidValues
      */
     public function testInvalidValues($value, $type)
     {
-        $this->assertFalse(6 === $type ? Ip::validateIPV6($value) : Ip::validate($value));
+        $this->assertFalse(6 === $type ? IP::validateIPV6($value) : IP::validate($value));
     }
 }

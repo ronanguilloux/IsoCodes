@@ -21,8 +21,9 @@ class Insee implements IsoCodeInterface
      */
     public static function validate($numero)
     {
-        //Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
-        //mais corigée par mes soins pour respecter plus scrupuleusement le format
+        $numero = (string) $numero;
+        // Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
+        // mais corigée par mes soins pour respecter plus scrupuleusement le format
         $regexp = '/^                                              # début de chaîne
             (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                     # année de naissance
@@ -33,7 +34,7 @@ class Insee implements IsoCodeInterface
                     (?<clef>0[1-9]|[1-8][0-9]|9[0-7])?             # numéro de contrôle (facultatif)
                     $                                              # fin de chaîne
                     /x';
-        //références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
+        // références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
         if (!preg_match($regexp, $numero, $match)) {
             return false;
@@ -48,22 +49,22 @@ class Insee implements IsoCodeInterface
          */
 
         $return = [
-            'sexe' => $match['sexe'], //7,8 => homme et femme ayant un num de sécu temporaire
-            'annee' => $match['annee'], //année de naissance + ou - un siècle uhuh
-            'mois' => $match['mois'], //20 à 30 ou 50 à 99 = inconnu
-            'departement' => $match['departement'], //99 = étranger
-            'numcommune' => $match['numcommune'], //990 = inconnu
-            'numacte' => $match['numacte'], //001 à 999
-            'clef' => isset($match['clef']) ? $match['clef'] : null, //00 à 97
-            'pays' => 'fra', //par défaut, on change que pour le cas spécifique
+            'sexe' => $match['sexe'], // 7,8 => homme et femme ayant un num de sécu temporaire
+            'annee' => $match['annee'], // année de naissance + ou - un siècle uhuh
+            'mois' => $match['mois'], // 20 à 30 ou 50 à 99 = inconnu
+            'departement' => $match['departement'], // 99 = étranger
+            'numcommune' => $match['numcommune'], // 990 = inconnu
+            'numacte' => $match['numacte'], // 001 à 999
+            'clef' => isset($match['clef']) ? $match['clef'] : null, // 00 à 97
+            'pays' => 'fra', // par défaut, on change que pour le cas spécifique
         ];
 
-        //base du calcul par défaut pour la clef (est modifié pour la corse)
+        // base du calcul par défaut pour la clef (est modifié pour la corse)
         $aChecker = floatval(substr($numero, 0, 13));
 
-        /*Traitement des cas des personnes nées hors métropole ou en corse*/
+        /* Traitement des cas des personnes nées hors métropole ou en corse */
         switch (true) {
-            //départements corses. Le calcul de la cles est différent
+            // départements corses. Le calcul de la cles est différent
             case '2A' == $return['departement']:
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
@@ -74,21 +75,21 @@ class Insee implements IsoCodeInterface
                 $aChecker -= 2000000;
                 break;
 
-            // département de naissance en outre-mer: de 970 à 989
+                // département de naissance en outre-mer: de 970 à 989
             case 97 == $return['departement'] || 98 == $return['departement']:
                 $return['departement'] .= substr($return['numcommune'], 0, 1);
                 $return['numcommune'] = substr($return['numcommune'], 1, 2);
                 if ($return['numcommune'] > 90) {
-                    //90 = commune inconnue
+                    // 90 = commune inconnue
                     return false;
                 }
                 break;
 
-            // naissance hors de France
-            case 99 == $return['departement'] || "00" == (string) $return['departement']:
+                // naissance hors de France
+            case 99 == $return['departement'] || '00' == (string) $return['departement']:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
-                    //990 = pays inconnu
+                    // 990 = pays inconnu
                     return false;
                 }
                 break;
@@ -96,7 +97,7 @@ class Insee implements IsoCodeInterface
             default:
                 if (isset($return['numcommune'])) {
                     if ($return['numcommune'] > 990) {
-                        //990 = commune inconnue
+                        // 990 = commune inconnue
                         return false;
                     }
                 }
@@ -106,7 +107,7 @@ class Insee implements IsoCodeInterface
         $clef = 97 - fmod($aChecker, 97);
 
         if (empty($return['clef'])) {
-            $return['clef'] = $clef; //la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
+            $return['clef'] = $clef; // la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
         }
         if ($clef != $return['clef']) {
             return false;

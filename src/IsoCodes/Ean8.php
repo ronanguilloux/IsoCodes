@@ -12,8 +12,6 @@ namespace IsoCodes;
 class Ean8 extends Gtin8 implements IsoCodeInterface
 {
     /**
-     * @param mixed $ean8
-     *
      * @deprecated in favor of Gtin8
      *
      * @return bool

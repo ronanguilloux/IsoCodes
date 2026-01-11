@@ -11,6 +11,7 @@ class Iban implements IsoCodeInterface
      * Iban validator.
      *
      * @author  petitchevalroux
+     *
      * @licence originale http://creativecommons.org/licenses/by-sa/2.0/fr/
      *
      * @see    http://dev.petitchevalroux.net/php/validation-iban-php.356.html + comments & links
@@ -21,6 +22,7 @@ class Iban implements IsoCodeInterface
      */
     public static function validate($iban)
     {
+        $iban = (string) $iban;
         if (!extension_loaded('bcmath')) {
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
