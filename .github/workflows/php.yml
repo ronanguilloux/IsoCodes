@@ -32,8 +32,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run test suite
-      run: composer test
-      
+    - name: Run phpunit suite
+      run: composer phpunit
+    
+    - name: Run phpstan suite
+      run: composer stan
+
     #- name: Coveralls GitHub Action
     #  uses: coverallsapp/github-action@v2.3.6

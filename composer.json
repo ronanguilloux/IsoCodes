@@ -92,6 +92,7 @@
         "bin-dir": "bin"
     },
     "scripts": {
-        "test": "bin/phpunit"
+        "phpunit": "bin/phpunit",
+        "stan": "bin/phpstan analyse src tests --level 1"
     }
 }

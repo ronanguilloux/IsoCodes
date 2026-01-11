@@ -87,6 +87,9 @@ dry-fix:
 cs-fix:
 	@bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --using-cache=yes -vv
 
+stan:
+	bin/phpstan analyse src tests --level 1
+
 #quality must remain quiet, as far as it's used in a pre-commit hook validation
 quality: sniff dry-fix
 
@@ -108,5 +111,5 @@ tests: vendor/autoload.php
 # .PHONY tasks list
 
 .PHONY: all install update help unit codecoverage continuous
-.PHONY: sniff dry-fix cs-fix quality stats done tests
+.PHONY: sniff dry-fix cs-fix quality stats done tests stan
 # vim:ft=make
