@@ -157,13 +157,13 @@ to get IsoCodes working with **Laravel 5** as a validator.
 
 ## Supported PHP versions
 
-- 7.3
-- 7.4
+- till tags 2.3.9: PHP 7.*
+- from tags 2.4.0: PHP 8.*
 
 ## Unit testing
 
 ```bash
-$ phpunit --testdox --coverage-text
+$ make tests
 ```
 
 
@@ -198,9 +198,6 @@ Test values are mainly real data or documented examples from standard documentat
 
 The `composer.json` already includes these  [Php Quality Assurance Toolchain](https://phpqa.io) libraries:
 
-* [phploc](https://github.com/sebastianbergmann/phploc)
-* [phpmd](https://github.com/phpmd/phpmd)
-* [phpcpd](https://github.com/sebastianbergmann/phpcpd)
 * [pdepend](https://github.com/pdepend/pdepend)
 * [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 
