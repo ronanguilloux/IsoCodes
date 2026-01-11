@@ -7,7 +7,7 @@ namespace IsoCodes\Tests;
  *
  * @covers \IsoCodes\IPv4
  */
-class IPv4Test extends AbstractIsoCodeTest
+class IPv4Test extends AbstractIsoCodeInterfaceTest
 {
     public static function getValidValues()
     {
@@ -28,8 +28,8 @@ class IPv4Test extends AbstractIsoCodeTest
         return [
             ['000.000.000.000'],
             ['256.255.255.255'],
-            ['2001:0db8:0000:85a3:0000:0000:ac1f:8001'],
-            ['2001:db8:0:85a3:0:0:ac1f:8001'],
+            ['2001:0db8:0000:85a3:0000:0000:ac1f:8001'], // IPv6 instead of IPv4
+            ['2001:db8:0:85a3:0:0:ac1f:8001'], // IPv6 instead of IPv4
         ];
     }
 }

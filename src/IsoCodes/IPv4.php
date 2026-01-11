@@ -6,19 +6,20 @@ namespace IsoCodes;
 
 /**
  * IPv4 validator.
- *
- * @see http://php.net/manual/en/function.filter-var.php
- * @see https://en.wikipedia.org/wiki/IPv4
  */
-class IPv4 extends IP implements IsoCodeInterface
+class IPv4 implements IsoCodeInterface
 {
     /**
-     * @param string $ipv4
+     * IP validator.
+     *
+     * @param string $ip
+     *
+     * @see http://php.net/manual/fr/function.filter-var.php
      *
      * @return bool
      */
-    public static function validate($ipv4)
+    public static function validate($ip)
     {
-        return parent::validate($ipv4, 4);
+        return false !== filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
     }
 }

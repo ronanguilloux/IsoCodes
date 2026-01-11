@@ -5,20 +5,21 @@ declare(strict_types=1);
 namespace IsoCodes;
 
 /**
- * IPV6 validator.
- *
- * @see http://php.net/manual/en/function.filter-var.php
- * @see https://en.wikipedia.org/wiki/IPv6
+ * IPv6 validator.
  */
-class IPv6 extends IP implements IsoCodeInterface
+class IPv6 implements IsoCodeInterface
 {
     /**
-     * @param string $ipv6
+     * IP validator.
+     *
+     * @param string $ip
+     *
+     * @see http://php.net/manual/fr/function.filter-var.php
      *
      * @return bool
      */
-    public static function validate($ipv6)
+    public static function validate($ip)
     {
-        return parent::validate($ipv6, 6);
+        return false !== filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
     }
 }
