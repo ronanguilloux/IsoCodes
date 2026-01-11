@@ -38,6 +38,9 @@ $isCUSIP = Cusip::validate('037833100'); // Apple Inc. (AAPL)
 // Is this the unique digital fingerprint for for "Instant Crush" by Daft Punk?
 $isISRC = Isrc::validate('US-QX9-13-00105');
 
+// Is this jazz band covering Daft Punk's "Around the World"?
+$isISWC = Iswc::validate('T-003.958.832-6');
+
 // Checking your iPhone device is valid?
 $isDevice = Imei::validate('352066060926230');
 
