@@ -34,3 +34,6 @@ jobs:
 
     - name: Run test suite
       run: composer test
+      
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v2.3.6

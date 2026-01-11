@@ -98,17 +98,14 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 
 ## Build status
 
-
 [![License](https://poser.pugx.org/ronanguilloux/isocodes/license.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Continuous Integration](https://github.com/ronanguilloux/IsoCodes/actions/workflows/php.yml/badge.svg)](https://github.com/ronanguilloux/IsoCodes/actions/workflows/php.yml)
 [![Latest Stable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/stable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
-[![Build Status](https://app.travis-ci.com/ronanguilloux/IsoCodes.svg?branch=master)](https://app.travis-ci.com/ronanguilloux/IsoCodes)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/?branch=master)
-[![SymfonyInsight](https://insight.symfony.com/projects/fde42adb-344d-4055-b78d-20b598040ac8/mini.svg)](https://insight.symfony.com/projects/fde42adb-344d-4055-b78d-20b598040ac8)
 [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.svg?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/?branch=master)
 [![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Daily Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/daily.png)](https://packagist.org/packages/ronanguilloux/isocodes)
-
 
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
