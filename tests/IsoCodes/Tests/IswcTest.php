@@ -15,7 +15,7 @@ class IswcTest extends AbstractIsoCodeInterfaceTest
             ['T-000.000.001-0'],    // The first ISWC was assigned in 1995, for the song "Dancing Queen" by ABBA.
             ['T-071070336-8'],      // "Sleigh Ride (Instrumental)" (Anderson)
             ['T-916371897-6'],      // "Sleigh Ride (Vocal Version)" (Anderson/Parish)
-            ['T-003.958.832-6'],    // "Around the World" by Thomas Bangalter, Guy-Manuel de Homem-Christo
+            ['T-003.016.924-4'],    // "Around the World" by Thomas Bangalter, Guy-Manuel de Homem-Christo
             ['T-345.246.800-3'],    // http://www.iswc.org/fr/faq.html (fixed!)
             ['T-802.987.480-5'],    // http://iswcnet.cisac.org/MWI/result/list.do?localEngineCode=999&pageNumber=12
         ];
