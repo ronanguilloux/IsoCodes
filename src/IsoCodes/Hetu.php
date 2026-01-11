@@ -41,6 +41,9 @@ class Hetu implements IsoCodeInterface
      * @param string $hetu
      *
      * @return bool
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public static function validate($hetu)
     {
@@ -48,22 +51,22 @@ class Hetu implements IsoCodeInterface
             return false;
         }
 
-        $dd = substr($hetu, 0, 2);
-        $mm = substr($hetu, 2, 2);
-        $yy = substr($hetu, 4, 2);
+        $day = substr($hetu, 0, 2);
+        $month = substr($hetu, 2, 2);
+        $year = substr($hetu, 4, 2);
         $centuryCode = strtoupper($hetu[6]);
-        $id = (int) ($dd.$mm.$yy.substr($hetu, 7, 3));
+        $identityNumber = (int) ($day.$month.$year.substr($hetu, 7, 3));
         $checksum = strtoupper($hetu[10]);
 
-        if ($dd < 1 || $dd > 31) {
+        if ($day < 1 || $day > 31) {
             return false;
         }
 
-        if ($mm < 1 || $mm > 12) {
+        if ($month < 1 || $month > 12) {
             return false;
         }
 
-        if (!is_numeric($yy)) {
+        if (!is_numeric($year)) {
             return false;
         }
 
@@ -71,7 +74,7 @@ class Hetu implements IsoCodeInterface
             return false;
         }
 
-        $hetuChecksumKey = $id % strlen(static::$validationKeys);
+        $hetuChecksumKey = $identityNumber % strlen(static::$validationKeys);
         if (!isset(static::$validationKeys[$hetuChecksumKey])
             || static::$validationKeys[$hetuChecksumKey] !== $checksum
         ) {

@@ -48,7 +48,7 @@ class Ssn implements IsoCodeInterface
         }
 
         $ssnFormatted = (9 == strlen($ssn)) ? preg_replace('/^([0-9]{3})([0-9]{2})([0-9]{4})$/', '$1-$2-$3', $ssn) : $ssn;
-        $ssn_array = explode('-', $ssnFormatted);
+        $ssnParts = explode('-', $ssnFormatted);
 
         // number groups must follow these rules:
         // * no single group can have all 0's
@@ -56,13 +56,13 @@ class Ssn implements IsoCodeInterface
         // * second group must be 01-99
         // * third group must be 0001-9999
 
-        foreach ($ssn_array as $group) {
+        foreach ($ssnParts as $group) {
             if (0 == $group) {
                 return false;
             }
         }
 
         // Forbidden numbers
-        return !(666 == $ssn_array[0] || '000' === $ssn_array[0] || $ssn_array[0] > 899);
+        return !(666 == $ssnParts[0] || '000' === $ssnParts[0] || $ssnParts[0] > 899);
     }
 }

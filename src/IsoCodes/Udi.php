@@ -15,19 +15,17 @@ namespace IsoCodes;
 class Udi extends Gtin14 implements IsoCodeInterface
 {
     /**
-     * @param mixed $di - Device Identifier component
-     *
      * @return bool
      */
-    public static function validate($di)
+    public static function validate($deviceIdentifier)
     {
-        $di = self::unDecorate($di);
+        $deviceIdentifier = self::unDecorate($deviceIdentifier);
         $validUdiLength = [8, 12, 13, 14];
-        $length = strlen($di);
+        $length = strlen($deviceIdentifier);
         if (!in_array($length, $validUdiLength)) {
             return false;
         }
 
-        return parent::check($di, $length);
+        return parent::check($deviceIdentifier, $length);
     }
 }

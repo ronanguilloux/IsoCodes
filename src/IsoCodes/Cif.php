@@ -33,21 +33,21 @@ class Cif implements IsoCodeInterface
         $cif = strtoupper(trim($cif));
         $sum = (string) Nif::getCifSum($cif);
 
-        $n = (10 - substr($sum, -1)) % 10;
+        $controlDigit = (10 - substr($sum, -1)) % 10;
 
         if (preg_match('/^[ABCDEFGHJKNPQRSUVW]{1}/', $cif)) {
             if (in_array($cif[0], ['A', 'B', 'E', 'H'])) {
                 // Numerico
-                return $cif[8] == $n;
+                return $cif[8] == $controlDigit;
             } elseif (in_array($cif[0], ['K', 'P', 'Q', 'S'])) {
                 // Letras
-                return $cif[8] == $cifCodes[$n];
+                return $cif[8] == $cifCodes[$controlDigit];
             } else {
                 // Alfanumérico
                 if (is_numeric($cif[8])) {
-                    return $cif[8] == $n;
+                    return $cif[8] == $controlDigit;
                 } else {
-                    return $cif[8] == $cifCodes[$n];
+                    return $cif[8] == $cifCodes[$controlDigit];
                 }
             }
         }

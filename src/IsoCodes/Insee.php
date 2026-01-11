@@ -11,13 +11,13 @@ class Insee implements IsoCodeInterface
      * Vérifie le numéro de sécurité sociale. S'il est valide, renvoit true (ou mieux : un tableau des infos)
      * sinon renvoie FALSE.
      *
-     * @param string $numero
-     *
      * @author Webu (Dylann Cordel <d.cordel@webu.fr>) corrigé par Ronan
      *
      * @see   http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/
      *
-     * @return bool ou mieux mixed array avec les infos récupérées du num de sécu ou FALSE
+     * @return bool
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public static function validate($numero)
     {
@@ -25,7 +25,7 @@ class Insee implements IsoCodeInterface
         // Expression de base d'Antoun et SNAFU (http://www.developpez.net/forums/d677820/php/langage/regex/verification-numero-securite-sociale/#post3969560),
         // mais corigée par mes soins pour respecter plus scrupuleusement le format
         $regexp = '/^                                              # début de chaîne
-            (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminin en cours d\'immatriculation en France
+            (?<sexe>[123478])                                      #  1 pour les hommes, 2 pour les femmes, 3 ou 7 pour les personnes étrangères de sexe masculin en cours d\'immatriculation en France, 4 ou 8 pour les personnes étrangères de sexe féminine en cours d\'immatriculation en France
             (?<annee>[0-9]{2})                                     # année de naissance
             (?<mois>0[1-9]|1[0-2]|[2-3][0-9]|4[0-2]|[5-9][0-9])    # mois de naissance: de 01 (janvier) à 12 (décembre) ou entre 20 et 42 ou entre 50 et 99
                     (?<departement>[0][0-9]|2[AB]|[1-9][0-9])      # le département : de 01 à 95, ou 2A ou 2B pour la Corse après le 1er janvier 1976, ou 96 à 98 pour des naissances hors France métropolitaine et 99 pour des naissances à l\'étranger. 00 pour les personnes en cours d\'immatriculation. Attention, cas particuliers supplémentaire outre-mer traité plus loin, hors expreg

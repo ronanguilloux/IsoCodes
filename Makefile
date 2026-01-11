@@ -95,10 +95,6 @@ quality: sniff dry-fix
 # packagist-based dev tools to add to your composer.json. See http://phpqatools.org
 stats: build quality done
 	@echo "Some stats about code quality"
-	@bin/phploc src
-	@bin/phploc tests
-	@bin/phpcpd src
-	@bin/phpcpd tests
 	@bin/pdepend --summary-xml=./build/summary.xml --jdepend-chart=./build/jdepend.svg --overview-pyramid=./build/pyramid.svg src
 	@bin/phpmd src text codesize,unusedcode
 

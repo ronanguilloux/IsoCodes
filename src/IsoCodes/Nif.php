@@ -38,7 +38,7 @@ class Nif implements IsoCodeInterface
         $nif = strtoupper(trim($nif));
 
         $sum = (string) self::getCifSum($nif);
-        $n = 10 - substr($sum, -1);
+        $controlDigit = 10 - substr($sum, -1);
 
         if (preg_match('/^[0-9]{8}[A-Z]{1}$/', $nif)) {
             // DNIs
@@ -53,7 +53,7 @@ class Nif implements IsoCodeInterface
             return $nif[8] == $nifCodes[$tmp % 23];
         } elseif (preg_match('/^[KLM]{1}/', $nif)) {
             // NIFs especiales
-            return $nif[8] == chr($n + 64);
+            return $nif[8] == chr($controlDigit + 64);
         } elseif (preg_match('/^[T]{1}[A-Z0-9]{8}$/', $nif)) {
             // NIE extraño
             return true;

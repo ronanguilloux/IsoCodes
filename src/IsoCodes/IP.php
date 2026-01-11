@@ -4,6 +4,8 @@ namespace IsoCodes;
 
 /**
  * Class IP.
+ *
+ * @SuppressWarnings(PHPMD.ShortClassName)
  */
 class IP implements IsoCodeInterface
 {

@@ -20,25 +20,25 @@ class Cusip implements IsoCodeInterface
         }
         $sum = 0;
         for ($i = 0; $i <= 7; ++$i) {
-            $c = $cusip[$i];
-            if (ctype_digit($c)) {
-                $v = intval($c);
-            } elseif (ctype_alpha($c)) {
-                $position = ord(strtoupper($c)) - ord('A') + 1;
-                $v = $position + 9;
-            } elseif ('*' == $c) {
-                $v = 36;
-            } elseif ('@' == $c) {
-                $v = 37;
-            } elseif ('#' == $c) {
-                $v = 38;
+            $char = $cusip[$i];
+            if (ctype_digit($char)) {
+                $value = intval($char);
+            } elseif (ctype_alpha($char)) {
+                $position = ord(strtoupper($char)) - ord('A') + 1;
+                $value = $position + 9;
+            } elseif ('*' == $char) {
+                $value = 36;
+            } elseif ('@' == $char) {
+                $value = 37;
+            } elseif ('#' == $char) {
+                $value = 38;
             } else {
                 return false;
             }
             if (1 == $i % 2) {
-                $v *= 2;
+                $value *= 2;
             }
-            $sum += floor($v / 10) + ($v % 10);
+            $sum += floor($value / 10) + ($value % 10);
         }
 
         return ord($cusip[8]) - 48 == (10 - ($sum % 10)) % 10;
