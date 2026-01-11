@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.4.0
+
+Made the project PHP 8 compatible.
+Updated dependencies.
+Updated code style.
+
 ## 2.0
 
 ### BC Breaks

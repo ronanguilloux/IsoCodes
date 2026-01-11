@@ -33,6 +33,7 @@ class PhoneNumberTest extends AbstractIsoCodeTest
             ['650.798.2800', 'US'],
             ['+16507982800', 'US'],
             ['16507982800', 'us'],
+            ['+49 171 1234567', 'DE'],
         ];
     }
 
@@ -44,6 +45,8 @@ class PhoneNumberTest extends AbstractIsoCodeTest
             ['0123456789', null],
             // Too long phone number (catch exception)
             [implode('', range(0, 200)), null],
+            ['+49 171 1234567tt', 'DE'],
+            ['+49 171 1234567ttttt', 'DE'],
         ];
     }
 

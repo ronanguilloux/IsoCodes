@@ -24,6 +24,10 @@ class PhoneNumber
         if (empty($phoneNumber)) {
             return false;
         }
+
+        if (preg_match('/[a-zA-Z]/', $phoneNumber)) {
+            return false;
+        }
         $country = strtoupper((string) $country);
         $phoneUtil = PhoneNumberUtil::getInstance();
 
