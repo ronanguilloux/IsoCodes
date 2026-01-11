@@ -98,14 +98,14 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 
 ## Build status
 
-[![License](https://poser.pugx.org/ronanguilloux/isocodes/license.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg)](LICENSE.md)
 [![Continuous Integration](https://github.com/ronanguilloux/IsoCodes/actions/workflows/php.yml/badge.svg)](https://github.com/ronanguilloux/IsoCodes/actions/workflows/php.yml)
-[![Latest Stable Version](https://poser.pugx.org/ronanguilloux/isocodes/v/stable.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Latest Stable Version](https://img.shields.io/packagist/v/ronanguilloux/isocodes.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.svg?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/?branch=master)
-[![Total Downloads](https://poser.pugx.org/ronanguilloux/isocodes/downloads)](https://packagist.org/packages/ronanguilloux/isocodes)
-[![Monthly Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/monthly.png)](https://packagist.org/packages/ronanguilloux/isocodes)
-[![Daily Downloads](https://poser.pugx.org/ronanguilloux/isocodes/d/daily.png)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Total Downloads](https://img.shields.io/packagist/dt/ronanguilloux/isocodes.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/ronanguilloux/isocodes)](https://packagist.org/packages/ronanguilloux/isocodes)
+[![Daily Downloads](https://img.shields.io/packagist/dd/ronanguilloux/isocodes)](https://packagist.org/packages/ronanguilloux/isocodes)
 
 Continously inspecting results (phpdoc, phpmd, phpcc, etc.) available on [Scrutinizer CI](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/inspections)
 
@@ -151,6 +151,8 @@ to get IsoCodes working with **CakePHP 3** as a validator.
 
 Install [pixelpeter/laravel5-isocodes-validation](https://github.com/pixelpeter/laravel5-isocodes-validation)
 to get IsoCodes working with **Laravel 5** as a validator.
+Install [pixelpeter/laravel-isocodes-validation](https://github.com/pixelpeter/laravel-isocodes-validation)
+to get IsoCodes working with **Laravel 10+** as a validator.
 
 ## Supported PHP versions
 
