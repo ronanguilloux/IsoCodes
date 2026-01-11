@@ -115,7 +115,7 @@ class Iban implements IsoCodeInterface
             return false;
         }
         // Fetch needed string for validation
-        $check = $check.substr($iban, 0, 4);
+        $check .= substr($iban, 0, 4);
         // Replace characters by decimal values
         $check = str_replace(
             ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],

@@ -27,7 +27,7 @@ class Iswc extends Luhn implements IsoCodeInterface
         $sum = 1;
 
         for ($i = 1; $i <= 9; ++$i) {
-            $sum = $sum + $i * (int) $iswc[$i];
+            $sum += $i * (int) $iswc[$i];
         }
 
         $rem = $sum % 10;

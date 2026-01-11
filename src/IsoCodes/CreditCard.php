@@ -35,7 +35,7 @@ class CreditCard implements IsoCodeInterface
             if ((($length - $i) % 2) == 0) {
                 $digit = (int) $digit * 2;
                 if ($digit > 9) {
-                    $digit = $digit - 9;
+                    $digit -= 9;
                 }
             }
             $tot += (int) $digit;
