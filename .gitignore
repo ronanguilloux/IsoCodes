@@ -4,6 +4,6 @@
 /bin/*
 /phpunit.xml
 .phpunit.result.cache
+.phpunit.cache/test-results
 .php_cs.cache
 .php-cs-fixer.cache
-
