@@ -103,7 +103,7 @@ IsoCodes is compatible with all versions of PHP that are [actively supported](ht
 [![Latest Stable Version](https://img.shields.io/packagist/v/ronanguilloux/isocodes.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Coverage Status](https://coveralls.io/repos/ronanguilloux/IsoCodes/badge.svg?branch=master)](https://coveralls.io/r/ronanguilloux/IsoCodes?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronanguilloux/IsoCodes/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/ronanguilloux/isocodes.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
+<br />[![Total Downloads](https://img.shields.io/packagist/dt/ronanguilloux/isocodes.svg)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Monthly Downloads](https://img.shields.io/packagist/dm/ronanguilloux/isocodes)](https://packagist.org/packages/ronanguilloux/isocodes)
 [![Daily Downloads](https://img.shields.io/packagist/dd/ronanguilloux/isocodes)](https://packagist.org/packages/ronanguilloux/isocodes)
 
