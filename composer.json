@@ -75,8 +75,7 @@
         "pdepend/pdepend": "~2",
         "friendsofphp/php-cs-fixer": "@stable",
         "php-coveralls/php-coveralls": "~2",
-        "symfony/phpunit-bridge": "^7.1",
-        "squizlabs/php_codesniffer": "*"
+        "symfony/phpunit-bridge": "^7.1"
     },
     "suggest": {
         "sllh/iso-codes-validator": "For Symfony or Silex integration with ease",
@@ -90,5 +89,8 @@
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "scripts": {
+        "test": "bin/phpunit"
     }
 }
