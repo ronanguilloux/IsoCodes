@@ -16,6 +16,7 @@ class IsrcTest extends AbstractIsoCodeInterfaceTest
             ['USPR37300012'],
             ['UK-A34-01-23456'],
             ['UKA340123456'],
+            ['US-QX9-13-00105'], // "Instant Crush" by Daft Punk featuring Julian Casablancas, Columbia Records, 2013, Album Version (5:37)
         ];
     }
 

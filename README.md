@@ -35,6 +35,9 @@ $isISIN = Isin::validate('US0378331005'); // Apple Inc. (AAPL)
 // Trading Apple products?
 $isCUSIP = Cusip::validate('037833100'); // Apple Inc. (AAPL)
 
+// Is this the unique digital fingerprint for for "Instant Crush" by Daft Punk?
+$isISRC = Isrc::validate('US-QX9-13-00105');
+
 // Checking your iPhone device is valid?
 $isDevice = Imei::validate('352066060926230');
 
