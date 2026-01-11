@@ -36,7 +36,7 @@ class Insee implements IsoCodeInterface
                     /x';
         // références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR
 
-        if (!preg_match($regexp, $numero, $match)) {
+        if (! preg_match($regexp, $numero, $match)) {
             return false;
         }
         /* attention à l'overflow de php :)
@@ -68,11 +68,13 @@ class Insee implements IsoCodeInterface
             case '2A' == $return['departement']:
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
+
                 break;
 
             case '2B' == $return['departement']:
                 $aChecker = floatval(str_replace('B', 0, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
+
                 break;
 
                 // département de naissance en outre-mer: de 970 à 989
@@ -83,6 +85,7 @@ class Insee implements IsoCodeInterface
                     // 90 = commune inconnue
                     return false;
                 }
+
                 break;
 
                 // naissance hors de France
@@ -92,6 +95,7 @@ class Insee implements IsoCodeInterface
                     // 990 = pays inconnu
                     return false;
                 }
+
                 break;
 
             default:
@@ -101,6 +105,7 @@ class Insee implements IsoCodeInterface
                         return false;
                     }
                 }
+
                 break;
         }
 

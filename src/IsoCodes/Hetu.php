@@ -47,7 +47,7 @@ class Hetu implements IsoCodeInterface
      */
     public static function validate($hetu)
     {
-        if (!is_string($hetu) || 11 != strlen($hetu)) {
+        if (! is_string($hetu) || 11 != strlen($hetu)) {
             return false;
         }
 
@@ -66,16 +66,16 @@ class Hetu implements IsoCodeInterface
             return false;
         }
 
-        if (!is_numeric($year)) {
+        if (! is_numeric($year)) {
             return false;
         }
 
-        if (!array_key_exists($centuryCode, static::$centuryCodes)) {
+        if (! array_key_exists($centuryCode, static::$centuryCodes)) {
             return false;
         }
 
         $hetuChecksumKey = $identityNumber % strlen(static::$validationKeys);
-        if (!isset(static::$validationKeys[$hetuChecksumKey])
+        if (! isset(static::$validationKeys[$hetuChecksumKey])
             || static::$validationKeys[$hetuChecksumKey] !== $checksum
         ) {
             return false;

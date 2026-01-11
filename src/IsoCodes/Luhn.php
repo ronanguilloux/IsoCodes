@@ -22,7 +22,7 @@ abstract class Luhn
             return false;
         }
         $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $luhn)) {
+        if (! preg_match($expr, $luhn)) {
             return false;
         }
         if (0 === (int) $luhn) {

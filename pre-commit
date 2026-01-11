@@ -37,7 +37,7 @@ then
     # and you can add your own rules here:
 
 	bin/phpcs --standard=PSR2 src -n
-	bin/php-cs-fixer fix --config=.php_cs.php --dry-run --stop-on-violation --using-cache=no -vv
+	bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --stop-on-violation --using-cache=yes -vv
 
 	# --------------------------------------------------
 	if [ $? != 0 ]

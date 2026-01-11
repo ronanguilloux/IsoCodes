@@ -22,11 +22,11 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
             return false;
         }
 
-        if (!is_numeric($key)) {
+        if (! is_numeric($key)) {
             return false;
         }
 
-        if (!is_string($code)) {
+        if (! is_string($code)) {
             return false;
         }
 

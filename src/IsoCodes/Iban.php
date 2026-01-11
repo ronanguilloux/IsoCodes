@@ -94,7 +94,7 @@ class Iban implements IsoCodeInterface
     public static function validate($iban)
     {
         $iban = (string) $iban;
-        if (!extension_loaded('bcmath')) {
+        if (! extension_loaded('bcmath')) {
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');
         }
         // Min length check

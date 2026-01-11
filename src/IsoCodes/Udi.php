@@ -22,7 +22,7 @@ class Udi extends Gtin14 implements IsoCodeInterface
         $deviceIdentifier = self::unDecorate($deviceIdentifier);
         $validUdiLength = [8, 12, 13, 14];
         $length = strlen($deviceIdentifier);
-        if (!in_array($length, $validUdiLength)) {
+        if (! in_array($length, $validUdiLength)) {
             return false;
         }
 

@@ -17,7 +17,7 @@ class Isbn implements IsoCodeInterface
      */
     public static function validate($isbn, $type = null)
     {
-        if (null !== $type && !in_array($type, [10, 13], true)) {
+        if (null !== $type && ! in_array($type, [10, 13], true)) {
             throw new \InvalidArgumentException('ISBN type option must be 10 or 13');
         }
 
@@ -42,7 +42,7 @@ class Isbn implements IsoCodeInterface
             return false;
         }
 
-        if (!preg_match('/\\d{9}[0-9xX]/i', $isbn10)) {
+        if (! preg_match('/\\d{9}[0-9xX]/i', $isbn10)) {
             return false;
         }
         $check = 0;
@@ -59,7 +59,7 @@ class Isbn implements IsoCodeInterface
     private static function validateIsbn13($isbn13)
     {
         $prefix = substr($isbn13, 0, 3);
-        if (13 != strlen($isbn13) || !ctype_digit($isbn13) || !in_array($prefix, ['978', '979'])) {
+        if (13 != strlen($isbn13) || ! ctype_digit($isbn13) || ! in_array($prefix, ['978', '979'])) {
             return false;
         }
 

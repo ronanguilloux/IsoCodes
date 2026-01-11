@@ -4,7 +4,7 @@ setlocale(LC_ALL, 'fr_FR');
 
 $vendorDir = __DIR__.'/../vendor';
 
-if (!@include $vendorDir.'/autoload.php') {
+if (! @include $vendorDir.'/autoload.php') {
     exit('You must set up the project dependencies, run the following commands:
     wget http://getcomposer.org/composer.phar
     php composer.phar install

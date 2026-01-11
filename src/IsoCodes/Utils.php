@@ -31,7 +31,7 @@ class Utils
         $digits = substr($value, 0, $length - 1);
         $check = substr($value, $length - 1, 1);
         $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $value)) {
+        if (! preg_match($expr, $value)) {
             return false;
         }
 
@@ -66,7 +66,7 @@ class Utils
             return false;
         }
         $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $value)) {
+        if (! preg_match($expr, $value)) {
             return false;
         }
         if (0 === (int) $value) {
@@ -95,14 +95,14 @@ class Utils
         $digits = substr($value, 0, $length - 1);
         $check = substr($value, $length - 1, 1);
         $expr = sprintf('/\\d{%d}/i', $length);
-        if (!preg_match($expr, $value)) {
+        if (! preg_match($expr, $value)) {
             return false;
         }
 
         $sum = 0;
         $len = strlen($digits);
         for ($i = 0; $i < $len; ++$i) {
-            if (!is_numeric($digits[$i])) {
+            if (! is_numeric($digits[$i])) {
                 return false;
             }
             $sum += $weights[$i] * intval($digits[$i]);

@@ -11,7 +11,7 @@ class IbanTest extends AbstractIsoCodeInterfaceTest
 {
     protected function setUp(): void
     {
-        if (!extension_loaded('bcmath')) {
+        if (! extension_loaded('bcmath')) {
             $this->markTestSkipped('The bcmath extension is needed.');
         }
         parent::setUp();

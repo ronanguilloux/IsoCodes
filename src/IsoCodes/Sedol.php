@@ -19,7 +19,7 @@ class Sedol implements IsoCodeInterface
 
         $char6 = substr($value, 0, 6);
 
-        if (!preg_match('/^[0-9BCDFGHJKLMNPQRSTVWXYZ]{6}$/', $char6)) {
+        if (! preg_match('/^[0-9BCDFGHJKLMNPQRSTVWXYZ]{6}$/', $char6)) {
             return false;
         }
 

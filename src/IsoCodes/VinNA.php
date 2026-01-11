@@ -22,7 +22,7 @@ class VinNA implements IsoCodeInterface
     public static function validate($vin)
     {
         $vin = strtolower((string) $vin);
-        if (!preg_match('/^[^\Wioq]{17}$/', $vin)) {
+        if (! preg_match('/^[^\Wioq]{17}$/', $vin)) {
             return false;
         }
 
@@ -57,7 +57,7 @@ class VinNA implements IsoCodeInterface
         $sum = 0;
         $len = strlen($vin);
         for ($i = 0; $i < $len; ++$i) {
-            if (!is_numeric($vin[$i])) {
+            if (! is_numeric($vin[$i])) {
                 $sum += $letterVal[$vin[$i]] * $weights[$i];
             } else {
                 $sum += $vin[$i] * $weights[$i];

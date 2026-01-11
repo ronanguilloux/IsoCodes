@@ -26,6 +26,7 @@ class PhoneNumber
         }
         $country = strtoupper((string) $country);
         $phoneUtil = PhoneNumberUtil::getInstance();
+
         try {
             $numberProto = $phoneUtil->parse($phoneNumber, $country);
         } catch (NumberParseException $e) {

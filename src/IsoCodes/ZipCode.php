@@ -222,7 +222,7 @@ class ZipCode
         }
 
         $country = strtoupper($country);
-        if (!isset(self::$patterns[$country])) {
+        if (! isset(self::$patterns[$country])) {
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
 

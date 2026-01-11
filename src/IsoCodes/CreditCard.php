@@ -20,7 +20,7 @@ class CreditCard implements IsoCodeInterface
             return false;
         }
 
-        if (!boolval(preg_match('/.*[1-9].*/', $creditCard))) {
+        if (! boolval(preg_match('/.*[1-9].*/', $creditCard))) {
             return false;
         }
 

@@ -34,7 +34,7 @@ class Ssn implements IsoCodeInterface
         $ssn = trim((string) $ssn);
 
         // Must be in format AAA-GG-SSSS or AAAGGSSSS
-        if (!preg_match('/^([0-9]{9}|[0-9]{3}-[0-9]{2}-[0-9]{4})$/', $ssn)) {
+        if (! preg_match('/^([0-9]{9}|[0-9]{3}-[0-9]{2}-[0-9]{4})$/', $ssn)) {
             return false;
         }
 
@@ -63,6 +63,6 @@ class Ssn implements IsoCodeInterface
         }
 
         // Forbidden numbers
-        return !(666 == $ssnParts[0] || '000' === $ssnParts[0] || $ssnParts[0] > 899);
+        return ! (666 == $ssnParts[0] || '000' === $ssnParts[0] || $ssnParts[0] > 899);
     }
 }

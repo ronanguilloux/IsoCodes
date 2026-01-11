@@ -24,7 +24,7 @@ class Siren implements IsoCodeInterface
      */
     public static function validate($insee, $length = 9)
     {
-        if (!is_numeric($insee)) {
+        if (! is_numeric($insee)) {
             return false;
         }
 
@@ -44,7 +44,7 @@ class Siren implements IsoCodeInterface
 
         $res = ($sum % 10) == 0;
 
-        if (!$res) {
+        if (! $res) {
             /**
              * La poste support (French mail company).
              *
