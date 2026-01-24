@@ -4,8 +4,8 @@ Fixes #1234 - <Rest of your commit title here>
 | ------------- | ---
 | Bug fix?      | yes/no
 | New feature?  | yes/no
-| BC breaks?    | no
-| Deprecations? | no
-| Tests pass?   | yes
+| BC breaks?    | yes/no
+| Deprecations? | yes/no
+| Tests pass?   | yes/no
 
 <Your commit description here>

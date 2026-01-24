@@ -24,23 +24,9 @@ class CreditCard implements IsoCodeInterface
             return false;
         }
 
-        // longueur de la chaine $creditCard
+        $creditCard = Utils::unDecorate($creditCard, [' ', '-', '.']);
         $length = strlen($creditCard);
 
-        // resultat de l'addition de tous les chiffres
-        $tot = 0;
-        for ($i = $length - 1; $i >= 0; --$i) {
-            $digit = substr($creditCard, $i, 1);
-
-            if ((($length - $i) % 2) == 0) {
-                $digit = (int) $digit * 2;
-                if ($digit > 9) {
-                    $digit -= 9;
-                }
-            }
-            $tot += (int) $digit;
-        }
-
-        return ($tot % 10) == 0;
+        return Utils::luhn($creditCard, $length, []);
     }
 }

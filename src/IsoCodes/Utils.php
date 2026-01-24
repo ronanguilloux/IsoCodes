@@ -25,32 +25,27 @@ class Utils
     /**
      * @param mixed $value: null or string
      */
-    public static function luhn($value, int $length, int $weight, int $divider, $hyphens): bool
+    public static function luhn($value, int $length, $hyphens): bool
     {
         $value = self::unDecorate($value, $hyphens);
-        $digits = substr($value, 0, $length - 1);
-        $check = substr($value, $length - 1, 1);
-        $expr = sprintf('/\\d{%d}/i', $length);
-        if (! preg_match($expr, $value)) {
+        if (strlen($value) !== $length) {
             return false;
         }
 
         $sum = 0;
-        $len = strlen($digits);
-        for ($i = 0; $i < $len; ++$i) {
-            if (0 === $i % 2) {
-                $add = (int) substr($digits, $i, 1);
-            } else {
-                $add = $weight * (int) substr($digits, $i, 1);
-                if (10 <= $add) { // '18' = 1+8 = 9, etc.
-                    $strAdd = strval($add);
-                    $add = intval($strAdd[0]) + intval($strAdd[1]);
+        $parity = $length % 2;
+        for ($i = 0; $i < $length; ++$i) {
+            $digit = (int) $value[$i];
+            if ($i % 2 === $parity) {
+                $digit *= 2;
+                if ($digit > 9) {
+                    $digit -= 9;
                 }
             }
-            $sum += $add;
+            $sum += $digit;
         }
 
-        return 0 === ($sum + $check) % $divider;
+        return 0 === ($sum % 10);
     }
 
     /**
@@ -147,12 +142,24 @@ class Utils
      */
     public static function iso7064Mod37_36(string $value): string
     {
+        $alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $value = strtoupper($value);
         $chars = str_split($value);
         $product = 36;
 
         foreach ($chars as $char) {
-            $digit = intval($char, 16); // Hex to decimal (0-9, A-F -> 0-15)
+            $digit = strpos($alphabet, $char);
+
+            // Check for invalid character not found in alphabet
+            if (false === $digit) {
+                // Fallback or Exception?
+                // Existing implementation used intval(char, 16) which treats non-hex loosely.
+                // But for strict Alphanumeric, we assume valid input or handle error.
+                // Given strict types, we should continue or return error.
+                // For now, let's behave like the old one, assuming sanitized input,
+                // but strict validation isn't the job of this calculator itself usually.
+                $digit = 0;
+            }
 
             // 1. Add 36 to [digit] to get Intermediate Sum
             // But since we carry product, it is: Sum = Product + Digit
@@ -182,11 +189,7 @@ class Utils
 
         $checkValue = 37 - $product;
 
-        // Convert to Alphanumeric (0-9, A-Z)
-        if ($checkValue < 10) {
-            return (string) $checkValue;
-        }
-
-        return chr($checkValue + 55); // 10 -> 'A' (65), etc.
+        // Convert to Alphanumeric
+        return $alphabet[$checkValue];
     }
 }

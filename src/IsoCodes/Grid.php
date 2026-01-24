@@ -27,33 +27,12 @@ class Grid implements IsoCodeInterface
             return false;
         }
 
-        $grid = strtoupper($grid);
-        $map = array_merge(
-            array_combine(range('0', '9'), range(0, 9)),
-            array_combine(range('A', 'Z'), range(10, 35))
-        );
-
         // ISO 7064 Mod 37, 36 (Hybrid)
-        // Empirical verification suggests Initial P = 35 (or similar offset) provides result 1 for valid GRids.
-        $p = 35;
-        $mod = 37;
+        // Utils::iso7064Mod37_36 calculates the check digit (last char).
+        // Since Grid validates the whole string, we calculate check of payload (17 chars) and match vs 18th char.
+        $payload = substr($grid, 0, 17);
+        $checkDigit = $grid[17];
 
-        for ($i = 0; $i < 18; ++$i) {
-            $char = $grid[$i];
-            $val = $map[$char];
-
-            // Step 1: Add
-            $p = ($p + $val) % $mod;
-
-            // Hybrid zero rule
-            if (0 === $p) {
-                $p = 36;
-            }
-
-            // Step 2: Multiply
-            $p = ($p * 2) % $mod;
-        }
-
-        return 1 === $p;
+        return Utils::iso7064Mod37_36($payload) === $checkDigit;
     }
 }

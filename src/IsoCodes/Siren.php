@@ -32,17 +32,7 @@ class Siren implements IsoCodeInterface
             return false;
         }
 
-        $sum = 0;
-        for ($i = 0; $i < $length; ++$i) {
-            $indice = ($length - $i);
-            $tmp = (2 - ($indice % 2)) * strval($insee)[$i];
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-        }
-
-        $res = ($sum % 10) == 0;
+        $res = Utils::luhn($insee, $length, []);
 
         if (! $res) {
             /**

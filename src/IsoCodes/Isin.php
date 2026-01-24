@@ -35,35 +35,10 @@ class Isin implements IsoCodeInterface
             $base10 .= (string) base_convert($digit, 36, 10);
         }
         $checksum = substr($isin, 11, 1);
-        $base10 = strrev($base10);
-        $length = strlen($base10);
 
-        // distinguishing leftmost from rightmost
-        for ($i = $length - 1; $i >= 0; --$i) {
-            $digit = substr($base10, $i, 1);
-            $rightmost = 'left';
-            if ((($length - $i) % 2) == 0) {
-                $left[] = $digit;
-            } else {
-                $right[] = $digit;
-                $rightmost = 'right';
-            }
-        }
+        // Verification with Luhn algorithm
+        $numericIsin = $base10.$checksum;
 
-        // Multiply the group containing the rightmost character
-        $simple = ('left' === $rightmost) ? $right : $left;
-        $doubled = ('left' === $rightmost) ? $left : $right;
-        $doubledCount = count($doubled);
-        for ($i = 0; $i < $doubledCount; ++$i) {
-            $digit = $doubled[$i] * 2;
-            if ($digit > 9) {
-                $digit = array_sum(str_split($digit));
-            }
-            $doubled[$i] = $digit;
-        }
-        $tot = array_sum($simple) + array_sum($doubled);
-        $moduled = 10 - ($tot % 10);
-
-        return (int) $moduled === (int) $checksum;
+        return Utils::luhn($numericIsin, strlen($numericIsin), []);
     }
 }

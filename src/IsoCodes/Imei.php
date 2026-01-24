@@ -41,6 +41,6 @@ class Imei implements IsoCodeInterface
         }
 
         // IMEI?
-        return Utils::Luhn($imei, $length, 2, 10, self::HYPHENS);
+        return Utils::Luhn($imei, $length, self::HYPHENS);
     }
 }

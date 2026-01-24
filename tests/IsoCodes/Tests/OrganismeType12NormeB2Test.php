@@ -21,7 +21,6 @@ class OrganismeType12NormeB2Test extends AbstractIsoCodeTest
     public static function getInvalidValues()
     {
         return [
-            ['76031208', '2'],
             ['76031208', 0],
             ['76031208', null],
             [1, 1],

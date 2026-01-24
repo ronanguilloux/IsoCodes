@@ -10,7 +10,7 @@ namespace IsoCodes;
  * @see http://www.ismn-international.org/publications/newsletter10/othersys.html
  * @see http://jsfiddle.net/sN3TU/
  */
-class Iswc extends Luhn implements IsoCodeInterface
+class Iswc implements IsoCodeInterface
 {
     /**
      * @return bool
@@ -22,7 +22,7 @@ class Iswc extends Luhn implements IsoCodeInterface
             return false;
         }
         $hyphens = ['‐', '-', '.'];
-        $iswc = parent::unDecorate($iswc, $hyphens);
+        $iswc = Utils::unDecorate($iswc, $hyphens);
 
         $sum = 1;
 

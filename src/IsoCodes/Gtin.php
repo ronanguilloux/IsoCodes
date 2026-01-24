@@ -7,7 +7,7 @@ namespace IsoCodes;
  *
  * @see http://www.gs1.org/how-calculate-check-digit-manually
  */
-abstract class Gtin extends Luhn
+abstract class Gtin
 {
     public const HYPHENS = ['‐', '-', ' ']; // regular dash, authentic hyphen (rare!) and space
 
@@ -18,6 +18,6 @@ abstract class Gtin extends Luhn
 
     public static function unDecorate($gtin, $hyphens = self::HYPHENS): string
     {
-        return parent::unDecorate($gtin, $hyphens);
+        return Utils::unDecorate($gtin, $hyphens);
     }
 }

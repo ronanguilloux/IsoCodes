@@ -34,23 +34,8 @@ class OrganismeType12NormeB2 implements IsoCodeInterface
             return false;
         }
 
-        $numerals = str_split($code);
-        $rank = array_reverse(array_keys($numerals));
-        $orderedNumerals = [];
-        foreach ($rank as $i => $rankValue) {
-            $orderedNumerals[$rankValue + 1] = $numerals[$i];
-        }
-        $results = [];
-        foreach ($orderedNumerals as $cle => $value) {
-            $results[$value] = (0 == $cle % 2) ? ((int) $value * 1) : ((int) $value * 2);
-        }
-        $sum = 0;
-        foreach ($results as $cle => $value) {
-            $sum += array_sum(str_split($value));
-        }
-        $validKey = str_split($sum);
-        $validKey = 10 - array_pop($validKey);
+        $value = $code.$key;
 
-        return $key === $validKey;
+        return Utils::luhn($value, strlen($value), []);
     }
 }

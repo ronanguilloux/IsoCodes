@@ -48,6 +48,6 @@ class Isbn implements IsoCodeInterface
             return false;
         }
 
-        return Luhn::check($isbn13, 13, false);
+        return Utils::luhnForGTIN($isbn13, 13, false);
     }
 }
