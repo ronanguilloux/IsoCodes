@@ -128,6 +128,10 @@ class Utils
             return 'X' === strtoupper($check);
         }
 
+        if (! is_numeric($check)) {
+            return false;
+        }
+
         return (int) $check === $expectedCheck;
     }
 
