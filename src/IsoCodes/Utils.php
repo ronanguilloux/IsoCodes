@@ -89,31 +89,50 @@ class Utils
         return 0 === $sum % $divider;
     }
 
+    /**
+     * Check a value using a weighted modulo algorithm.
+     *
+     * Used for ISBN-10, ISSN, etc.
+     * The algorithm is:
+     * 1. Calculate the sum of the products of each digit and its corresponding weight.
+     * 2. Calculate the remainder of the sum divided by the divider (modulo).
+     * 3. Calculate the complement: divider - remainder.
+     * 4. If remainder is 0, check digit is 0.
+     * 5. If complement is 10, check digit is 'X' (if applicable).
+     *
+     * @param string $value   The value to check
+     * @param int    $length  Expected length of the value
+     * @param array  $weights Weights to apply to each digit
+     * @param int    $divider Modulo divider
+     * @param array  $hyphens Characters to ignore (remove)
+     */
     public static function luhnWithWeights(string $value, int $length, array $weights, int $divider, $hyphens): bool
     {
         $value = self::unDecorate($value, $hyphens);
+        if ($length !== strlen($value)) {
+            return false;
+        }
+
         $digits = substr($value, 0, $length - 1);
         $check = substr($value, $length - 1, 1);
-        $expr = sprintf('/\\d{%d}/i', $length);
-        if (! preg_match($expr, $value)) {
+        $expr = sprintf('/\\d{%d}/i', $length - 1); // Check only the digits part
+        if (! preg_match($expr, $digits)) {
             return false;
         }
 
         $sum = 0;
         $len = strlen($digits);
         for ($i = 0; $i < $len; ++$i) {
-            if (! is_numeric($digits[$i])) {
-                return false;
-            }
-            $sum += $weights[$i] * intval($digits[$i]);
+            $sum += $weights[$i] * (int) $digits[$i];
         }
 
         $rest = $sum % $divider;
+        $expectedCheck = (0 === $rest) ? 0 : $divider - $rest;
 
-        if (0 === $rest) {
-            $check = $divider;
+        if (10 === $expectedCheck) { // Handle X case if applicable (mostly 11)
+            return 'X' === strtoupper($check);
         }
 
-        return intval($check) === $divider - $rest;
+        return (int) $check === $expectedCheck;
     }
 }

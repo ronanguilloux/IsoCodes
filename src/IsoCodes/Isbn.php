@@ -38,22 +38,7 @@ class Isbn implements IsoCodeInterface
 
     private static function validateIsbn10($isbn10)
     {
-        if (10 != strlen($isbn10)) {
-            return false;
-        }
-
-        if (! preg_match('/\\d{9}[0-9xX]/i', $isbn10)) {
-            return false;
-        }
-        $check = 0;
-        for ($i = 0; $i < 10; ++$i) {
-            if ('X' == $isbn10[$i]) {
-                $check += 10 * intval(10 - $i);
-            }
-            $check += intval($isbn10[$i]) * intval(10 - $i);
-        }
-
-        return 0 == $check % 11;
+        return Utils::luhnWithWeights($isbn10, 10, [10, 9, 8, 7, 6, 5, 4, 3, 2], 11, []);
     }
 
     private static function validateIsbn13($isbn13)
