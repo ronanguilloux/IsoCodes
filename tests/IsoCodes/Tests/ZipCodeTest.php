@@ -69,6 +69,15 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['GIR 0AA', 'GB'], // UK, Girobank/Santander (quirk)
             ['BFPO 23', 'GB'], // UK, BFPO (quirk)
             ['bfpo 23', 'GB', true],
+
+            ['33901', 'AG'],
+            ['-7151', 'AQ'],
+            ['99999', 'BF'],
+            ['12345', 'KP'],
+            ['NRU68', 'NR'],
+            ['P3600700', 'PS'],
+            ['600-699', 'PS'],
+            ['Harare', 'ZW'],
         ];
     }
 
@@ -183,6 +192,10 @@ class ZipCodeTest extends AbstractIsoCodeTest
             ['junk BS5 7EX', 'GB'], // Ensure the regex is anchored to start (issue #108)
             ['NG4 EP1', 'GB'], // Letters and numbers transposed
             ['ZZ0 0ZZ', 'GB'], // Dummy "overseas" postcode sometimes used to skirt form validation
+
+            ['7151', 'AQ'],
+            ['01111', 'BF'],
+            ['NRU69', 'NR'],
         ];
     }
 
