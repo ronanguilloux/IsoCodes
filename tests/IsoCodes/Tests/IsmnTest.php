@@ -15,6 +15,10 @@ class IsmnTest extends AbstractIsoCodeInterfaceTest
             ['979-0-2600-0043-8'],  // Wikipedia
             ['979-0-060-11561-5'],  // Wikipedia
             ['979-0-9016791-7-7'],  // Wikipedia
+            ['979-0-006-44431-1'],  // Bärenreiter - Beethoven: Symphony No. 5 (Full Score)
+            ['979-0-060-02591-4'],  // Boosey & Hawkes - Stravinsky: The Rite of Spring
+            ['979-0-004-16201-9'],  // Breitkopf & Härtel - Mozart: Requiem KV 626 (Vocal Score)
+            ['979-0-001-13239-8'],  // Howard Shore: The Lord of the Rings (The Fellowship of the Ring)
             ['9 790230 671187'],    // http://www.ismn-international.org/whatis.html
         ];
     }
