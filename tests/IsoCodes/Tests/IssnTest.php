@@ -26,6 +26,7 @@ class IssnTest extends AbstractIsoCodeTest
             ['1234-567'],  // Too short
             ['1234-56789'], // Too long
             ['0378-595A'], // Invalid char
+            ['0000-000X'], // Bad checksum (X when 0 expected)
             ['abc'],       // Garbage
             [12345678],    // Integer (though Utils casts to string, usually we test strictly or semi-strictly), validation expects string usually but casting is in code.
             // The implementation does $issn = (string) $issn; so int might pass if valid.
