@@ -64,6 +64,7 @@ $isVin = VinNA::validate('1HGBH41JXMN109186');
 * ISBN - International Standard Book Number, both 10 & 13 digits
 * ISMN - International Standard Music Number
 * ISSN - International Standard Serial Number
+* IMO  - International Maritime Organization (Ship Identification Number)
 * ISWC - International Standard Musical Work Code
 * IMEI - International Mobile Equipment Identity
 * VIN  - Vehicle Identification Number – ISO 3779 & ISO 4030
