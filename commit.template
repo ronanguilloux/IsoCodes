@@ -7,6 +7,6 @@ fix 9999 <Rest of your commit title here>
 | BC breaks?    | no
 | Deprecations? | no
 | Tests pass?   | yes
-| Fixed tickets | #1234
+Fixes #1234
 
 <Your commit description here>

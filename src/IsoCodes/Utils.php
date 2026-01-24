@@ -135,4 +135,58 @@ class Utils
 
         return (int) $check === $expectedCheck;
     }
+
+    /**
+     * Calculate Check Character using ISO 7064, MOD 37-36.
+     *
+     * Used for ISAN.
+     *
+     * @param string $value The value to calculate check character for (hexadecimal)
+     *
+     * @return string The calculated check character
+     */
+    public static function iso7064Mod37_36(string $value): string
+    {
+        $value = strtoupper($value);
+        $chars = str_split($value);
+        $product = 36;
+
+        foreach ($chars as $char) {
+            $digit = intval($char, 16); // Hex to decimal (0-9, A-F -> 0-15)
+
+            // 1. Add 36 to [digit] to get Intermediate Sum
+            // But since we carry product, it is: Sum = Product + Digit
+            $sum = $product + $digit;
+
+            // 2. Adjust Intermediate Sum
+            if ($sum > 36) {
+                $sum -= 36;
+            }
+            if (0 === $sum) {
+                $sum = 36;
+            }
+
+            // 3. Calculate Product
+            $product = $sum * 2;
+
+            // 4. Adjust Product
+            if ($product >= 37) {
+                $product -= 37;
+            }
+        }
+
+        // Final Validation
+        if (1 === $product) {
+            return '0';
+        }
+
+        $checkValue = 37 - $product;
+
+        // Convert to Alphanumeric (0-9, A-Z)
+        if ($checkValue < 10) {
+            return (string) $checkValue;
+        }
+
+        return chr($checkValue + 55); // 10 -> 'A' (65), etc.
+    }
 }
