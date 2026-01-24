@@ -21,8 +21,8 @@ class Gs1QrCodeTest extends AbstractIsoCodeTest
             // Raw
             ['010123456789012815251231'],
 
-            // 2D Code URL style (often seen in QR)? 
-            // GS1 Digital Link is a URI, but GS1 QR Code usually encodes Element Strings directly 
+            // 2D Code URL style (often seen in QR)?
+            // GS1 Digital Link is a URI, but GS1 QR Code usually encodes Element Strings directly
             // or follows the URI syntax. The validator checks element string format.
             // If the user passes the raw element string decoded from the QR:
             ['(01)09501101020917'],

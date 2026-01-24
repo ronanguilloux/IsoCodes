@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Gs1DataMatrix
+ * Class Gs1DataMatrix.
  *
  * GS1 DataMatrix
  *

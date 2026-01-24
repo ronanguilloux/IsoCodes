@@ -3,7 +3,7 @@
 namespace IsoCodes;
 
 /**
- * Class Gs1QrCode
+ * Class Gs1QrCode.
  *
  * GS1 QR Code
  *

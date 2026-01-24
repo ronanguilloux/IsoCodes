@@ -20,7 +20,7 @@ class Gs1DataMatrixTest extends AbstractIsoCodeTest
 
             // Longer Strings (Simulated DataMatrix capacity)
             // Example: Many AIs concatenated
-            ['(01)01234567890128' . str_repeat('(10)BATCH123', 5)],
+            ['(01)01234567890128'.str_repeat('(10)BATCH123', 5)],
 
             // Raw format
             ['010123456789012815251231'],
