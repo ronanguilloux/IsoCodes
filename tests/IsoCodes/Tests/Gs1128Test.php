@@ -59,6 +59,9 @@ class Gs1128Test extends AbstractIsoCodeTest
             ['(01)01234567890123'],     // Bad GTIN checksum
             [str_repeat('1', 50)],      // Too long (>48)
             ['(10)TOO_LONG_FOR_BATCH_NUMBER_OVER_20_CHARS_XXXX'], // >20 for AI 10
+            ['(10)000000'], // Batch cannot be all zeros
+            ['(21)000'],    // Serial cannot be all zeros
+            ['(400)000'],   // PO cannot be all zeros
         ];
     }
 

@@ -26,6 +26,10 @@ class Giai implements IsoCodeInterface
 
         // GIAI is alphanumeric, up to 30 characters.
         // It does not contain a check digit.
+        if (preg_match('/^0+$/', $giai)) {
+            return false;
+        }
+
         return (bool) preg_match('/^[A-Z0-9]{1,30}$/', $giai);
     }
 }

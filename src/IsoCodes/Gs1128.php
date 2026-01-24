@@ -148,6 +148,9 @@ class Gs1128 implements IsoCodeInterface
                 }
             }
             // 'an' is pretty much anything allowed in GS1-128 (ASCII 32-126)
+            if ('an' === $def['type'] && preg_match('/^0+$/', $val)) {
+                return false;
+            }
 
             // 3. Specific Validations
             if ('00' === $ai) {

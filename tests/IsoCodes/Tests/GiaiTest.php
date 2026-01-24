@@ -38,6 +38,7 @@ class GiaiTest extends AbstractIsoCodeTest
             ['1234567890123456789012345678901'], // 31 chars
             ['2006-3290R'], // Hyphen not allowed
             ['A.B.C'], // Dot not allowed
+            ['00000000'], // All zeros rejected
         ];
     }
 
