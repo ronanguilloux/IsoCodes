@@ -45,7 +45,11 @@ $isISWC = Iswc::validate('T-003.958.832-6');
 $isDevice = Imei::validate('352066060926230');
 
 // Selling your Honda Civic?
-$isVin = VinNA::validate('1HGBH41JXMN109186');    
+$isVin = VinNA::validate('1HGBH41JXMN109186');
+
+// Sending packages via DHL?
+$isIdentcode = Identcode::validate('563102430313');
+$isLeitcode = Leitcode::validate('23669012012305');
 ```
 
 
@@ -92,6 +96,11 @@ $isVin = VinNA::validate('1HGBH41JXMN109186');
 * GDTI - Global Document Type Identifier
 * UDI - Unique Device Identification (the GTIN part of it)
 * Older/deprecated identifiers, now in GTIN: EAN-8, EAN-13, UCC-13, UPC-A, DUN-14, ITF-14
+
+### Logistics & Post
+
+* Identcode (Deutsche Post DHL)
+* Leitcode (Deutsche Post DHL)
 
 ### Miscellaneous
 

@@ -20,7 +20,7 @@ class Pzn implements IsoCodeInterface
     {
         $pzn = Utils::unDecorate($pzn, ['-', ' ', 'PZN', 'pzn']);
 
-        if (strlen($pzn) !== 8 || ! ctype_digit($pzn)) {
+        if (8 !== strlen($pzn) || ! ctype_digit($pzn)) {
             return false;
         }
 
@@ -35,7 +35,7 @@ class Pzn implements IsoCodeInterface
 
         $remainder = $sum % 11;
 
-        if ($remainder === 10) {
+        if (10 === $remainder) {
             return false;
         }
 

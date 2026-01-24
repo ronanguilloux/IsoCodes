@@ -50,7 +50,9 @@
         "ISIN",
         "phone number",
         "zipcode",
-        "HETU"
+        "HETU",
+        "Identcode",
+        "Leitcode"
     ],
     "type": "library",
     "homepage": "https://github.com/ronanguilloux/IsoCodes",
