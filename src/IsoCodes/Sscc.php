@@ -14,7 +14,7 @@ class Sscc extends Gtin implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($sscc)
+    public static function validate($sscc, $options = [])
     {
         return parent::check($sscc, 18);
     }

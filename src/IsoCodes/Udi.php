@@ -17,7 +17,7 @@ class Udi extends Gtin14 implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($deviceIdentifier)
+    public static function validate($deviceIdentifier, $options = [])
     {
         $deviceIdentifier = self::unDecorate($deviceIdentifier);
         $validUdiLength = [8, 12, 13, 14];

@@ -2,10 +2,12 @@
 
 namespace IsoCodes;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * Class ZipCode.
  */
-class ZipCode
+class ZipCode implements IsoCodeInterface
 {
     /**
      * ZipCode patterns, generated from http://i18napis.appspot.com (updated: 2016-07-08).
@@ -278,19 +280,47 @@ class ZipCode
     ];
 
     /**
-     * @param string $zipcode
-     * @param string $country
-     * @param bool   $caseSentitive
+     * @param string       $zipcode
+     * @param string|array $options       Country code (string) or options array
+     * @param bool|null    $caseSentitive Deprecated: use options array instead
      *
      * @return bool
      *
      * @throws \InvalidArgumentException
      */
-    public static function validate($zipcode, $country = null, $caseSentitive = false)
+    public static function validate($zipcode, $options = [], $caseSentitive = null)
     {
         $zipcode = trim((string) $zipcode);
-        $country = trim((string) $country);
-        if (empty($zipcode) || empty($country)) {
+        if (empty($zipcode)) {
+            return false;
+        }
+
+        if (is_string($options)) {
+            $options = ['country' => $options];
+            if (null !== $caseSentitive) {
+                $options['case_sensitive'] = $caseSentitive;
+            }
+        } elseif (null === $options) {
+            $options = [];
+        }
+
+        if (! is_array($options)) {
+            $options = [];
+        }
+
+        $resolver = new OptionsResolver();
+        $resolver->setDefaults([
+            'country' => null,
+            'case_sensitive' => false,
+        ]);
+        $resolver->setAllowedTypes('country', ['string', 'null']);
+        $resolver->setAllowedTypes('case_sensitive', 'bool');
+
+        $options = $resolver->resolve($options);
+
+        $country = trim((string) $options['country']);
+
+        if (empty($country)) {
             return false;
         }
 
@@ -299,7 +329,7 @@ class ZipCode
             throw new \InvalidArgumentException("ERROR: The zipcode validator for $country does not exists yet: feel free to add it.");
         }
 
-        return (bool) preg_match('/^('.self::$patterns[$country].')$/'.($caseSentitive ? 'i' : ''), $zipcode);
+        return (bool) preg_match('/^('.self::$patterns[$country].')$/'.($options['case_sensitive'] ? 'i' : ''), $zipcode);
     }
 
     /**

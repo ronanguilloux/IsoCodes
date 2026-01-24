@@ -2,6 +2,8 @@
 
 namespace IsoCodes;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * Class Gs1DataMatrix.
  *
@@ -18,10 +20,16 @@ class Gs1DataMatrix extends Gs1128
      *
      * @return bool
      */
-    public static function validate($gs1String)
+    public static function validate($gs1String, $options = [])
     {
-        // GS1 DataMatrix can hold up to 2335 numeric or 3116 numeric-only characters.
+        $resolver = new OptionsResolver();
+        $resolver->setDefaults(['max_length' => 2335]);
+        $resolver->setAllowedTypes('max_length', 'int');
+
+        $options = $resolver->resolve($options);
+
+        // GS1 DataMatrix capacity is up to 2335 numeric or 3116 numeric-only characters.
         // We set a safe high limit.
-        return parent::validateGs1String((string) $gs1String, 2335);
+        return parent::validateGs1String((string) $gs1String, $options['max_length']);
     }
 }

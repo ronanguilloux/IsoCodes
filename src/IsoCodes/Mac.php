@@ -22,7 +22,7 @@ class Mac implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($mac)
+    public static function validate($mac, $options = [])
     {
         $mac = (string) $mac;
         $pattern = '/^(([a-f0-9]{2}-){5}[a-f0-9]{2}|([A-F0-9]{2}-){5}[A-Z0-9]{2}|([a-f0-9]{2}:){5}[a-z0-9]{2}|([A-F0-9]{2}:){5}[A-Z0-9]{2})$/';

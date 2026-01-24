@@ -2,6 +2,8 @@
 
 namespace IsoCodes;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * Class Gs1128.
  *
@@ -37,12 +39,19 @@ class Gs1128 implements IsoCodeInterface
 
     /**
      * @param string $gs1128
+     * @param array  $options
      *
      * @return bool
      */
-    public static function validate($gs1128)
+    public static function validate($gs1128, $options = [])
     {
-        return self::validateGs1String((string) $gs1128, 48);
+        $resolver = new OptionsResolver();
+        $resolver->setDefaults(['max_length' => 48]);
+        $resolver->setAllowedTypes('max_length', 'int');
+
+        $options = $resolver->resolve($options);
+
+        return self::validateGs1String((string) $gs1128, $options['max_length']);
     }
 
     /**

@@ -12,7 +12,7 @@ namespace IsoCodes;
  */
 class Cusip implements IsoCodeInterface
 {
-    public static function validate($cusip)
+    public static function validate($cusip, $options = [])
     {
         $cusip = (string) $cusip;
         if (9 !== strlen($cusip)) {

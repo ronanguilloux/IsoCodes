@@ -15,7 +15,7 @@ class Grid implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($grid)
+    public static function validate($grid, $options = [])
     {
         $grid = trim((string) $grid);
 

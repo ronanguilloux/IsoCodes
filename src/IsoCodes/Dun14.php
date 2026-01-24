@@ -15,7 +15,7 @@ class Dun14 extends Gtin14 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($dun14)
+    public static function validate($dun14, $options = [])
     {
         return parent::check($dun14, 14);
     }

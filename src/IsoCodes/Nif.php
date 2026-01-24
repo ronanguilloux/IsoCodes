@@ -27,7 +27,7 @@ class Nif implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($nif)
+    public static function validate($nif, $options = [])
     {
         $nif = (string) $nif;
         $nifCodes = 'TRWAGMYFPDXBNJZSQVHLCKE';

@@ -17,7 +17,7 @@ class Itf14 extends Gtin14 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($itf14)
+    public static function validate($itf14, $options = [])
     {
         return parent::check($itf14, 14);
     }

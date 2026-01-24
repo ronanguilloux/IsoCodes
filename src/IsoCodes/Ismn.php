@@ -17,7 +17,7 @@ class Ismn extends Gtin13 implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($ean13)
+    public static function validate($ean13, $options = [])
     {
         return parent::check($ean13, 13);
     }

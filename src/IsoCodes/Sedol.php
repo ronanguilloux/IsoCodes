@@ -10,7 +10,7 @@ namespace IsoCodes;
  */
 class Sedol implements IsoCodeInterface
 {
-    public static function validate($value)
+    public static function validate($value, $options = [])
     {
         $value = (string) $value;
         if (7 !== strlen($value)) {

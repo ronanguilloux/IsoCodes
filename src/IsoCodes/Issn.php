@@ -14,7 +14,7 @@ class Issn implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($issn)
+    public static function validate($issn, $options = [])
     {
         return Utils::luhnWithWeights((string) $issn, 8, [8, 7, 6, 5, 4, 3, 2], 11, ['-', ' ']);
     }

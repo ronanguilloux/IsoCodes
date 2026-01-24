@@ -20,7 +20,7 @@ final class Bsn implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($value)
+    public static function validate($value, $options = [])
     {
         if (! is_numeric($value)) {
             return false;

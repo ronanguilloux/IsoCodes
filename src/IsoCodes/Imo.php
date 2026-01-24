@@ -16,7 +16,7 @@ class Imo implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($imo)
+    public static function validate($imo, $options = [])
     {
         $imo = (string) $imo;
         $imo = Utils::unDecorate($imo, ['IMO', 'imo', ' ']);

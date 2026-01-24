@@ -15,7 +15,7 @@ class Gln extends Gtin13 implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($gln)
+    public static function validate($gln, $options = [])
     {
         return parent::check($gln, 13);
     }

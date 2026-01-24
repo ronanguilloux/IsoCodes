@@ -30,7 +30,7 @@ class Insee implements IsoCodeInterface
                     $                                              # fin de chaîne
                     /x';
 
-    public static function validate($numero)
+    public static function validate($numero, $options = [])
     {
         $numero = (string) $numero;
         // références : http://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France#Signification_des_chiffres_du_NIR

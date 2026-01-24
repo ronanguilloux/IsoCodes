@@ -2,6 +2,8 @@
 
 namespace IsoCodes;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * Class Gs1QrCode.
  *
@@ -18,10 +20,16 @@ class Gs1QrCode extends Gs1128
      *
      * @return bool
      */
-    public static function validate($gs1String)
+    public static function validate($gs1String, $options = [])
     {
+        $resolver = new OptionsResolver();
+        $resolver->setDefaults(['max_length' => 4296]);
+        $resolver->setAllowedTypes('max_length', 'int');
+
+        $options = $resolver->resolve($options);
+
         // GS1 QR Code capacity is up to 4296 chars.
         // We set a safe high limit.
-        return parent::validateGs1String((string) $gs1String, 4296);
+        return parent::validateGs1String((string) $gs1String, $options['max_length']);
     }
 }

@@ -21,7 +21,7 @@ class Bban implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($bban)
+    public static function validate($bban, $options = [])
     {
         if (! extension_loaded('bcmath')) {
             throw new \RuntimeException(__METHOD__.' needs the bcmath extension.');

@@ -26,7 +26,7 @@ class Isan implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($isan)
+    public static function validate($isan, $options = [])
     {
         $isan = (string) $isan;
         $isan = strtoupper($isan);

@@ -20,7 +20,7 @@ class Uid implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($uid)
+    public static function validate($uid, $options = [])
     {
         $multipliers = [5, 4, 3, 2, 7, 6, 5, 4];
 

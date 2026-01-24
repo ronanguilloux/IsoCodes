@@ -16,7 +16,7 @@ class Isin implements IsoCodeInterface
      *
      * @return bool true if ISIN is valid
      */
-    public static function validate($isin)
+    public static function validate($isin, $options = [])
     {
         $isin = strtoupper((string) $isin);
         if (! preg_match('/^[A-Z]{2}[A-Z0-9]{9}[0-9]$/i', $isin)) {

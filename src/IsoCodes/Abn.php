@@ -19,7 +19,7 @@ class Abn implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($abn)
+    public static function validate($abn, $options = [])
     {
         $abn = (string) $abn;
         $weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19];

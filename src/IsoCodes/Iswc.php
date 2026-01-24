@@ -15,7 +15,7 @@ class Iswc extends Luhn implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($iswc)
+    public static function validate($iswc, $options = [])
     {
         $iswc = (string) $iswc;
         if (! boolval(preg_match('/^\s*T[\-.]?(\d)(\d)(\d)[\-.]?(\d)(\d)(\d)[\-.]?(\d)(\d)(\d)[\-.]?(\d)\s*$/i', $iswc))) {

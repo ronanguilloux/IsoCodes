@@ -18,7 +18,7 @@ class IPv4 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($ip)
+    public static function validate($ip, $options = [])
     {
         return false !== filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
     }

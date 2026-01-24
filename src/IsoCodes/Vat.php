@@ -82,7 +82,7 @@ class Vat implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($vat)
+    public static function validate($vat, $options = [])
     {
         if (empty($vat) || null === $vat || '' === $vat) {
             return false;

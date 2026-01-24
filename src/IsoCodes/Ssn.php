@@ -29,7 +29,7 @@ class Ssn implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($ssn)
+    public static function validate($ssn, $options = [])
     {
         $ssn = trim((string) $ssn);
 

@@ -28,7 +28,7 @@ class Imei implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($imei)
+    public static function validate($imei, $options = [])
     {
         $imei = Utils::unDecorate($imei, self::HYPHENS);
         $length = 15; // for IMEI only; IMEISV = EMEI+1, and not Luhn check

@@ -20,7 +20,7 @@ class Uei implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($uei)
+    public static function validate($uei, $options = [])
     {
         $uei = strtoupper(trim((string) $uei));
 

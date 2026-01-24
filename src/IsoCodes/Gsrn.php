@@ -17,7 +17,7 @@ class Gsrn extends Gtin implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($gsrn)
+    public static function validate($gsrn, $options = [])
     {
         return parent::check($gsrn, 18);
     }

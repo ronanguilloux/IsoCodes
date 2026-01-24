@@ -266,7 +266,7 @@ class ISO3166A2 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($alpha2)
+    public static function validate($alpha2, $options = [])
     {
         if (null === $alpha2) {
             return false;

@@ -228,4 +228,17 @@ class ZipCodeTest extends AbstractIsoCodeTest
             }
         }
     }
+
+    public function testOptionsArraySyntax()
+    {
+        // Test with country in options
+        $this->assertTrue(ZipCode::validate('12345', ['country' => 'US']));
+
+        // Test with case_sensitive in options
+        $this->assertTrue(ZipCode::validate('a0a 1a0', ['country' => 'CA', 'case_sensitive' => true]));
+        $this->assertFalse(ZipCode::validate('a0a 1a0', ['country' => 'CA', 'case_sensitive' => false]));
+
+        // Test with missing country option (should default to null and return false per logic)
+        $this->assertFalse(ZipCode::validate('12345', []));
+    }
 }

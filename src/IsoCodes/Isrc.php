@@ -15,7 +15,7 @@ class Isrc implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($isrc)
+    public static function validate($isrc, $options = [])
     {
         $isrc = trim((string) $isrc);
 

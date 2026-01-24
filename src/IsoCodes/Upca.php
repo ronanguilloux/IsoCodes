@@ -17,7 +17,7 @@ class Upca extends Gtin12 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($upca)
+    public static function validate($upca, $options = [])
     {
         return parent::check($upca, 12);
     }

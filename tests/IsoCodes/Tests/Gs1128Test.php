@@ -80,4 +80,13 @@ class Gs1128Test extends AbstractIsoCodeTest
     {
         $this->assertFalse(Gs1128::validate($gs1128));
     }
+
+    public function testMaxLengthOption()
+    {
+        $validString = '(01)01234567890128'; // Length 18 (+4 parens) = 22
+        $this->assertTrue(Gs1128::validate($validString));
+
+        // Restrict length to 20, should fail
+        $this->assertFalse(Gs1128::validate($validString, ['max_length' => 15]));
+    }
 }

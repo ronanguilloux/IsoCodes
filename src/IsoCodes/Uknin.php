@@ -23,7 +23,7 @@ class Uknin implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($uknin)
+    public static function validate($uknin, $options = [])
     {
         $uknin = (string) $uknin;
         $regexpMustCheck = "/^(?!BG|GB|NK|KN|TN|NT|ZZ)[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z]\d{6}[A-D]$/";

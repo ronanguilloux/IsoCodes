@@ -15,7 +15,7 @@ class Ein implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($ein)
+    public static function validate($ein, $options = [])
     {
         $ein = trim((string) $ein);
 

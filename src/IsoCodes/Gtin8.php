@@ -14,7 +14,7 @@ namespace IsoCodes;
  */
 class Gtin8 extends Gtin implements IsoCodeInterface
 {
-    public static function validate($gtin8)
+    public static function validate($gtin8, $options = [])
     {
         return parent::check($gtin8, 8);
     }

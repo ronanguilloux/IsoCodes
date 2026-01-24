@@ -13,7 +13,7 @@ class Gtin13 extends Gtin implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($gtin13)
+    public static function validate($gtin13, $options = [])
     {
         return parent::check($gtin13, 13);
     }

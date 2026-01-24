@@ -45,7 +45,7 @@ class Hetu implements IsoCodeInterface
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
      */
-    public static function validate($hetu)
+    public static function validate($hetu, $options = [])
     {
         if (! is_string($hetu) || 11 != strlen($hetu)) {
             return false;

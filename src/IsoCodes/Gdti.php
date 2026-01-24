@@ -15,7 +15,7 @@ class Gdti extends Gtin13 implements IsoCodeInterface
     /**
      * @return bool
      */
-    public static function validate($grai)
+    public static function validate($grai, $options = [])
     {
         $grai = (string) $grai;
         if (strlen($grai) < 13) {

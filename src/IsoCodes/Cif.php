@@ -22,7 +22,7 @@ class Cif implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($cif)
+    public static function validate($cif, $options = [])
     {
         $cif = (string) $cif;
         $cifCodes = 'JABCDEFGHI';

@@ -16,7 +16,7 @@ class Ean8 extends Gtin8 implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($ean8)
+    public static function validate($ean8, $options = [])
     {
         return parent::check($ean8, 8);
     }

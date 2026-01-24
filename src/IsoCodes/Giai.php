@@ -19,7 +19,7 @@ class Giai implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($giai)
+    public static function validate($giai, $options = [])
     {
         $giai = trim((string) $giai);
         $giai = strtoupper($giai);

@@ -16,7 +16,7 @@ class Cpr implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($cpr)
+    public static function validate($cpr, $options = [])
     {
         $cpr = trim((string) $cpr);
 

@@ -19,7 +19,7 @@ class VinNA implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($vin)
+    public static function validate($vin, $options = [])
     {
         $vin = strtolower((string) $vin);
         if (! preg_match('/^[^\Wioq]{17}$/', $vin)) {

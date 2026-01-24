@@ -91,7 +91,7 @@ class Iban implements IsoCodeInterface
      *
      * @return bool
      */
-    public static function validate($iban)
+    public static function validate($iban, $options = [])
     {
         $iban = (string) $iban;
         if (! extension_loaded('bcmath')) {
