@@ -42,24 +42,33 @@ class Gs1128 implements IsoCodeInterface
      */
     public static function validate($gs1128)
     {
-        $gs1128 = (string) $gs1128;
+        return self::validateGs1String((string) $gs1128, 48);
+    }
 
-        if (empty($gs1128)) {
+    /**
+     * @param string $gs1String
+     * @param int    $maxLength
+     *
+     * @return bool
+     */
+    protected static function validateGs1String($gs1String, $maxLength)
+    {
+        if (empty($gs1String)) {
             return false;
         }
 
-        // Check total length (approx limit 48 chars of data)
+        // Check total length
         // Ideally we check data length, but rough check first
-        $clean = str_replace(['(', ')'], '', $gs1128);
-        if (strlen($clean) > 48) {
+        $clean = str_replace(['(', ')'], '', $gs1String);
+        if (strlen($clean) > $maxLength) {
             return false;
         }
 
         // Pre-processing
         $parts = [];
-        if (0 === strpos($gs1128, '(')) {
+        if (0 === strpos($gs1String, '(')) {
             // Human Readable Format: (01)123(15)456...
-            if (! preg_match_all('/\(([0-9]{2,4})\)([^(\)]+)/', $gs1128, $matches, PREG_SET_ORDER)) {
+            if (! preg_match_all('/\(([0-9]{2,4})\)([^(\)]+)/', $gs1String, $matches, PREG_SET_ORDER)) {
                 return false;
             }
             foreach ($matches as $match) {
@@ -68,7 +77,7 @@ class Gs1128 implements IsoCodeInterface
         } else {
             // Raw Format: 01123...
             // This is harder, need to parse using AI table
-            $remaining = $gs1128;
+            $remaining = $gs1String;
             while (strlen($remaining) > 0) {
                 $ai = null;
                 $def = null;
