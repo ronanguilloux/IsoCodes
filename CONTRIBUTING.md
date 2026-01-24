@@ -31,7 +31,7 @@ Please checkout [Guidelines for submitting a pull request][3].
 | BC breaks?    | no
 | Deprecations? | no
 | Tests pass?   | yes
-| Fixed tickets | #1234
+| Github Issue  | Closes #1234
 ```
 
 See [commit.template] to be used that way:
