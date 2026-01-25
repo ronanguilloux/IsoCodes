@@ -42,14 +42,13 @@ class Cif implements IsoCodeInterface
             } elseif (in_array($cif[0], ['K', 'P', 'Q', 'S'])) {
                 // Letras
                 return $cif[8] == $cifCodes[$controlDigit];
-            } else {
-                // Alfanumérico
-                if (is_numeric($cif[8])) {
-                    return $cif[8] == $controlDigit;
-                } else {
-                    return $cif[8] == $cifCodes[$controlDigit];
-                }
             }
+            // Alfanumérico
+            if (is_numeric($cif[8])) {
+                return $cif[8] == $controlDigit;
+            }
+
+            return $cif[8] == $cifCodes[$controlDigit];
         }
 
         return false;
