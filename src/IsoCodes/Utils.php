@@ -144,7 +144,7 @@ class Utils
      *
      * @return string The calculated check character
      */
-    public static function iso7064Mod37_36(string $value): string
+    public static function iso7064Mod3736(string $value): string
     {
         $alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $value = strtoupper($value);

@@ -64,7 +64,7 @@ class Isan implements IsoCodeInterface
         }
 
         // 2. Validate Check1
-        if (Utils::iso7064Mod37_36($core) !== $check1) {
+        if (Utils::iso7064Mod3736($core) !== $check1) {
             return false;
         }
 
@@ -87,7 +87,7 @@ class Isan implements IsoCodeInterface
         // Check1 is NOT included
         $fullInput = $core.$version;
 
-        if (Utils::iso7064Mod37_36($fullInput) !== $check2) {
+        if (Utils::iso7064Mod3736($fullInput) !== $check2) {
             return false;
         }
 

@@ -33,6 +33,6 @@ class Grid implements IsoCodeInterface
         $payload = substr($grid, 0, 17);
         $checkDigit = $grid[17];
 
-        return Utils::iso7064Mod37_36($payload) === $checkDigit;
+        return Utils::iso7064Mod3736($payload) === $checkDigit;
     }
 }
