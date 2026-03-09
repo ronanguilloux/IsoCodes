@@ -23,7 +23,9 @@ class IsinTest extends AbstractIsoCodeInterfaceTest
             ['FR0004038099'], // GFI Informatique
             ['US5949181045'], // Microsoft
             ['FR0003500008'], // CAC40
-            ['FR0000133308'],  // France Telecom
+            ['FR0000133308'], // France Telecom
+            ['US0378331005'], // https://www.isin.org/isin-format/
+            ['FR0128142470'], // Agence centrale des organismes de Sécurité sociale
         ];
     }
 
