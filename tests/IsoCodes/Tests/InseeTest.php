@@ -31,6 +31,7 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
         return [
             ['353072B07300483'],
             ['253072C07300483'],
+            ['177022A00100228'], // Wrong checksum
         ];
     }
 }
