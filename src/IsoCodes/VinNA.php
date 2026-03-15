@@ -65,10 +65,10 @@ class VinNA implements IsoCodeInterface
         }
 
         $check = $sum % 11;
-        if (10 == $check) {
+        if (10 === $check) {
             $check = 'x';
         }
 
-        return $check == $vin[8];
+        return (string) $check === (string) $vin[8];
     }
 }
