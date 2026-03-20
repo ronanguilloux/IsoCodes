@@ -26,21 +26,21 @@ class Cusip implements IsoCodeInterface
             } elseif (ctype_alpha($char)) {
                 $position = ord(strtoupper($char)) - ord('A') + 1;
                 $value = $position + 9;
-            } elseif ('*' == $char) {
+            } elseif ('*' === $char) {
                 $value = 36;
-            } elseif ('@' == $char) {
+            } elseif ('@' === $char) {
                 $value = 37;
-            } elseif ('#' == $char) {
+            } elseif ('#' === $char) {
                 $value = 38;
             } else {
                 return false;
             }
-            if (1 == $i % 2) {
+            if (1 === $i % 2) {
                 $value *= 2;
             }
             $sum += floor($value / 10) + ($value % 10);
         }
 
-        return ord($cusip[8]) - 48 == (10 - ($sum % 10)) % 10;
+        return ord($cusip[8]) - 48 === (10 - ($sum % 10)) % 10;
     }
 }
