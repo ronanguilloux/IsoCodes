@@ -113,7 +113,7 @@ class Insee implements IsoCodeInterface
         if (empty($return['clef'])) {
             $return['clef'] = $clef; // la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
         }
-        if ($clef != $return['clef']) {
+        if ((string) $clef !== (string) $return['clef']) {
             return false;
         }
 
