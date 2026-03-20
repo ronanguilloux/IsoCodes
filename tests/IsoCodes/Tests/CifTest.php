@@ -37,6 +37,7 @@ class CifTest extends AbstractIsoCodeInterfaceTest
             ['N0032484I'],     // NIF: first digit OK, end control digit KO
             ['M0032484I'],     // NIF: first digit KO, end control digit KO
             ['M0032484H'],     // NIF: first digit KO, end control digit OK
+            ['A0874542A'],     // Test type juggling where A equals 0 loosely
         ];
     }
 }
