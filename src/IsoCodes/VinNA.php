@@ -69,6 +69,6 @@ class VinNA implements IsoCodeInterface
             $check = 'x';
         }
 
-        return (string) $check === $vin[8];
+        return (string) $check === (string) $vin[8];
     }
 }
