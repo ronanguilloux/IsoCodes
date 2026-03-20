@@ -34,6 +34,7 @@ class InseeTest extends AbstractIsoCodeInterfaceTest
             // Type juggling prevention
             ['17702562600450x44'],
             ['1770256260045 44'],
+            ['177022A00100228'], // Wrong checksum
         ];
     }
 }

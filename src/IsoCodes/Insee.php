@@ -64,20 +64,20 @@ class Insee implements IsoCodeInterface
         /* Traitement des cas des personnes nées hors métropole ou en corse */
         switch (true) {
             // départements corses. Le calcul de la cles est différent
-            case '2A' == $return['departement']:
+            case '2A' === $return['departement']:
                 $aChecker = floatval(str_replace('A', 0, substr($numero, 0, 13)));
                 $aChecker -= 1000000;
 
                 break;
 
-            case '2B' == $return['departement']:
+            case '2B' === $return['departement']:
                 $aChecker = floatval(str_replace('B', 0, substr($numero, 0, 13)));
                 $aChecker -= 2000000;
 
                 break;
 
                 // département de naissance en outre-mer: de 970 à 989
-            case 97 == $return['departement'] || 98 == $return['departement']:
+            case '97' === $return['departement'] || '98' === $return['departement']:
                 $return['departement'] .= substr($return['numcommune'], 0, 1);
                 $return['numcommune'] = substr($return['numcommune'], 1, 2);
                 if ($return['numcommune'] > 90) {
@@ -88,7 +88,7 @@ class Insee implements IsoCodeInterface
                 break;
 
                 // naissance hors de France
-            case 99 == $return['departement'] || '00' == (string) $return['departement']:
+            case '99' === $return['departement'] || '00' === $return['departement']:
                 $return['pays'] = $match['numcommune'];
                 if ($return['numcommune'] > 990) {
                     // 990 = pays inconnu

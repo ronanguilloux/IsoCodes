@@ -22,6 +22,7 @@ class VinNATest extends AbstractIsoCodeInterfaceTest
     {
         return [
             ['1M8GDM9AYKP042788'], // wrong check
+            ['WAUZZZF4aHA030002'], // check digit evaluates to 0 but provided 'a' (loose type comparison issue)
         ];
     }
 }

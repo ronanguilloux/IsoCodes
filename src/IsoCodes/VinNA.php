@@ -57,7 +57,7 @@ class VinNA implements IsoCodeInterface
         $sum = 0;
         $len = strlen($vin);
         for ($i = 0; $i < $len; ++$i) {
-            if (! is_numeric($vin[$i])) {
+            if (! ctype_digit($vin[$i])) {
                 $sum += $letterVal[$vin[$i]] * $weights[$i];
             } else {
                 $sum += $vin[$i] * $weights[$i];
@@ -65,10 +65,10 @@ class VinNA implements IsoCodeInterface
         }
 
         $check = $sum % 11;
-        if (10 == $check) {
+        if (10 === $check) {
             $check = 'x';
         }
 
-        return $check == $vin[8];
+        return (string) $check === (string) $vin[8];
     }
 }
