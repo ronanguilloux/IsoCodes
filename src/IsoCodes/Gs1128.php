@@ -178,10 +178,6 @@ class Gs1128 implements IsoCodeInterface
                 $m = (int) substr($val, 2, 2);
                 $d = (int) substr($val, 4, 2);
 
-                // Allow "00" day for "last day of month" logic in GS1?
-                // For strict "valid calendar date" required by user, 00 is invalid.
-                // We'll use checkdate. Assume 20xx for YY.
-                // checkdate(month, day, year)
                 if (! checkdate($m, $d, 2000 + $y)) {
                     return false;
                 }
