@@ -111,9 +111,9 @@ class Insee implements IsoCodeInterface
         $clef = 97 - fmod($aChecker, 97);
 
         if (empty($return['clef'])) {
-            $return['clef'] = $clef; // la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
+            $return['clef'] = sprintf('%02d', $clef); // la clef est optionnelle, si elle n'est pas spécifiée, le numéro est valide, mais on rajoute la clef
         }
-        if ((string) $clef !== (string) $return['clef']) {
+        if (sprintf('%02d', $clef) !== (string) $return['clef']) {
             return false;
         }
 
